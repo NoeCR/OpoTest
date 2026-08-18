@@ -219,9 +219,16 @@ class _LawContentScreenState extends State<LawContentScreen> {
   Future<void> _openTitle(Map<String, dynamic> titleRow) async {
     final db = context.read<AppDatabase>();
     final titleId = titleRow['id'] as String;
-    final titleName = titleRow['name'] as String? ?? titleRow['code'] as String? ?? '';
     final payload = await db.getTitle(titleId);
     if (!mounted || payload == null) return;
+
+    final title = asStringMap(payload['title']);
+    final headerTitle = cleanText(title?['code']).isNotEmpty
+        ? cleanText(title?['code'])
+        : (titleRow['code'] as String? ?? titleRow['name'] as String? ?? '');
+    final headerSubtitle = cleanText(title?['name_es']).isNotEmpty
+        ? cleanText(title?['name_es'])
+        : cleanText(titleRow['name']);
 
     final chapters = mapsOf(payload['arChapters']);
     final articles = articleTestGroups(payload);
@@ -230,13 +237,19 @@ class _LawContentScreenState extends State<LawContentScreen> {
         HierarchyScreen(
           lawId: widget.lawId,
           titleId: titleId,
-          titleName: titleName,
+          headerTitle: headerTitle,
+          headerSubtitle: headerSubtitle.isNotEmpty ? headerSubtitle : null,
           payload: payload,
         ),
       );
     } else {
       await context.pushPage(
-        TitleTestsScreen(lawId: widget.lawId, titleId: titleId, titleName: titleName),
+        TitleTestsScreen(
+          lawId: widget.lawId,
+          titleId: titleId,
+          headerTitle: headerTitle,
+          headerSubtitle: headerSubtitle.isNotEmpty ? headerSubtitle : null,
+        ),
       );
     }
     if (mounted) await _load();
@@ -253,8 +266,8 @@ class _LawContentScreenState extends State<LawContentScreen> {
 
   String _titleFooter(Map<String, dynamic>? extra, String code, String name) {
     final title = asStringMap(extra?['title']);
-    final text = cleanText(title?['text_es']);
-    if (text.isNotEmpty) return text;
+    final subtitle = cleanText(title?['name_es']);
+    if (subtitle.isNotEmpty) return subtitle;
     if (name.isNotEmpty && name != code) return name;
     final chapters = mapsOf(extra?['arChapters']);
     if (chapters.isNotEmpty) return '${chapters.length} capítulos';

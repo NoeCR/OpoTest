@@ -14,14 +14,16 @@ class TitleTestsScreen extends StatefulWidget {
     super.key,
     required this.lawId,
     required this.titleId,
-    required this.titleName,
+    required this.headerTitle,
+    this.headerSubtitle,
     this.chapterId,
     this.testIds,
   });
 
   final String lawId;
   final String titleId;
-  final String titleName;
+  final String headerTitle;
+  final String? headerSubtitle;
   final String? chapterId;
   final List<String>? testIds;
 
@@ -86,8 +88,8 @@ class _TitleTestsScreenState extends State<TitleTestsScreen> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           GradientHeader(
-            title: 'Tests',
-            subtitle: widget.titleName,
+            title: widget.headerTitle,
+            subtitle: widget.headerSubtitle,
             trailing: _ids.isEmpty
                 ? null
                 : Container(

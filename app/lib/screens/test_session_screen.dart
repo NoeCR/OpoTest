@@ -220,7 +220,6 @@ class _TestSessionScreenState extends State<TestSessionScreen> {
         const SizedBox(height: 12),
         for (var i = 0; i < q.answers.length; i++)
           _AnswerTile(
-            letter: String.fromCharCode(65 + i),
             text: q.answers[i],
             selected: selected == i + 1,
             state: _answerState(q, i + 1, selected),
@@ -375,9 +374,7 @@ class _TestSessionScreenState extends State<TestSessionScreen> {
             Expanded(
               child: PageView.builder(
                 controller: _pageController,
-                physics: widget.reviewMode
-                    ? const PageScrollPhysics()
-                    : const NeverScrollableScrollPhysics(),
+                physics: const PageScrollPhysics(),
                 itemCount: widget.test.questions.length,
                 onPageChanged: (index) => setState(() => currentIndex = index),
                 itemBuilder: (_, index) => _buildQuestionPage(index),
@@ -462,14 +459,12 @@ enum _AnswerVisual { normal, correct, incorrect }
 
 class _AnswerTile extends StatelessWidget {
   const _AnswerTile({
-    required this.letter,
     required this.text,
     required this.selected,
     required this.state,
     required this.onTap,
   });
 
-  final String letter;
   final String text;
   final bool selected;
   final _AnswerVisual state;
@@ -478,24 +473,16 @@ class _AnswerTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Color? border;
-    Color? letterBg = Colors.grey.shade200;
-    Color? letterFg = Colors.black87;
     Color? cardBg;
 
     if (state == _AnswerVisual.correct) {
       border = Colors.green.shade400;
-      letterBg = Colors.green.shade400;
-      letterFg = Colors.white;
       cardBg = Colors.green.shade50;
     } else if (state == _AnswerVisual.incorrect) {
       border = Colors.red.shade400;
-      letterBg = Colors.red.shade400;
-      letterFg = Colors.white;
       cardBg = Colors.red.shade50;
     } else if (selected) {
       border = AppTheme.primary;
-      letterBg = AppTheme.primary;
-      letterFg = Colors.white;
     }
 
     return Card(
@@ -509,19 +496,8 @@ class _AnswerTile extends StatelessWidget {
         onTap: onTap,
         borderRadius: BorderRadius.circular(12),
         child: Padding(
-          padding: const EdgeInsets.all(12),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              CircleAvatar(
-                radius: 16,
-                backgroundColor: letterBg,
-                child: Text(letter, style: TextStyle(color: letterFg, fontWeight: FontWeight.bold)),
-              ),
-              const SizedBox(width: 12),
-              Expanded(child: Text(text, style: const TextStyle(fontSize: 15, height: 1.35))),
-            ],
-          ),
+          padding: const EdgeInsets.all(14),
+          child: Text(text, style: const TextStyle(fontSize: 15, height: 1.35)),
         ),
       ),
     );

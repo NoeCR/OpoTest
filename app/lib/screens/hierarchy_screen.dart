@@ -16,14 +16,16 @@ class HierarchyScreen extends StatefulWidget {
     super.key,
     required this.lawId,
     required this.titleId,
-    required this.titleName,
+    required this.headerTitle,
+    this.headerSubtitle,
     required this.payload,
     this.chapterId,
   });
 
   final String lawId;
   final String titleId;
-  final String titleName;
+  final String headerTitle;
+  final String? headerSubtitle;
   final Map<String, dynamic> payload;
   final String? chapterId;
 
@@ -58,10 +60,23 @@ class _HierarchyScreenState extends State<HierarchyScreen> {
     setState(() => _attempted = attempted);
   }
 
+  String _folderLabel(Map<String, dynamic> folder) {
+    final code = cleanText(folder['code']);
+    final name = cleanText(folder['name_es']);
+    if (code.isNotEmpty) return code;
+    return name;
+  }
+
+  String? _folderSubtitle(Map<String, dynamic> folder) {
+    final name = cleanText(folder['name_es']);
+    final code = cleanText(folder['code']);
+    if (name.isNotEmpty && name != code) return name;
+    return null;
+  }
+
   Future<void> _openChapter(Map<String, dynamic> chapter) async {
     final db = context.read<AppDatabase>();
     final id = chapter['id']?.toString() ?? '';
-    final name = chapter['name_es']?.toString() ?? chapter['code']?.toString() ?? '';
     final chapterPayload = await db.getChapterPayload(widget.lawId, widget.titleId, id) ??
         {
           'qByChapter': widget.payload['qByChapter'],
@@ -72,14 +87,16 @@ class _HierarchyScreenState extends State<HierarchyScreen> {
 
     final sections = mapsOf(chapterPayload['arSections']);
     final articles = articleTestGroups(chapterPayload);
-    final label = '${widget.titleName} — ${chapter['code'] ?? name}';
+    final headerTitle = _folderLabel(chapter);
+    final headerSubtitle = _folderSubtitle(chapter);
 
     if (sections.isEmpty && articles.isEmpty) {
       await context.pushPage(
         TitleTestsScreen(
           lawId: widget.lawId,
           titleId: widget.titleId,
-          titleName: label,
+          headerTitle: headerTitle,
+          headerSubtitle: headerSubtitle,
           chapterId: id,
         ),
       );
@@ -88,7 +105,8 @@ class _HierarchyScreenState extends State<HierarchyScreen> {
         HierarchyScreen(
           lawId: widget.lawId,
           titleId: widget.titleId,
-          titleName: label,
+          headerTitle: headerTitle,
+          headerSubtitle: headerSubtitle,
           payload: chapterPayload,
           chapterId: id,
         ),
@@ -99,13 +117,13 @@ class _HierarchyScreenState extends State<HierarchyScreen> {
 
   Future<void> _openSection(Map<String, dynamic> section) async {
     final id = section['id']?.toString() ?? '';
-    final name = section['name_es']?.toString() ?? section['code']?.toString() ?? '';
     final ids = testIdsFromQMap(widget.payload['qBySection'], id);
     await context.pushPage(
       TitleTestsScreen(
         lawId: widget.lawId,
         titleId: widget.titleId,
-        titleName: '${widget.titleName} — $name',
+        headerTitle: _folderLabel(section),
+        headerSubtitle: _folderSubtitle(section),
         chapterId: widget.chapterId,
         testIds: ids,
       ),
@@ -118,7 +136,7 @@ class _HierarchyScreenState extends State<HierarchyScreen> {
       TitleTestsScreen(
         lawId: widget.lawId,
         titleId: widget.titleId,
-        titleName: article.code,
+        headerTitle: article.code,
         chapterId: widget.chapterId,
         testIds: article.testIds,
       ),
@@ -136,9 +154,10 @@ class _HierarchyScreenState extends State<HierarchyScreen> {
 
   String _folderFooter(Map<String, dynamic> folder) {
     final name = cleanText(folder['name_es']);
+    final code = cleanText(folder['code']);
+    if (name.isNotEmpty && name != code) return name;
     final text = cleanText(folder['text_es']);
     if (text.isNotEmpty) return text;
-    if (name.isNotEmpty) return name;
     return _isChapter ? 'Tests de la sección' : 'Tests del capítulo';
   }
 
@@ -153,8 +172,8 @@ class _HierarchyScreenState extends State<HierarchyScreen> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           GradientHeader(
-            title: _isChapter ? 'Secciones' : 'Capítulos',
-            subtitle: widget.titleName,
+            title: widget.headerTitle,
+            subtitle: widget.headerSubtitle,
             gradient: AppDecorations.darkHeaderGradient,
           ),
           Expanded(
@@ -170,9 +189,7 @@ class _HierarchyScreenState extends State<HierarchyScreen> {
                   ),
                 for (final folder in folders)
                   TopicProgressCard(
-                    title: cleanText(folder['code']).isNotEmpty
-                        ? cleanText(folder['code'])
-                        : cleanText(folder['name_es']),
+                    title: _folderLabel(folder),
                     footerLabel: _folderFooter(folder),
                     progress: progressCounts(_folderTestIds(folder), _attempted),
                     onTap: () => _isChapter ? _openSection(folder) : _openChapter(folder),

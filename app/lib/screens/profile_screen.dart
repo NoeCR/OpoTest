@@ -54,31 +54,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
       body: ListView(
         padding: EdgeInsets.zero,
         children: [
-          Stack(
-            children: [
-              const GradientHeader(title: 'Perfil', subtitle: 'Cuenta local · sin servidor'),
-              Positioned(
-                left: 0,
-                right: 0,
-                bottom: -36,
-                child: Center(
-                  child: CircleAvatar(
-                    radius: 40,
-                    backgroundColor: Colors.white,
-                    child: CircleAvatar(
-                      radius: 36,
-                      backgroundColor: AppTheme.primary,
-                      child: Text(
-                        user.name[0].toUpperCase(),
-                        style: const TextStyle(color: Colors.white, fontSize: 28, fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 48),
+          const GradientHeader(title: 'Perfil', subtitle: 'Cuenta local · sin servidor'),
+          const SizedBox(height: 16),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Column(
