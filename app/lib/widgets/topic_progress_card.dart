@@ -25,7 +25,8 @@ class TopicProgressCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final color = progressTrafficColor(progress.ratio);
+    final barColor = progressTrafficColor(progress.ratio);
+    final subtitle = footerLabel.trim();
 
     return Padding(
       padding: const EdgeInsets.only(bottom: 12),
@@ -41,71 +42,95 @@ class TopicProgressCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Padding(
-                padding: const EdgeInsets.fromLTRB(18, 18, 18, 16),
-                child: Text(
-                  title,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w800,
-                    color: AppTheme.cardDark,
-                    height: 1.25,
-                  ),
-                ),
-              ),
-              Container(
-                padding: const EdgeInsets.fromLTRB(16, 12, 16, 14),
-                decoration: const BoxDecoration(
-                  color: AppTheme.cardFooter,
-                  border: Border(top: BorderSide(color: Color(0xFFD5DCE6))),
-                ),
+                padding: EdgeInsets.fromLTRB(18, 18, 18, subtitle.isEmpty && progress.isEmpty ? 18 : 12),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Expanded(
                           child: Text(
-                            footerLabel,
-                            maxLines: 1,
+                            title,
+                            maxLines: 2,
                             overflow: TextOverflow.ellipsis,
                             style: const TextStyle(
-                              fontSize: 12,
-                              color: Colors.black54,
-                              fontWeight: FontWeight.w500,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w800,
+                              color: AppTheme.cardDark,
+                              height: 1.25,
                             ),
                           ),
                         ),
                         if (!progress.isEmpty) ...[
-                          const SizedBox(width: 8),
-                          Text(
-                            progress.label,
-                            style: TextStyle(
-                              fontSize: 13,
-                              fontWeight: FontWeight.w800,
-                              color: color,
-                            ),
-                          ),
+                          const SizedBox(width: 10),
+                          _ProgressBadge(label: progress.label),
                         ],
                       ],
                     ),
-                    if (!progress.isEmpty) ...[
-                      const SizedBox(height: 8),
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(6),
-                        child: LinearProgressIndicator(
-                          value: progress.ratio,
-                          minHeight: 7,
-                          backgroundColor: color.withValues(alpha: 0.18),
-                          color: color,
+                    if (subtitle.isNotEmpty) ...[
+                      const SizedBox(height: 6),
+                      Text(
+                        subtitle,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(
+                          fontSize: 13,
+                          color: Colors.black54,
+                          height: 1.3,
                         ),
                       ),
                     ],
                   ],
                 ),
               ),
+              if (!progress.isEmpty)
+                Container(
+                  padding: const EdgeInsets.fromLTRB(16, 0, 16, 14),
+                  decoration: const BoxDecoration(
+                    color: AppTheme.cardFooter,
+                    border: Border(top: BorderSide(color: Color(0xFFD5DCE6))),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 12),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(6),
+                      child: LinearProgressIndicator(
+                        value: progress.ratio,
+                        minHeight: 7,
+                        backgroundColor: barColor.withValues(alpha: 0.18),
+                        color: barColor,
+                      ),
+                    ),
+                  ),
+                ),
             ],
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class _ProgressBadge extends StatelessWidget {
+  const _ProgressBadge({required this.label});
+
+  final String label;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+      decoration: BoxDecoration(
+        color: const Color(0xFFE8EDF3),
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Text(
+        label,
+        style: const TextStyle(
+          fontSize: 12,
+          fontWeight: FontWeight.w700,
+          color: AppTheme.cardDark,
         ),
       ),
     );

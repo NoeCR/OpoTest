@@ -8,7 +8,17 @@ Este formato sigue una estructura inspirada en [Keep a Changelog](https://keepac
 
 ---
 
-## [1.0.1] - 2026-08-18
+## [1.0.2] - 2026-08-18
+
+### Changed
+- Lista de Legislación con tarjetas unificadas: título, subtítulo, badge de progreso neutro y barra de avance con color.
+- Oculta leyes y títulos sin tests en el temario importado.
+
+### Fixed
+- Tests a nivel de ley inaccesibles cuando no hay tests en títulos o capítulos (p. ej. RD364/1995).
+- Lectura de índices `qByLaw` legacy con `mainLevel` como lista directa.
+
+---
 
 ### Changed
 - Opciones de respuesta sin prefijos A/B/C/D; la selección se indica con el borde.

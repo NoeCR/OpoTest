@@ -28,8 +28,18 @@ class LawsScreen extends StatefulWidget {
 class _LawsScreenState extends State<LawsScreen> {
   int _reloadToken = 0;
 
-  Future<List<Map<String, dynamic>>> _loadLaws() =>
-      context.read<AppDatabase>().getLaws();
+  Future<_LawsListData> _loadLawsList() async {
+    final db = context.read<AppDatabase>();
+    final userId = context.read<AppState>().activeUser?.id;
+    final laws = await db.getLaws();
+    final testsByLaw = await db.testIdsGroupedByLaw();
+    final attempted = userId == null ? <String>{} : await db.attemptedTestIds(userId);
+    final progressByLaw = <String, ProgressCounts>{
+      for (final entry in testsByLaw.entries)
+        entry.key: progressCounts(entry.value, attempted),
+    };
+    return _LawsListData(laws: laws, progressByLaw: progressByLaw);
+  }
 
   Future<void> _retryImport() async {
     try {
@@ -47,9 +57,9 @@ class _LawsScreenState extends State<LawsScreen> {
         children: [
           const GradientHeader(title: 'Legislación', subtitle: 'Selecciona una ley'),
           Expanded(
-            child: FutureBuilder<List<Map<String, dynamic>>>(
+            child: FutureBuilder<_LawsListData>(
               key: ValueKey(_reloadToken),
-              future: _loadLaws(),
+              future: _loadLawsList(),
               builder: (context, snap) {
                 if (snap.connectionState != ConnectionState.done) {
                   return const Center(child: CircularProgressIndicator());
@@ -62,7 +72,8 @@ class _LawsScreenState extends State<LawsScreen> {
                     ),
                   );
                 }
-                final laws = snap.data ?? [];
+                final laws = snap.data?.laws ?? [];
+                final progressByLaw = snap.data?.progressByLaw ?? {};
                 if (laws.isEmpty) {
                   return Center(
                     child: Padding(
@@ -84,69 +95,38 @@ class _LawsScreenState extends State<LawsScreen> {
                     ),
                   );
                 }
+                final lawsWithTests = laws.where((law) {
+                  final lawId = law['id'] as String;
+                  return (progressByLaw[lawId]?.total ?? 0) > 0;
+                }).toList();
+
+                if (lawsWithTests.isEmpty) {
+                  return const Center(
+                    child: Padding(
+                      padding: EdgeInsets.all(24),
+                      child: Text('No hay tests en el temario importado', textAlign: TextAlign.center),
+                    ),
+                  );
+                }
+
                 return ListView.builder(
-                  padding: const EdgeInsets.all(16),
-                  itemCount: laws.length,
+                  padding: const EdgeInsets.fromLTRB(16, 12, 16, 24),
+                  itemCount: lawsWithTests.length,
                   itemBuilder: (context, i) {
-                    final law = laws[i];
+                    final law = lawsWithTests[i];
+                    final lawId = law['id'] as String;
                     final code = law['code'] as String? ?? '';
                     final name = law['name'] as String? ?? '';
-                    return Padding(
-                      padding: const EdgeInsets.only(bottom: 10),
-                      child: Material(
-                        color: Colors.transparent,
-                        child: InkWell(
-                          borderRadius: BorderRadius.circular(16),
-                          onTap: () => context.pushPage(
-                            LawContentScreen(
-                              lawId: law['id'] as String,
-                              lawCode: code,
-                              lawName: name,
-                            ),
-                          ),
-                          child: Ink(
-                            decoration: AppDecorations.card(),
-                            padding: const EdgeInsets.all(16),
-                            child: Row(
-                              children: [
-                                Container(
-                                  width: 48,
-                                  height: 48,
-                                  alignment: Alignment.center,
-                                  decoration: BoxDecoration(
-                                    color: AppTheme.primary.withValues(alpha: 0.1),
-                                    borderRadius: BorderRadius.circular(12),
-                                  ),
-                                  child: Text(
-                                    code.length > 4 ? code.substring(0, 4) : code,
-                                    style: const TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      color: AppTheme.primary,
-                                      fontSize: 11,
-                                    ),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                ),
-                                const SizedBox(width: 14),
-                                Expanded(
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Text(code, style: const TextStyle(fontWeight: FontWeight.bold)),
-                                      const SizedBox(height: 4),
-                                      Text(
-                                        name,
-                                        maxLines: 2,
-                                        overflow: TextOverflow.ellipsis,
-                                        style: const TextStyle(color: Colors.black54, fontSize: 13, height: 1.3),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                const Icon(Icons.chevron_right, color: Colors.black26),
-                              ],
-                            ),
-                          ),
+                    final subtitle = name.isNotEmpty && name != code ? name : '';
+                    return TopicProgressCard(
+                      title: code.isNotEmpty ? code : name,
+                      footerLabel: subtitle,
+                      progress: progressByLaw[lawId] ?? const ProgressCounts(done: 0, total: 0),
+                      onTap: () => context.pushPage(
+                        LawContentScreen(
+                          lawId: lawId,
+                          lawCode: code,
+                          lawName: name,
                         ),
                       ),
                     );
@@ -159,6 +139,13 @@ class _LawsScreenState extends State<LawsScreen> {
       ),
     );
   }
+}
+
+class _LawsListData {
+  const _LawsListData({required this.laws, required this.progressByLaw});
+
+  final List<Map<String, dynamic>> laws;
+  final Map<String, ProgressCounts> progressByLaw;
 }
 
 class LawContentScreen extends StatefulWidget {
@@ -184,6 +171,7 @@ class _LawContentScreenState extends State<LawContentScreen> {
   List<String> _examIds = [];
   List<String> _officialIds = [];
   List<String> _ownIds = [];
+  List<String> _lawTestIds = [];
   Map<String, TestStats> _stats = {};
   bool _loading = true;
 
@@ -197,16 +185,21 @@ class _LawContentScreenState extends State<LawContentScreen> {
     final db = context.read<AppDatabase>();
     final userId = context.read<AppState>().activeUser?.id;
     final titles = await db.getTitlesForLaw(widget.lawId);
+    final lawTestIds = await db.testIdsForLawType(widget.lawId, ContentKind.tests.dbType);
     final examIds = await db.testIdsForLawType(widget.lawId, ContentKind.exams.dbType);
     final officialIds = await db.testIdsForLawType(widget.lawId, ContentKind.official.dbType);
     final ownIds = await db.testIdsForLawSource(widget.lawId, AppDatabase.testSourceCustom);
     final attempted = userId == null ? <String>{} : await db.attemptedTestIds(userId);
     final stats = userId == null
         ? <String, TestStats>{}
-        : await db.statsForTests(userId, [...examIds, ...officialIds, ...ownIds]);
+        : await db.statsForTests(
+            userId,
+            [...lawTestIds, ...examIds, ...officialIds, ...ownIds],
+          );
     if (!mounted) return;
     setState(() {
       _titles = titles;
+      _lawTestIds = lawTestIds;
       _examIds = examIds;
       _officialIds = officialIds;
       _ownIds = ownIds;
@@ -325,7 +318,7 @@ class _LawContentScreenState extends State<LawContentScreen> {
       );
     }
 
-    if (_titles.isEmpty) {
+    if (_titles.isEmpty && _lawTestIds.isEmpty) {
       return const Center(
         child: Padding(
           padding: EdgeInsets.all(24),
@@ -342,33 +335,41 @@ class _LawContentScreenState extends State<LawContentScreen> {
       return titleHasTests(extra, t['id'] as String);
     }).toList();
 
-    if (titlesWithTests.isEmpty) {
-      return const Center(
-        child: Padding(
-          padding: EdgeInsets.all(24),
-          child: Text('No hay tests en esta ley', textAlign: TextAlign.center),
-        ),
+    if (titlesWithTests.isNotEmpty) {
+      return ListView.builder(
+        padding: const EdgeInsets.fromLTRB(16, 12, 16, 24),
+        itemCount: titlesWithTests.length,
+        itemBuilder: (context, i) {
+          final t = titlesWithTests[i];
+          Map<String, dynamic>? extra;
+          try {
+            extra = jsonDecode(t['payload'] as String) as Map<String, dynamic>;
+          } catch (_) {}
+          final code = t['code'] as String? ?? '';
+          final name = t['name'] as String? ?? '';
+          return TopicProgressCard(
+            title: code.isNotEmpty ? code : name,
+            footerLabel: _titleFooter(extra, code, name),
+            progress: _titleProgress(t['id'] as String, extra),
+            onTap: () => _openTitle(t),
+          );
+        },
       );
     }
 
-    return ListView.builder(
-      padding: const EdgeInsets.fromLTRB(16, 12, 16, 24),
-      itemCount: titlesWithTests.length,
-      itemBuilder: (context, i) {
-        final t = titlesWithTests[i];
-        Map<String, dynamic>? extra;
-        try {
-          extra = jsonDecode(t['payload'] as String) as Map<String, dynamic>;
-        } catch (_) {}
-        final code = t['code'] as String? ?? '';
-        final name = t['name'] as String? ?? '';
-        return TopicProgressCard(
-          title: code.isNotEmpty ? code : name,
-          footerLabel: _titleFooter(extra, code, name),
-          progress: _titleProgress(t['id'] as String, extra),
-          onTap: () => _openTitle(t),
-        );
-      },
+    if (_lawTestIds.isNotEmpty) {
+      return TestPickerGrid(
+        ids: _lawTestIds,
+        stats: _stats,
+        onOpen: _openTest,
+      );
+    }
+
+    return const Center(
+      child: Padding(
+        padding: EdgeInsets.all(24),
+        child: Text('No hay tests en esta ley', textAlign: TextAlign.center),
+      ),
     );
   }
 }

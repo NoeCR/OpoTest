@@ -437,6 +437,24 @@ class AppDatabase {
     return rows.map((r) => r['id'] as String).toList();
   }
 
+  /// IDs de tests temario (`type = test`) agrupados por ley.
+  Future<Map<String, List<String>>> testIdsGroupedByLaw() async {
+    final rows = await db.query(
+      'tests',
+      columns: ['id', 'law_id'],
+      where: 'type = ?',
+      whereArgs: ['test'],
+      orderBy: 'law_id, index_num, CAST(id AS INTEGER)',
+    );
+    final grouped = <String, List<String>>{};
+    for (final row in rows) {
+      final lawId = row['law_id']?.toString();
+      if (lawId == null || lawId.isEmpty) continue;
+      grouped.putIfAbsent(lawId, () => []).add(row['id'] as String);
+    }
+    return grouped;
+  }
+
   Future<List<String>> testIdsForLawSource(String lawId, String source) async {
     final rows = await db.query(
       'tests',
@@ -455,6 +473,8 @@ class AppDatabase {
     if (main is Map) {
       final list = main[type];
       if (list is List) return list.map((e) => e.toString()).toList();
+    } else if (main is List && type == 'test') {
+      return main.map((e) => e.toString()).toList();
     }
     return [];
   }
