@@ -1,86 +1,59 @@
-# Testea Local
+# OpoTest
 
-Réplica offline de **Testea** con contenido local, cuentas locales y sync opcional cada 7 días.
+App Flutter offline para practicar tests de oposiciones con temario local, progreso por usuario y métricas de rendimiento.
 
-## 1. Exportar temario completo
+## Qué hace este repositorio
 
-```bash
-cd testea-local
-node scripts/export-temario.cjs --concurrency=10
-```
+- Ejecuta una app móvil/escritorio en Flutter (`app/`).
+- Carga legislación y tests desde datos locales (`data/`).
+- Permite cuentas locales y persistencia en SQLite.
+- Guarda intentos, estadísticas y progreso (`hechos/total`) por bloque.
+- Incluye scripts para exportar/actualizar contenido y para uso en emulador Android.
 
-Salida en `data/`:
-- `laws-index.json`, `hierarchy.json`, `options.json`
-- `laws/{id}/...` — jerarquía ley/título/capítulo
-- `tests/{id}.json` — cada test con preguntas y `textClarification_es`
-- `manifest.json` — estadísticas de exportación
+## Arranque rápido
 
-Reanudar tests fallidos:
+### 1) Preparar app
 
 ```bash
-node scripts/export-temario.cjs --resume --concurrency=10
-```
-
-## 2. Captura emulador (screenshots; HTTPS opcional)
-
-**Recomendado:** usar Testea **sin proxy** para navegar la app. El temario ya está exportado vía API directa.
-
-```powershell
-cd testea-local
-.\scripts\emulator-capture.ps1 -Screenshot    # PNG en capture/screens/
-.\scripts\emulator-capture.ps1 -StopProxy
-```
-
-### Proxy HTTPS (avanzado, Android 14)
-
-En Android 14 la app puede quedarse en splash con proxy activo. Si necesitas capturar tráfico:
-
-```powershell
-.\scripts\emulator-capture.ps1 -InstallCert
-# Ajustes > Seguridad > Instalar certificado > Certificado CA
-# Menú ≡ > Downloads > mitmproxy.cer (no uses el selector de Drive)
-.\scripts\emulator-capture.ps1 -StartProxy
-```
-
-## 3. App Flutter
-
-```bash
-cd testea-local/app
+cd app
 flutter pub get
-flutter run -d windows   # o android
 ```
 
-**Primera ejecución:** importa automáticamente desde `../data` (desktop) o desde la carpeta empujada al dispositivo (Android).
+### 2) Ejecutar
 
-### Android / emulador
+```bash
+flutter run -d windows
+# o en Android/emulador
+flutter run -d emulator-5554
+```
 
-El temario no vive dentro del APK. Empújalo una vez:
+### 3) Cargar temario en Android (si aplica)
 
 ```powershell
-cd testea-local
+cd ..
 .\scripts\push-data-android.ps1 -Device emulator-5554
 ```
 
-Luego reinicia la app o **Perfil → Configuración → Importar temario**.
+Luego reinicia la app o usa la importación desde Configuración.
 
-### Características
+## Características principales
 
-- Barra inferior **Tests / Perfil** (como Testea)
-- Cuentas **100% locales** (crear / cambiar / borrar progreso)
-- Navegación: Legislación → Títulos → Capítulos → Grid de tests con **Nota media / Mejor nota**
-- Tests, respuestas e intentos en **SQLite**
-- Sesión con **Índice** de preguntas, contador "Completadas X de Y"
-- Resultados con **Nota neta**, grid de respuestas y review con **nota aclaratoria**
-- Test aleatorio desde el temario importado
-- Exportar progreso JSON (resumen + intentos) en **Perfil**
-- Sync: solo comprueba versión remota; reimportas cuando quieras
+- Navegación jerárquica: ley → título → capítulo/sección/artículo.
+- Selector por tipo de contenido: tests, exámenes, preguntas oficiales y preguntas propias.
+- Sesión de examen con tiempo, avance y revisión.
+- Resultados con métricas (aciertos, fallos, sin responder, tiempo).
+- Notas aclaratorias con render HTML.
+- Persistencia local de progreso por usuario.
 
-## Estructura
+## Estructura del repositorio
 
+```text
+OpoTest/
+  app/       # Aplicación Flutter
+  data/      # Contenido local de legislación/tests
+  scripts/   # Utilidades de exportación, captura y carga en emulador
 ```
-testea-local/
-  scripts/export-temario.cjs
-  scripts/emulator-capture.ps1
-  data/                 # export (gitignore parcial)
-  app/                  # Flutter (lib/screens, database, services)
-```
+
+## Documentación de cambios
+
+Revisa `CHANGELOG.md` para el historial de versiones y funcionalidades.
