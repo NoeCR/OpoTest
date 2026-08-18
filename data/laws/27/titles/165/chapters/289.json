@@ -1,0 +1,208 @@
+{
+  "error": 0,
+  "arSections": [
+    {
+      "id": "290",
+      "idChapter": "289",
+      "code": "CAPÍTULO I",
+      "ordinal": "I",
+      "order": "1",
+      "name_es": "Sección 1ª - De la preparación de los contratos de las Administraciones Públicas",
+      "text_es": ""
+    },
+    {
+      "id": "342",
+      "idChapter": "289",
+      "code": "CAPÍTULO I",
+      "ordinal": "I",
+      "order": "2",
+      "name_es": "Sección 2ª - De la adjudicación de los contratos de las Administraciones Públicas",
+      "text_es": ""
+    },
+    {
+      "id": "343",
+      "idChapter": "289",
+      "code": "CAPÍTULO I",
+      "ordinal": "I",
+      "order": "3",
+      "name_es": "Sección 3ª - De los efectos, cumplimiento y extinción de los contratos administrativos",
+      "text_es": ""
+    },
+    {
+      "id": "291",
+      "idChapter": "289",
+      "code": "CAPÍTULO II",
+      "ordinal": "II",
+      "order": "4",
+      "name_es": "Racionalización técnica de la contratación\r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "27",
+    "code": "L9/2017",
+    "ordinal": "L9/2017",
+    "order": "5",
+    "order_def": "AAAA5",
+    "publish": "YES",
+    "name_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público, por la que se transponen al ordenamiento jurídico español las Directivas del Parlamento Europeo y del Consejo 2014/23/UE y 2014/24/UE, de 26 de febrero de 2014.",
+    "acronim_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público."
+  },
+  "title": {
+    "id": "165",
+    "idLaw": "27",
+    "code": "LIBRO SEGUNDO",
+    "ordinal": "SEGUNDO",
+    "order": "3",
+    "order_def": "AAAA3BBBB5",
+    "name_es": "De los contratos de las Administraciones Públicas\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "289",
+    "idTitle": "165",
+    "code": "TÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "name_es": "Disposiciones generales\r",
+    "text_es": ""
+  },
+  "qByChapter": {
+    "289": {
+      "mainLevel": [],
+      "subLevel": [
+        "733",
+        "734",
+        "735",
+        "736",
+        "737",
+        "738",
+        "739",
+        "849",
+        "834",
+        "835",
+        "757",
+        "759",
+        "776",
+        "777",
+        "778",
+        "779",
+        "786",
+        "787",
+        "788",
+        "789",
+        "756",
+        "755",
+        "754",
+        "743",
+        "742",
+        "741",
+        "744",
+        "745",
+        "746",
+        "747",
+        "748",
+        "749",
+        "750",
+        "751",
+        "752",
+        "753",
+        "810",
+        "811",
+        "812",
+        "813",
+        "814",
+        "809",
+        "808",
+        "807",
+        "806",
+        "804",
+        "796",
+        "793",
+        "792",
+        "791",
+        "805"
+      ],
+      "recent": 0
+    }
+  },
+  "qBySection": {
+    "290": {
+      "mainLevel": [
+        "733",
+        "734",
+        "735",
+        "736",
+        "737",
+        "738",
+        "739"
+      ],
+      "subLevel": [],
+      "recent": 0
+    },
+    "291": {
+      "mainLevel": [
+        "834",
+        "835",
+        "849"
+      ],
+      "subLevel": [],
+      "recent": 0
+    },
+    "342": {
+      "mainLevel": [
+        "741",
+        "742",
+        "743",
+        "744",
+        "745",
+        "746",
+        "747",
+        "748",
+        "749",
+        "750",
+        "751",
+        "752",
+        "753",
+        "754",
+        "755",
+        "756",
+        "757",
+        "759",
+        "776",
+        "777",
+        "778",
+        "779",
+        "786",
+        "787",
+        "788",
+        "789"
+      ],
+      "subLevel": [],
+      "recent": 0
+    },
+    "343": {
+      "mainLevel": [
+        "791",
+        "792",
+        "793",
+        "796",
+        "804",
+        "805",
+        "806",
+        "807",
+        "808",
+        "809",
+        "810",
+        "811",
+        "812",
+        "813",
+        "814"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "arArticles": [],
+  "qByArticle": []
+}

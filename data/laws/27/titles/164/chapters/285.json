@@ -1,0 +1,104 @@
+{
+  "error": 0,
+  "arSections": [
+    {
+      "id": "278",
+      "idChapter": "285",
+      "code": "CAPÍTULO I",
+      "ordinal": "I",
+      "order": "1",
+      "name_es": "Racionalidad y consistencia de la contratación del sector público.\r",
+      "text_es": ""
+    },
+    {
+      "id": "279",
+      "idChapter": "285",
+      "code": "CAPÍTULO II",
+      "ordinal": "II",
+      "order": "2",
+      "name_es": "Libertad de pactos y contenido mínimo del contrato.\r",
+      "text_es": ""
+    },
+    {
+      "id": "280",
+      "idChapter": "285",
+      "code": "CAPÍTULO III",
+      "ordinal": "III",
+      "order": "3",
+      "name_es": "Perfección y forma del contrato.\r",
+      "text_es": ""
+    },
+    {
+      "id": "281",
+      "idChapter": "285",
+      "code": "CAPÍTULO IV",
+      "ordinal": "IV",
+      "order": "4",
+      "name_es": "Régimen de invalidez.\r",
+      "text_es": ""
+    },
+    {
+      "id": "282",
+      "idChapter": "285",
+      "code": "CAPÍTULO V",
+      "ordinal": "V",
+      "order": "5",
+      "name_es": "Del recurso especial.\r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "27",
+    "code": "L9/2017",
+    "ordinal": "L9/2017",
+    "order": "5",
+    "order_def": "AAAA5",
+    "publish": "YES",
+    "name_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público, por la que se transponen al ordenamiento jurídico español las Directivas del Parlamento Europeo y del Consejo 2014/23/UE y 2014/24/UE, de 26 de febrero de 2014.",
+    "acronim_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público."
+  },
+  "title": {
+    "id": "164",
+    "idLaw": "27",
+    "code": "LIBRO PRIMERO",
+    "ordinal": "PRIMERO",
+    "order": "2",
+    "order_def": "AAAA2BBBB5",
+    "name_es": "Configuración general de la contratación del sector público y elementos estructurales de los contratos\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "285",
+    "idTitle": "164",
+    "code": "TÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "name_es": "Disposiciones generales sobre la contratación del sector público\r",
+    "text_es": ""
+  },
+  "qByChapter": {
+    "285": {
+      "mainLevel": [
+        "669",
+        "682",
+        "681",
+        "680",
+        "679",
+        "678",
+        "677",
+        "676",
+        "675",
+        "673",
+        "672",
+        "671",
+        "670",
+        "683"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "qBySection": [],
+  "arArticles": [],
+  "qByArticle": []
+}

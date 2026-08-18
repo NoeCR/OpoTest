@@ -1,0 +1,50 @@
+{
+  "error": 0,
+  "arSections": [],
+  "law": {
+    "id": "41",
+    "code": "LO2/1982",
+    "ordinal": "LO2/1982",
+    "order": "25",
+    "order_def": "AAA25",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 2/1982, de 12 de mayo, del Tribunal de Cuentas.",
+    "acronim_es": "Ley Orgánica 2/1982, de 12 de mayo, del Tribunal de Cuentas."
+  },
+  "title": {
+    "id": "283",
+    "idLaw": "41",
+    "code": "TÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "order_def": "AAAA2BBB25",
+    "name_es": "Composición y organización del Tribunal de Cuentas\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "490",
+    "idTitle": "283",
+    "code": "CAPÍTULO III",
+    "ordinal": "III",
+    "order": "3",
+    "name_es": "La Sección de Fiscalización\r",
+    "text_es": ""
+  },
+  "qByChapter": [],
+  "qBySection": [],
+  "arArticles": [
+    {
+      "id": "3916",
+      "idLaw": "41",
+      "idTitle": "283",
+      "idChapter": "490",
+      "idSection": null,
+      "code": "Artículo 23",
+      "ordinal": "23",
+      "order": "1",
+      "name_es": "\r",
+      "text_es": ""
+    }
+  ],
+  "qByArticle": []
+}

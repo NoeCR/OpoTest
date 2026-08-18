@@ -1,0 +1,140 @@
+{
+  "error": 0,
+  "arChapters": [],
+  "law": {
+    "id": "5",
+    "code": "CONSTITUCIÓN",
+    "ordinal": "CONSTITUCIÓN",
+    "order": "1",
+    "order_def": "AAAA1",
+    "publish": "YES",
+    "name_es": "Constitución Española de 1978",
+    "acronim_es": "Constitución Española"
+  },
+  "title": {
+    "id": "28",
+    "idLaw": "5",
+    "code": "TÍTULO IX",
+    "ordinal": "IX",
+    "order": "11",
+    "order_def": "AAA11BBBB1",
+    "name_es": "Del Tribunal Constitucional",
+    "text_es": "Artículos del 159 al 165"
+  },
+  "qByTitle": {
+    "28": {
+      "mainLevel": [
+        "205",
+        "206",
+        "207",
+        "208",
+        "209",
+        "210",
+        "211",
+        "212",
+        "213",
+        "214",
+        "215"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "qByChapter": [],
+  "arArticles": [
+    {
+      "id": "466",
+      "idLaw": "5",
+      "idTitle": "28",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 159",
+      "ordinal": "159",
+      "order": "1",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "467",
+      "idLaw": "5",
+      "idTitle": "28",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 160",
+      "ordinal": "160",
+      "order": "2",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "468",
+      "idLaw": "5",
+      "idTitle": "28",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 161",
+      "ordinal": "161",
+      "order": "3",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "469",
+      "idLaw": "5",
+      "idTitle": "28",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 162",
+      "ordinal": "162",
+      "order": "4",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "470",
+      "idLaw": "5",
+      "idTitle": "28",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 163",
+      "ordinal": "163",
+      "order": "5",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "471",
+      "idLaw": "5",
+      "idTitle": "28",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 164",
+      "ordinal": "164",
+      "order": "6",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "472",
+      "idLaw": "5",
+      "idTitle": "28",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 165",
+      "ordinal": "165",
+      "order": "7",
+      "name_es": "\r",
+      "text_es": ""
+    }
+  ],
+  "$arIdsArticles": [
+    "466",
+    "467",
+    "468",
+    "469",
+    "470",
+    "471",
+    "472"
+  ],
+  "qByArticle": []
+}

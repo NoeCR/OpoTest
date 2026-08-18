@@ -1,0 +1,125 @@
+{
+  "error": 0,
+  "arChapters": [
+    {
+      "id": "39",
+      "idTitle": "27",
+      "code": "CAPÍTULO PRIMERO",
+      "ordinal": "I",
+      "order": "1",
+      "name_es": "Principios generales",
+      "text_es": null
+    },
+    {
+      "id": "40",
+      "idTitle": "27",
+      "code": "CAPÍTULO SEGUNDO",
+      "ordinal": "II",
+      "order": "2",
+      "name_es": "De la Administración Local",
+      "text_es": null
+    },
+    {
+      "id": "41",
+      "idTitle": "27",
+      "code": "CAPÍTULO TERCERO",
+      "ordinal": "III",
+      "order": "3",
+      "name_es": "De las Comunidades Autónomas",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "5",
+    "code": "CONSTITUCIÓN",
+    "ordinal": "CONSTITUCIÓN",
+    "order": "1",
+    "order_def": "AAAA1",
+    "publish": "YES",
+    "name_es": "Constitución Española de 1978",
+    "acronim_es": "Constitución Española"
+  },
+  "title": {
+    "id": "27",
+    "idLaw": "5",
+    "code": "TÍTULO VIII",
+    "ordinal": "VIII",
+    "order": "10",
+    "order_def": "AAA10BBBB1",
+    "name_es": "De la Organización Territorial del Estado",
+    "text_es": "Artículos del 137 al 158"
+  },
+  "qByTitle": {
+    "27": {
+      "mainLevel": [],
+      "subLevel": [
+        "179",
+        "180",
+        "181",
+        "182",
+        "183",
+        "184",
+        "185",
+        "188",
+        "189",
+        "190",
+        "191",
+        "192",
+        "193",
+        "194",
+        "195",
+        "196",
+        "197",
+        "198",
+        "199",
+        "200",
+        "201"
+      ],
+      "recent": 0
+    }
+  },
+  "qByChapter": {
+    "39": {
+      "mainLevel": [
+        "179",
+        "180"
+      ],
+      "subLevel": [],
+      "recent": 0
+    },
+    "40": {
+      "mainLevel": [
+        "181",
+        "182",
+        "183",
+        "184"
+      ],
+      "subLevel": [],
+      "recent": 0
+    },
+    "41": {
+      "mainLevel": [
+        "195",
+        "196",
+        "197",
+        "198",
+        "199",
+        "200",
+        "194",
+        "193",
+        "192",
+        "191",
+        "190",
+        "189",
+        "188",
+        "185",
+        "201"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "arArticles": [],
+  "$arIdsArticles": [],
+  "qByArticle": []
+}

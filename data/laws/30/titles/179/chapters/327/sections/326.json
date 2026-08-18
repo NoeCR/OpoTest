@@ -1,0 +1,70 @@
+{
+  "error": 0,
+  "arArticles": [
+    {
+      "id": "3181",
+      "idLaw": "30",
+      "idTitle": "179",
+      "idChapter": "327",
+      "idSection": "326",
+      "code": "Artículo 23",
+      "ordinal": "23",
+      "order": "1",
+      "name_es": "Recursos.\r",
+      "text_es": ""
+    },
+    {
+      "id": "3182",
+      "idLaw": "30",
+      "idTitle": "179",
+      "idChapter": "327",
+      "idSection": "326",
+      "code": "Artículo 24",
+      "ordinal": "24",
+      "order": "2",
+      "name_es": "Reclamación ante el Consejo de Transparencia y Buen Gobierno.\r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "30",
+    "code": "L19/2013",
+    "ordinal": "L19/2013",
+    "order": "27",
+    "order_def": "AAA27",
+    "publish": "YES",
+    "name_es": "Ley 19/2013, de 9 de diciembre, de transparencia, acceso a la información pública y buen gobierno.",
+    "acronim_es": "Ley 19/2013, de 9 de diciembre, de transparencia, acceso a la información pública y buen gobierno."
+  },
+  "title": {
+    "id": "179",
+    "idLaw": "30",
+    "code": "TÍTULO I",
+    "ordinal": "I",
+    "order": "2",
+    "order_def": "AAAA2BBB27",
+    "name_es": "Transparencia de la actividad pública.\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "327",
+    "idTitle": "179",
+    "code": "CAPÍTULO III",
+    "ordinal": "III",
+    "order": "3",
+    "name_es": "Derecho de acceso a la información pública.",
+    "text_es": ""
+  },
+  "section": {
+    "id": "326",
+    "idChapter": "327",
+    "code": "SECCIÓN 3",
+    "ordinal": "3",
+    "order": "3",
+    "name_es": "Régimen de impugnaciones.",
+    "text_es": ""
+  },
+  "code": "SECCIÓN 3 - ",
+  "qBySection": [],
+  "qByArticle": []
+}

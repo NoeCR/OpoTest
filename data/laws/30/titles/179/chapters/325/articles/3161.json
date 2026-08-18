@@ -1,0 +1,47 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "30",
+    "code": "L19/2013",
+    "ordinal": "L19/2013",
+    "order": "27",
+    "order_def": "AAA27",
+    "publish": "YES",
+    "name_es": "Ley 19/2013, de 9 de diciembre, de transparencia, acceso a la información pública y buen gobierno.",
+    "acronim_es": "Ley 19/2013, de 9 de diciembre, de transparencia, acceso a la información pública y buen gobierno."
+  },
+  "title": {
+    "id": "179",
+    "idLaw": "30",
+    "code": "TÍTULO I",
+    "ordinal": "I",
+    "order": "2",
+    "order_def": "AAAA2BBB27",
+    "name_es": "Transparencia de la actividad pública.\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "325",
+    "idTitle": "179",
+    "code": "CAPÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "name_es": "Ámbito subjetivo de aplicación.\r",
+    "text_es": ""
+  },
+  "section": [],
+  "article": {
+    "id": "3161",
+    "idLaw": "30",
+    "idTitle": "179",
+    "idChapter": "325",
+    "idSection": null,
+    "code": "Artículo 4",
+    "ordinal": "Artículo 4",
+    "order": "3",
+    "name_es": "Obligación de suministrar información.\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

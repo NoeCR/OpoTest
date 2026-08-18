@@ -1,0 +1,109 @@
+{
+  "error": 0,
+  "arChapters": [],
+  "law": {
+    "id": "8",
+    "code": "RD365/1995",
+    "ordinal": "RD365/1995",
+    "order": "19",
+    "order_def": "AAA19",
+    "publish": "YES",
+    "name_es": "Real Decreto 365/1995, de 10 de marzo, por el que se aprueba el Reglamento de situaciones administrativas de los funcionarios civiles de la Administración General del Estado.",
+    "acronim_es": "RD 365/1995 - Situaciones Administrativas"
+  },
+  "title": {
+    "id": "48",
+    "idLaw": "8",
+    "code": "CAPÍTULO III",
+    "ordinal": "III",
+    "order": "3",
+    "order_def": "AAAA3BBB19",
+    "name_es": "Servicios especiales\r",
+    "text_es": ""
+  },
+  "qByTitle": [],
+  "qByChapter": [],
+  "arArticles": [
+    {
+      "id": "576",
+      "idLaw": "8",
+      "idTitle": "48",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 4",
+      "ordinal": "4",
+      "order": "1",
+      "name_es": "Servicios especiales\r",
+      "text_es": ""
+    },
+    {
+      "id": "577",
+      "idLaw": "8",
+      "idTitle": "48",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 5",
+      "ordinal": "5",
+      "order": "2",
+      "name_es": "Cargo de carácter político\r",
+      "text_es": ""
+    },
+    {
+      "id": "578",
+      "idLaw": "8",
+      "idTitle": "48",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 6",
+      "ordinal": "6",
+      "order": "3",
+      "name_es": "Declaración de la situación de servicios especiales\r",
+      "text_es": ""
+    },
+    {
+      "id": "579",
+      "idLaw": "8",
+      "idTitle": "48",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 7",
+      "ordinal": "7",
+      "order": "4",
+      "name_es": "Reserva de puestos de trabajo\r",
+      "text_es": ""
+    },
+    {
+      "id": "580",
+      "idLaw": "8",
+      "idTitle": "48",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 8",
+      "ordinal": "8",
+      "order": "5",
+      "name_es": "Efectos de la situación de servicios especiales\r",
+      "text_es": ""
+    },
+    {
+      "id": "581",
+      "idLaw": "8",
+      "idTitle": "48",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 9",
+      "ordinal": "9",
+      "order": "6",
+      "name_es": "Solicitud de reingreso al servicio activo\r",
+      "text_es": ""
+    }
+  ],
+  "$arIdsArticles": [
+    "576",
+    "577",
+    "578",
+    "579",
+    "580",
+    "581"
+  ],
+  "qByArticle": []
+}

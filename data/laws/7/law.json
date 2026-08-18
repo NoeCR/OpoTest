@@ -1,0 +1,108 @@
+{
+  "error": 0,
+  "arTitles": [
+    {
+      "id": "40",
+      "idLaw": "7",
+      "code": "PRELIMINAR ",
+      "ordinal": "",
+      "order": "1",
+      "order_def": "AAAA1BBB18",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "41",
+      "idLaw": "7",
+      "code": "TÍTULO I",
+      "ordinal": "I",
+      "order": "2",
+      "order_def": "AAAA2BBB18",
+      "name_es": "Ingreso en Cuerpos o Escalas de funcionarios\r",
+      "text_es": ""
+    },
+    {
+      "id": "42",
+      "idLaw": "7",
+      "code": "TÍTULO II",
+      "ordinal": "II",
+      "order": "3",
+      "order_def": "AAAA3BBB18",
+      "name_es": "Selección del personal laboral\r",
+      "text_es": ""
+    },
+    {
+      "id": "43",
+      "idLaw": "7",
+      "code": "TÍTULO III",
+      "ordinal": "III",
+      "order": "4",
+      "order_def": "AAAA4BBB18",
+      "name_es": "Provisión de puestos de trabajo\r",
+      "text_es": ""
+    },
+    {
+      "id": "44",
+      "idLaw": "7",
+      "code": "TÍTULO IV",
+      "ordinal": "IV",
+      "order": "5",
+      "order_def": "AAAA5BBB18",
+      "name_es": "Carrera profesional\r",
+      "text_es": ""
+    },
+    {
+      "id": "45",
+      "idLaw": "7",
+      "code": "TÍTULO V",
+      "ordinal": "V",
+      "order": "6",
+      "order_def": "AAAA6BBB18",
+      "name_es": "Promoción interna\r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "7",
+    "code": "RD364/1995",
+    "ordinal": "RD364/1995",
+    "order": "18",
+    "order_def": "AAA18",
+    "publish": "YES",
+    "name_es": "Real Decreto 364/1995, de 10 de marzo, por el que se aprueba el Reglamento General de ingreso del personal al servicio de la Administración General del Estado y de provisión de puestos de trabajo y promoción profesional de los funcionarios civiles de la Administración General del Estado",
+    "acronim_es": "RD 364/1995 - Ingreso, Provisión de puestos y Promoción profesional."
+  },
+  "pt": true,
+  "qByLaw": {
+    "7": {
+      "mainLevel": [
+        "1078",
+        "1079",
+        "1080",
+        "1081",
+        "1082"
+      ],
+      "subLevel": [],
+      "userDone": 0
+    }
+  },
+  "qByLawNew": {
+    "7": {
+      "mainLevel": {
+        "test": [
+          "1078",
+          "1079",
+          "1080",
+          "1081",
+          "1082"
+        ]
+      },
+      "subLevel": [],
+      "userDone": 0,
+      "recent": 0
+    }
+  },
+  "qByTitle": [],
+  "arArticles": [],
+  "qByArticle": []
+}

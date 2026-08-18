@@ -1,0 +1,47 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "41",
+    "code": "LO2/1982",
+    "ordinal": "LO2/1982",
+    "order": "25",
+    "order_def": "AAA25",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 2/1982, de 12 de mayo, del Tribunal de Cuentas.",
+    "acronim_es": "Ley Orgánica 2/1982, de 12 de mayo, del Tribunal de Cuentas."
+  },
+  "title": {
+    "id": "283",
+    "idLaw": "41",
+    "code": "TÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "order_def": "AAAA2BBB25",
+    "name_es": "Composición y organización del Tribunal de Cuentas\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "491",
+    "idTitle": "283",
+    "code": "CAPÍTULO IV",
+    "ordinal": "IV",
+    "order": "4",
+    "name_es": "La Sección de Enjuiciamiento\r",
+    "text_es": ""
+  },
+  "section": [],
+  "article": {
+    "id": "3918",
+    "idLaw": "41",
+    "idTitle": "283",
+    "idChapter": "491",
+    "idSection": null,
+    "code": "Artículo 25",
+    "ordinal": "25",
+    "order": "2",
+    "name_es": "\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

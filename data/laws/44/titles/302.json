@@ -1,0 +1,83 @@
+{
+  "error": 0,
+  "arChapters": [],
+  "law": {
+    "id": "44",
+    "code": "LO1/2004",
+    "ordinal": "LO1/2004",
+    "order": "29",
+    "order_def": "AAA29",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 1/2004, de 28 de diciembre, de Medidas de Protección Integral contra la Violencia de Género.",
+    "acronim_es": "Ley Orgánica 1/2004 Medidas de Protección contra la Violencia de Género."
+  },
+  "title": {
+    "id": "302",
+    "idLaw": "44",
+    "code": "TÍTULO III",
+    "ordinal": "III",
+    "order": "4",
+    "order_def": "AAAA4BBB29",
+    "name_es": "Tutela Institucional\r",
+    "text_es": ""
+  },
+  "qByTitle": [],
+  "qByChapter": [],
+  "arArticles": [
+    {
+      "id": "4004",
+      "idLaw": "44",
+      "idTitle": "302",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 29",
+      "ordinal": "29",
+      "order": "1",
+      "name_es": "La Delegación del Gobierno contra la Violencia de Género.\r",
+      "text_es": ""
+    },
+    {
+      "id": "4005",
+      "idLaw": "44",
+      "idTitle": "302",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 30",
+      "ordinal": "30",
+      "order": "2",
+      "name_es": "Observatorio Estatal de Violencia sobre la Mujer.\r",
+      "text_es": ""
+    },
+    {
+      "id": "4006",
+      "idLaw": "44",
+      "idTitle": "302",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 31",
+      "ordinal": "31",
+      "order": "3",
+      "name_es": "Fuerzas y Cuerpos de Seguridad.\r",
+      "text_es": ""
+    },
+    {
+      "id": "4007",
+      "idLaw": "44",
+      "idTitle": "302",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 32",
+      "ordinal": "32",
+      "order": "4",
+      "name_es": "Planes de colaboración.\r",
+      "text_es": ""
+    }
+  ],
+  "$arIdsArticles": [
+    "4004",
+    "4005",
+    "4006",
+    "4007"
+  ],
+  "qByArticle": []
+}

@@ -1,0 +1,106 @@
+{
+  "error": 0,
+  "arTitles": [
+    {
+      "id": "299",
+      "idLaw": "44",
+      "code": "TÍTULO PRELIMINAR",
+      "ordinal": "PRELIMINAR",
+      "order": "1",
+      "order_def": "AAAA1BBB29",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "300",
+      "idLaw": "44",
+      "code": "TÍTULO I",
+      "ordinal": "I",
+      "order": "2",
+      "order_def": "AAAA2BBB29",
+      "name_es": "Medidas de sensibilización, prevención y detección\r",
+      "text_es": ""
+    },
+    {
+      "id": "301",
+      "idLaw": "44",
+      "code": "TÍTULO II",
+      "ordinal": "II",
+      "order": "3",
+      "order_def": "AAAA3BBB29",
+      "name_es": "Derechos de las mujeres víctimas de violencia de género\r",
+      "text_es": ""
+    },
+    {
+      "id": "302",
+      "idLaw": "44",
+      "code": "TÍTULO III",
+      "ordinal": "III",
+      "order": "4",
+      "order_def": "AAAA4BBB29",
+      "name_es": "Tutela Institucional\r",
+      "text_es": ""
+    },
+    {
+      "id": "303",
+      "idLaw": "44",
+      "code": "TÍTULO IV",
+      "ordinal": "IV",
+      "order": "5",
+      "order_def": "AAAA5BBB29",
+      "name_es": "Tutela Penal\r",
+      "text_es": ""
+    },
+    {
+      "id": "304",
+      "idLaw": "44",
+      "code": "TÍTULO V",
+      "ordinal": "V",
+      "order": "6",
+      "order_def": "AAAA6BBB29",
+      "name_es": "Tutela Judicial",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "44",
+    "code": "LO1/2004",
+    "ordinal": "LO1/2004",
+    "order": "29",
+    "order_def": "AAA29",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 1/2004, de 28 de diciembre, de Medidas de Protección Integral contra la Violencia de Género.",
+    "acronim_es": "Ley Orgánica 1/2004 Medidas de Protección contra la Violencia de Género."
+  },
+  "pt": true,
+  "qByLaw": {
+    "44": {
+      "mainLevel": [
+        "1072",
+        "1073",
+        "1074",
+        "1075"
+      ],
+      "subLevel": [],
+      "userDone": 0
+    }
+  },
+  "qByLawNew": {
+    "44": {
+      "mainLevel": {
+        "test": [
+          "1072",
+          "1073",
+          "1074",
+          "1075"
+        ]
+      },
+      "subLevel": [],
+      "userDone": 0,
+      "recent": 0
+    }
+  },
+  "qByTitle": [],
+  "arArticles": [],
+  "qByArticle": []
+}

@@ -1,0 +1,135 @@
+{
+  "error": 0,
+  "arChapters": [],
+  "law": {
+    "id": "35",
+    "code": "L38/2003",
+    "ordinal": "L38/2003",
+    "order": "28",
+    "order_def": "AAA28",
+    "publish": "YES",
+    "name_es": "Ley 38/2003, de 17 de noviembre, General de Subvenciones.",
+    "acronim_es": "Ley 38/2003, de 17 de noviembre, General de Subvenciones."
+  },
+  "title": {
+    "id": "226",
+    "idLaw": "35",
+    "code": "TÍTULO III",
+    "ordinal": "III",
+    "order": "4",
+    "order_def": "AAAA4BBB28",
+    "name_es": "Del control financiero de subvenciones.\r",
+    "text_es": ""
+  },
+  "qByTitle": [],
+  "qByChapter": [],
+  "arArticles": [
+    {
+      "id": "3472",
+      "idLaw": "35",
+      "idTitle": "226",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 44",
+      "ordinal": "44",
+      "order": "1",
+      "name_es": "Objeto y competencia para el ejercicio del control financiero de subvenciones\r",
+      "text_es": ""
+    },
+    {
+      "id": "3473",
+      "idLaw": "35",
+      "idTitle": "226",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 45",
+      "ordinal": "45",
+      "order": "2",
+      "name_es": "Control financiero de ayudas y subvenciones financiadas total o parcialmente con cargo a fondos comunitarios\r",
+      "text_es": ""
+    },
+    {
+      "id": "3474",
+      "idLaw": "35",
+      "idTitle": "226",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 46",
+      "ordinal": "46",
+      "order": "3",
+      "name_es": "Obligación de colaboración\r",
+      "text_es": ""
+    },
+    {
+      "id": "3475",
+      "idLaw": "35",
+      "idTitle": "226",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 47",
+      "ordinal": "47",
+      "order": "4",
+      "name_es": "Facultades del personal controlador\r",
+      "text_es": ""
+    },
+    {
+      "id": "3476",
+      "idLaw": "35",
+      "idTitle": "226",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 48",
+      "ordinal": "48",
+      "order": "5",
+      "name_es": "Deberes del personal controlador\r",
+      "text_es": ""
+    },
+    {
+      "id": "3477",
+      "idLaw": "35",
+      "idTitle": "226",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 49",
+      "ordinal": "49",
+      "order": "6",
+      "name_es": "Del procedimiento de control financiero\r",
+      "text_es": ""
+    },
+    {
+      "id": "3478",
+      "idLaw": "35",
+      "idTitle": "226",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 50",
+      "ordinal": "50",
+      "order": "7",
+      "name_es": "Documentación de las actuaciones de control financiero\r",
+      "text_es": ""
+    },
+    {
+      "id": "3479",
+      "idLaw": "35",
+      "idTitle": "226",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 51",
+      "ordinal": "51",
+      "order": "8",
+      "name_es": "Efectos de los informes de control financiero\r",
+      "text_es": ""
+    }
+  ],
+  "$arIdsArticles": [
+    "3472",
+    "3473",
+    "3474",
+    "3475",
+    "3476",
+    "3477",
+    "3478",
+    "3479"
+  ],
+  "qByArticle": []
+}

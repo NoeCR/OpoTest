@@ -1,0 +1,58 @@
+{
+  "error": 0,
+  "arArticles": [
+    {
+      "id": "1930",
+      "idLaw": "22",
+      "idTitle": "123",
+      "idChapter": "164",
+      "idSection": "91",
+      "code": "Artículo 69",
+      "ordinal": "69",
+      "order": "1",
+      "name_es": "Principios de funcionamiento de la gestión económico-financiera.\r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "22",
+    "code": "L47/2003",
+    "ordinal": "L47/2003",
+    "order": "6",
+    "order_def": "AAAA6",
+    "publish": "YES",
+    "name_es": "Ley 47/2003, de 26 de noviembre, General Presupuestaria.",
+    "acronim_es": "Ley 47/2003, General Presupuestaria."
+  },
+  "title": {
+    "id": "123",
+    "idLaw": "22",
+    "code": "TÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "order_def": "AAAA2BBBB6",
+    "name_es": "De los Presupuestos Generales del Estado\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "164",
+    "idTitle": "123",
+    "code": "CAPÍTULO VI",
+    "ordinal": "VI",
+    "order": "6",
+    "name_es": "De la Gestión presupuestaria\r",
+    "text_es": ""
+  },
+  "section": {
+    "id": "91",
+    "idChapter": "164",
+    "code": "SECCIÓN 1",
+    "ordinal": "1",
+    "order": "1",
+    "name_es": "Principios generales de la gestión presupuestaria\r",
+    "text_es": ""
+  },
+  "code": "SECCIÓN 1 - ",
+  "qBySection": [],
+  "qByArticle": []
+}

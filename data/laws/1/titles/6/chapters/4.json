@@ -1,0 +1,253 @@
+{
+  "error": 0,
+  "arSections": [],
+  "law": {
+    "id": "1",
+    "code": "L39/2015",
+    "ordinal": "L39/2015",
+    "order": "2",
+    "order_def": "AAAA2",
+    "publish": "YES",
+    "name_es": "Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas",
+    "acronim_es": "Ley 39/2015, del Procedimiento Administrativo Común"
+  },
+  "title": {
+    "id": "6",
+    "idLaw": "1",
+    "code": "TÍTULO II",
+    "ordinal": "II",
+    "order": "3",
+    "order_def": "AAAA3BBBB2",
+    "name_es": "De la actividad de las Administraciones Públicas.",
+    "text_es": "Artículos del 13 al 33"
+  },
+  "chapter": {
+    "id": "4",
+    "idTitle": "6",
+    "code": "CAPÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "name_es": "Normas generales de actuación.",
+    "text_es": "Artículos del 13 al 28"
+  },
+  "qByChapter": {
+    "4": {
+      "mainLevel": [
+        "297",
+        "311",
+        "310",
+        "309",
+        "308",
+        "307",
+        "306",
+        "305",
+        "304",
+        "303",
+        "302",
+        "301",
+        "300",
+        "299",
+        "298",
+        "312"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "qBySection": [],
+  "arArticles": [
+    {
+      "id": "86",
+      "idLaw": "1",
+      "idTitle": "6",
+      "idChapter": "4",
+      "idSection": null,
+      "code": "Artículo 13",
+      "ordinal": "13",
+      "order": "1",
+      "name_es": "Derechos de las personas en sus relaciones con las Administraciones Públicas.",
+      "text_es": ""
+    },
+    {
+      "id": "87",
+      "idLaw": "1",
+      "idTitle": "6",
+      "idChapter": "4",
+      "idSection": null,
+      "code": "Artículo 14",
+      "ordinal": "14",
+      "order": "2",
+      "name_es": "Derecho y obligación de relacionarse electrónicamente con las Administraciones Públicas.",
+      "text_es": ""
+    },
+    {
+      "id": "88",
+      "idLaw": "1",
+      "idTitle": "6",
+      "idChapter": "4",
+      "idSection": null,
+      "code": "Artículo 15",
+      "ordinal": "15",
+      "order": "3",
+      "name_es": "Lengua de los procedimientos.",
+      "text_es": ""
+    },
+    {
+      "id": "89",
+      "idLaw": "1",
+      "idTitle": "6",
+      "idChapter": "4",
+      "idSection": null,
+      "code": "Artículo 16",
+      "ordinal": "16",
+      "order": "4",
+      "name_es": "Registros.",
+      "text_es": ""
+    },
+    {
+      "id": "90",
+      "idLaw": "1",
+      "idTitle": "6",
+      "idChapter": "4",
+      "idSection": null,
+      "code": "Artículo 17",
+      "ordinal": "17",
+      "order": "5",
+      "name_es": "Archivo de documentos.",
+      "text_es": ""
+    },
+    {
+      "id": "91",
+      "idLaw": "1",
+      "idTitle": "6",
+      "idChapter": "4",
+      "idSection": null,
+      "code": "Artículo 18",
+      "ordinal": "18",
+      "order": "6",
+      "name_es": "Colaboración de las personas.",
+      "text_es": ""
+    },
+    {
+      "id": "92",
+      "idLaw": "1",
+      "idTitle": "6",
+      "idChapter": "4",
+      "idSection": null,
+      "code": "Artículo 19",
+      "ordinal": "19",
+      "order": "7",
+      "name_es": "Comparecencia de las personas.",
+      "text_es": ""
+    },
+    {
+      "id": "93",
+      "idLaw": "1",
+      "idTitle": "6",
+      "idChapter": "4",
+      "idSection": null,
+      "code": "Artículo 20",
+      "ordinal": "20",
+      "order": "8",
+      "name_es": "Responsabilidad de la tramitación.",
+      "text_es": ""
+    },
+    {
+      "id": "94",
+      "idLaw": "1",
+      "idTitle": "6",
+      "idChapter": "4",
+      "idSection": null,
+      "code": "Artículo 21",
+      "ordinal": "21",
+      "order": "9",
+      "name_es": "Obligación de resolver.",
+      "text_es": ""
+    },
+    {
+      "id": "95",
+      "idLaw": "1",
+      "idTitle": "6",
+      "idChapter": "4",
+      "idSection": null,
+      "code": "Artículo 22",
+      "ordinal": "22",
+      "order": "10",
+      "name_es": "Suspensión del plazo máximo para resolver.",
+      "text_es": ""
+    },
+    {
+      "id": "96",
+      "idLaw": "1",
+      "idTitle": "6",
+      "idChapter": "4",
+      "idSection": null,
+      "code": "Artículo 23",
+      "ordinal": "23",
+      "order": "11",
+      "name_es": "Ampliación del plazo máximo para resolver y notificar.",
+      "text_es": ""
+    },
+    {
+      "id": "97",
+      "idLaw": "1",
+      "idTitle": "6",
+      "idChapter": "4",
+      "idSection": null,
+      "code": "Artículo 24",
+      "ordinal": "24",
+      "order": "12",
+      "name_es": "Silencio administrativo en procedimientos iniciados a solicitud del interesado.",
+      "text_es": ""
+    },
+    {
+      "id": "98",
+      "idLaw": "1",
+      "idTitle": "6",
+      "idChapter": "4",
+      "idSection": null,
+      "code": "Artículo 25",
+      "ordinal": "25",
+      "order": "13",
+      "name_es": "Falta de resolución expresa en procedimientos iniciados de oficio.",
+      "text_es": ""
+    },
+    {
+      "id": "99",
+      "idLaw": "1",
+      "idTitle": "6",
+      "idChapter": "4",
+      "idSection": null,
+      "code": "Artículo 26",
+      "ordinal": "26",
+      "order": "14",
+      "name_es": "Emisión de documentos por las Administraciones Públicas.",
+      "text_es": ""
+    },
+    {
+      "id": "100",
+      "idLaw": "1",
+      "idTitle": "6",
+      "idChapter": "4",
+      "idSection": null,
+      "code": "Artículo 27",
+      "ordinal": "27",
+      "order": "15",
+      "name_es": "Validez y eficacia de las copias realizadas por las Administraciones Públicas.",
+      "text_es": ""
+    },
+    {
+      "id": "101",
+      "idLaw": "1",
+      "idTitle": "6",
+      "idChapter": "4",
+      "idSection": null,
+      "code": "Artículo 28",
+      "ordinal": "28",
+      "order": "16",
+      "name_es": "Documentos aportados por los interesados al procedimiento administrativo.",
+      "text_es": ""
+    }
+  ],
+  "qByArticle": []
+}

@@ -1,0 +1,50 @@
+{
+  "error": 0,
+  "arSections": [],
+  "law": {
+    "id": "15",
+    "code": "L7/1985",
+    "ordinal": "L7/1985",
+    "order": "26",
+    "order_def": "AAA26",
+    "publish": "YES",
+    "name_es": "Ley 7/1985, de 2 de abril, reguladora de las Bases del Régimen Local",
+    "acronim_es": "Ley 7/1985 - Bases del Régimen Local"
+  },
+  "title": {
+    "id": "91",
+    "idLaw": "15",
+    "code": "TÍTULO VI",
+    "ordinal": "VI",
+    "order": "6",
+    "order_def": "AAAA6BBB26",
+    "name_es": "Bienes, actividades y servicios y contratación\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "141",
+    "idTitle": "91",
+    "code": "CAPÍTULO III",
+    "ordinal": "III",
+    "order": "3",
+    "name_es": "Contratación\r",
+    "text_es": ""
+  },
+  "qByChapter": [],
+  "qBySection": [],
+  "arArticles": [
+    {
+      "id": "1634",
+      "idLaw": "15",
+      "idTitle": "91",
+      "idChapter": "141",
+      "idSection": null,
+      "code": "Artículo 88",
+      "ordinal": "88",
+      "order": "1",
+      "name_es": "\r",
+      "text_es": ""
+    }
+  ],
+  "qByArticle": []
+}

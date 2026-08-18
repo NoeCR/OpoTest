@@ -1,0 +1,94 @@
+{
+  "error": 0,
+  "arChapters": [
+    {
+      "id": "283",
+      "idTitle": "163",
+      "code": "CAPÍTULO I",
+      "ordinal": "I",
+      "order": "1",
+      "name_es": "Objeto y ámbito de aplicación de la Ley\r",
+      "text_es": ""
+    },
+    {
+      "id": "284",
+      "idTitle": "163",
+      "code": "CAPÍTULO II",
+      "ordinal": "II",
+      "order": "2",
+      "name_es": "Contratos del sector público\r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "27",
+    "code": "L9/2017",
+    "ordinal": "L9/2017",
+    "order": "5",
+    "order_def": "AAAA5",
+    "publish": "YES",
+    "name_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público, por la que se transponen al ordenamiento jurídico español las Directivas del Parlamento Europeo y del Consejo 2014/23/UE y 2014/24/UE, de 26 de febrero de 2014.",
+    "acronim_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público."
+  },
+  "title": {
+    "id": "163",
+    "idLaw": "27",
+    "code": "TÍTULO PRELIMINAR",
+    "ordinal": "PRELIMINAR",
+    "order": "1",
+    "order_def": "AAAA1BBBB5",
+    "name_es": "Disposiciones generales\r",
+    "text_es": ""
+  },
+  "qByTitle": {
+    "163": {
+      "mainLevel": [],
+      "subLevel": [
+        "647",
+        "648",
+        "649",
+        "651",
+        "660",
+        "661",
+        "662",
+        "663",
+        "664",
+        "665",
+        "666",
+        "667",
+        "668"
+      ],
+      "recent": 0
+    }
+  },
+  "qByChapter": {
+    "283": {
+      "mainLevel": [
+        "647",
+        "648",
+        "649"
+      ],
+      "subLevel": [],
+      "recent": 0
+    },
+    "284": {
+      "mainLevel": [
+        "667",
+        "666",
+        "665",
+        "664",
+        "663",
+        "662",
+        "661",
+        "660",
+        "651",
+        "668"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "arArticles": [],
+  "$arIdsArticles": [],
+  "qByArticle": []
+}

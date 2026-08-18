@@ -1,0 +1,50 @@
+{
+  "error": 0,
+  "arSections": [],
+  "law": {
+    "id": "24",
+    "code": "LO3/2007",
+    "ordinal": "LO3/2007",
+    "order": "10",
+    "order_def": "AAA10",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres.",
+    "acronim_es": "Ley Orgánica 3/2007- Igualdad efectiva de mujeres y hombres."
+  },
+  "title": {
+    "id": "145",
+    "idLaw": "24",
+    "code": "TÍTULO V",
+    "ordinal": "V",
+    "order": "6",
+    "order_def": "AAAA6BBB10",
+    "name_es": "El principio de igualdad en el empleo público.\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "276",
+    "idTitle": "145",
+    "code": "CAPÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "name_es": "Criterios de acuación de las Admsinitraciones públicas.\r",
+    "text_es": ""
+  },
+  "qByChapter": [],
+  "qBySection": [],
+  "arArticles": [
+    {
+      "id": "2282",
+      "idLaw": "24",
+      "idTitle": "145",
+      "idChapter": "276",
+      "idSection": null,
+      "code": "Artículo 51",
+      "ordinal": "51",
+      "order": "1",
+      "name_es": "Criterios de actuación de las Administraciones públicas.\r",
+      "text_es": ""
+    }
+  ],
+  "qByArticle": []
+}

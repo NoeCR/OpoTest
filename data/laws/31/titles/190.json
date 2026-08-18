@@ -1,0 +1,48 @@
+{
+  "error": 0,
+  "arChapters": [
+    {
+      "id": "328",
+      "idTitle": "190",
+      "code": "CAPÍTULO I",
+      "ordinal": "I",
+      "order": "1",
+      "name_es": "Criterios y líneas generales de actuación de los poderes públicos y órgano de participación ciudadana.\r",
+      "text_es": ""
+    },
+    {
+      "id": "329",
+      "idTitle": "190",
+      "code": "CAPÍTULO II",
+      "ordinal": "II",
+      "order": "2",
+      "name_es": "Políticas públicas para promover la igualdad efectiva de las personas LGTBI.\r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "31",
+    "code": "L4/2023",
+    "ordinal": "L4/2023",
+    "order": "20",
+    "order_def": "AAA20",
+    "publish": "YES",
+    "name_es": "Ley 4/2023, de 28 de febrero, para la igualdad real y efectiva de las personas trans y para la garantía de los derechos de las personas LGTBI.",
+    "acronim_es": "Ley 4/2023, de 28 de febrero, para la igualdad real y efectiva de las personas trans y para la garantía de los derechos de las personas LGTBI."
+  },
+  "title": {
+    "id": "190",
+    "idLaw": "31",
+    "code": "TÍTULO I",
+    "ordinal": "I",
+    "order": "2",
+    "order_def": "AAAA2BBB20",
+    "name_es": "Actuación de los poderes públicos.\r",
+    "text_es": ""
+  },
+  "qByTitle": [],
+  "qByChapter": [],
+  "arArticles": [],
+  "$arIdsArticles": [],
+  "qByArticle": []
+}

@@ -1,0 +1,47 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "44",
+    "code": "LO1/2004",
+    "ordinal": "LO1/2004",
+    "order": "29",
+    "order_def": "AAA29",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 1/2004, de 28 de diciembre, de Medidas de Protección Integral contra la Violencia de Género.",
+    "acronim_es": "Ley Orgánica 1/2004 Medidas de Protección contra la Violencia de Género."
+  },
+  "title": {
+    "id": "301",
+    "idLaw": "44",
+    "code": "TÍTULO II",
+    "ordinal": "II",
+    "order": "3",
+    "order_def": "AAAA3BBB29",
+    "name_es": "Derechos de las mujeres víctimas de violencia de género\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "507",
+    "idTitle": "301",
+    "code": "CAPÍTULO III",
+    "ordinal": "III",
+    "order": "3",
+    "name_es": "Derechos de las funcionarias públicas\r",
+    "text_es": ""
+  },
+  "section": [],
+  "article": {
+    "id": "3998",
+    "idLaw": "44",
+    "idTitle": "301",
+    "idChapter": "507",
+    "idSection": null,
+    "code": "Artículo 25",
+    "ordinal": "25",
+    "order": "2",
+    "name_es": "Justificación de las faltas de asistencia.\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

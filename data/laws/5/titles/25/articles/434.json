@@ -1,0 +1,39 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "5",
+    "code": "CONSTITUCIÓN",
+    "ordinal": "CONSTITUCIÓN",
+    "order": "1",
+    "order_def": "AAAA1",
+    "publish": "YES",
+    "name_es": "Constitución Española de 1978",
+    "acronim_es": "Constitución Española"
+  },
+  "title": {
+    "id": "25",
+    "idLaw": "5",
+    "code": "TÍTULO VI",
+    "ordinal": "VI",
+    "order": "8",
+    "order_def": "AAAA8BBBB1",
+    "name_es": "Del Poder Judicial",
+    "text_es": "Artículos del 117 al 127"
+  },
+  "chapter": [],
+  "section": [],
+  "article": {
+    "id": "434",
+    "idLaw": "5",
+    "idTitle": "25",
+    "idChapter": null,
+    "idSection": null,
+    "code": "Artículo 127",
+    "ordinal": "127",
+    "order": "11",
+    "name_es": "\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

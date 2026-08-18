@@ -1,0 +1,47 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "22",
+    "code": "L47/2003",
+    "ordinal": "L47/2003",
+    "order": "6",
+    "order_def": "AAAA6",
+    "publish": "YES",
+    "name_es": "Ley 47/2003, de 26 de noviembre, General Presupuestaria.",
+    "acronim_es": "Ley 47/2003, General Presupuestaria."
+  },
+  "title": {
+    "id": "127",
+    "idLaw": "22",
+    "code": "TÍTULO VI",
+    "ordinal": "VI",
+    "order": "6",
+    "order_def": "AAAA6BBBB6",
+    "name_es": "Del control de la gestión económico-financiera efectuado por la Intervención General de la Administración del Estado\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "177",
+    "idTitle": "127",
+    "code": "CAPÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "name_es": "Normas generales\r",
+    "text_es": ""
+  },
+  "section": [],
+  "article": {
+    "id": "2003",
+    "idLaw": "22",
+    "idTitle": "127",
+    "idChapter": "177",
+    "idSection": null,
+    "code": "Artículo 140",
+    "ordinal": "140",
+    "order": "1",
+    "name_es": "Del control de la gestión económico-financiera del sector público estatal.\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

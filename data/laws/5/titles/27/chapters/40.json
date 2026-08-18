@@ -1,0 +1,85 @@
+{
+  "error": 0,
+  "arSections": [],
+  "law": {
+    "id": "5",
+    "code": "CONSTITUCIÓN",
+    "ordinal": "CONSTITUCIÓN",
+    "order": "1",
+    "order_def": "AAAA1",
+    "publish": "YES",
+    "name_es": "Constitución Española de 1978",
+    "acronim_es": "Constitución Española"
+  },
+  "title": {
+    "id": "27",
+    "idLaw": "5",
+    "code": "TÍTULO VIII",
+    "ordinal": "VIII",
+    "order": "10",
+    "order_def": "AAA10BBBB1",
+    "name_es": "De la Organización Territorial del Estado",
+    "text_es": "Artículos del 137 al 158"
+  },
+  "chapter": {
+    "id": "40",
+    "idTitle": "27",
+    "code": "CAPÍTULO SEGUNDO",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "De la Administración Local",
+    "text_es": null
+  },
+  "qByChapter": {
+    "40": {
+      "mainLevel": [
+        "181",
+        "182",
+        "183",
+        "184"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "qBySection": [],
+  "arArticles": [
+    {
+      "id": "447",
+      "idLaw": "5",
+      "idTitle": "27",
+      "idChapter": "40",
+      "idSection": null,
+      "code": "Artículo 140",
+      "ordinal": "140",
+      "order": "1",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "448",
+      "idLaw": "5",
+      "idTitle": "27",
+      "idChapter": "40",
+      "idSection": null,
+      "code": "Artículo 141",
+      "ordinal": "141",
+      "order": "2",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "449",
+      "idLaw": "5",
+      "idTitle": "27",
+      "idChapter": "40",
+      "idSection": null,
+      "code": "Artículo 142",
+      "ordinal": "142",
+      "order": "3",
+      "name_es": "\r",
+      "text_es": ""
+    }
+  ],
+  "qByArticle": []
+}

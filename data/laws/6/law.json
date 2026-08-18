@@ -1,0 +1,94 @@
+{
+  "error": 0,
+  "arTitles": [
+    {
+      "id": "35",
+      "idLaw": "6",
+      "code": "CAPÍTULO I",
+      "ordinal": "I",
+      "order": "1",
+      "order_def": "AAAA1BBB31",
+      "name_es": "Principios generales",
+      "text_es": "\r"
+    },
+    {
+      "id": "36",
+      "idLaw": "6",
+      "code": "CAPÍTULO II",
+      "ordinal": "II",
+      "order": "2",
+      "order_def": "AAAA2BBB31",
+      "name_es": "Ámbito de aplicación",
+      "text_es": "\r"
+    },
+    {
+      "id": "37",
+      "idLaw": "6",
+      "code": "CAPÍTULO III",
+      "ordinal": "III",
+      "order": "3",
+      "order_def": "AAAA3BBB31",
+      "name_es": "Actividades públicas",
+      "text_es": "\r"
+    },
+    {
+      "id": "38",
+      "idLaw": "6",
+      "code": "CAPÍTULO IV",
+      "ordinal": "IV",
+      "order": "4",
+      "order_def": "AAAA4BBB31",
+      "name_es": "Actividades privadas",
+      "text_es": "\r"
+    },
+    {
+      "id": "39",
+      "idLaw": "6",
+      "code": "CAPÍTULO V",
+      "ordinal": "V",
+      "order": "5",
+      "order_def": "AAAA5BBB31",
+      "name_es": "Disposiciones comunes",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "6",
+    "code": "L53/1984",
+    "ordinal": "L53/1984",
+    "order": "31",
+    "order_def": "AAA31",
+    "publish": "YES",
+    "name_es": "Ley 53/1984, de 26 de diciembre, de Incompatibilidades del Personal al Servicio de las Administraciones Públicas",
+    "acronim_es": "Ley 53/1984 - Incompatibilidades"
+  },
+  "pt": true,
+  "qByLaw": {
+    "6": {
+      "mainLevel": [
+        "867",
+        "868",
+        "869"
+      ],
+      "subLevel": [],
+      "userDone": 0
+    }
+  },
+  "qByLawNew": {
+    "6": {
+      "mainLevel": {
+        "test": [
+          "867",
+          "868",
+          "869"
+        ]
+      },
+      "subLevel": [],
+      "userDone": 0,
+      "recent": 0
+    }
+  },
+  "qByTitle": [],
+  "arArticles": [],
+  "qByArticle": []
+}

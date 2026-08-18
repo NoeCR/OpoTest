@@ -1,0 +1,75 @@
+{
+  "error": 0,
+  "arChapters": [
+    {
+      "id": "142",
+      "idTitle": "92",
+      "code": "CAPÍTULO I",
+      "ordinal": "I",
+      "order": "1",
+      "name_es": "Disposiciones generales\r",
+      "text_es": ""
+    },
+    {
+      "id": "143",
+      "idTitle": "92",
+      "code": "CAPÍTULO II",
+      "ordinal": "II",
+      "order": "2",
+      "name_es": "Disposiciones comunes a los funcionarios de carrera\r",
+      "text_es": ""
+    },
+    {
+      "id": "144",
+      "idTitle": "92",
+      "code": "CAPÍTULO III",
+      "ordinal": "III",
+      "order": "3",
+      "name_es": "Selección y formación de los funcionarios con habilitación de carácter\r",
+      "text_es": ""
+    },
+    {
+      "id": "145",
+      "idTitle": "92",
+      "code": "CAPÍTULO IV",
+      "ordinal": "IV",
+      "order": "4",
+      "name_es": "Selección de los restantes funcionarios y reglas sobre provisión de\r",
+      "text_es": ""
+    },
+    {
+      "id": "146",
+      "idTitle": "92",
+      "code": "CAPÍTULO V",
+      "ordinal": "V",
+      "order": "5",
+      "name_es": "Del personal laboral y eventual\r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "15",
+    "code": "L7/1985",
+    "ordinal": "L7/1985",
+    "order": "26",
+    "order_def": "AAA26",
+    "publish": "YES",
+    "name_es": "Ley 7/1985, de 2 de abril, reguladora de las Bases del Régimen Local",
+    "acronim_es": "Ley 7/1985 - Bases del Régimen Local"
+  },
+  "title": {
+    "id": "92",
+    "idLaw": "15",
+    "code": "TÍTULO VII",
+    "ordinal": "VII",
+    "order": "7",
+    "order_def": "AAAA7BBB26",
+    "name_es": "Personal al servicio de las entidades locales\r",
+    "text_es": ""
+  },
+  "qByTitle": [],
+  "qByChapter": [],
+  "arArticles": [],
+  "$arIdsArticles": [],
+  "qByArticle": []
+}

@@ -1,0 +1,92 @@
+{
+  "error": 0,
+  "arChapters": [],
+  "law": {
+    "id": "12",
+    "code": "L50/1997",
+    "ordinal": "L50/1997",
+    "order": "9",
+    "order_def": "AAAA9",
+    "publish": "YES",
+    "name_es": "Ley 50/1997, de 27 de noviembre, del Gobierno",
+    "acronim_es": "Ley 50/1997 - del Gobierno"
+  },
+  "title": {
+    "id": "74",
+    "idLaw": "12",
+    "code": "TÍTULO III",
+    "ordinal": "III",
+    "order": "3",
+    "order_def": "AAAA3BBBB9",
+    "name_es": "De las normas de funcionamiento del Gobierno y de la delegación de competencias\r",
+    "text_es": ""
+  },
+  "qByTitle": {
+    "74": {
+      "mainLevel": [
+        "231",
+        "817"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "qByChapter": [],
+  "arArticles": [
+    {
+      "id": "1438",
+      "idLaw": "12",
+      "idTitle": "74",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 17",
+      "ordinal": "17",
+      "order": "1",
+      "name_es": "De las normas aplicables al funcionamiento del Gobierno\r",
+      "text_es": ""
+    },
+    {
+      "id": "1439",
+      "idLaw": "12",
+      "idTitle": "74",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 18",
+      "ordinal": "18",
+      "order": "2",
+      "name_es": "Del funcionamiento del Consejo de Ministros\r",
+      "text_es": ""
+    },
+    {
+      "id": "1440",
+      "idLaw": "12",
+      "idTitle": "74",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 19",
+      "ordinal": "19",
+      "order": "3",
+      "name_es": "De las actas de las Comisiones Delegadas del Gobierno y de la Comisión General de Secretarios de Estado y Subsecretarios\r",
+      "text_es": ""
+    },
+    {
+      "id": "1441",
+      "idLaw": "12",
+      "idTitle": "74",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 20",
+      "ordinal": "20",
+      "order": "4",
+      "name_es": "Delegación y avocación de competencias\r",
+      "text_es": ""
+    }
+  ],
+  "$arIdsArticles": [
+    "1438",
+    "1439",
+    "1440",
+    "1441"
+  ],
+  "qByArticle": []
+}

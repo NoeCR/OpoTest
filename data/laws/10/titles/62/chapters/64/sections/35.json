@@ -1,0 +1,142 @@
+{
+  "error": 0,
+  "arArticles": [
+    {
+      "id": "1272",
+      "idLaw": "10",
+      "idTitle": "62",
+      "idChapter": "64",
+      "idSection": "35",
+      "code": "Artículo 15",
+      "ordinal": "15",
+      "order": "1",
+      "name_es": "Régimen\r",
+      "text_es": ""
+    },
+    {
+      "id": "1273",
+      "idLaw": "10",
+      "idTitle": "62",
+      "idChapter": "64",
+      "idSection": "35",
+      "code": "Artículo 16",
+      "ordinal": "16",
+      "order": "2",
+      "name_es": "Secretario\r",
+      "text_es": ""
+    },
+    {
+      "id": "1274",
+      "idLaw": "10",
+      "idTitle": "62",
+      "idChapter": "64",
+      "idSection": "35",
+      "code": "Artículo 17",
+      "ordinal": "17",
+      "order": "3",
+      "name_es": "Convocatorias y sesiones\r",
+      "text_es": ""
+    },
+    {
+      "id": "1275",
+      "idLaw": "10",
+      "idTitle": "62",
+      "idChapter": "64",
+      "idSection": "35",
+      "code": "Artículo 18",
+      "ordinal": "18",
+      "order": "4",
+      "name_es": "Actas\r",
+      "text_es": ""
+    },
+    {
+      "id": "1276",
+      "idLaw": "10",
+      "idTitle": "62",
+      "idChapter": "64",
+      "idSection": "35",
+      "code": "Artículo 19",
+      "ordinal": "19",
+      "order": "5",
+      "name_es": "Régimen de los órganos colegiados de la Administración General del\r",
+      "text_es": ""
+    },
+    {
+      "id": "1277",
+      "idLaw": "10",
+      "idTitle": "62",
+      "idChapter": "64",
+      "idSection": "35",
+      "code": "Artículo 20",
+      "ordinal": "20",
+      "order": "6",
+      "name_es": "Requisitos para constituir órganos colegiados\r",
+      "text_es": ""
+    },
+    {
+      "id": "1278",
+      "idLaw": "10",
+      "idTitle": "62",
+      "idChapter": "64",
+      "idSection": "35",
+      "code": "Artículo 21",
+      "ordinal": "21",
+      "order": "7",
+      "name_es": "Clasificación y composición de los órganos colegiados\r",
+      "text_es": ""
+    },
+    {
+      "id": "1279",
+      "idLaw": "10",
+      "idTitle": "62",
+      "idChapter": "64",
+      "idSection": "35",
+      "code": "Artículo 22",
+      "ordinal": "22",
+      "order": "8",
+      "name_es": "Creación, modificación y supresión de órganos colegiados\r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "10",
+    "code": "L40/2015",
+    "ordinal": "L40/2015",
+    "order": "3",
+    "order_def": "AAAA3",
+    "publish": "YES",
+    "name_es": "Ley 40/2015, de 1 de octubre, de Régimen Jurídico del Sector Público.",
+    "acronim_es": "Ley 40/2015 - Régimen Jurídico del Sector Público."
+  },
+  "title": {
+    "id": "62",
+    "idLaw": "10",
+    "code": "TÍTULO PRELIMINAR",
+    "ordinal": "PRELIMINAR",
+    "order": "1",
+    "order_def": "AAAA1BBBB3",
+    "name_es": "Disposiciones generales, principios de actuación y funcionamiento del sector público\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "64",
+    "idTitle": "62",
+    "code": "CAPÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "De los órganos de las Administraciones Públicas\r",
+    "text_es": ""
+  },
+  "section": {
+    "id": "35",
+    "idChapter": "64",
+    "code": "SECCIÓN 3",
+    "ordinal": "3",
+    "order": "3",
+    "name_es": "Órganos colegiados de las distintas administraciones públicas",
+    "text_es": null
+  },
+  "code": "SECCIÓN 3 - ",
+  "qBySection": [],
+  "qByArticle": []
+}

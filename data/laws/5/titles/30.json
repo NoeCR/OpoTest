@@ -1,0 +1,54 @@
+{
+  "error": 0,
+  "arChapters": [],
+  "law": {
+    "id": "5",
+    "code": "CONSTITUCIÓN",
+    "ordinal": "CONSTITUCIÓN",
+    "order": "1",
+    "order_def": "AAAA1",
+    "publish": "YES",
+    "name_es": "Constitución Española de 1978",
+    "acronim_es": "Constitución Española"
+  },
+  "title": {
+    "id": "30",
+    "idLaw": "5",
+    "code": "DISPOSICIONES",
+    "ordinal": "DISPOSICIONES",
+    "order": "13",
+    "order_def": "AAA13BBBB1",
+    "name_es": "DISPOSICIONES",
+    "text_es": null
+  },
+  "qByTitle": {
+    "30": {
+      "mainLevel": [
+        "21",
+        "22",
+        "23"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "qByChapter": [],
+  "arArticles": [
+    {
+      "id": "1257",
+      "idLaw": "5",
+      "idTitle": "30",
+      "idChapter": "0",
+      "idSection": "0",
+      "code": "Disposiciones",
+      "ordinal": "Disposiciones",
+      "order": "1",
+      "name_es": "Disposiciones",
+      "text_es": "Disposiciones"
+    }
+  ],
+  "$arIdsArticles": [
+    "1257"
+  ],
+  "qByArticle": []
+}

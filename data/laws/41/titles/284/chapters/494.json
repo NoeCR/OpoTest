@@ -1,0 +1,146 @@
+{
+  "error": 0,
+  "arSections": [],
+  "law": {
+    "id": "41",
+    "code": "LO2/1982",
+    "ordinal": "LO2/1982",
+    "order": "25",
+    "order_def": "AAA25",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 2/1982, de 12 de mayo, del Tribunal de Cuentas.",
+    "acronim_es": "Ley Orgánica 2/1982, de 12 de mayo, del Tribunal de Cuentas."
+  },
+  "title": {
+    "id": "284",
+    "idLaw": "41",
+    "code": "TÍTULO III",
+    "ordinal": "III",
+    "order": "3",
+    "order_def": "AAAA3BBB25",
+    "name_es": "Los miembros del Tribunal y el personal a su servicio\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "494",
+    "idTitle": "284",
+    "code": "CAPÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "name_es": "Los miembros del Tribunal\r",
+    "text_es": ""
+  },
+  "qByChapter": [],
+  "qBySection": [],
+  "arArticles": [
+    {
+      "id": "3921",
+      "idLaw": "41",
+      "idTitle": "284",
+      "idChapter": "494",
+      "idSection": null,
+      "code": "Artículo 28",
+      "ordinal": "28",
+      "order": "1",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "3922",
+      "idLaw": "41",
+      "idTitle": "284",
+      "idChapter": "494",
+      "idSection": null,
+      "code": "Artículo 29",
+      "ordinal": "29",
+      "order": "2",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "3923",
+      "idLaw": "41",
+      "idTitle": "284",
+      "idChapter": "494",
+      "idSection": null,
+      "code": "Artículo 30",
+      "ordinal": "30",
+      "order": "3",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "3924",
+      "idLaw": "41",
+      "idTitle": "284",
+      "idChapter": "494",
+      "idSection": null,
+      "code": "Artículo 31",
+      "ordinal": "31",
+      "order": "4",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "3925",
+      "idLaw": "41",
+      "idTitle": "284",
+      "idChapter": "494",
+      "idSection": null,
+      "code": "Artículo 32",
+      "ordinal": "32",
+      "order": "5",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "3926",
+      "idLaw": "41",
+      "idTitle": "284",
+      "idChapter": "494",
+      "idSection": null,
+      "code": "Artículo 33",
+      "ordinal": "33",
+      "order": "6",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "3927",
+      "idLaw": "41",
+      "idTitle": "284",
+      "idChapter": "494",
+      "idSection": null,
+      "code": "Artículo 34",
+      "ordinal": "34",
+      "order": "7",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "3928",
+      "idLaw": "41",
+      "idTitle": "284",
+      "idChapter": "494",
+      "idSection": null,
+      "code": "Artículo 35",
+      "ordinal": "35",
+      "order": "8",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "3929",
+      "idLaw": "41",
+      "idTitle": "284",
+      "idChapter": "494",
+      "idSection": null,
+      "code": "Artículo 36",
+      "ordinal": "36",
+      "order": "9",
+      "name_es": "\r",
+      "text_es": ""
+    }
+  ],
+  "qByArticle": []
+}

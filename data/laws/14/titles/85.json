@@ -1,0 +1,48 @@
+{
+  "error": 0,
+  "arChapters": [
+    {
+      "id": "125",
+      "idTitle": "85",
+      "code": "CAPÍTULO I",
+      "ordinal": "I",
+      "order": "1",
+      "name_es": "Personal\r",
+      "text_es": ""
+    },
+    {
+      "id": "126",
+      "idTitle": "85",
+      "code": "CAPÍTULO II",
+      "ordinal": "II",
+      "order": "2",
+      "name_es": "Dotación económica",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "14",
+    "code": "LO3/1981",
+    "ordinal": "LO3/1981",
+    "order": "21",
+    "order_def": "AAA21",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 3/1981, de 6 de abril, del Defensor del Pueblo.",
+    "acronim_es": "LO 3/1981 - Defensor del Pueblo"
+  },
+  "title": {
+    "id": "85",
+    "idLaw": "14",
+    "code": "TÍTULO IV",
+    "ordinal": "IV",
+    "order": "4",
+    "order_def": "AAAA4BBB21",
+    "name_es": "Medios personales y materiales",
+    "text_es": ""
+  },
+  "qByTitle": [],
+  "qByChapter": [],
+  "arArticles": [],
+  "$arIdsArticles": [],
+  "qByArticle": []
+}

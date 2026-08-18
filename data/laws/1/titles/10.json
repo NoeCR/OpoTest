@@ -1,0 +1,132 @@
+{
+  "error": 0,
+  "arChapters": [],
+  "law": {
+    "id": "1",
+    "code": "L39/2015",
+    "ordinal": "L39/2015",
+    "order": "2",
+    "order_def": "AAAA2",
+    "publish": "YES",
+    "name_es": "Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas",
+    "acronim_es": "Ley 39/2015, del Procedimiento Administrativo Común"
+  },
+  "title": {
+    "id": "10",
+    "idLaw": "1",
+    "code": "TÍTULO VI",
+    "ordinal": "VI",
+    "order": "7",
+    "order_def": "AAAA7BBBB2",
+    "name_es": "De la iniciativa legislativa y de la potestad para dictar reglamentos y otras disposiciones.",
+    "text_es": "Artículos del 127 al 133"
+  },
+  "qByTitle": {
+    "10": {
+      "mainLevel": [
+        "394",
+        "395",
+        "396"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "qByChapter": [],
+  "arArticles": [
+    {
+      "id": "200",
+      "idLaw": "1",
+      "idTitle": "10",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 127",
+      "ordinal": "127",
+      "order": "1",
+      "name_es": "Iniciativa legislativa y potestad para dictar normas con rango de ley.",
+      "text_es": ""
+    },
+    {
+      "id": "201",
+      "idLaw": "1",
+      "idTitle": "10",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 128",
+      "ordinal": "128",
+      "order": "2",
+      "name_es": "Potestad reglamentaria.",
+      "text_es": ""
+    },
+    {
+      "id": "202",
+      "idLaw": "1",
+      "idTitle": "10",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 129",
+      "ordinal": "129",
+      "order": "3",
+      "name_es": "Principios de buena regulación.",
+      "text_es": ""
+    },
+    {
+      "id": "203",
+      "idLaw": "1",
+      "idTitle": "10",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 130",
+      "ordinal": "130",
+      "order": "4",
+      "name_es": "Evaluación normativa y adaptación de la normativa vigente a los principios de buena regulación.",
+      "text_es": ""
+    },
+    {
+      "id": "204",
+      "idLaw": "1",
+      "idTitle": "10",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 131",
+      "ordinal": "131",
+      "order": "5",
+      "name_es": "Publicidad de las normas.",
+      "text_es": ""
+    },
+    {
+      "id": "205",
+      "idLaw": "1",
+      "idTitle": "10",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 132",
+      "ordinal": "132",
+      "order": "6",
+      "name_es": "Planificación normativa.",
+      "text_es": ""
+    },
+    {
+      "id": "206",
+      "idLaw": "1",
+      "idTitle": "10",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 133",
+      "ordinal": "133",
+      "order": "7",
+      "name_es": "Participación de los ciudadanos en el procedimiento de elaboración de normas con rango de Ley y reglamentos.",
+      "text_es": ""
+    }
+  ],
+  "$arIdsArticles": [
+    "200",
+    "201",
+    "202",
+    "203",
+    "204",
+    "205",
+    "206"
+  ],
+  "qByArticle": []
+}

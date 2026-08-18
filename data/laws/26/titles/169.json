@@ -1,0 +1,29 @@
+{
+  "error": 0,
+  "arChapters": [],
+  "law": {
+    "id": "26",
+    "code": "RDL6/2023",
+    "ordinal": "RDL6/2023",
+    "order": "7",
+    "order_def": "AAAA7",
+    "publish": "YES",
+    "name_es": "Real Decreto-ley 6/2023, de 19 de diciembre, por el que se aprueban medidas urgentes para la ejecución del Plan de Recuperación, Transformación y Resiliencia en materia de servicio público de justicia, función pública, régimen local y mecenazgo.",
+    "acronim_es": "Real Decreto-ley 6/2023, por el que se aprueban medidas urgentes."
+  },
+  "title": {
+    "id": "169",
+    "idLaw": "26",
+    "code": "DISPOSICIONES",
+    "ordinal": "DISPOSICIONES",
+    "order": "1",
+    "order_def": "AAAA1BBBB7",
+    "name_es": "Disposiciones",
+    "text_es": "Disposiciones"
+  },
+  "qByTitle": [],
+  "qByChapter": [],
+  "arArticles": [],
+  "$arIdsArticles": [],
+  "qByArticle": []
+}

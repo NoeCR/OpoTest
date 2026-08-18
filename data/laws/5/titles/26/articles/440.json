@@ -1,0 +1,39 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "5",
+    "code": "CONSTITUCIÓN",
+    "ordinal": "CONSTITUCIÓN",
+    "order": "1",
+    "order_def": "AAAA1",
+    "publish": "YES",
+    "name_es": "Constitución Española de 1978",
+    "acronim_es": "Constitución Española"
+  },
+  "title": {
+    "id": "26",
+    "idLaw": "5",
+    "code": "TÍTULO VII",
+    "ordinal": "VII",
+    "order": "9",
+    "order_def": "AAAA9BBBB1",
+    "name_es": "Economía y Hacienda",
+    "text_es": "Artículos del 128 al 136"
+  },
+  "chapter": [],
+  "section": [],
+  "article": {
+    "id": "440",
+    "idLaw": "5",
+    "idTitle": "26",
+    "idChapter": null,
+    "idSection": null,
+    "code": "Artículo 133",
+    "ordinal": "133",
+    "order": "6",
+    "name_es": "\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

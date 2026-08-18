@@ -1,0 +1,146 @@
+{
+  "error": 0,
+  "arSections": [],
+  "law": {
+    "id": "44",
+    "code": "LO1/2004",
+    "ordinal": "LO1/2004",
+    "order": "29",
+    "order_def": "AAA29",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 1/2004, de 28 de diciembre, de Medidas de Protección Integral contra la Violencia de Género.",
+    "acronim_es": "Ley Orgánica 1/2004 Medidas de Protección contra la Violencia de Género."
+  },
+  "title": {
+    "id": "304",
+    "idLaw": "44",
+    "code": "TÍTULO V",
+    "ordinal": "V",
+    "order": "6",
+    "order_def": "AAAA6BBB29",
+    "name_es": "Tutela Judicial",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "513",
+    "idTitle": "304",
+    "code": "CAPÍTULO IV",
+    "ordinal": "IV",
+    "order": "4",
+    "name_es": "Medidas judiciales de protección y de seguridad de las víctimas\r",
+    "text_es": ""
+  },
+  "qByChapter": [],
+  "qBySection": [],
+  "arArticles": [
+    {
+      "id": "4036",
+      "idLaw": "44",
+      "idTitle": "304",
+      "idChapter": "513",
+      "idSection": null,
+      "code": "Artículo 61",
+      "ordinal": "61",
+      "order": "1",
+      "name_es": "Disposiciones generales.\r",
+      "text_es": ""
+    },
+    {
+      "id": "4037",
+      "idLaw": "44",
+      "idTitle": "304",
+      "idChapter": "513",
+      "idSection": null,
+      "code": "Artículo 62",
+      "ordinal": "62",
+      "order": "2",
+      "name_es": "De la orden de protección.\r",
+      "text_es": ""
+    },
+    {
+      "id": "4038",
+      "idLaw": "44",
+      "idTitle": "304",
+      "idChapter": "513",
+      "idSection": null,
+      "code": "Artículo 63",
+      "ordinal": "63",
+      "order": "3",
+      "name_es": "De la protección de datos y las limitaciones a la publicidad.\r",
+      "text_es": ""
+    },
+    {
+      "id": "4039",
+      "idLaw": "44",
+      "idTitle": "304",
+      "idChapter": "513",
+      "idSection": null,
+      "code": "Artículo 64",
+      "ordinal": "64",
+      "order": "4",
+      "name_es": "De las medidas de salida del domicilio, alejamiento o suspensión de las comunicaciones.\r",
+      "text_es": ""
+    },
+    {
+      "id": "4040",
+      "idLaw": "44",
+      "idTitle": "304",
+      "idChapter": "513",
+      "idSection": null,
+      "code": "Artículo 65",
+      "ordinal": "65",
+      "order": "5",
+      "name_es": "De las medidas de suspensión de la patria potestad o la custodia de menores.\r",
+      "text_es": ""
+    },
+    {
+      "id": "4041",
+      "idLaw": "44",
+      "idTitle": "304",
+      "idChapter": "513",
+      "idSection": null,
+      "code": "Artículo 66",
+      "ordinal": "66",
+      "order": "6",
+      "name_es": "De la medida de suspensión del régimen de visitas, estancia, relación o comunicación con los menores.\r",
+      "text_es": ""
+    },
+    {
+      "id": "4042",
+      "idLaw": "44",
+      "idTitle": "304",
+      "idChapter": "513",
+      "idSection": null,
+      "code": "Artículo 67",
+      "ordinal": "67",
+      "order": "7",
+      "name_es": "De la medida de suspensión del derecho a la tenencia, porte y uso de armas.\r",
+      "text_es": ""
+    },
+    {
+      "id": "4043",
+      "idLaw": "44",
+      "idTitle": "304",
+      "idChapter": "513",
+      "idSection": null,
+      "code": "Artículo 68",
+      "ordinal": "68",
+      "order": "8",
+      "name_es": "Garantías para la adopción de las medidas.\r",
+      "text_es": ""
+    },
+    {
+      "id": "4044",
+      "idLaw": "44",
+      "idTitle": "304",
+      "idChapter": "513",
+      "idSection": null,
+      "code": "Artículo 69",
+      "ordinal": "69",
+      "order": "9",
+      "name_es": "Mantenimiento de las medidas de protección y seguridad.\r",
+      "text_es": ""
+    }
+  ],
+  "qByArticle": []
+}

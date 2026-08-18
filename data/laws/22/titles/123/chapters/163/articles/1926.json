@@ -1,0 +1,47 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "22",
+    "code": "L47/2003",
+    "ordinal": "L47/2003",
+    "order": "6",
+    "order_def": "AAAA6",
+    "publish": "YES",
+    "name_es": "Ley 47/2003, de 26 de noviembre, General Presupuestaria.",
+    "acronim_es": "Ley 47/2003, General Presupuestaria."
+  },
+  "title": {
+    "id": "123",
+    "idLaw": "22",
+    "code": "TÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "order_def": "AAAA2BBBB6",
+    "name_es": "De los Presupuestos Generales del Estado\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "163",
+    "idTitle": "123",
+    "code": "CAPÍTULO V",
+    "ordinal": "V",
+    "order": "5",
+    "name_es": "De las Entidades Públicas Empresariales, Sociedades Mercantiles Estatales y Fundaciones del sector público Estatal\r",
+    "text_es": ""
+  },
+  "section": [],
+  "article": {
+    "id": "1926",
+    "idLaw": "22",
+    "idTitle": "123",
+    "idChapter": "163",
+    "idSection": null,
+    "code": "Artículo 65",
+    "ordinal": "65",
+    "order": "2",
+    "name_es": "Artículo 65. Programa de actuación plurianual.\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

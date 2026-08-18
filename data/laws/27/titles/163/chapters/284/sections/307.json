@@ -1,0 +1,94 @@
+{
+  "error": 0,
+  "arArticles": [
+    {
+      "id": "2680",
+      "idLaw": "27",
+      "idTitle": "163",
+      "idChapter": "284",
+      "idSection": "307",
+      "code": "Artículo 27",
+      "ordinal": "27",
+      "order": "2",
+      "name_es": "Jurisdicción competente.",
+      "text_es": ""
+    },
+    {
+      "id": "2679",
+      "idLaw": "27",
+      "idTitle": "163",
+      "idChapter": "284",
+      "idSection": "307",
+      "code": "Artículo 26",
+      "ordinal": "26",
+      "order": "3",
+      "name_es": "Contratos privados.",
+      "text_es": ""
+    },
+    {
+      "id": "2678",
+      "idLaw": "27",
+      "idTitle": "163",
+      "idChapter": "284",
+      "idSection": "307",
+      "code": "Artículo 25",
+      "ordinal": "25",
+      "order": "4",
+      "name_es": "Contratos administrativos.",
+      "text_es": ""
+    },
+    {
+      "id": "2677",
+      "idLaw": "27",
+      "idTitle": "163",
+      "idChapter": "284",
+      "idSection": "307",
+      "code": "Artículo 24",
+      "ordinal": "24",
+      "order": "5",
+      "name_es": "Régimen jurídico aplicable a los contratos del sector público.",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "27",
+    "code": "L9/2017",
+    "ordinal": "L9/2017",
+    "order": "5",
+    "order_def": "AAAA5",
+    "publish": "YES",
+    "name_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público, por la que se transponen al ordenamiento jurídico español las Directivas del Parlamento Europeo y del Consejo 2014/23/UE y 2014/24/UE, de 26 de febrero de 2014.",
+    "acronim_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público."
+  },
+  "title": {
+    "id": "163",
+    "idLaw": "27",
+    "code": "TÍTULO PRELIMINAR",
+    "ordinal": "PRELIMINAR",
+    "order": "1",
+    "order_def": "AAAA1BBBB5",
+    "name_es": "Disposiciones generales\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "284",
+    "idTitle": "163",
+    "code": "CAPÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "Contratos del sector público\r",
+    "text_es": ""
+  },
+  "section": {
+    "id": "307",
+    "idChapter": "284",
+    "code": "SECCIÓN 3",
+    "ordinal": "3",
+    "order": "3",
+    "name_es": "Contratos administrativos y contratos privados.",
+    "text_es": ""
+  },
+  "code": "SECCIÓN 3 - ",
+  "qBySection": [],
+  "qByArticle": []
+}

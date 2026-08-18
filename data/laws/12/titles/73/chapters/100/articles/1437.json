@@ -1,0 +1,47 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "12",
+    "code": "L50/1997",
+    "ordinal": "L50/1997",
+    "order": "9",
+    "order_def": "AAAA9",
+    "publish": "YES",
+    "name_es": "Ley 50/1997, de 27 de noviembre, del Gobierno",
+    "acronim_es": "Ley 50/1997 - del Gobierno"
+  },
+  "title": {
+    "id": "73",
+    "idLaw": "12",
+    "code": "TÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "order_def": "AAAA2BBBB9",
+    "name_es": "Del estatuto de los miembros del Gobierno, de los Secretarios de Estado y de los Directores de los Gabinetes\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "100",
+    "idTitle": "73",
+    "code": "CAPÍTULO III",
+    "ordinal": "III",
+    "order": "3",
+    "name_es": "De los Directores de los Gabinetes de Presidente, Vicepresidentes, Ministros y Secretarios de Estado",
+    "text_es": ""
+  },
+  "section": [],
+  "article": {
+    "id": "1437",
+    "idLaw": "12",
+    "idTitle": "73",
+    "idChapter": "100",
+    "idSection": null,
+    "code": "Artículo 16",
+    "ordinal": "16",
+    "order": "1",
+    "name_es": "Del nombramiento y cese de los Directores de los Gabinetes\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

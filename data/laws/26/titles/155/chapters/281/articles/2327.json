@@ -1,0 +1,47 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "26",
+    "code": "RDL6/2023",
+    "ordinal": "RDL6/2023",
+    "order": "7",
+    "order_def": "AAAA7",
+    "publish": "YES",
+    "name_es": "Real Decreto-ley 6/2023, de 19 de diciembre, por el que se aprueban medidas urgentes para la ejecución del Plan de Recuperación, Transformación y Resiliencia en materia de servicio público de justicia, función pública, régimen local y mecenazgo.",
+    "acronim_es": "Real Decreto-ley 6/2023, por el que se aprueban medidas urgentes."
+  },
+  "title": {
+    "id": "155",
+    "idLaw": "26",
+    "code": "TÍTULO III",
+    "ordinal": "III",
+    "order": "4",
+    "order_def": "AAAA4BBBB7",
+    "name_es": "Evaluación del desempeño y carrera profesional.",
+    "text_es": "Artículos del 116 al 122."
+  },
+  "chapter": {
+    "id": "281",
+    "idTitle": "155",
+    "code": "CAPÍTULO I",
+    "ordinal": "I",
+    "order": "2",
+    "name_es": "Evaluación del desempeño.",
+    "text_es": "Artículos del 116 al 121."
+  },
+  "section": [],
+  "article": {
+    "id": "2327",
+    "idLaw": "26",
+    "idTitle": "155",
+    "idChapter": "281",
+    "idSection": null,
+    "code": "Artículo 118",
+    "ordinal": "118",
+    "order": "3",
+    "name_es": "Principios y criterios orientadores de la evaluación del desempeño.\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

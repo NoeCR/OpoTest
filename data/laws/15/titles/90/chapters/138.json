@@ -1,0 +1,134 @@
+{
+  "error": 0,
+  "arSections": [],
+  "law": {
+    "id": "15",
+    "code": "L7/1985",
+    "ordinal": "L7/1985",
+    "order": "26",
+    "order_def": "AAA26",
+    "publish": "YES",
+    "name_es": "Ley 7/1985, de 2 de abril, reguladora de las Bases del Régimen Local",
+    "acronim_es": "Ley 7/1985 - Bases del Régimen Local"
+  },
+  "title": {
+    "id": "90",
+    "idLaw": "15",
+    "code": "TÍTULO V",
+    "ordinal": "V",
+    "order": "5",
+    "order_def": "AAAA5BBB26",
+    "name_es": "Disposiciones comunes a las entidades locales\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "138",
+    "idTitle": "90",
+    "code": "CAPÍTULO V",
+    "ordinal": "V",
+    "order": "5",
+    "name_es": "Estatuto de los miembros de las Corporaciones locales\r",
+    "text_es": ""
+  },
+  "qByChapter": [],
+  "qBySection": [],
+  "arArticles": [
+    {
+      "id": "1613",
+      "idLaw": "15",
+      "idTitle": "90",
+      "idChapter": "138",
+      "idSection": null,
+      "code": "Artículo 73",
+      "ordinal": "73",
+      "order": "1",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "1614",
+      "idLaw": "15",
+      "idTitle": "90",
+      "idChapter": "138",
+      "idSection": null,
+      "code": "Artículo 74",
+      "ordinal": "74",
+      "order": "2",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "1615",
+      "idLaw": "15",
+      "idTitle": "90",
+      "idChapter": "138",
+      "idSection": null,
+      "code": "Artículo 75",
+      "ordinal": "75",
+      "order": "3",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "1616",
+      "idLaw": "15",
+      "idTitle": "90",
+      "idChapter": "138",
+      "idSection": null,
+      "code": "Artículo 75 bis",
+      "ordinal": "75 bis",
+      "order": "4",
+      "name_es": "Régimen retributivo de los miembros de las Corporaciones Locales y del personal al servicio de las Entidades Locales\r",
+      "text_es": ""
+    },
+    {
+      "id": "1617",
+      "idLaw": "15",
+      "idTitle": "90",
+      "idChapter": "138",
+      "idSection": null,
+      "code": "Artículo 75 ter",
+      "ordinal": "75 ter",
+      "order": "5",
+      "name_es": "Limitación en el número de los cargos públicos de las Entidades Locales con dedicación exclusiva\r",
+      "text_es": ""
+    },
+    {
+      "id": "1618",
+      "idLaw": "15",
+      "idTitle": "90",
+      "idChapter": "138",
+      "idSection": null,
+      "code": "Artículo 76",
+      "ordinal": "76",
+      "order": "6",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "1619",
+      "idLaw": "15",
+      "idTitle": "90",
+      "idChapter": "138",
+      "idSection": null,
+      "code": "Artículo 77",
+      "ordinal": "77",
+      "order": "7",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "1620",
+      "idLaw": "15",
+      "idTitle": "90",
+      "idChapter": "138",
+      "idSection": null,
+      "code": "Artículo 78",
+      "ordinal": "78",
+      "order": "8",
+      "name_es": "\r",
+      "text_es": ""
+    }
+  ],
+  "qByArticle": []
+}

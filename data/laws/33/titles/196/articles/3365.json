@@ -1,0 +1,39 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "33",
+    "code": "LO4/2001",
+    "ordinal": "LO4/2001",
+    "order": "22",
+    "order_def": "AAA22",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 4/2001, de 12 de noviembre, reguladora del Derecho de Petición.",
+    "acronim_es": "Ley Orgánica 4/2001, de 12 de noviembre, reguladora del Derecho de Petición."
+  },
+  "title": {
+    "id": "196",
+    "idLaw": "33",
+    "code": "Preámbulo",
+    "ordinal": "Preámbulo",
+    "order": "1",
+    "order_def": "AAAA1BBB22",
+    "name_es": "Preámbulo",
+    "text_es": "Preámbulo"
+  },
+  "chapter": [],
+  "section": [],
+  "article": {
+    "id": "3365",
+    "idLaw": "33",
+    "idTitle": "196",
+    "idChapter": null,
+    "idSection": null,
+    "code": "Artículo 1",
+    "ordinal": "1",
+    "order": "1",
+    "name_es": "Titulares del derecho de petición.\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

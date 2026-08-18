@@ -1,0 +1,47 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "41",
+    "code": "LO2/1982",
+    "ordinal": "LO2/1982",
+    "order": "25",
+    "order_def": "AAA25",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 2/1982, de 12 de mayo, del Tribunal de Cuentas.",
+    "acronim_es": "Ley Orgánica 2/1982, de 12 de mayo, del Tribunal de Cuentas."
+  },
+  "title": {
+    "id": "286",
+    "idLaw": "41",
+    "code": "TÍTULO V",
+    "ordinal": "V",
+    "order": "5",
+    "order_def": "AAAA5BBB25",
+    "name_es": "Funcionamiento del Tribunal",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "501",
+    "idTitle": "286",
+    "code": "CAPÍTULO III",
+    "ordinal": "III",
+    "order": "3",
+    "name_es": "Los procedimientos judiciales",
+    "text_es": ""
+  },
+  "section": [],
+  "article": {
+    "id": "3939",
+    "idLaw": "41",
+    "idTitle": "286",
+    "idChapter": "501",
+    "idSection": null,
+    "code": "Artículo 46",
+    "ordinal": "46",
+    "order": "1",
+    "name_es": "\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

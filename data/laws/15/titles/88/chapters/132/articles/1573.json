@@ -1,0 +1,47 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "15",
+    "code": "L7/1985",
+    "ordinal": "L7/1985",
+    "order": "26",
+    "order_def": "AAA26",
+    "publish": "YES",
+    "name_es": "Ley 7/1985, de 2 de abril, reguladora de las Bases del Régimen Local",
+    "acronim_es": "Ley 7/1985 - Bases del Régimen Local"
+  },
+  "title": {
+    "id": "88",
+    "idLaw": "15",
+    "code": "TÍTULO III",
+    "ordinal": "III",
+    "order": "3",
+    "order_def": "AAAA3BBB26",
+    "name_es": "La Provincia\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "132",
+    "idTitle": "88",
+    "code": "CAPÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "Competencias\r",
+    "text_es": ""
+  },
+  "section": [],
+  "article": {
+    "id": "1573",
+    "idLaw": "15",
+    "idTitle": "88",
+    "idChapter": "132",
+    "idSection": null,
+    "code": "Artículo 36",
+    "ordinal": "36",
+    "order": "1",
+    "name_es": "\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

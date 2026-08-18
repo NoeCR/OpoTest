@@ -1,0 +1,47 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "44",
+    "code": "LO1/2004",
+    "ordinal": "LO1/2004",
+    "order": "29",
+    "order_def": "AAA29",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 1/2004, de 28 de diciembre, de Medidas de Protección Integral contra la Violencia de Género.",
+    "acronim_es": "Ley Orgánica 1/2004 Medidas de Protección contra la Violencia de Género."
+  },
+  "title": {
+    "id": "304",
+    "idLaw": "44",
+    "code": "TÍTULO V",
+    "ordinal": "V",
+    "order": "6",
+    "order_def": "AAAA6BBB29",
+    "name_es": "Tutela Judicial",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "513",
+    "idTitle": "304",
+    "code": "CAPÍTULO IV",
+    "ordinal": "IV",
+    "order": "4",
+    "name_es": "Medidas judiciales de protección y de seguridad de las víctimas\r",
+    "text_es": ""
+  },
+  "section": [],
+  "article": {
+    "id": "4037",
+    "idLaw": "44",
+    "idTitle": "304",
+    "idChapter": "513",
+    "idSection": null,
+    "code": "Artículo 62",
+    "ordinal": "62",
+    "order": "2",
+    "name_es": "De la orden de protección.\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

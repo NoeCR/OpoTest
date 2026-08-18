@@ -1,0 +1,64 @@
+{
+  "error": 0,
+  "arTitles": [
+    {
+      "id": "98",
+      "idLaw": "16",
+      "code": "CAPÍTULO I",
+      "ordinal": "I",
+      "order": "1",
+      "order_def": "AAAA1BBB13",
+      "name_es": "Las funciones de información administrativa y de atención al ciudadano",
+      "text_es": ""
+    },
+    {
+      "id": "99",
+      "idLaw": "16",
+      "code": "CAPÍTULO II",
+      "ordinal": "II",
+      "order": "2",
+      "order_def": "AAAA2BBB13",
+      "name_es": "Organización de la información administrativa",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "16",
+    "code": "RD208/1996",
+    "ordinal": "RD208/1996",
+    "order": "13",
+    "order_def": "AAA13",
+    "publish": "YES",
+    "name_es": "Real Decreto 208/1996, de 9 de febrero, por el que se regulan los servicios de información administrativa y atención al ciudadano.",
+    "acronim_es": "RD 208/1996 - Información administrativa y atención al ciudadano"
+  },
+  "pt": true,
+  "qByLaw": {
+    "16": {
+      "mainLevel": [
+        "73",
+        "74",
+        "75"
+      ],
+      "subLevel": [],
+      "userDone": 0
+    }
+  },
+  "qByLawNew": {
+    "16": {
+      "mainLevel": {
+        "test": [
+          "73",
+          "74",
+          "75"
+        ]
+      },
+      "subLevel": [],
+      "userDone": 0,
+      "recent": 0
+    }
+  },
+  "qByTitle": [],
+  "arArticles": [],
+  "qByArticle": []
+}

@@ -1,0 +1,142 @@
+{
+  "error": 0,
+  "arArticles": [
+    {
+      "id": "131",
+      "idLaw": "1",
+      "idTitle": "8",
+      "idChapter": "10",
+      "idSection": "17",
+      "code": "Artículo 58",
+      "ordinal": "58",
+      "order": "1",
+      "name_es": "Iniciación de oficio.",
+      "text_es": ""
+    },
+    {
+      "id": "132",
+      "idLaw": "1",
+      "idTitle": "8",
+      "idChapter": "10",
+      "idSection": "17",
+      "code": "Artículo 59",
+      "ordinal": "59",
+      "order": "2",
+      "name_es": "Inicio del procedimiento a propia iniciativa.",
+      "text_es": ""
+    },
+    {
+      "id": "133",
+      "idLaw": "1",
+      "idTitle": "8",
+      "idChapter": "10",
+      "idSection": "17",
+      "code": "Artículo 60",
+      "ordinal": "60",
+      "order": "3",
+      "name_es": "Inicio del procedimiento como consecuencia de orden superior.",
+      "text_es": ""
+    },
+    {
+      "id": "134",
+      "idLaw": "1",
+      "idTitle": "8",
+      "idChapter": "10",
+      "idSection": "17",
+      "code": "Artículo 61",
+      "ordinal": "61",
+      "order": "4",
+      "name_es": "Inicio del procedimiento por petición razonada de otros órganos.",
+      "text_es": ""
+    },
+    {
+      "id": "135",
+      "idLaw": "1",
+      "idTitle": "8",
+      "idChapter": "10",
+      "idSection": "17",
+      "code": "Artículo 62",
+      "ordinal": "62",
+      "order": "5",
+      "name_es": "Inicio del procedimiento por denuncia.",
+      "text_es": ""
+    },
+    {
+      "id": "136",
+      "idLaw": "1",
+      "idTitle": "8",
+      "idChapter": "10",
+      "idSection": "17",
+      "code": "Artículo 63",
+      "ordinal": "63",
+      "order": "6",
+      "name_es": "Especialidades en el inicio de los procedimientos de naturaleza sancionadora.",
+      "text_es": ""
+    },
+    {
+      "id": "137",
+      "idLaw": "1",
+      "idTitle": "8",
+      "idChapter": "10",
+      "idSection": "17",
+      "code": "Artículo 64",
+      "ordinal": "64",
+      "order": "7",
+      "name_es": "Acuerdo de iniciación en los procedimientos de naturaleza sancionadora.",
+      "text_es": ""
+    },
+    {
+      "id": "138",
+      "idLaw": "1",
+      "idTitle": "8",
+      "idChapter": "10",
+      "idSection": "17",
+      "code": "Artículo 65",
+      "ordinal": "65",
+      "order": "8",
+      "name_es": "Especialidades en el inicio de oficio de los procedimientos de responsabilidad patrimonial.",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "1",
+    "code": "L39/2015",
+    "ordinal": "L39/2015",
+    "order": "2",
+    "order_def": "AAAA2",
+    "publish": "YES",
+    "name_es": "Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas",
+    "acronim_es": "Ley 39/2015, del Procedimiento Administrativo Común"
+  },
+  "title": {
+    "id": "8",
+    "idLaw": "1",
+    "code": "TÍTULO IV",
+    "ordinal": "IV",
+    "order": "5",
+    "order_def": "AAAA5BBBB2",
+    "name_es": "De las disposiciones sobre el procedimiento administrativo común.",
+    "text_es": "Artículos del 53 al 105"
+  },
+  "chapter": {
+    "id": "10",
+    "idTitle": "8",
+    "code": "CAPÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "Iniciación del procedimiento.",
+    "text_es": "Artículos del 54 al 69"
+  },
+  "section": {
+    "id": "17",
+    "idChapter": "10",
+    "code": "Sección 2",
+    "ordinal": "2",
+    "order": "2",
+    "name_es": "Iniciación del procedimiento de oficio por la administración.",
+    "text_es": "Articulos del 58 al 65"
+  },
+  "code": "Sección 2 - ",
+  "qBySection": [],
+  "qByArticle": []
+}

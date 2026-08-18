@@ -1,0 +1,50 @@
+{
+  "error": 0,
+  "arSections": [],
+  "law": {
+    "id": "35",
+    "code": "L38/2003",
+    "ordinal": "L38/2003",
+    "order": "28",
+    "order_def": "AAA28",
+    "publish": "YES",
+    "name_es": "Ley 38/2003, de 17 de noviembre, General de Subvenciones.",
+    "acronim_es": "Ley 38/2003, de 17 de noviembre, General de Subvenciones."
+  },
+  "title": {
+    "id": "224",
+    "idLaw": "35",
+    "code": "TÍTULO I",
+    "ordinal": "I",
+    "order": "2",
+    "order_def": "AAAA2BBB28",
+    "name_es": "Procedimientos de concesión y gestión de las subvenciones.\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "442",
+    "idTitle": "224",
+    "code": "CAPÍTULO III",
+    "ordinal": "III",
+    "order": "3",
+    "name_es": "Del procedimiento de concesión directa\r",
+    "text_es": ""
+  },
+  "qByChapter": [],
+  "qBySection": [],
+  "arArticles": [
+    {
+      "id": "3456",
+      "idLaw": "35",
+      "idTitle": "224",
+      "idChapter": "442",
+      "idSection": null,
+      "code": "Artículo 28",
+      "ordinal": "28",
+      "order": "1",
+      "name_es": "Concesión directa\r",
+      "text_es": ""
+    }
+  ],
+  "qByArticle": []
+}

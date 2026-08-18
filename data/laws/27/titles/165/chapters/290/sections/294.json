@@ -1,0 +1,224 @@
+{
+  "error": 0,
+  "arArticles": [
+    {
+      "id": "2937",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "294",
+      "code": "Artículo 284",
+      "ordinal": "284",
+      "order": "1",
+      "name_es": "Ámbito del contrato de concesión de servicios\r",
+      "text_es": ""
+    },
+    {
+      "id": "2938",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "294",
+      "code": "Artículo 285",
+      "ordinal": "285",
+      "order": "2",
+      "name_es": "Pliegos y anteproyecto de obra y explotación\r",
+      "text_es": ""
+    },
+    {
+      "id": "2939",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "294",
+      "code": "Artículo 286",
+      "ordinal": "286",
+      "order": "3",
+      "name_es": "Efectos, cumplimiento y extinción\r",
+      "text_es": ""
+    },
+    {
+      "id": "2940",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "294",
+      "code": "Artículo 287",
+      "ordinal": "287",
+      "order": "4",
+      "name_es": "Ejecución del contrato de concesión de servicios generales.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2941",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "294",
+      "code": "Artículo 288",
+      "ordinal": "288",
+      "order": "5",
+      "name_es": "Obligaciones generales.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2942",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "294",
+      "code": "Artículo 289",
+      "ordinal": "289",
+      "order": "6",
+      "name_es": "Prestaciones económicas.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2943",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "294",
+      "code": "Artículo 290",
+      "ordinal": "290",
+      "order": "7",
+      "name_es": "Modificación del contrato y mantenimiento de su equilibrio económico.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2944",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "294",
+      "code": "Artículo 291",
+      "ordinal": "291",
+      "order": "8",
+      "name_es": "Reversión.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2945",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "294",
+      "code": "Artículo 292",
+      "ordinal": "292",
+      "order": "9",
+      "name_es": "Falta de entrega de contraprestaciones económicas y medios auxiliares\r",
+      "text_es": ""
+    },
+    {
+      "id": "2946",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "294",
+      "code": "Artículo 293",
+      "ordinal": "293",
+      "order": "10",
+      "name_es": "Incumplimiento del concesionario\r",
+      "text_es": ""
+    },
+    {
+      "id": "2947",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "294",
+      "code": "Artículo 294",
+      "ordinal": "294",
+      "order": "11",
+      "name_es": "Causas de resolución\r",
+      "text_es": ""
+    },
+    {
+      "id": "2948",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "294",
+      "code": "Artículo 295",
+      "ordinal": "295",
+      "order": "12",
+      "name_es": "Efectos de la resolución.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2949",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "294",
+      "code": "Artículo 296",
+      "ordinal": "296",
+      "order": "13",
+      "name_es": "Subcontratación.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2950",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "294",
+      "code": "Artículo 297",
+      "ordinal": "297",
+      "order": "14",
+      "name_es": "Regulación supletoria\r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "27",
+    "code": "L9/2017",
+    "ordinal": "L9/2017",
+    "order": "5",
+    "order_def": "AAAA5",
+    "publish": "YES",
+    "name_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público, por la que se transponen al ordenamiento jurídico español las Directivas del Parlamento Europeo y del Consejo 2014/23/UE y 2014/24/UE, de 26 de febrero de 2014.",
+    "acronim_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público."
+  },
+  "title": {
+    "id": "165",
+    "idLaw": "27",
+    "code": "LIBRO SEGUNDO",
+    "ordinal": "SEGUNDO",
+    "order": "3",
+    "order_def": "AAAA3BBBB5",
+    "name_es": "De los contratos de las Administraciones Públicas\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "290",
+    "idTitle": "165",
+    "code": "TÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "De los distintos tipos de contratos de las Administraciones Públicas\r",
+    "text_es": ""
+  },
+  "section": {
+    "id": "294",
+    "idChapter": "290",
+    "code": "CAPÍTULO III",
+    "ordinal": "III",
+    "order": "3",
+    "name_es": "Del contrato de concesión de servicios\r",
+    "text_es": ""
+  },
+  "code": "CAPÍTULO III - ",
+  "qBySection": {
+    "294": {
+      "mainLevel": [
+        "994",
+        "995",
+        "996"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "qByArticle": []
+}

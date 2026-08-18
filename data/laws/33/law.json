@@ -1,0 +1,52 @@
+{
+  "error": 0,
+  "arTitles": [
+    {
+      "id": "196",
+      "idLaw": "33",
+      "code": "Preámbulo",
+      "ordinal": "Preámbulo",
+      "order": "1",
+      "order_def": "AAAA1BBB22",
+      "name_es": "Preámbulo",
+      "text_es": "Preámbulo"
+    }
+  ],
+  "law": {
+    "id": "33",
+    "code": "LO4/2001",
+    "ordinal": "LO4/2001",
+    "order": "22",
+    "order_def": "AAA22",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 4/2001, de 12 de noviembre, reguladora del Derecho de Petición.",
+    "acronim_es": "Ley Orgánica 4/2001, de 12 de noviembre, reguladora del Derecho de Petición."
+  },
+  "pt": true,
+  "qByLaw": {
+    "33": {
+      "mainLevel": [
+        "832",
+        "833"
+      ],
+      "subLevel": [],
+      "userDone": 0
+    }
+  },
+  "qByLawNew": {
+    "33": {
+      "mainLevel": {
+        "test": [
+          "832",
+          "833"
+        ]
+      },
+      "subLevel": [],
+      "userDone": 0,
+      "recent": 0
+    }
+  },
+  "qByTitle": [],
+  "arArticles": [],
+  "qByArticle": []
+}

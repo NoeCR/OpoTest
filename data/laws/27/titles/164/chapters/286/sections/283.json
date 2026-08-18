@@ -1,0 +1,94 @@
+{
+  "error": 0,
+  "arArticles": [
+    {
+      "id": "2714",
+      "idLaw": "27",
+      "idTitle": "164",
+      "idChapter": "286",
+      "idSection": "283",
+      "code": "Artículo 61",
+      "ordinal": "61",
+      "order": "1",
+      "name_es": "Competencia para contratar.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2715",
+      "idLaw": "27",
+      "idTitle": "164",
+      "idChapter": "286",
+      "idSection": "283",
+      "code": "Artículo 62",
+      "ordinal": "62",
+      "order": "2",
+      "name_es": "Responsable del contrato.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2716",
+      "idLaw": "27",
+      "idTitle": "164",
+      "idChapter": "286",
+      "idSection": "283",
+      "code": "Artículo 63",
+      "ordinal": "63",
+      "order": "3",
+      "name_es": "Perfil de contratante.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2717",
+      "idLaw": "27",
+      "idTitle": "164",
+      "idChapter": "286",
+      "idSection": "283",
+      "code": "Artículo 64",
+      "ordinal": "64",
+      "order": "4",
+      "name_es": "Lucha contra la corrupción y prevención de los conflictos de intereses.\r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "27",
+    "code": "L9/2017",
+    "ordinal": "L9/2017",
+    "order": "5",
+    "order_def": "AAAA5",
+    "publish": "YES",
+    "name_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público, por la que se transponen al ordenamiento jurídico español las Directivas del Parlamento Europeo y del Consejo 2014/23/UE y 2014/24/UE, de 26 de febrero de 2014.",
+    "acronim_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público."
+  },
+  "title": {
+    "id": "164",
+    "idLaw": "27",
+    "code": "LIBRO PRIMERO",
+    "ordinal": "PRIMERO",
+    "order": "2",
+    "order_def": "AAAA2BBBB5",
+    "name_es": "Configuración general de la contratación del sector público y elementos estructurales de los contratos\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "286",
+    "idTitle": "164",
+    "code": "TÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "Partes en el contrato\r",
+    "text_es": ""
+  },
+  "section": {
+    "id": "283",
+    "idChapter": "286",
+    "code": "CAPÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "name_es": "Órgano de contratación\r",
+    "text_es": ""
+  },
+  "code": "CAPÍTULO I - ",
+  "qBySection": [],
+  "qByArticle": []
+}

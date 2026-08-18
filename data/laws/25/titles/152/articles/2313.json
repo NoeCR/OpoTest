@@ -1,0 +1,39 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "25",
+    "code": "Agenda 2030",
+    "ordinal": "2030",
+    "order": "8",
+    "order_def": "AAAA8",
+    "publish": "YES",
+    "name_es": "La Asamblea General adopta la Agenda 2030 para el Desarrollo Sostenible",
+    "acronim_es": "Agenda 2030 para el Desarrollo Sostenible"
+  },
+  "title": {
+    "id": "152",
+    "idLaw": "25",
+    "code": "Agenda2030",
+    "ordinal": "Agenda2030",
+    "order": "1",
+    "order_def": "AAAA1BBBB8",
+    "name_es": "La Asamblea General adopta la Agenda 2030 para el Desarrollo Sostenible",
+    "text_es": ""
+  },
+  "chapter": [],
+  "section": [],
+  "article": {
+    "id": "2313",
+    "idLaw": "25",
+    "idTitle": "152",
+    "idChapter": "0",
+    "idSection": "0",
+    "code": "Agenda2030",
+    "ordinal": "Agenda2030",
+    "order": "1",
+    "name_es": "Agenda2030",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

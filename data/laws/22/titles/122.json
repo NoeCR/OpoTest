@@ -1,0 +1,80 @@
+{
+  "error": 0,
+  "arChapters": [
+    {
+      "id": "157",
+      "idTitle": "122",
+      "code": "CAPÍTULO I",
+      "ordinal": "I",
+      "order": "1",
+      "name_es": "Ámbito de aplicación y organización del sector público estatal\r",
+      "text_es": ""
+    },
+    {
+      "id": "158",
+      "idTitle": "122",
+      "code": "CAPÍTULO II",
+      "ordinal": "II",
+      "order": "2",
+      "name_es": "Del régimen de la Hacienda Pública estatal\r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "22",
+    "code": "L47/2003",
+    "ordinal": "L47/2003",
+    "order": "6",
+    "order_def": "AAAA6",
+    "publish": "YES",
+    "name_es": "Ley 47/2003, de 26 de noviembre, General Presupuestaria.",
+    "acronim_es": "Ley 47/2003, General Presupuestaria."
+  },
+  "title": {
+    "id": "122",
+    "idLaw": "22",
+    "code": "TÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "order_def": "AAAA1BBBB6",
+    "name_es": "Del ámbito de aplicación y de la Hacienda Pública estatal\r",
+    "text_es": ""
+  },
+  "qByTitle": {
+    "122": {
+      "mainLevel": [],
+      "subLevel": [
+        "760",
+        "761",
+        "762",
+        "763",
+        "764",
+        "765"
+      ],
+      "recent": 0
+    }
+  },
+  "qByChapter": {
+    "157": {
+      "mainLevel": [
+        "760"
+      ],
+      "subLevel": [],
+      "recent": 0
+    },
+    "158": {
+      "mainLevel": [
+        "761",
+        "762",
+        "763",
+        "764",
+        "765"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "arArticles": [],
+  "$arIdsArticles": [],
+  "qByArticle": []
+}

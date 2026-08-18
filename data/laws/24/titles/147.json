@@ -1,0 +1,70 @@
+{
+  "error": 0,
+  "arChapters": [],
+  "law": {
+    "id": "24",
+    "code": "LO3/2007",
+    "ordinal": "LO3/2007",
+    "order": "10",
+    "order_def": "AAA10",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres.",
+    "acronim_es": "Ley Orgánica 3/2007- Igualdad efectiva de mujeres y hombres."
+  },
+  "title": {
+    "id": "147",
+    "idLaw": "24",
+    "code": "TÍTULO VII",
+    "ordinal": "VII",
+    "order": "8",
+    "order_def": "AAAA8BBB10",
+    "name_es": "La igualdad en la responsabilidad social de las empresas.\r",
+    "text_es": ""
+  },
+  "qByTitle": [],
+  "qByChapter": [],
+  "arArticles": [
+    {
+      "id": "2304",
+      "idLaw": "24",
+      "idTitle": "147",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 73",
+      "ordinal": "73",
+      "order": "1",
+      "name_es": "Acciones de responsabilidad social de las empresas en materia de igualdad.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2305",
+      "idLaw": "24",
+      "idTitle": "147",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 74",
+      "ordinal": "74",
+      "order": "2",
+      "name_es": "Publicidad de las acciones de responsabilidad social en materia de igualdad.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2306",
+      "idLaw": "24",
+      "idTitle": "147",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 75",
+      "ordinal": "75",
+      "order": "3",
+      "name_es": "Participación de las mujeres en los Consejos de administración de las sociedades mercantiles.\r",
+      "text_es": ""
+    }
+  ],
+  "$arIdsArticles": [
+    "2304",
+    "2305",
+    "2306"
+  ],
+  "qByArticle": []
+}

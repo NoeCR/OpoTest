@@ -1,0 +1,252 @@
+{
+  "error": 0,
+  "arArticles": [
+    {
+      "id": "2768",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "289",
+      "idSection": "290",
+      "code": "Artículo 115",
+      "ordinal": "115",
+      "order": "1",
+      "name_es": "Consultas preliminares del mercado.",
+      "text_es": ""
+    },
+    {
+      "id": "2769",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "289",
+      "idSection": "290",
+      "code": "Artículo 116",
+      "ordinal": "116",
+      "order": "2",
+      "name_es": "Expediente de contratación: iniciación y contenido.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2770",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "289",
+      "idSection": "290",
+      "code": "Artículo 117",
+      "ordinal": "117",
+      "order": "3",
+      "name_es": "Aprobación del expediente.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2771",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "289",
+      "idSection": "290",
+      "code": "Artículo 118",
+      "ordinal": "118",
+      "order": "4",
+      "name_es": "Expediente de contratación en contratos menores.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2772",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "289",
+      "idSection": "290",
+      "code": "Artículo 119",
+      "ordinal": "119",
+      "order": "5",
+      "name_es": "Tramitación urgente del expediente.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2773",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "289",
+      "idSection": "290",
+      "code": "Artículo 120",
+      "ordinal": "120",
+      "order": "6",
+      "name_es": "Tramitación de emergencia.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2774",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "289",
+      "idSection": "290",
+      "code": "Artículo 121",
+      "ordinal": "121",
+      "order": "7",
+      "name_es": "Pliegos de cláusulas administrativas generales.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2775",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "289",
+      "idSection": "290",
+      "code": "Artículo 122",
+      "ordinal": "122",
+      "order": "8",
+      "name_es": "Pliegos de cláusulas administrativas particulares.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2776",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "289",
+      "idSection": "290",
+      "code": "Artículo 123",
+      "ordinal": "123",
+      "order": "9",
+      "name_es": "Pliego de prescripciones técnicas generales.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2777",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "289",
+      "idSection": "290",
+      "code": "Artículo 124",
+      "ordinal": "124",
+      "order": "10",
+      "name_es": "Pliego de prescripciones técnicas particulares\r",
+      "text_es": ""
+    },
+    {
+      "id": "2778",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "289",
+      "idSection": "290",
+      "code": "Artículo 125",
+      "ordinal": "125",
+      "order": "11",
+      "name_es": "Definición de determinadas prescripciones técnicas.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2779",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "289",
+      "idSection": "290",
+      "code": "Artículo 126",
+      "ordinal": "126",
+      "order": "12",
+      "name_es": "Reglas para el establecimiento de prescripciones técnicas.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2780",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "289",
+      "idSection": "290",
+      "code": "Artículo 127",
+      "ordinal": "127",
+      "order": "13",
+      "name_es": "Etiquetas.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2781",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "289",
+      "idSection": "290",
+      "code": "Artículo 128",
+      "ordinal": "128",
+      "order": "14",
+      "name_es": "Informes de pruebas, certificación y otros medios de prueba.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2782",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "289",
+      "idSection": "290",
+      "code": "Artículo 129",
+      "ordinal": "129",
+      "order": "15",
+      "name_es": "Información sobre las obligaciones relativas a la fiscalidad, protección del medio ambiente, empleo y condiciones laborales y de contratar a un porcentaje específico de personas con discapacidad.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2783",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "289",
+      "idSection": "290",
+      "code": "Artículo 130",
+      "ordinal": "130",
+      "order": "16",
+      "name_es": "Información sobre las condiciones de subrogación en contratos de trabajo.\r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "27",
+    "code": "L9/2017",
+    "ordinal": "L9/2017",
+    "order": "5",
+    "order_def": "AAAA5",
+    "publish": "YES",
+    "name_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público, por la que se transponen al ordenamiento jurídico español las Directivas del Parlamento Europeo y del Consejo 2014/23/UE y 2014/24/UE, de 26 de febrero de 2014.",
+    "acronim_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público."
+  },
+  "title": {
+    "id": "165",
+    "idLaw": "27",
+    "code": "LIBRO SEGUNDO",
+    "ordinal": "SEGUNDO",
+    "order": "3",
+    "order_def": "AAAA3BBBB5",
+    "name_es": "De los contratos de las Administraciones Públicas\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "289",
+    "idTitle": "165",
+    "code": "TÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "name_es": "Disposiciones generales\r",
+    "text_es": ""
+  },
+  "section": {
+    "id": "290",
+    "idChapter": "289",
+    "code": "CAPÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "name_es": "Sección 1ª - De la preparación de los contratos de las Administraciones Públicas",
+    "text_es": ""
+  },
+  "code": "CAPÍTULO I - ",
+  "qBySection": {
+    "290": {
+      "mainLevel": [
+        "733",
+        "734",
+        "735",
+        "736",
+        "737",
+        "738",
+        "739"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "qByArticle": []
+}

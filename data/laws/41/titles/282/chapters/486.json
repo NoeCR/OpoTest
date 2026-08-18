@@ -1,0 +1,110 @@
+{
+  "error": 0,
+  "arSections": [],
+  "law": {
+    "id": "41",
+    "code": "LO2/1982",
+    "ordinal": "LO2/1982",
+    "order": "25",
+    "order_def": "AAA25",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 2/1982, de 12 de mayo, del Tribunal de Cuentas.",
+    "acronim_es": "Ley Orgánica 2/1982, de 12 de mayo, del Tribunal de Cuentas."
+  },
+  "title": {
+    "id": "282",
+    "idLaw": "41",
+    "code": "TÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "order_def": "AAAA1BBB25",
+    "name_es": "Fiscalización económico-financiera y jurisdicción contable\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "486",
+    "idTitle": "282",
+    "code": "CAPÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "La función fiscalizadora del Tribunal\r",
+    "text_es": ""
+  },
+  "qByChapter": [],
+  "qBySection": [],
+  "arArticles": [
+    {
+      "id": "3902",
+      "idLaw": "41",
+      "idTitle": "282",
+      "idChapter": "486",
+      "idSection": null,
+      "code": "Artículo 9",
+      "ordinal": "9",
+      "order": "1",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "3903",
+      "idLaw": "41",
+      "idTitle": "282",
+      "idChapter": "486",
+      "idSection": null,
+      "code": "Artículo 10",
+      "ordinal": "10",
+      "order": "2",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "3904",
+      "idLaw": "41",
+      "idTitle": "282",
+      "idChapter": "486",
+      "idSection": null,
+      "code": "Artículo 11",
+      "ordinal": "11",
+      "order": "3",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "3905",
+      "idLaw": "41",
+      "idTitle": "282",
+      "idChapter": "486",
+      "idSection": null,
+      "code": "Artículo 12",
+      "ordinal": "12",
+      "order": "4",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "3906",
+      "idLaw": "41",
+      "idTitle": "282",
+      "idChapter": "486",
+      "idSection": null,
+      "code": "Artículo 13",
+      "ordinal": "13",
+      "order": "5",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "3907",
+      "idLaw": "41",
+      "idTitle": "282",
+      "idChapter": "486",
+      "idSection": null,
+      "code": "Artículo 14",
+      "ordinal": "14",
+      "order": "6",
+      "name_es": "\r",
+      "text_es": ""
+    }
+  ],
+  "qByArticle": []
+}

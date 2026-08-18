@@ -1,0 +1,47 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "12",
+    "code": "L50/1997",
+    "ordinal": "L50/1997",
+    "order": "9",
+    "order_def": "AAAA9",
+    "publish": "YES",
+    "name_es": "Ley 50/1997, de 27 de noviembre, del Gobierno",
+    "acronim_es": "Ley 50/1997 - del Gobierno"
+  },
+  "title": {
+    "id": "72",
+    "idLaw": "12",
+    "code": "TÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "order_def": "AAAA1BBBB9",
+    "name_es": "Del Gobierno composición, organización y órganos de colaboración y apoyo\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "96",
+    "idTitle": "72",
+    "code": "CAPÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "name_es": "Del Gobierno, su composición, organización y funciones\r",
+    "text_es": ""
+  },
+  "section": [],
+  "article": {
+    "id": "1422",
+    "idLaw": "12",
+    "idTitle": "72",
+    "idChapter": "96",
+    "idSection": null,
+    "code": "Artículo 1",
+    "ordinal": "1",
+    "order": "1",
+    "name_es": "Del Gobierno\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

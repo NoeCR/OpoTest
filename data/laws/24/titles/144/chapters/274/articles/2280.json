@@ -1,0 +1,47 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "24",
+    "code": "LO3/2007",
+    "ordinal": "LO3/2007",
+    "order": "10",
+    "order_def": "AAA10",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres.",
+    "acronim_es": "Ley Orgánica 3/2007- Igualdad efectiva de mujeres y hombres."
+  },
+  "title": {
+    "id": "144",
+    "idLaw": "24",
+    "code": "TÍTULO IV",
+    "ordinal": "IV",
+    "order": "5",
+    "order_def": "AAAA5BBB10",
+    "name_es": "El derecho al trabajo en igualdad de oportunidades.\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "274",
+    "idTitle": "144",
+    "code": "CAPÍTULO III",
+    "ordinal": "III",
+    "order": "3",
+    "name_es": "Los planes de igualdad de las empresas y otras medidas de promoción de la igualdad.\r",
+    "text_es": ""
+  },
+  "section": [],
+  "article": {
+    "id": "2280",
+    "idLaw": "24",
+    "idTitle": "144",
+    "idChapter": "274",
+    "idSection": null,
+    "code": "Artículo 49",
+    "ordinal": "49",
+    "order": "5",
+    "name_es": "Apoyo para la implantación voluntaria de planes de igualdad.\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

@@ -1,0 +1,110 @@
+{
+  "error": 0,
+  "arSections": [],
+  "law": {
+    "id": "31",
+    "code": "L4/2023",
+    "ordinal": "L4/2023",
+    "order": "20",
+    "order_def": "AAA20",
+    "publish": "YES",
+    "name_es": "Ley 4/2023, de 28 de febrero, para la igualdad real y efectiva de las personas trans y para la garantía de los derechos de las personas LGTBI.",
+    "acronim_es": "Ley 4/2023, de 28 de febrero, para la igualdad real y efectiva de las personas trans y para la garantía de los derechos de las personas LGTBI."
+  },
+  "title": {
+    "id": "192",
+    "idLaw": "31",
+    "code": "TÍTULO III",
+    "ordinal": "III",
+    "order": "4",
+    "order_def": "AAAA4BBB20",
+    "name_es": "Protección efectiva y reparación frente a la discriminación y la violencia por LGTBIfobia.\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "334",
+    "idTitle": "192",
+    "code": "CAPÍTULO III",
+    "ordinal": "III",
+    "order": "3",
+    "name_es": "Protección de los derechos de personas LGTBI en situaciones especiales.",
+    "text_es": ""
+  },
+  "qByChapter": [],
+  "qBySection": [],
+  "arArticles": [
+    {
+      "id": "3350",
+      "idLaw": "31",
+      "idTitle": "192",
+      "idChapter": "334",
+      "idSection": null,
+      "code": "Artículo 70",
+      "ordinal": "70",
+      "order": "1",
+      "name_es": "Personas LGTBI menores de edad.\r",
+      "text_es": ""
+    },
+    {
+      "id": "3351",
+      "idLaw": "31",
+      "idTitle": "192",
+      "idChapter": "334",
+      "idSection": null,
+      "code": "Artículo 71",
+      "ordinal": "71",
+      "order": "2",
+      "name_es": "Personas LGTBI con discapacidad o en situación de dependencia.\r",
+      "text_es": ""
+    },
+    {
+      "id": "3352",
+      "idLaw": "31",
+      "idTitle": "192",
+      "idChapter": "334",
+      "idSection": null,
+      "code": "Artículo 72",
+      "ordinal": "72",
+      "order": "3",
+      "name_es": "Personas extranjeras LGTBI.\r",
+      "text_es": ""
+    },
+    {
+      "id": "3353",
+      "idLaw": "31",
+      "idTitle": "192",
+      "idChapter": "334",
+      "idSection": null,
+      "code": "Artículo 73",
+      "ordinal": "73",
+      "order": "4",
+      "name_es": "Personas mayores LGTBI.\r",
+      "text_es": ""
+    },
+    {
+      "id": "3354",
+      "idLaw": "31",
+      "idTitle": "192",
+      "idChapter": "334",
+      "idSection": null,
+      "code": "Artículo 74",
+      "ordinal": "74",
+      "order": "5",
+      "name_es": "Personas intersexuales.\r",
+      "text_es": ""
+    },
+    {
+      "id": "3355",
+      "idLaw": "31",
+      "idTitle": "192",
+      "idChapter": "334",
+      "idSection": null,
+      "code": "Artículo 75",
+      "ordinal": "75",
+      "order": "6",
+      "name_es": "Personas LGTBI en situación de sinhogarismo.\r",
+      "text_es": ""
+    }
+  ],
+  "qByArticle": []
+}

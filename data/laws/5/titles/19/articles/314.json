@@ -1,0 +1,39 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "5",
+    "code": "CONSTITUCIÓN",
+    "ordinal": "CONSTITUCIÓN",
+    "order": "1",
+    "order_def": "AAAA1",
+    "publish": "YES",
+    "name_es": "Constitución Española de 1978",
+    "acronim_es": "Constitución Española"
+  },
+  "title": {
+    "id": "19",
+    "idLaw": "5",
+    "code": "TÍTULO PRELIMINAR",
+    "ordinal": "PRELIMINAR",
+    "order": "2",
+    "order_def": "AAAA2BBBB1",
+    "name_es": "Título Preliminar",
+    "text_es": "Artículos del 1 al 9"
+  },
+  "chapter": [],
+  "section": [],
+  "article": {
+    "id": "314",
+    "idLaw": "5",
+    "idTitle": "19",
+    "idChapter": null,
+    "idSection": null,
+    "code": "Artículo 7",
+    "ordinal": "7",
+    "order": "7",
+    "name_es": "\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

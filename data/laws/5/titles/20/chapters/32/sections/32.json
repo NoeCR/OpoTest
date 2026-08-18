@@ -1,0 +1,165 @@
+{
+  "error": 0,
+  "arArticles": [
+    {
+      "id": "337",
+      "idLaw": "5",
+      "idTitle": "20",
+      "idChapter": "32",
+      "idSection": "32",
+      "code": "Artículo 30",
+      "ordinal": "30",
+      "order": "1",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "338",
+      "idLaw": "5",
+      "idTitle": "20",
+      "idChapter": "32",
+      "idSection": "32",
+      "code": "Artículo 31",
+      "ordinal": "31",
+      "order": "2",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "339",
+      "idLaw": "5",
+      "idTitle": "20",
+      "idChapter": "32",
+      "idSection": "32",
+      "code": "Artículo 32",
+      "ordinal": "32",
+      "order": "3",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "340",
+      "idLaw": "5",
+      "idTitle": "20",
+      "idChapter": "32",
+      "idSection": "32",
+      "code": "Artículo 33",
+      "ordinal": "33",
+      "order": "4",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "341",
+      "idLaw": "5",
+      "idTitle": "20",
+      "idChapter": "32",
+      "idSection": "32",
+      "code": "Artículo 34",
+      "ordinal": "34",
+      "order": "5",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "342",
+      "idLaw": "5",
+      "idTitle": "20",
+      "idChapter": "32",
+      "idSection": "32",
+      "code": "Artículo 35",
+      "ordinal": "35",
+      "order": "6",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "343",
+      "idLaw": "5",
+      "idTitle": "20",
+      "idChapter": "32",
+      "idSection": "32",
+      "code": "Artículo 36",
+      "ordinal": "36",
+      "order": "7",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "344",
+      "idLaw": "5",
+      "idTitle": "20",
+      "idChapter": "32",
+      "idSection": "32",
+      "code": "Artículo 37",
+      "ordinal": "37",
+      "order": "8",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "345",
+      "idLaw": "5",
+      "idTitle": "20",
+      "idChapter": "32",
+      "idSection": "32",
+      "code": "Artículo 38",
+      "ordinal": "38",
+      "order": "9",
+      "name_es": "\r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "5",
+    "code": "CONSTITUCIÓN",
+    "ordinal": "CONSTITUCIÓN",
+    "order": "1",
+    "order_def": "AAAA1",
+    "publish": "YES",
+    "name_es": "Constitución Española de 1978",
+    "acronim_es": "Constitución Española"
+  },
+  "title": {
+    "id": "20",
+    "idLaw": "5",
+    "code": "TÍTULO I",
+    "ordinal": "I",
+    "order": "3",
+    "order_def": "AAAA3BBBB1",
+    "name_es": "De los derechos y deberes fundamentales",
+    "text_es": "Artículos del 10 al 55"
+  },
+  "chapter": {
+    "id": "32",
+    "idTitle": "20",
+    "code": "CAPÍTULO SEGUNDO",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "Derechos y libertades",
+    "text_es": null
+  },
+  "section": {
+    "id": "32",
+    "idChapter": "32",
+    "code": "Sección 2",
+    "ordinal": "2",
+    "order": "2",
+    "name_es": "De los derechos y deberes de los ciudadanos",
+    "text_es": null
+  },
+  "code": "Sección 2 - ",
+  "qBySection": {
+    "32": {
+      "mainLevel": [
+        "56",
+        "57",
+        "58",
+        "59"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "qByArticle": []
+}

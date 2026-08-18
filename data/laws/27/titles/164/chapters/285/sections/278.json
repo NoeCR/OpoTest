@@ -1,0 +1,118 @@
+{
+  "error": 0,
+  "arArticles": [
+    {
+      "id": "2681",
+      "idLaw": "27",
+      "idTitle": "164",
+      "idChapter": "285",
+      "idSection": "278",
+      "code": "Artículo 28",
+      "ordinal": "28",
+      "order": "1",
+      "name_es": "Necesidad e idoneidad del contrato y eficiencia en la contratación.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2682",
+      "idLaw": "27",
+      "idTitle": "164",
+      "idChapter": "285",
+      "idSection": "278",
+      "code": "Artículo 29",
+      "ordinal": "29",
+      "order": "2",
+      "name_es": "Plazo de duración de los contratos y de ejecución de la prestación.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2683",
+      "idLaw": "27",
+      "idTitle": "164",
+      "idChapter": "285",
+      "idSection": "278",
+      "code": "Artículo 30",
+      "ordinal": "30",
+      "order": "3",
+      "name_es": "Ejecución directa de prestaciones por la Administración Pública con la colaboración de empresarios particulares o a través de medios propios no personificados.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2684",
+      "idLaw": "27",
+      "idTitle": "164",
+      "idChapter": "285",
+      "idSection": "278",
+      "code": "Artículo 31",
+      "ordinal": "31",
+      "order": "4",
+      "name_es": "Potestad de auto organización y sistemas de cooperación pública vertical y horizontal\r",
+      "text_es": ""
+    },
+    {
+      "id": "2685",
+      "idLaw": "27",
+      "idTitle": "164",
+      "idChapter": "285",
+      "idSection": "278",
+      "code": "Artículo 32",
+      "ordinal": "32",
+      "order": "5",
+      "name_es": "Encargos de los poderes adjudicadores a medios propios personificados.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2686",
+      "idLaw": "27",
+      "idTitle": "164",
+      "idChapter": "285",
+      "idSection": "278",
+      "code": "Artículo 33",
+      "ordinal": "33",
+      "order": "6",
+      "name_es": "Encargos de entidades pertenecientes al sector público que no tengan la consideración de poder adjudicador a mediospropios personificados.\r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "27",
+    "code": "L9/2017",
+    "ordinal": "L9/2017",
+    "order": "5",
+    "order_def": "AAAA5",
+    "publish": "YES",
+    "name_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público, por la que se transponen al ordenamiento jurídico español las Directivas del Parlamento Europeo y del Consejo 2014/23/UE y 2014/24/UE, de 26 de febrero de 2014.",
+    "acronim_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público."
+  },
+  "title": {
+    "id": "164",
+    "idLaw": "27",
+    "code": "LIBRO PRIMERO",
+    "ordinal": "PRIMERO",
+    "order": "2",
+    "order_def": "AAAA2BBBB5",
+    "name_es": "Configuración general de la contratación del sector público y elementos estructurales de los contratos\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "285",
+    "idTitle": "164",
+    "code": "TÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "name_es": "Disposiciones generales sobre la contratación del sector público\r",
+    "text_es": ""
+  },
+  "section": {
+    "id": "278",
+    "idChapter": "285",
+    "code": "CAPÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "name_es": "Racionalidad y consistencia de la contratación del sector público.\r",
+    "text_es": ""
+  },
+  "code": "CAPÍTULO I - ",
+  "qBySection": [],
+  "qByArticle": []
+}

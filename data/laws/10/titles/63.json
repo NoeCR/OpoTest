@@ -1,0 +1,124 @@
+{
+  "error": 0,
+  "arChapters": [
+    {
+      "id": "69",
+      "idTitle": "63",
+      "code": "CAPÍTULO I",
+      "ordinal": "I",
+      "order": "1",
+      "name_es": "Organización administrativa\r",
+      "text_es": ""
+    },
+    {
+      "id": "70",
+      "idTitle": "63",
+      "code": "CAPÍTULO II",
+      "ordinal": "II",
+      "order": "2",
+      "name_es": "Los Ministerios y su estructura interna\r",
+      "text_es": ""
+    },
+    {
+      "id": "71",
+      "idTitle": "63",
+      "code": "CAPÍTULO III",
+      "ordinal": "III",
+      "order": "3",
+      "name_es": "Órganos territoriales\r",
+      "text_es": ""
+    },
+    {
+      "id": "72",
+      "idTitle": "63",
+      "code": "CAPÍTULO IV",
+      "ordinal": "IV",
+      "order": "4",
+      "name_es": "De la Administración General del Estado en el exterior\r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "10",
+    "code": "L40/2015",
+    "ordinal": "L40/2015",
+    "order": "3",
+    "order_def": "AAAA3",
+    "publish": "YES",
+    "name_es": "Ley 40/2015, de 1 de octubre, de Régimen Jurídico del Sector Público.",
+    "acronim_es": "Ley 40/2015 - Régimen Jurídico del Sector Público."
+  },
+  "title": {
+    "id": "63",
+    "idLaw": "10",
+    "code": "TÍTULO I",
+    "ordinal": "I",
+    "order": "2",
+    "order_def": "AAAA2BBBB3",
+    "name_es": "Administración General del Estado\r",
+    "text_es": ""
+  },
+  "qByTitle": {
+    "63": {
+      "mainLevel": [],
+      "subLevel": [
+        "638",
+        "639",
+        "640",
+        "641",
+        "642",
+        "643",
+        "644",
+        "645",
+        "646",
+        "684",
+        "685",
+        "686",
+        "687",
+        "688",
+        "690",
+        "691"
+      ],
+      "recent": 0
+    }
+  },
+  "qByChapter": {
+    "69": {
+      "mainLevel": [
+        "638",
+        "639"
+      ],
+      "subLevel": [],
+      "recent": 0
+    },
+    "70": {
+      "mainLevel": [
+        "646",
+        "645",
+        "644",
+        "643",
+        "642",
+        "641",
+        "640"
+      ],
+      "subLevel": [],
+      "recent": 0
+    },
+    "71": {
+      "mainLevel": [
+        "690",
+        "688",
+        "687",
+        "686",
+        "685",
+        "684",
+        "691"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "arArticles": [],
+  "$arIdsArticles": [],
+  "qByArticle": []
+}

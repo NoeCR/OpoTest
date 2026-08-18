@@ -1,0 +1,130 @@
+{
+  "error": 0,
+  "arArticles": [
+    {
+      "id": "2033",
+      "idLaw": "22",
+      "idTitle": "127",
+      "idChapter": "180",
+      "idSection": "103",
+      "code": "Artículo 169",
+      "ordinal": "169",
+      "order": "1",
+      "name_es": "Auditoría de cumplimiento.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2034",
+      "idLaw": "22",
+      "idTitle": "127",
+      "idChapter": "180",
+      "idSection": "103",
+      "code": "Artículo 170",
+      "ordinal": "170",
+      "order": "2",
+      "name_es": "Auditoría operativa.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2035",
+      "idLaw": "22",
+      "idTitle": "127",
+      "idChapter": "180",
+      "idSection": "103",
+      "code": "Artículo 171",
+      "ordinal": "171",
+      "order": "3",
+      "name_es": "Auditoría de contratos-programas y de seguimiento de planes de equilibrio financiero.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2036",
+      "idLaw": "22",
+      "idTitle": "127",
+      "idChapter": "180",
+      "idSection": "103",
+      "code": "Artículo 172",
+      "ordinal": "172",
+      "order": "4",
+      "name_es": "Auditoría de los Planes iniciales de actuación.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2037",
+      "idLaw": "22",
+      "idTitle": "127",
+      "idChapter": "180",
+      "idSection": "103",
+      "code": "Artículo 173",
+      "ordinal": "173",
+      "order": "5",
+      "name_es": "Auditoría de la cuenta de los tributos estatales.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2038",
+      "idLaw": "22",
+      "idTitle": "127",
+      "idChapter": "180",
+      "idSection": "103",
+      "code": "Artículo 174",
+      "ordinal": "174",
+      "order": "6",
+      "name_es": "Auditoría de las empresas colaboradoras de la Seguridad Social.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2039",
+      "idLaw": "22",
+      "idTitle": "127",
+      "idChapter": "180",
+      "idSection": "103",
+      "code": "Artículo 175",
+      "ordinal": "175",
+      "order": "7",
+      "name_es": "Auditoría de privatizaciones.\r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "22",
+    "code": "L47/2003",
+    "ordinal": "L47/2003",
+    "order": "6",
+    "order_def": "AAAA6",
+    "publish": "YES",
+    "name_es": "Ley 47/2003, de 26 de noviembre, General Presupuestaria.",
+    "acronim_es": "Ley 47/2003, General Presupuestaria."
+  },
+  "title": {
+    "id": "127",
+    "idLaw": "22",
+    "code": "TÍTULO VI",
+    "ordinal": "VI",
+    "order": "6",
+    "order_def": "AAAA6BBBB6",
+    "name_es": "Del control de la gestión económico-financiera efectuado por la Intervención General de la Administración del Estado\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "180",
+    "idTitle": "127",
+    "code": "CAPÍTULO IV",
+    "ordinal": "IV",
+    "order": "4",
+    "name_es": "De la auditoría pública",
+    "text_es": ""
+  },
+  "section": {
+    "id": "103",
+    "idChapter": "180",
+    "code": "SECCIÓN 3",
+    "ordinal": "3",
+    "order": "3",
+    "name_es": "Auditorías públicas específicas",
+    "text_es": ""
+  },
+  "code": "SECCIÓN 3 - ",
+  "qBySection": [],
+  "qByArticle": []
+}

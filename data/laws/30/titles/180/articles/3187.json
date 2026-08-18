@@ -1,0 +1,39 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "30",
+    "code": "L19/2013",
+    "ordinal": "L19/2013",
+    "order": "27",
+    "order_def": "AAA27",
+    "publish": "YES",
+    "name_es": "Ley 19/2013, de 9 de diciembre, de transparencia, acceso a la información pública y buen gobierno.",
+    "acronim_es": "Ley 19/2013, de 9 de diciembre, de transparencia, acceso a la información pública y buen gobierno."
+  },
+  "title": {
+    "id": "180",
+    "idLaw": "30",
+    "code": "TÍTULO II",
+    "ordinal": "II",
+    "order": "3",
+    "order_def": "AAAA3BBB27",
+    "name_es": "Buen gobierno.\r",
+    "text_es": ""
+  },
+  "chapter": [],
+  "section": [],
+  "article": {
+    "id": "3187",
+    "idLaw": "30",
+    "idTitle": "180",
+    "idChapter": null,
+    "idSection": null,
+    "code": "Artículo 29",
+    "ordinal": "29",
+    "order": "5",
+    "name_es": "Infracciones disciplinarias.\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

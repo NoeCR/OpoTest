@@ -1,0 +1,175 @@
+{
+  "error": 0,
+  "arArticles": [
+    {
+      "id": "2951",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "295",
+      "code": "Artículo 298",
+      "ordinal": "298",
+      "order": "1",
+      "name_es": "Arrendamiento.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2952",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "295",
+      "code": "Artículo 299",
+      "ordinal": "299",
+      "order": "2",
+      "name_es": "Contratos de fabricación.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2953",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "295",
+      "code": "Artículo 300",
+      "ordinal": "300",
+      "order": "3",
+      "name_es": "Entrega y recepción.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2954",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "295",
+      "code": "Artículo 301",
+      "ordinal": "301",
+      "order": "4",
+      "name_es": "Pago del precio.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2955",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "295",
+      "code": "Artículo 302",
+      "ordinal": "302",
+      "order": "5",
+      "name_es": "Pago en metálico y en otros bienes\r",
+      "text_es": ""
+    },
+    {
+      "id": "2956",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "295",
+      "code": "Artículo 303",
+      "ordinal": "303",
+      "order": "6",
+      "name_es": "Facultades de la Administración en el proceso de fabricación\r",
+      "text_es": ""
+    },
+    {
+      "id": "2957",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "295",
+      "code": "Artículo 304",
+      "ordinal": "304",
+      "order": "7",
+      "name_es": "Gastos de entrega y recepción\r",
+      "text_es": ""
+    },
+    {
+      "id": "2958",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "295",
+      "code": "Artículo 305",
+      "ordinal": "305",
+      "order": "8",
+      "name_es": "Vicios o defectos durante el plazo de garantía\r",
+      "text_es": ""
+    },
+    {
+      "id": "2959",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "295",
+      "code": "Artículo 306",
+      "ordinal": "306",
+      "order": "9",
+      "name_es": "Causas de resolución.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2960",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "295",
+      "code": "Artículo 307",
+      "ordinal": "307",
+      "order": "10",
+      "name_es": "Efectos de la resolución\r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "27",
+    "code": "L9/2017",
+    "ordinal": "L9/2017",
+    "order": "5",
+    "order_def": "AAAA5",
+    "publish": "YES",
+    "name_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público, por la que se transponen al ordenamiento jurídico español las Directivas del Parlamento Europeo y del Consejo 2014/23/UE y 2014/24/UE, de 26 de febrero de 2014.",
+    "acronim_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público."
+  },
+  "title": {
+    "id": "165",
+    "idLaw": "27",
+    "code": "LIBRO SEGUNDO",
+    "ordinal": "SEGUNDO",
+    "order": "3",
+    "order_def": "AAAA3BBBB5",
+    "name_es": "De los contratos de las Administraciones Públicas\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "290",
+    "idTitle": "165",
+    "code": "TÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "De los distintos tipos de contratos de las Administraciones Públicas\r",
+    "text_es": ""
+  },
+  "section": {
+    "id": "295",
+    "idChapter": "290",
+    "code": "CAPÍTULO IV",
+    "ordinal": "IV",
+    "order": "4",
+    "name_es": "Del contrato de suministro\r",
+    "text_es": ""
+  },
+  "code": "CAPÍTULO IV - ",
+  "qBySection": {
+    "295": {
+      "mainLevel": [
+        "1000",
+        "1001"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "qByArticle": []
+}

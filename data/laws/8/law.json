@@ -1,0 +1,121 @@
+{
+  "error": 0,
+  "arTitles": [
+    {
+      "id": "46",
+      "idLaw": "8",
+      "code": "CAPÍTULO I",
+      "ordinal": "I",
+      "order": "1",
+      "order_def": "AAAA1BBB19",
+      "name_es": "Disposiciones generales \r",
+      "text_es": ""
+    },
+    {
+      "id": "47",
+      "idLaw": "8",
+      "code": "CAPÍTULO II",
+      "ordinal": "II",
+      "order": "2",
+      "order_def": "AAAA2BBB19",
+      "name_es": "Servicio activo \r",
+      "text_es": ""
+    },
+    {
+      "id": "48",
+      "idLaw": "8",
+      "code": "CAPÍTULO III",
+      "ordinal": "III",
+      "order": "3",
+      "order_def": "AAAA3BBB19",
+      "name_es": "Servicios especiales\r",
+      "text_es": ""
+    },
+    {
+      "id": "49",
+      "idLaw": "8",
+      "code": "CAPÍTULO IV",
+      "ordinal": "IV",
+      "order": "4",
+      "order_def": "AAAA4BBB19",
+      "name_es": "Servicio en Comunidades Autónomas \r",
+      "text_es": ""
+    },
+    {
+      "id": "50",
+      "idLaw": "8",
+      "code": "CAPÍTULO V",
+      "ordinal": "V",
+      "order": "5",
+      "order_def": "AAAA5BBB19",
+      "name_es": "Expectativa de destino \r",
+      "text_es": ""
+    },
+    {
+      "id": "51",
+      "idLaw": "8",
+      "code": "CAPÍTULO VI",
+      "ordinal": "VI",
+      "order": "6",
+      "order_def": "AAAA6BBB19",
+      "name_es": "Excedencia forzosa \r",
+      "text_es": ""
+    },
+    {
+      "id": "52",
+      "idLaw": "8",
+      "code": "CAPÍTULO VII",
+      "ordinal": "VII",
+      "order": "7",
+      "order_def": "AAAA7BBB19",
+      "name_es": "Excedencia para el cuidado de hijos \r",
+      "text_es": ""
+    },
+    {
+      "id": "53",
+      "idLaw": "8",
+      "code": "CAPÍTULO VIII",
+      "ordinal": "VIII",
+      "order": "8",
+      "order_def": "AAAA8BBB19",
+      "name_es": "Excedencia voluntaria\r",
+      "text_es": ""
+    },
+    {
+      "id": "54",
+      "idLaw": "8",
+      "code": "CAPÍTULO IX",
+      "ordinal": "IX",
+      "order": "9",
+      "order_def": "AAAA9BBB19",
+      "name_es": "Suspensión de funciones\r",
+      "text_es": ""
+    },
+    {
+      "id": "55",
+      "idLaw": "8",
+      "code": "CAPÍTULO X",
+      "ordinal": "X",
+      "order": "10",
+      "order_def": "AAA10BBB19",
+      "name_es": "Cambio de situaciones administrativas \r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "8",
+    "code": "RD365/1995",
+    "ordinal": "RD365/1995",
+    "order": "19",
+    "order_def": "AAA19",
+    "publish": "YES",
+    "name_es": "Real Decreto 365/1995, de 10 de marzo, por el que se aprueba el Reglamento de situaciones administrativas de los funcionarios civiles de la Administración General del Estado.",
+    "acronim_es": "RD 365/1995 - Situaciones Administrativas"
+  },
+  "pt": true,
+  "qByLaw": [],
+  "qByLawNew": [],
+  "qByTitle": [],
+  "arArticles": [],
+  "qByArticle": []
+}

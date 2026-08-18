@@ -1,0 +1,74 @@
+{
+  "error": 0,
+  "arSections": [
+    {
+      "id": "338",
+      "idChapter": "331",
+      "code": "SECCIÓN 1",
+      "ordinal": "1",
+      "order": "1",
+      "name_es": "Líneas generales de actuación de los poderes públicos para promover la igualdad real y efectiva de las personas trans.\r",
+      "text_es": ""
+    },
+    {
+      "id": "339",
+      "idChapter": "331",
+      "code": "SECCIÓN 2",
+      "ordinal": "2",
+      "order": "2",
+      "name_es": "Medidas en el ámbito laboral para promover la igualdad real y efectiva de las personas trans.\r",
+      "text_es": ""
+    },
+    {
+      "id": "340",
+      "idChapter": "331",
+      "code": "SECCIÓN 3",
+      "ordinal": "3",
+      "order": "3",
+      "name_es": "Medidas en el ámbito de la salud para promover la igualdad real y efectiva de las personas trans.\r",
+      "text_es": ""
+    },
+    {
+      "id": "341",
+      "idChapter": "331",
+      "code": "SECCIÓN 4",
+      "ordinal": "4",
+      "order": "4",
+      "name_es": "Medidas en el ámbito educativo para promover la igualdad real y efectiva de las personas trans.",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "31",
+    "code": "L4/2023",
+    "ordinal": "L4/2023",
+    "order": "20",
+    "order_def": "AAA20",
+    "publish": "YES",
+    "name_es": "Ley 4/2023, de 28 de febrero, para la igualdad real y efectiva de las personas trans y para la garantía de los derechos de las personas LGTBI.",
+    "acronim_es": "Ley 4/2023, de 28 de febrero, para la igualdad real y efectiva de las personas trans y para la garantía de los derechos de las personas LGTBI."
+  },
+  "title": {
+    "id": "191",
+    "idLaw": "31",
+    "code": "TÍTULO II",
+    "ordinal": "II",
+    "order": "3",
+    "order_def": "AAAA3BBB20",
+    "name_es": "Medidas para la igualdad real y efectiva de las personas trans.\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "331",
+    "idTitle": "191",
+    "code": "CAPÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "Políticas públicas para promover la igualdad real y efectiva de las personas trans.\r",
+    "text_es": ""
+  },
+  "qByChapter": [],
+  "qBySection": [],
+  "arArticles": [],
+  "qByArticle": []
+}

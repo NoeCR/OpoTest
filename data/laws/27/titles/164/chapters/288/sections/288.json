@@ -1,0 +1,142 @@
+{
+  "error": 0,
+  "arArticles": [
+    {
+      "id": "2759",
+      "idLaw": "27",
+      "idTitle": "164",
+      "idChapter": "288",
+      "idSection": "288",
+      "code": "Artículo 106",
+      "ordinal": "106",
+      "order": "1",
+      "name_es": "Exigencia y régimen de la garantía provisional.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2760",
+      "idLaw": "27",
+      "idTitle": "164",
+      "idChapter": "288",
+      "idSection": "288",
+      "code": "Artículo 107",
+      "ordinal": "107",
+      "order": "2",
+      "name_es": "Exigencia de la garantía definitiva.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2761",
+      "idLaw": "27",
+      "idTitle": "164",
+      "idChapter": "288",
+      "idSection": "288",
+      "code": "Artículo 108",
+      "ordinal": "108",
+      "order": "3",
+      "name_es": "Garantías definitivas admisibles.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2762",
+      "idLaw": "27",
+      "idTitle": "164",
+      "idChapter": "288",
+      "idSection": "288",
+      "code": "Artículo 109",
+      "ordinal": "109",
+      "order": "4",
+      "name_es": "Constitución, reposición y reajuste de garantías.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2763",
+      "idLaw": "27",
+      "idTitle": "164",
+      "idChapter": "288",
+      "idSection": "288",
+      "code": "Artículo 110",
+      "ordinal": "110",
+      "order": "5",
+      "name_es": "Responsabilidades a que están afectas las garantías.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2764",
+      "idLaw": "27",
+      "idTitle": "164",
+      "idChapter": "288",
+      "idSection": "288",
+      "code": "Artículo 111",
+      "ordinal": "111",
+      "order": "6",
+      "name_es": "Devolución y cancelación de las garantías definitivas.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2765",
+      "idLaw": "27",
+      "idTitle": "164",
+      "idChapter": "288",
+      "idSection": "288",
+      "code": "Artículo 112",
+      "ordinal": "112",
+      "order": "7",
+      "name_es": "Régimen de las garantías prestadas por terceros.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2766",
+      "idLaw": "27",
+      "idTitle": "164",
+      "idChapter": "288",
+      "idSection": "288",
+      "code": "Artículo 113",
+      "ordinal": "113",
+      "order": "8",
+      "name_es": "Preferencia en la ejecución de garantías.\r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "27",
+    "code": "L9/2017",
+    "ordinal": "L9/2017",
+    "order": "5",
+    "order_def": "AAAA5",
+    "publish": "YES",
+    "name_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público, por la que se transponen al ordenamiento jurídico español las Directivas del Parlamento Europeo y del Consejo 2014/23/UE y 2014/24/UE, de 26 de febrero de 2014.",
+    "acronim_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público."
+  },
+  "title": {
+    "id": "164",
+    "idLaw": "27",
+    "code": "LIBRO PRIMERO",
+    "ordinal": "PRIMERO",
+    "order": "2",
+    "order_def": "AAAA2BBBB5",
+    "name_es": "Configuración general de la contratación del sector público y elementos estructurales de los contratos\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "288",
+    "idTitle": "164",
+    "code": "TÍTULO IV",
+    "ordinal": "IV",
+    "order": "4",
+    "name_es": "Garantías exigibles en la contratación del sector público\r",
+    "text_es": ""
+  },
+  "section": {
+    "id": "288",
+    "idChapter": "288",
+    "code": "CAPÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "name_es": "Garantías exigibles en los contratos celebrados con las Administraciones Públicas\r",
+    "text_es": ""
+  },
+  "code": "CAPÍTULO I - ",
+  "qBySection": [],
+  "qByArticle": []
+}

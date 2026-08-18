@@ -1,0 +1,118 @@
+{
+  "error": 0,
+  "arArticles": [
+    {
+      "id": "3559",
+      "idLaw": "36",
+      "idTitle": "232",
+      "idChapter": "459",
+      "idSection": "344",
+      "code": "Artículo 62",
+      "ordinal": "62",
+      "order": "1",
+      "name_es": "Artículo 62",
+      "text_es": ""
+    },
+    {
+      "id": "3560",
+      "idLaw": "36",
+      "idTitle": "232",
+      "idChapter": "459",
+      "idSection": "344",
+      "code": "Artículo 63",
+      "ordinal": "63",
+      "order": "2",
+      "name_es": "Artículo 63",
+      "text_es": ""
+    },
+    {
+      "id": "3561",
+      "idLaw": "36",
+      "idTitle": "232",
+      "idChapter": "459",
+      "idSection": "344",
+      "code": "Artículo 64",
+      "ordinal": "64",
+      "order": "3",
+      "name_es": "Artículo 64",
+      "text_es": ""
+    },
+    {
+      "id": "3562",
+      "idLaw": "36",
+      "idTitle": "232",
+      "idChapter": "459",
+      "idSection": "344",
+      "code": "Artículo 65",
+      "ordinal": "65",
+      "order": "4",
+      "name_es": "Artículo 65",
+      "text_es": ""
+    },
+    {
+      "id": "3563",
+      "idLaw": "36",
+      "idTitle": "232",
+      "idChapter": "459",
+      "idSection": "344",
+      "code": "Artículo 66",
+      "ordinal": "66",
+      "order": "5",
+      "name_es": "Artículo 66",
+      "text_es": ""
+    },
+    {
+      "id": "3564",
+      "idLaw": "36",
+      "idTitle": "232",
+      "idChapter": "459",
+      "idSection": "344",
+      "code": "Artículo 67",
+      "ordinal": "67",
+      "order": "6",
+      "name_es": "Artículo 67",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "36",
+    "code": "LO2/1979",
+    "ordinal": "LO2/1979",
+    "order": "24",
+    "order_def": "AAA24",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 2/1979, de 3 de octubre, del Tribunal Constitucional.",
+    "acronim_es": "Ley Orgánica 2/1979, del Tribunal Constitucional."
+  },
+  "title": {
+    "id": "232",
+    "idLaw": "36",
+    "code": "TÍTULO IV",
+    "ordinal": "IV",
+    "order": "4",
+    "order_def": "AAAA4BBB24",
+    "name_es": "De los conflictos constitucionales.\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "459",
+    "idTitle": "232",
+    "code": "CAPÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "De los conflictos entre el Estado y las Comunidades Autónomas o de éstas entre sí.\r",
+    "text_es": ""
+  },
+  "section": {
+    "id": "344",
+    "idChapter": "459",
+    "code": "SECCIÓN 1",
+    "ordinal": "1",
+    "order": "1",
+    "name_es": "Conflictos positivos.\r",
+    "text_es": ""
+  },
+  "code": "SECCIÓN 1 - ",
+  "qBySection": [],
+  "qByArticle": []
+}

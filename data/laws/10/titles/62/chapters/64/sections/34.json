@@ -1,0 +1,130 @@
+{
+  "error": 0,
+  "arArticles": [
+    {
+      "id": "1265",
+      "idLaw": "10",
+      "idTitle": "62",
+      "idChapter": "64",
+      "idSection": "34",
+      "code": "Artículo 8",
+      "ordinal": "8",
+      "order": "1",
+      "name_es": "Competencia\r",
+      "text_es": ""
+    },
+    {
+      "id": "1266",
+      "idLaw": "10",
+      "idTitle": "62",
+      "idChapter": "64",
+      "idSection": "34",
+      "code": "Artículo 9",
+      "ordinal": "9",
+      "order": "2",
+      "name_es": "Delegación de competencias\r",
+      "text_es": ""
+    },
+    {
+      "id": "1267",
+      "idLaw": "10",
+      "idTitle": "62",
+      "idChapter": "64",
+      "idSection": "34",
+      "code": "Artículo 10",
+      "ordinal": "10",
+      "order": "3",
+      "name_es": "Avocación\r",
+      "text_es": ""
+    },
+    {
+      "id": "1268",
+      "idLaw": "10",
+      "idTitle": "62",
+      "idChapter": "64",
+      "idSection": "34",
+      "code": "Artículo 11",
+      "ordinal": "11",
+      "order": "4",
+      "name_es": "Encomiendas de gestión\r",
+      "text_es": ""
+    },
+    {
+      "id": "1269",
+      "idLaw": "10",
+      "idTitle": "62",
+      "idChapter": "64",
+      "idSection": "34",
+      "code": "Artículo 12",
+      "ordinal": "12",
+      "order": "5",
+      "name_es": "Delegación de firma\r",
+      "text_es": ""
+    },
+    {
+      "id": "1270",
+      "idLaw": "10",
+      "idTitle": "62",
+      "idChapter": "64",
+      "idSection": "34",
+      "code": "Artículo 13",
+      "ordinal": "13",
+      "order": "6",
+      "name_es": "Suplencia\r",
+      "text_es": ""
+    },
+    {
+      "id": "1271",
+      "idLaw": "10",
+      "idTitle": "62",
+      "idChapter": "64",
+      "idSection": "34",
+      "code": "Artículo 14",
+      "ordinal": "14",
+      "order": "7",
+      "name_es": "Decisiones sobre competencia\r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "10",
+    "code": "L40/2015",
+    "ordinal": "L40/2015",
+    "order": "3",
+    "order_def": "AAAA3",
+    "publish": "YES",
+    "name_es": "Ley 40/2015, de 1 de octubre, de Régimen Jurídico del Sector Público.",
+    "acronim_es": "Ley 40/2015 - Régimen Jurídico del Sector Público."
+  },
+  "title": {
+    "id": "62",
+    "idLaw": "10",
+    "code": "TÍTULO PRELIMINAR",
+    "ordinal": "PRELIMINAR",
+    "order": "1",
+    "order_def": "AAAA1BBBB3",
+    "name_es": "Disposiciones generales, principios de actuación y funcionamiento del sector público\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "64",
+    "idTitle": "62",
+    "code": "CAPÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "De los órganos de las Administraciones Públicas\r",
+    "text_es": ""
+  },
+  "section": {
+    "id": "34",
+    "idChapter": "64",
+    "code": "SECCIÓN 2",
+    "ordinal": "2",
+    "order": "2",
+    "name_es": "Competencia",
+    "text_es": null
+  },
+  "code": "SECCIÓN 2 - ",
+  "qBySection": [],
+  "qByArticle": []
+}

@@ -1,0 +1,120 @@
+{
+  "error": 0,
+  "arChapters": [],
+  "law": {
+    "id": "4",
+    "code": "RDL5/2015",
+    "ordinal": "RDL5/2015",
+    "order": "4",
+    "order_def": "AAAA4",
+    "publish": "YES",
+    "name_es": "Real Decreto Legislativo 5/2015, de 30 de octubre, por el que se aprueba el texto refundido de la Ley del Estatuto Básico del Empleado Público.",
+    "acronim_es": "RDL 5/2015 - TREBEP"
+  },
+  "title": {
+    "id": "17",
+    "idLaw": "4",
+    "code": "TÍTULO VII",
+    "ordinal": "VII",
+    "order": "7",
+    "order_def": "AAAA7BBBB4",
+    "name_es": "Régimen disciplinario",
+    "text_es": ""
+  },
+  "qByTitle": {
+    "17": {
+      "mainLevel": [
+        "481",
+        "482",
+        "483",
+        "484"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "qByChapter": [],
+  "arArticles": [
+    {
+      "id": "305",
+      "idLaw": "4",
+      "idTitle": "17",
+      "idChapter": "0",
+      "idSection": "0",
+      "code": "Artículo 98",
+      "ordinal": "98",
+      "order": "1",
+      "name_es": "Procedimiento disciplinario y medidas provisionales",
+      "text_es": ""
+    },
+    {
+      "id": "304",
+      "idLaw": "4",
+      "idTitle": "17",
+      "idChapter": "0",
+      "idSection": "0",
+      "code": "Artículo 97",
+      "ordinal": "97",
+      "order": "2",
+      "name_es": "Prescripción de las faltas y sanciones",
+      "text_es": ""
+    },
+    {
+      "id": "303",
+      "idLaw": "4",
+      "idTitle": "17",
+      "idChapter": "0",
+      "idSection": "0",
+      "code": "Artículo 96",
+      "ordinal": "96",
+      "order": "3",
+      "name_es": "Sanciones",
+      "text_es": ""
+    },
+    {
+      "id": "302",
+      "idLaw": "4",
+      "idTitle": "17",
+      "idChapter": "0",
+      "idSection": "0",
+      "code": "Artículo 95",
+      "ordinal": "95",
+      "order": "4",
+      "name_es": "Faltas disciplinarias",
+      "text_es": ""
+    },
+    {
+      "id": "301",
+      "idLaw": "4",
+      "idTitle": "17",
+      "idChapter": "0",
+      "idSection": "0",
+      "code": "Artículo 94",
+      "ordinal": "94",
+      "order": "5",
+      "name_es": "Ejercicio de la potestad disciplinaria",
+      "text_es": ""
+    },
+    {
+      "id": "300",
+      "idLaw": "4",
+      "idTitle": "17",
+      "idChapter": "0",
+      "idSection": "0",
+      "code": "Artículo 93",
+      "ordinal": "93",
+      "order": "6",
+      "name_es": "Responsabilidad disciplinaria",
+      "text_es": ""
+    }
+  ],
+  "$arIdsArticles": [
+    "305",
+    "304",
+    "303",
+    "302",
+    "301",
+    "300"
+  ],
+  "qByArticle": []
+}

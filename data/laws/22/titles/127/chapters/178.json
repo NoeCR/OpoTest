@@ -1,0 +1,168 @@
+{
+  "error": 0,
+  "arSections": [],
+  "law": {
+    "id": "22",
+    "code": "L47/2003",
+    "ordinal": "L47/2003",
+    "order": "6",
+    "order_def": "AAAA6",
+    "publish": "YES",
+    "name_es": "Ley 47/2003, de 26 de noviembre, General Presupuestaria.",
+    "acronim_es": "Ley 47/2003, General Presupuestaria."
+  },
+  "title": {
+    "id": "127",
+    "idLaw": "22",
+    "code": "TÍTULO VI",
+    "ordinal": "VI",
+    "order": "6",
+    "order_def": "AAAA6BBBB6",
+    "name_es": "Del control de la gestión económico-financiera efectuado por la Intervención General de la Administración del Estado\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "178",
+    "idTitle": "127",
+    "code": "CAPÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "De la función interventora\r",
+    "text_es": ""
+  },
+  "qByChapter": {
+    "178": {
+      "mainLevel": [
+        "1018",
+        "1019",
+        "1020"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "qBySection": [],
+  "arArticles": [
+    {
+      "id": "2011",
+      "idLaw": "22",
+      "idTitle": "127",
+      "idChapter": "178",
+      "idSection": null,
+      "code": "Artículo 148",
+      "ordinal": "148",
+      "order": "1",
+      "name_es": "Definición.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2012",
+      "idLaw": "22",
+      "idTitle": "127",
+      "idChapter": "178",
+      "idSection": null,
+      "code": "Artículo 149",
+      "ordinal": "149",
+      "order": "2",
+      "name_es": "Ámbito de aplicación.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2013",
+      "idLaw": "22",
+      "idTitle": "127",
+      "idChapter": "178",
+      "idSection": null,
+      "code": "Artículo 150",
+      "ordinal": "150",
+      "order": "3",
+      "name_es": "Modalidades de ejercicio.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2014",
+      "idLaw": "22",
+      "idTitle": "127",
+      "idChapter": "178",
+      "idSection": null,
+      "code": "Artículo 150 bis",
+      "ordinal": "150 bis",
+      "order": "4",
+      "name_es": "Competencias.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2015",
+      "idLaw": "22",
+      "idTitle": "127",
+      "idChapter": "178",
+      "idSection": null,
+      "code": "Artículo 151",
+      "ordinal": "151",
+      "order": "5",
+      "name_es": "No sujeción a fiscalización previa.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2016",
+      "idLaw": "22",
+      "idTitle": "127",
+      "idChapter": "178",
+      "idSection": null,
+      "code": "Artículo 152",
+      "ordinal": "152",
+      "order": "6",
+      "name_es": "Fiscalización e intervención previa de requisitos básicos.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2017",
+      "idLaw": "22",
+      "idTitle": "127",
+      "idChapter": "178",
+      "idSection": null,
+      "code": "Artículo 153",
+      "ordinal": "153",
+      "order": "7",
+      "name_es": "Fiscalización previa e Intervención de pagos a justificar y anticipos de caja fija.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2018",
+      "idLaw": "22",
+      "idTitle": "127",
+      "idChapter": "178",
+      "idSection": null,
+      "code": "Artículo 154",
+      "ordinal": "154",
+      "order": "8",
+      "name_es": "Reparos.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2019",
+      "idLaw": "22",
+      "idTitle": "127",
+      "idChapter": "178",
+      "idSection": null,
+      "code": "Artículo 155",
+      "ordinal": "155",
+      "order": "9",
+      "name_es": "Discrepancias.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2020",
+      "idLaw": "22",
+      "idTitle": "127",
+      "idChapter": "178",
+      "idSection": null,
+      "code": "Artículo 156",
+      "ordinal": "156",
+      "order": "10",
+      "name_es": "Omisión de fiscalización.\r",
+      "text_es": ""
+    }
+  ],
+  "qByArticle": []
+}

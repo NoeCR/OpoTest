@@ -1,0 +1,47 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "24",
+    "code": "LO3/2007",
+    "ordinal": "LO3/2007",
+    "order": "10",
+    "order_def": "AAA10",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres.",
+    "acronim_es": "Ley Orgánica 3/2007- Igualdad efectiva de mujeres y hombres."
+  },
+  "title": {
+    "id": "145",
+    "idLaw": "24",
+    "code": "TÍTULO V",
+    "ordinal": "V",
+    "order": "6",
+    "order_def": "AAAA6BBB10",
+    "name_es": "El principio de igualdad en el empleo público.\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "279",
+    "idTitle": "145",
+    "code": "CAPÍTULO IV",
+    "ordinal": "IV",
+    "order": "4",
+    "name_es": "Fuerzas Armadas.\r",
+    "text_es": ""
+  },
+  "section": [],
+  "article": {
+    "id": "2297",
+    "idLaw": "24",
+    "idTitle": "145",
+    "idChapter": "279",
+    "idSection": null,
+    "code": "Artículo 66",
+    "ordinal": "66",
+    "order": "2",
+    "name_es": "Aplicación en las Fuerzas Armadas de las normas referidas al personal de las administraciones públicas.\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

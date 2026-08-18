@@ -1,0 +1,113 @@
+{
+  "error": 0,
+  "arTitles": [
+    {
+      "id": "82",
+      "idLaw": "14",
+      "code": "TÍTULO I",
+      "ordinal": "I",
+      "order": "1",
+      "order_def": "AAAA1BBB21",
+      "name_es": "Nombramiento, cese y condiciones\r",
+      "text_es": ""
+    },
+    {
+      "id": "83",
+      "idLaw": "14",
+      "code": "TÍTULO II",
+      "ordinal": "II",
+      "order": "2",
+      "order_def": "AAAA2BBB21",
+      "name_es": "Del procedimiento\r",
+      "text_es": ""
+    },
+    {
+      "id": "84",
+      "idLaw": "14",
+      "code": "TÍTULO III",
+      "ordinal": "III",
+      "order": "3",
+      "order_def": "AAAA3BBB21",
+      "name_es": "De las resoluciones\r",
+      "text_es": ""
+    },
+    {
+      "id": "85",
+      "idLaw": "14",
+      "code": "TÍTULO IV",
+      "ordinal": "IV",
+      "order": "4",
+      "order_def": "AAAA4BBB21",
+      "name_es": "Medios personales y materiales",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "14",
+    "code": "LO3/1981",
+    "ordinal": "LO3/1981",
+    "order": "21",
+    "order_def": "AAA21",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 3/1981, de 6 de abril, del Defensor del Pueblo.",
+    "acronim_es": "LO 3/1981 - Defensor del Pueblo"
+  },
+  "pt": true,
+  "qByLaw": {
+    "14": {
+      "mainLevel": [],
+      "subLevel": [
+        "821",
+        "826",
+        "827",
+        "828",
+        "829",
+        "830"
+      ],
+      "userDone": 0
+    }
+  },
+  "qByLawNew": {
+    "14": {
+      "mainLevel": [],
+      "subLevel": [
+        "821",
+        "826",
+        "827",
+        "828",
+        "829",
+        "830"
+      ],
+      "userDone": 0,
+      "recent": 0
+    }
+  },
+  "qByTitle": {
+    "82": {
+      "mainLevel": [
+        "821",
+        "826"
+      ],
+      "subLevel": [],
+      "recent": 0
+    },
+    "83": {
+      "mainLevel": [
+        "827",
+        "828",
+        "829"
+      ],
+      "subLevel": [],
+      "recent": 0
+    },
+    "84": {
+      "mainLevel": [
+        "830"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "arArticles": [],
+  "qByArticle": []
+}

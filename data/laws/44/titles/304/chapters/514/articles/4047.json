@@ -1,0 +1,47 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "44",
+    "code": "LO1/2004",
+    "ordinal": "LO1/2004",
+    "order": "29",
+    "order_def": "AAA29",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 1/2004, de 28 de diciembre, de Medidas de Protección Integral contra la Violencia de Género.",
+    "acronim_es": "Ley Orgánica 1/2004 Medidas de Protección contra la Violencia de Género."
+  },
+  "title": {
+    "id": "304",
+    "idLaw": "44",
+    "code": "TÍTULO V",
+    "ordinal": "V",
+    "order": "6",
+    "order_def": "AAAA6BBB29",
+    "name_es": "Tutela Judicial",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "514",
+    "idTitle": "304",
+    "code": "CAPÍTULO V",
+    "ordinal": "V",
+    "order": "5",
+    "name_es": "Del Fiscal contra la Violencia sobre la Mujer",
+    "text_es": ""
+  },
+  "section": [],
+  "article": {
+    "id": "4047",
+    "idLaw": "44",
+    "idTitle": "304",
+    "idChapter": "514",
+    "idSection": null,
+    "code": "Artículo 72",
+    "ordinal": "72",
+    "order": "3",
+    "name_es": "Delegados de la Jefatura de la Fiscalía.",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

@@ -1,0 +1,47 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "15",
+    "code": "L7/1985",
+    "ordinal": "L7/1985",
+    "order": "26",
+    "order_def": "AAA26",
+    "publish": "YES",
+    "name_es": "Ley 7/1985, de 2 de abril, reguladora de las Bases del Régimen Local",
+    "acronim_es": "Ley 7/1985 - Bases del Régimen Local"
+  },
+  "title": {
+    "id": "90",
+    "idLaw": "15",
+    "code": "TÍTULO V",
+    "ordinal": "V",
+    "order": "5",
+    "order_def": "AAAA5BBB26",
+    "name_es": "Disposiciones comunes a las entidades locales\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "136",
+    "idTitle": "90",
+    "code": "CAPÍTULO III",
+    "ordinal": "III",
+    "order": "3",
+    "name_es": "Impugnación de actos y acuerdos y ejercicio de acciones\r",
+    "text_es": ""
+  },
+  "section": [],
+  "article": {
+    "id": "1602",
+    "idLaw": "15",
+    "idTitle": "90",
+    "idChapter": "136",
+    "idSection": null,
+    "code": "Artículo 64",
+    "ordinal": "64",
+    "order": "2",
+    "name_es": "\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

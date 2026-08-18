@@ -1,0 +1,75 @@
+{
+  "error": 0,
+  "arChapters": [
+    {
+      "id": "276",
+      "idTitle": "145",
+      "code": "CAPÍTULO I",
+      "ordinal": "I",
+      "order": "1",
+      "name_es": "Criterios de acuación de las Admsinitraciones públicas.\r",
+      "text_es": ""
+    },
+    {
+      "id": "277",
+      "idTitle": "145",
+      "code": "CAPÍTULO II",
+      "ordinal": "II",
+      "order": "2",
+      "name_es": "El principio de presencia equilibrada en la Administración General del Estado y en los organismos públicos vinculados o dependientes de ella.\r",
+      "text_es": ""
+    },
+    {
+      "id": "278",
+      "idTitle": "145",
+      "code": "CAPÍTULO III",
+      "ordinal": "III",
+      "order": "3",
+      "name_es": "Medidas de Igualdad en el empleo para la Administración General del Estado y para los organismos públicos vinculados o dependientes de ella.\r",
+      "text_es": ""
+    },
+    {
+      "id": "279",
+      "idTitle": "145",
+      "code": "CAPÍTULO IV",
+      "ordinal": "IV",
+      "order": "4",
+      "name_es": "Fuerzas Armadas.\r",
+      "text_es": ""
+    },
+    {
+      "id": "280",
+      "idTitle": "145",
+      "code": "CAPÍTULO V",
+      "ordinal": "V",
+      "order": "5",
+      "name_es": "Fuerzas y Cuerpos de Seguridad del Estado.",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "24",
+    "code": "LO3/2007",
+    "ordinal": "LO3/2007",
+    "order": "10",
+    "order_def": "AAA10",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres.",
+    "acronim_es": "Ley Orgánica 3/2007- Igualdad efectiva de mujeres y hombres."
+  },
+  "title": {
+    "id": "145",
+    "idLaw": "24",
+    "code": "TÍTULO V",
+    "ordinal": "V",
+    "order": "6",
+    "order_def": "AAAA6BBB10",
+    "name_es": "El principio de igualdad en el empleo público.\r",
+    "text_es": ""
+  },
+  "qByTitle": [],
+  "qByChapter": [],
+  "arArticles": [],
+  "$arIdsArticles": [],
+  "qByArticle": []
+}

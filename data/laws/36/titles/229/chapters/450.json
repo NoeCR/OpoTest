@@ -1,0 +1,170 @@
+{
+  "error": 0,
+  "arSections": [],
+  "law": {
+    "id": "36",
+    "code": "LO2/1979",
+    "ordinal": "LO2/1979",
+    "order": "24",
+    "order_def": "AAA24",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 2/1979, de 3 de octubre, del Tribunal Constitucional.",
+    "acronim_es": "Ley Orgánica 2/1979, del Tribunal Constitucional."
+  },
+  "title": {
+    "id": "229",
+    "idLaw": "36",
+    "code": "TÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "order_def": "AAAA1BBB24",
+    "name_es": "Del Tribunal Constitucional.\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "450",
+    "idTitle": "229",
+    "code": "CAPÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "De los Magistrados del Tribunal Constitucional.\r",
+    "text_es": ""
+  },
+  "qByChapter": [],
+  "qBySection": [],
+  "arArticles": [
+    {
+      "id": "3513",
+      "idLaw": "36",
+      "idTitle": "229",
+      "idChapter": "450",
+      "idSection": null,
+      "code": "Artículo 16",
+      "ordinal": "16",
+      "order": "1",
+      "name_es": "Artículo 16",
+      "text_es": ""
+    },
+    {
+      "id": "3514",
+      "idLaw": "36",
+      "idTitle": "229",
+      "idChapter": "450",
+      "idSection": null,
+      "code": "Artículo 17",
+      "ordinal": "17",
+      "order": "2",
+      "name_es": "Artículo 17",
+      "text_es": ""
+    },
+    {
+      "id": "3515",
+      "idLaw": "36",
+      "idTitle": "229",
+      "idChapter": "450",
+      "idSection": null,
+      "code": "Artículo 18",
+      "ordinal": "18",
+      "order": "3",
+      "name_es": "Artículo 18",
+      "text_es": ""
+    },
+    {
+      "id": "3516",
+      "idLaw": "36",
+      "idTitle": "229",
+      "idChapter": "450",
+      "idSection": null,
+      "code": "Artículo 19",
+      "ordinal": "19",
+      "order": "4",
+      "name_es": "Artículo 19",
+      "text_es": ""
+    },
+    {
+      "id": "3517",
+      "idLaw": "36",
+      "idTitle": "229",
+      "idChapter": "450",
+      "idSection": null,
+      "code": "Artículo 20",
+      "ordinal": "20",
+      "order": "5",
+      "name_es": "Artículo 20",
+      "text_es": ""
+    },
+    {
+      "id": "3518",
+      "idLaw": "36",
+      "idTitle": "229",
+      "idChapter": "450",
+      "idSection": null,
+      "code": "Artículo 21",
+      "ordinal": "21",
+      "order": "6",
+      "name_es": "Artículo 21",
+      "text_es": ""
+    },
+    {
+      "id": "3519",
+      "idLaw": "36",
+      "idTitle": "229",
+      "idChapter": "450",
+      "idSection": null,
+      "code": "Artículo 22",
+      "ordinal": "22",
+      "order": "7",
+      "name_es": "Artículo 22",
+      "text_es": ""
+    },
+    {
+      "id": "3520",
+      "idLaw": "36",
+      "idTitle": "229",
+      "idChapter": "450",
+      "idSection": null,
+      "code": "Artículo 23",
+      "ordinal": "23",
+      "order": "8",
+      "name_es": "Artículo 23",
+      "text_es": ""
+    },
+    {
+      "id": "3521",
+      "idLaw": "36",
+      "idTitle": "229",
+      "idChapter": "450",
+      "idSection": null,
+      "code": "Artículo 24",
+      "ordinal": "24",
+      "order": "9",
+      "name_es": "Artículo 24",
+      "text_es": ""
+    },
+    {
+      "id": "3522",
+      "idLaw": "36",
+      "idTitle": "229",
+      "idChapter": "450",
+      "idSection": null,
+      "code": "Artículo 25",
+      "ordinal": "25",
+      "order": "10",
+      "name_es": "Artículo 25",
+      "text_es": ""
+    },
+    {
+      "id": "3523",
+      "idLaw": "36",
+      "idTitle": "229",
+      "idChapter": "450",
+      "idSection": null,
+      "code": "Artículo 26",
+      "ordinal": "26",
+      "order": "11",
+      "name_es": "Artículo 26",
+      "text_es": ""
+    }
+  ],
+  "qByArticle": []
+}

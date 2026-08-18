@@ -1,0 +1,154 @@
+{
+  "error": 0,
+  "arArticles": [
+    {
+      "id": "1934",
+      "idLaw": "22",
+      "idTitle": "123",
+      "idChapter": "164",
+      "idSection": "93",
+      "code": "Artículo 73",
+      "ordinal": "73",
+      "order": "1",
+      "name_es": "Fases del procedimiento de la gestión de los gastos.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1935",
+      "idLaw": "22",
+      "idTitle": "123",
+      "idChapter": "164",
+      "idSection": "93",
+      "code": "Artículo 74",
+      "ordinal": "74",
+      "order": "2",
+      "name_es": "Competencias en materia de gestión de gastos.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1936",
+      "idLaw": "22",
+      "idTitle": "123",
+      "idChapter": "164",
+      "idSection": "93",
+      "code": "Artículo 75",
+      "ordinal": "75",
+      "order": "3",
+      "name_es": "Ordenación de pagos.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1937",
+      "idLaw": "22",
+      "idTitle": "123",
+      "idChapter": "164",
+      "idSection": "93",
+      "code": "Artículo 76",
+      "ordinal": "76",
+      "order": "4",
+      "name_es": "Embargo de derechos de cobro.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1938",
+      "idLaw": "22",
+      "idTitle": "123",
+      "idChapter": "164",
+      "idSection": "93",
+      "code": "Artículo 77",
+      "ordinal": "77",
+      "order": "5",
+      "name_es": "Pagos indebidos y demás reintegros.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1939",
+      "idLaw": "22",
+      "idTitle": "123",
+      "idChapter": "164",
+      "idSection": "93",
+      "code": "Artículo 78",
+      "ordinal": "78",
+      "order": "6",
+      "name_es": "Anticipos de caja fija y fondos de maniobra.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1940",
+      "idLaw": "22",
+      "idTitle": "123",
+      "idChapter": "164",
+      "idSection": "93",
+      "code": "Artículo 79",
+      "ordinal": "79",
+      "order": "7",
+      "name_es": "Pagos a justificar.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1941",
+      "idLaw": "22",
+      "idTitle": "123",
+      "idChapter": "164",
+      "idSection": "93",
+      "code": "Artículo 80",
+      "ordinal": "80",
+      "order": "8",
+      "name_es": "Gestión de Presupuestos de ingresos.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1942",
+      "idLaw": "22",
+      "idTitle": "123",
+      "idChapter": "164",
+      "idSection": "93",
+      "code": "Artículo 81",
+      "ordinal": "81",
+      "order": "9",
+      "name_es": "Devoluciones de ingresos.\r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "22",
+    "code": "L47/2003",
+    "ordinal": "L47/2003",
+    "order": "6",
+    "order_def": "AAAA6",
+    "publish": "YES",
+    "name_es": "Ley 47/2003, de 26 de noviembre, General Presupuestaria.",
+    "acronim_es": "Ley 47/2003, General Presupuestaria."
+  },
+  "title": {
+    "id": "123",
+    "idLaw": "22",
+    "code": "TÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "order_def": "AAAA2BBBB6",
+    "name_es": "De los Presupuestos Generales del Estado\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "164",
+    "idTitle": "123",
+    "code": "CAPÍTULO VI",
+    "ordinal": "VI",
+    "order": "6",
+    "name_es": "De la Gestión presupuestaria\r",
+    "text_es": ""
+  },
+  "section": {
+    "id": "93",
+    "idChapter": "164",
+    "code": "SECCIÓN 3",
+    "ordinal": "3",
+    "order": "3",
+    "name_es": "Gestión de los presupuestos generales del estado\r",
+    "text_es": ""
+  },
+  "code": "SECCIÓN 3 - ",
+  "qBySection": [],
+  "qByArticle": []
+}

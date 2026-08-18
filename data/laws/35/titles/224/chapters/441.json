@@ -1,0 +1,98 @@
+{
+  "error": 0,
+  "arSections": [],
+  "law": {
+    "id": "35",
+    "code": "L38/2003",
+    "ordinal": "L38/2003",
+    "order": "28",
+    "order_def": "AAA28",
+    "publish": "YES",
+    "name_es": "Ley 38/2003, de 17 de noviembre, General de Subvenciones.",
+    "acronim_es": "Ley 38/2003, de 17 de noviembre, General de Subvenciones."
+  },
+  "title": {
+    "id": "224",
+    "idLaw": "35",
+    "code": "TÍTULO I",
+    "ordinal": "I",
+    "order": "2",
+    "order_def": "AAAA2BBB28",
+    "name_es": "Procedimientos de concesión y gestión de las subvenciones.\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "441",
+    "idTitle": "224",
+    "code": "CAPÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "Del procedimiento de concesión en régimen de concurrencia competitiva\r",
+    "text_es": ""
+  },
+  "qByChapter": [],
+  "qBySection": [],
+  "arArticles": [
+    {
+      "id": "3451",
+      "idLaw": "35",
+      "idTitle": "224",
+      "idChapter": "441",
+      "idSection": null,
+      "code": "Artículo 23",
+      "ordinal": "23",
+      "order": "1",
+      "name_es": "Iniciación\r",
+      "text_es": ""
+    },
+    {
+      "id": "3452",
+      "idLaw": "35",
+      "idTitle": "224",
+      "idChapter": "441",
+      "idSection": null,
+      "code": "Artículo 24",
+      "ordinal": "24",
+      "order": "2",
+      "name_es": "Instrucción\r",
+      "text_es": ""
+    },
+    {
+      "id": "3453",
+      "idLaw": "35",
+      "idTitle": "224",
+      "idChapter": "441",
+      "idSection": null,
+      "code": "Artículo 25",
+      "ordinal": "25",
+      "order": "3",
+      "name_es": "Resolución\r",
+      "text_es": ""
+    },
+    {
+      "id": "3454",
+      "idLaw": "35",
+      "idTitle": "224",
+      "idChapter": "441",
+      "idSection": null,
+      "code": "Artículo 26",
+      "ordinal": "26",
+      "order": "4",
+      "name_es": "Notificación de la resolución\r",
+      "text_es": ""
+    },
+    {
+      "id": "3455",
+      "idLaw": "35",
+      "idTitle": "224",
+      "idChapter": "441",
+      "idSection": null,
+      "code": "Artículo 27",
+      "ordinal": "27",
+      "order": "5",
+      "name_es": "Reformulación de las solicitudes\r",
+      "text_es": ""
+    }
+  ],
+  "qByArticle": []
+}

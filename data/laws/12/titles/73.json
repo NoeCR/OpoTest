@@ -1,0 +1,67 @@
+{
+  "error": 0,
+  "arChapters": [
+    {
+      "id": "98",
+      "idTitle": "73",
+      "code": "CAPÍTULO I",
+      "ordinal": "I",
+      "order": "1",
+      "name_es": "De los miembros del Gobierno\r",
+      "text_es": ""
+    },
+    {
+      "id": "99",
+      "idTitle": "73",
+      "code": "CAPÍTULO II",
+      "ordinal": "II",
+      "order": "2",
+      "name_es": "De los Secretarios de Estado\r",
+      "text_es": ""
+    },
+    {
+      "id": "100",
+      "idTitle": "73",
+      "code": "CAPÍTULO III",
+      "ordinal": "III",
+      "order": "3",
+      "name_es": "De los Directores de los Gabinetes de Presidente, Vicepresidentes, Ministros y Secretarios de Estado",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "12",
+    "code": "L50/1997",
+    "ordinal": "L50/1997",
+    "order": "9",
+    "order_def": "AAAA9",
+    "publish": "YES",
+    "name_es": "Ley 50/1997, de 27 de noviembre, del Gobierno",
+    "acronim_es": "Ley 50/1997 - del Gobierno"
+  },
+  "title": {
+    "id": "73",
+    "idLaw": "12",
+    "code": "TÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "order_def": "AAAA2BBBB9",
+    "name_es": "Del estatuto de los miembros del Gobierno, de los Secretarios de Estado y de los Directores de los Gabinetes\r",
+    "text_es": ""
+  },
+  "qByTitle": {
+    "73": {
+      "mainLevel": [
+        "229",
+        "230",
+        "816"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "qByChapter": [],
+  "arArticles": [],
+  "$arIdsArticles": [],
+  "qByArticle": []
+}

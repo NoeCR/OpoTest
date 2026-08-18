@@ -1,0 +1,39 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "44",
+    "code": "LO1/2004",
+    "ordinal": "LO1/2004",
+    "order": "29",
+    "order_def": "AAA29",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 1/2004, de 28 de diciembre, de Medidas de Protección Integral contra la Violencia de Género.",
+    "acronim_es": "Ley Orgánica 1/2004 Medidas de Protección contra la Violencia de Género."
+  },
+  "title": {
+    "id": "302",
+    "idLaw": "44",
+    "code": "TÍTULO III",
+    "ordinal": "III",
+    "order": "4",
+    "order_def": "AAAA4BBB29",
+    "name_es": "Tutela Institucional\r",
+    "text_es": ""
+  },
+  "chapter": [],
+  "section": [],
+  "article": {
+    "id": "4004",
+    "idLaw": "44",
+    "idTitle": "302",
+    "idChapter": null,
+    "idSection": null,
+    "code": "Artículo 29",
+    "ordinal": "29",
+    "order": "1",
+    "name_es": "La Delegación del Gobierno contra la Violencia de Género.\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

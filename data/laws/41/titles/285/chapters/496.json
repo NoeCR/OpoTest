@@ -1,0 +1,86 @@
+{
+  "error": 0,
+  "arSections": [],
+  "law": {
+    "id": "41",
+    "code": "LO2/1982",
+    "ordinal": "LO2/1982",
+    "order": "25",
+    "order_def": "AAA25",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 2/1982, de 12 de mayo, del Tribunal de Cuentas.",
+    "acronim_es": "Ley Orgánica 2/1982, de 12 de mayo, del Tribunal de Cuentas."
+  },
+  "title": {
+    "id": "285",
+    "idLaw": "41",
+    "code": "TÍTULO IV",
+    "ordinal": "IV",
+    "order": "4",
+    "order_def": "AAAA4BBB25",
+    "name_es": "La responsabilidad contable\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "496",
+    "idTitle": "285",
+    "code": "CAPÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "name_es": "Disposiciones comunes\r",
+    "text_es": ""
+  },
+  "qByChapter": [],
+  "qBySection": [],
+  "arArticles": [
+    {
+      "id": "3931",
+      "idLaw": "41",
+      "idTitle": "285",
+      "idChapter": "496",
+      "idSection": null,
+      "code": "Artículo 38",
+      "ordinal": "38",
+      "order": "1",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "3932",
+      "idLaw": "41",
+      "idTitle": "285",
+      "idChapter": "496",
+      "idSection": null,
+      "code": "Artículo 39",
+      "ordinal": "39",
+      "order": "2",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "3933",
+      "idLaw": "41",
+      "idTitle": "285",
+      "idChapter": "496",
+      "idSection": null,
+      "code": "Artículo 40",
+      "ordinal": "40",
+      "order": "3",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "3934",
+      "idLaw": "41",
+      "idTitle": "285",
+      "idChapter": "496",
+      "idSection": null,
+      "code": "Artículo 41",
+      "ordinal": "41",
+      "order": "4",
+      "name_es": "\r",
+      "text_es": ""
+    }
+  ],
+  "qByArticle": []
+}

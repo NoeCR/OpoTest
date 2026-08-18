@@ -1,0 +1,186 @@
+{
+  "error": 0,
+  "arChapters": [],
+  "law": {
+    "id": "5",
+    "code": "CONSTITUCIÓN",
+    "ordinal": "CONSTITUCIÓN",
+    "order": "1",
+    "order_def": "AAAA1",
+    "publish": "YES",
+    "name_es": "Constitución Española de 1978",
+    "acronim_es": "Constitución Española"
+  },
+  "title": {
+    "id": "21",
+    "idLaw": "5",
+    "code": "TÍTULO II",
+    "ordinal": "II",
+    "order": "4",
+    "order_def": "AAAA4BBBB1",
+    "name_es": "De la Corona",
+    "text_es": "Artículos del 56 al 65"
+  },
+  "qByTitle": {
+    "21": {
+      "mainLevel": [
+        "76",
+        "77",
+        "78",
+        "79",
+        "80",
+        "81",
+        "82",
+        "83",
+        "84",
+        "85",
+        "86",
+        "87",
+        "88",
+        "89",
+        "90",
+        "91",
+        "92",
+        "93"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "qByChapter": [],
+  "arArticles": [
+    {
+      "id": "363",
+      "idLaw": "5",
+      "idTitle": "21",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 56",
+      "ordinal": "56",
+      "order": "1",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "364",
+      "idLaw": "5",
+      "idTitle": "21",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 57",
+      "ordinal": "57",
+      "order": "2",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "365",
+      "idLaw": "5",
+      "idTitle": "21",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 58",
+      "ordinal": "58",
+      "order": "3",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "366",
+      "idLaw": "5",
+      "idTitle": "21",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 59",
+      "ordinal": "59",
+      "order": "4",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "367",
+      "idLaw": "5",
+      "idTitle": "21",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 60",
+      "ordinal": "60",
+      "order": "5",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "368",
+      "idLaw": "5",
+      "idTitle": "21",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 61",
+      "ordinal": "61",
+      "order": "6",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "369",
+      "idLaw": "5",
+      "idTitle": "21",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 62",
+      "ordinal": "62",
+      "order": "7",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "370",
+      "idLaw": "5",
+      "idTitle": "21",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 63",
+      "ordinal": "63",
+      "order": "8",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "371",
+      "idLaw": "5",
+      "idTitle": "21",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 64",
+      "ordinal": "64",
+      "order": "9",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "372",
+      "idLaw": "5",
+      "idTitle": "21",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 65",
+      "ordinal": "65",
+      "order": "10",
+      "name_es": "\r",
+      "text_es": ""
+    }
+  ],
+  "$arIdsArticles": [
+    "363",
+    "364",
+    "365",
+    "366",
+    "367",
+    "368",
+    "369",
+    "370",
+    "371",
+    "372"
+  ],
+  "qByArticle": []
+}

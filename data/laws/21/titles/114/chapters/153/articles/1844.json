@@ -1,0 +1,47 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "21",
+    "code": "L2/2014",
+    "ordinal": "L2/2014",
+    "order": "12",
+    "order_def": "AAA12",
+    "publish": "YES",
+    "name_es": "Ley 2/2014, de 25 de marzo, de la Acción y del Servicio Exterior del Estado.",
+    "acronim_es": "Ley 2/2014 - Acción y del Servicio Exterior del Estado."
+  },
+  "title": {
+    "id": "114",
+    "idLaw": "21",
+    "code": "TÍTULO III",
+    "ordinal": "III",
+    "order": "4",
+    "order_def": "AAAA4BBB12",
+    "name_es": "De la Administración General del Estado en el exterior: El Servicio Exterior del Estado",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "153",
+    "idTitle": "114",
+    "code": "CAPÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "name_es": "Organización del Servicio Exterior del Estado\r",
+    "text_es": ""
+  },
+  "section": [],
+  "article": {
+    "id": "1844",
+    "idLaw": "21",
+    "idTitle": "114",
+    "idChapter": "153",
+    "idSection": null,
+    "code": "Artículo 44",
+    "ordinal": "44",
+    "order": "3",
+    "name_es": "Jefatura de la Misión.\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

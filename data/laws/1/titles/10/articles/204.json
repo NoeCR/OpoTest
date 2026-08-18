@@ -1,0 +1,39 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "1",
+    "code": "L39/2015",
+    "ordinal": "L39/2015",
+    "order": "2",
+    "order_def": "AAAA2",
+    "publish": "YES",
+    "name_es": "Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas",
+    "acronim_es": "Ley 39/2015, del Procedimiento Administrativo Común"
+  },
+  "title": {
+    "id": "10",
+    "idLaw": "1",
+    "code": "TÍTULO VI",
+    "ordinal": "VI",
+    "order": "7",
+    "order_def": "AAAA7BBBB2",
+    "name_es": "De la iniciativa legislativa y de la potestad para dictar reglamentos y otras disposiciones.",
+    "text_es": "Artículos del 127 al 133"
+  },
+  "chapter": [],
+  "section": [],
+  "article": {
+    "id": "204",
+    "idLaw": "1",
+    "idTitle": "10",
+    "idChapter": null,
+    "idSection": null,
+    "code": "Artículo 131",
+    "ordinal": "131",
+    "order": "5",
+    "name_es": "Publicidad de las normas.",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

@@ -1,0 +1,48 @@
+{
+  "error": 0,
+  "arChapters": [
+    {
+      "id": "494",
+      "idTitle": "284",
+      "code": "CAPÍTULO I",
+      "ordinal": "I",
+      "order": "1",
+      "name_es": "Los miembros del Tribunal\r",
+      "text_es": ""
+    },
+    {
+      "id": "495",
+      "idTitle": "284",
+      "code": "CAPÍTULO II",
+      "ordinal": "II",
+      "order": "2",
+      "name_es": "El personal al servicio del Tribunal\r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "41",
+    "code": "LO2/1982",
+    "ordinal": "LO2/1982",
+    "order": "25",
+    "order_def": "AAA25",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 2/1982, de 12 de mayo, del Tribunal de Cuentas.",
+    "acronim_es": "Ley Orgánica 2/1982, de 12 de mayo, del Tribunal de Cuentas."
+  },
+  "title": {
+    "id": "284",
+    "idLaw": "41",
+    "code": "TÍTULO III",
+    "ordinal": "III",
+    "order": "3",
+    "order_def": "AAAA3BBB25",
+    "name_es": "Los miembros del Tribunal y el personal a su servicio\r",
+    "text_es": ""
+  },
+  "qByTitle": [],
+  "qByChapter": [],
+  "arArticles": [],
+  "$arIdsArticles": [],
+  "qByArticle": []
+}

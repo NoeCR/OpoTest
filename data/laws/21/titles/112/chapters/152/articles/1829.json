@@ -1,0 +1,47 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "21",
+    "code": "L2/2014",
+    "ordinal": "L2/2014",
+    "order": "12",
+    "order_def": "AAA12",
+    "publish": "YES",
+    "name_es": "Ley 2/2014, de 25 de marzo, de la Acción y del Servicio Exterior del Estado.",
+    "acronim_es": "Ley 2/2014 - Acción y del Servicio Exterior del Estado."
+  },
+  "title": {
+    "id": "112",
+    "idLaw": "21",
+    "code": "TÍTULO I",
+    "ordinal": "I",
+    "order": "2",
+    "order_def": "AAAA2BBB12",
+    "name_es": "Sujetos y ámbitos de la Acción Exterior\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "152",
+    "idTitle": "112",
+    "code": "CAPÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "Ámbitos de la Acción Exterior del Estado\r",
+    "text_es": ""
+  },
+  "section": [],
+  "article": {
+    "id": "1829",
+    "idLaw": "21",
+    "idTitle": "112",
+    "idChapter": "152",
+    "idSection": null,
+    "code": "Artículo 29",
+    "ordinal": "29",
+    "order": "16",
+    "name_es": "Acción Exterior en materia agraria, alimentaria, pesquera y medioambiental.\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

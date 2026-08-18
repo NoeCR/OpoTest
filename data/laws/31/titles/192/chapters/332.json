@@ -1,0 +1,110 @@
+{
+  "error": 0,
+  "arSections": [],
+  "law": {
+    "id": "31",
+    "code": "L4/2023",
+    "ordinal": "L4/2023",
+    "order": "20",
+    "order_def": "AAA20",
+    "publish": "YES",
+    "name_es": "Ley 4/2023, de 28 de febrero, para la igualdad real y efectiva de las personas trans y para la garantía de los derechos de las personas LGTBI.",
+    "acronim_es": "Ley 4/2023, de 28 de febrero, para la igualdad real y efectiva de las personas trans y para la garantía de los derechos de las personas LGTBI."
+  },
+  "title": {
+    "id": "192",
+    "idLaw": "31",
+    "code": "TÍTULO III",
+    "ordinal": "III",
+    "order": "4",
+    "order_def": "AAAA4BBB20",
+    "name_es": "Protección efectiva y reparación frente a la discriminación y la violencia por LGTBIfobia.\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "332",
+    "idTitle": "192",
+    "code": "CAPÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "name_es": "Medidas generales de protección y reparación.\r",
+    "text_es": ""
+  },
+  "qByChapter": [],
+  "qBySection": [],
+  "arArticles": [
+    {
+      "id": "3342",
+      "idLaw": "31",
+      "idTitle": "192",
+      "idChapter": "332",
+      "idSection": null,
+      "code": "Artículo 62",
+      "ordinal": "62",
+      "order": "1",
+      "name_es": "Medidas de protección frente a la discriminación y la violencia.\r",
+      "text_es": ""
+    },
+    {
+      "id": "3343",
+      "idLaw": "31",
+      "idTitle": "192",
+      "idChapter": "332",
+      "idSection": null,
+      "code": "Artículo 63",
+      "ordinal": "63",
+      "order": "2",
+      "name_es": "Actuación administrativa contra la discriminación.\r",
+      "text_es": ""
+    },
+    {
+      "id": "3344",
+      "idLaw": "31",
+      "idTitle": "192",
+      "idChapter": "332",
+      "idSection": null,
+      "code": "Artículo 64",
+      "ordinal": "64",
+      "order": "3",
+      "name_es": "Nulidad de los contratos y negocios jurídicos discriminatorios.\r",
+      "text_es": ""
+    },
+    {
+      "id": "3345",
+      "idLaw": "31",
+      "idTitle": "192",
+      "idChapter": "332",
+      "idSection": null,
+      "code": "Artículo 65",
+      "ordinal": "65",
+      "order": "4",
+      "name_es": "Legitimación para la defensa del derecho a la igualdad de trato y no discriminación.\r",
+      "text_es": ""
+    },
+    {
+      "id": "3346",
+      "idLaw": "31",
+      "idTitle": "192",
+      "idChapter": "332",
+      "idSection": null,
+      "code": "Artículo 66",
+      "ordinal": "66",
+      "order": "5",
+      "name_es": "Reglas relativas a la carga de la prueba.\r",
+      "text_es": ""
+    },
+    {
+      "id": "3347",
+      "idLaw": "31",
+      "idTitle": "192",
+      "idChapter": "332",
+      "idSection": null,
+      "code": "Artículo 67",
+      "ordinal": "67",
+      "order": "6",
+      "name_es": "Derecho a la atención y al asesoramiento jurídico.\r",
+      "text_es": ""
+    }
+  ],
+  "qByArticle": []
+}

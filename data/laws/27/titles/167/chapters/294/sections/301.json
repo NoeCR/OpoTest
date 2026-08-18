@@ -1,0 +1,154 @@
+{
+  "error": 0,
+  "arArticles": [
+    {
+      "id": "2990",
+      "idLaw": "27",
+      "idTitle": "167",
+      "idChapter": "294",
+      "idSection": "301",
+      "code": "Artículo 337",
+      "ordinal": "337",
+      "order": "1",
+      "name_es": "Registro Oficial de Licitadores y Empresas Clasificadas del Sector Público.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2991",
+      "idLaw": "27",
+      "idTitle": "167",
+      "idChapter": "294",
+      "idSection": "301",
+      "code": "Artículo 338",
+      "ordinal": "338",
+      "order": "2",
+      "name_es": "Inscripciones y publicaciones de oficio.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2992",
+      "idLaw": "27",
+      "idTitle": "167",
+      "idChapter": "294",
+      "idSection": "301",
+      "code": "Artículo 339",
+      "ordinal": "339",
+      "order": "3",
+      "name_es": "Inscripciones a solicitud de los interesados.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2993",
+      "idLaw": "27",
+      "idTitle": "167",
+      "idChapter": "294",
+      "idSection": "301",
+      "code": "Artículo 340",
+      "ordinal": "340",
+      "order": "4",
+      "name_es": "Competencia para la inscripción en el Registro Oficial de Licitadores y Empresas Clasificadas del Sector Público.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2994",
+      "idLaw": "27",
+      "idTitle": "167",
+      "idChapter": "294",
+      "idSection": "301",
+      "code": "Artículo 341",
+      "ordinal": "341",
+      "order": "5",
+      "name_es": "Registros de licitadores y empresas clasificadas de las Comunidades Autónomas.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2995",
+      "idLaw": "27",
+      "idTitle": "167",
+      "idChapter": "294",
+      "idSection": "301",
+      "code": "Artículo 342",
+      "ordinal": "342",
+      "order": "6",
+      "name_es": "Voluntariedad de la inscripción.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2996",
+      "idLaw": "27",
+      "idTitle": "167",
+      "idChapter": "294",
+      "idSection": "301",
+      "code": "Artículo 343",
+      "ordinal": "343",
+      "order": "7",
+      "name_es": "Actualización de la información registral.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2997",
+      "idLaw": "27",
+      "idTitle": "167",
+      "idChapter": "294",
+      "idSection": "301",
+      "code": "Artículo 344",
+      "ordinal": "344",
+      "order": "8",
+      "name_es": "Publicidad\r",
+      "text_es": ""
+    },
+    {
+      "id": "2998",
+      "idLaw": "27",
+      "idTitle": "167",
+      "idChapter": "294",
+      "idSection": "301",
+      "code": "Artículo 345",
+      "ordinal": "345",
+      "order": "9",
+      "name_es": "Colaboración entre Registros.\r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "27",
+    "code": "L9/2017",
+    "ordinal": "L9/2017",
+    "order": "5",
+    "order_def": "AAAA5",
+    "publish": "YES",
+    "name_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público, por la que se transponen al ordenamiento jurídico español las Directivas del Parlamento Europeo y del Consejo 2014/23/UE y 2014/24/UE, de 26 de febrero de 2014.",
+    "acronim_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público."
+  },
+  "title": {
+    "id": "167",
+    "idLaw": "27",
+    "code": "LIBRO CUARTO",
+    "ordinal": "CUARTO",
+    "order": "5",
+    "order_def": "AAAA5BBBB5",
+    "name_es": "Organización administrativa para la gestión de la contratación\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "294",
+    "idTitle": "167",
+    "code": "TÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "Registros Oficiales\r",
+    "text_es": ""
+  },
+  "section": {
+    "id": "301",
+    "idChapter": "294",
+    "code": "CAPÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "name_es": "Registros Oficiales de Licitadores y Empresas Clasificadas\r",
+    "text_es": ""
+  },
+  "code": "CAPÍTULO I - ",
+  "qBySection": [],
+  "qByArticle": []
+}

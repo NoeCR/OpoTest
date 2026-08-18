@@ -1,0 +1,70 @@
+{
+  "error": 0,
+  "arChapters": [],
+  "law": {
+    "id": "24",
+    "code": "LO3/2007",
+    "ordinal": "LO3/2007",
+    "order": "10",
+    "order_def": "AAA10",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres.",
+    "acronim_es": "Ley Orgánica 3/2007- Igualdad efectiva de mujeres y hombres."
+  },
+  "title": {
+    "id": "148",
+    "idLaw": "24",
+    "code": "TÍTULO VIII",
+    "ordinal": "VIII",
+    "order": "9",
+    "order_def": "AAAA9BBB10",
+    "name_es": "Disposiciones organizativas.\r",
+    "text_es": ""
+  },
+  "qByTitle": [],
+  "qByChapter": [],
+  "arArticles": [
+    {
+      "id": "2307",
+      "idLaw": "24",
+      "idTitle": "148",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 76",
+      "ordinal": "76",
+      "order": "1",
+      "name_es": "Comisión Interministerial de Igualdad entre mujeres y hombres.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2308",
+      "idLaw": "24",
+      "idTitle": "148",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 77",
+      "ordinal": "77",
+      "order": "2",
+      "name_es": "Las Unidades de Igualdad.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2309",
+      "idLaw": "24",
+      "idTitle": "148",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 78",
+      "ordinal": "78",
+      "order": "3",
+      "name_es": "Consejo de Participación de la Mujer.\r",
+      "text_es": ""
+    }
+  ],
+  "$arIdsArticles": [
+    "2307",
+    "2308",
+    "2309"
+  ],
+  "qByArticle": []
+}

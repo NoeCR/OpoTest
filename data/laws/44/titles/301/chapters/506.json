@@ -1,0 +1,74 @@
+{
+  "error": 0,
+  "arSections": [],
+  "law": {
+    "id": "44",
+    "code": "LO1/2004",
+    "ordinal": "LO1/2004",
+    "order": "29",
+    "order_def": "AAA29",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 1/2004, de 28 de diciembre, de Medidas de Protección Integral contra la Violencia de Género.",
+    "acronim_es": "Ley Orgánica 1/2004 Medidas de Protección contra la Violencia de Género."
+  },
+  "title": {
+    "id": "301",
+    "idLaw": "44",
+    "code": "TÍTULO II",
+    "ordinal": "II",
+    "order": "3",
+    "order_def": "AAAA3BBB29",
+    "name_es": "Derechos de las mujeres víctimas de violencia de género\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "506",
+    "idTitle": "301",
+    "code": "CAPÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "Derechos laborales y prestaciones de la Seguridad Social\r",
+    "text_es": ""
+  },
+  "qByChapter": [],
+  "qBySection": [],
+  "arArticles": [
+    {
+      "id": "3994",
+      "idLaw": "44",
+      "idTitle": "301",
+      "idChapter": "506",
+      "idSection": null,
+      "code": "Artículo 21",
+      "ordinal": "21",
+      "order": "1",
+      "name_es": "Derechos laborales y de Seguridad Social.\r",
+      "text_es": ""
+    },
+    {
+      "id": "3995",
+      "idLaw": "44",
+      "idTitle": "301",
+      "idChapter": "506",
+      "idSection": null,
+      "code": "Artículo 22",
+      "ordinal": "22",
+      "order": "2",
+      "name_es": "Programa específico de empleo.\r",
+      "text_es": ""
+    },
+    {
+      "id": "3996",
+      "idLaw": "44",
+      "idTitle": "301",
+      "idChapter": "506",
+      "idSection": null,
+      "code": "Artículo 23",
+      "ordinal": "23",
+      "order": "3",
+      "name_es": "Acreditación de situaciones de violencia de género.\r",
+      "text_es": ""
+    }
+  ],
+  "qByArticle": []
+}

@@ -1,0 +1,122 @@
+{
+  "error": 0,
+  "arChapters": [],
+  "law": {
+    "id": "31",
+    "code": "L4/2023",
+    "ordinal": "L4/2023",
+    "order": "20",
+    "order_def": "AAA20",
+    "publish": "YES",
+    "name_es": "Ley 4/2023, de 28 de febrero, para la igualdad real y efectiva de las personas trans y para la garantía de los derechos de las personas LGTBI.",
+    "acronim_es": "Ley 4/2023, de 28 de febrero, para la igualdad real y efectiva de las personas trans y para la garantía de los derechos de las personas LGTBI."
+  },
+  "title": {
+    "id": "193",
+    "idLaw": "31",
+    "code": "TÍTULO IV",
+    "ordinal": "IV",
+    "order": "5",
+    "order_def": "AAAA5BBB20",
+    "name_es": "Infracciones y sanciones.\r",
+    "text_es": ""
+  },
+  "qByTitle": [],
+  "qByChapter": [],
+  "arArticles": [
+    {
+      "id": "3356",
+      "idLaw": "31",
+      "idTitle": "193",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 76",
+      "ordinal": "76",
+      "order": "1",
+      "name_es": "Objeto y ámbito de aplicación de este título.\r",
+      "text_es": ""
+    },
+    {
+      "id": "3357",
+      "idLaw": "31",
+      "idTitle": "193",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 77",
+      "ordinal": "77",
+      "order": "2",
+      "name_es": "Competencia.\r",
+      "text_es": ""
+    },
+    {
+      "id": "3358",
+      "idLaw": "31",
+      "idTitle": "193",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 78",
+      "ordinal": "78",
+      "order": "3",
+      "name_es": "Plazo de resolución.\r",
+      "text_es": ""
+    },
+    {
+      "id": "3359",
+      "idLaw": "31",
+      "idTitle": "193",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 79",
+      "ordinal": "79",
+      "order": "4",
+      "name_es": "Infracciones.\r",
+      "text_es": ""
+    },
+    {
+      "id": "3360",
+      "idLaw": "31",
+      "idTitle": "193",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 80",
+      "ordinal": "80",
+      "order": "5",
+      "name_es": "Sanciones y criterios de graduación.\r",
+      "text_es": ""
+    },
+    {
+      "id": "3361",
+      "idLaw": "31",
+      "idTitle": "193",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 81",
+      "ordinal": "81",
+      "order": "6",
+      "name_es": "Prescripción de las infracciones y de las sanciones.\r",
+      "text_es": ""
+    },
+    {
+      "id": "3362",
+      "idLaw": "31",
+      "idTitle": "193",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 82",
+      "ordinal": "82",
+      "order": "7",
+      "name_es": "Prohibición de ayudas a asociaciones que cometan, inciten o promocionen actos discriminatorios o de violencia contra las personas LGTBI.\r",
+      "text_es": ""
+    }
+  ],
+  "$arIdsArticles": [
+    "3356",
+    "3357",
+    "3358",
+    "3359",
+    "3360",
+    "3361",
+    "3362"
+  ],
+  "qByArticle": []
+}

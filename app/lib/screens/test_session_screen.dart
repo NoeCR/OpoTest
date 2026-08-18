@@ -1,0 +1,529 @@
+import 'dart:async';
+
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:uuid/uuid.dart';
+
+import '../database/app_database.dart';
+import '../models/local_user.dart';
+import '../models/question.dart';
+import '../services/test_scoring.dart';
+import '../navigation/app_navigation.dart';
+import '../state/app_state.dart';
+import '../theme/app_theme.dart';
+import '../widgets/answer_grid.dart';
+import '../widgets/clarification_sheet.dart';
+import 'test_result_screen.dart';
+
+class TestSessionScreen extends StatefulWidget {
+  const TestSessionScreen({
+    super.key,
+    required this.test,
+    required this.errorFormat,
+    required this.durationMinutes,
+    required this.examSimulation,
+    this.reviewMode = false,
+    this.initialAnswers = const {},
+    this.initialIndex = 0,
+    this.initialElapsed = 0,
+  });
+
+  final TestDefinition test;
+  final int errorFormat;
+  final int durationMinutes;
+  final bool examSimulation;
+  final bool reviewMode;
+  final Map<int, int> initialAnswers;
+  final int initialIndex;
+  final int initialElapsed;
+
+  @override
+  State<TestSessionScreen> createState() => _TestSessionScreenState();
+}
+
+class _TestSessionScreenState extends State<TestSessionScreen> {
+  late int currentIndex;
+  late Map<int, int> answers;
+  late int elapsed;
+  late PageController _pageController;
+  Timer? _timer;
+  bool _advancing = false;
+
+  bool get _hasTimeLimit => !widget.reviewMode && widget.durationMinutes > 0;
+  int get _timeLimitSeconds => widget.durationMinutes * 60;
+  int get _remainingSeconds =>
+      _hasTimeLimit ? (_timeLimitSeconds - elapsed).clamp(0, _timeLimitSeconds) : 0;
+
+  @override
+  void initState() {
+    super.initState();
+    currentIndex = widget.initialIndex;
+    answers = Map.from(widget.initialAnswers);
+    elapsed = widget.initialElapsed;
+    _pageController = PageController(initialPage: widget.initialIndex);
+    if (!widget.reviewMode) {
+      _timer = Timer.periodic(const Duration(seconds: 1), (_) {
+        setState(() => elapsed++);
+        if (_hasTimeLimit && elapsed >= _timeLimitSeconds) {
+          _finish(force: true);
+        }
+      });
+    }
+  }
+
+  @override
+  void dispose() {
+    _timer?.cancel();
+    _pageController.dispose();
+    super.dispose();
+  }
+
+  bool get showClarification => widget.reviewMode || !widget.examSimulation;
+
+  void _goToQuestion(int index, {bool animate = true}) {
+    if (index < 0 || index >= widget.test.questions.length) return;
+    setState(() => currentIndex = index);
+    if (_pageController.hasClients) {
+      if (animate) {
+        _pageController.animateToPage(
+          index,
+          duration: const Duration(milliseconds: 260),
+          curve: Curves.easeOutCubic,
+        );
+      } else {
+        _pageController.jumpToPage(index);
+      }
+    }
+  }
+
+  void _select(int option) {
+    if (widget.reviewMode || _advancing) return;
+
+    final index = currentIndex;
+    setState(() => answers[index] = option);
+
+    if (index >= widget.test.questions.length - 1) return;
+
+    _advancing = true;
+    final delay = widget.examSimulation ? Duration.zero : const Duration(milliseconds: 450);
+    Future.delayed(delay, () {
+      if (!mounted) return;
+      _advancing = false;
+      _goToQuestion(index + 1);
+    });
+  }
+
+  Future<void> _confirmFinish() async {
+    if (widget.reviewMode) {
+      await _finish();
+      return;
+    }
+
+    final unanswered = widget.test.questions.length -
+        answers.values.where((v) => v > 0).length;
+
+    final proceed = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: const Text('Finalizar test'),
+        content: Text(
+          unanswered > 0
+              ? 'Quedan $unanswered preguntas sin responder. ¿Quieres finalizar y ver los resultados?'
+              : '¿Quieres finalizar y ver los resultados?',
+        ),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(ctx, false), child: const Text('Continuar')),
+          FilledButton(onPressed: () => Navigator.pop(ctx, true), child: const Text('Finalizar')),
+        ],
+      ),
+    );
+
+    if (proceed == true && mounted) await _finish(force: false);
+  }
+
+  Future<void> _finish({bool force = false}) async {
+    _timer?.cancel();
+    if (!widget.reviewMode) {
+      final result = TestScoring.score(
+        questions: widget.test.questions,
+        answers: answers,
+        errorFormat: widget.errorFormat,
+      );
+      final user = context.read<AppState>().activeUser!;
+      final attempt = TestAttempt(
+        id: const Uuid().v4(),
+        userId: user.id,
+        testId: widget.test.id,
+        testName: widget.test.name,
+        finishedAt: DateTime.now(),
+        durationSeconds: elapsed,
+        netScore: result.netScore,
+        percentScore: result.percentScore,
+        answers: answers,
+        examSimulation: widget.examSimulation,
+        errorFormat: widget.errorFormat,
+      );
+      await context.read<AppDatabase>().saveAttempt(attempt);
+      if (!mounted) return;
+      context.pushReplacementPage(
+        TestResultScreen(
+          test: widget.test,
+          answers: answers,
+          result: result,
+          durationSeconds: elapsed,
+        ),
+      );
+    } else {
+      Navigator.pop(context);
+    }
+  }
+
+  Widget _buildQuestionPage(int index) {
+    final q = widget.test.questions[index];
+    final selected = answers[index];
+
+    return ListView(
+      key: PageStorageKey<int>(index),
+      padding: const EdgeInsets.all(16),
+      children: [
+        Card(
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  '${q.order}. ${q.text}',
+                  style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w600, height: 1.35),
+                ),
+                if (showClarification && q.clarificationHtml.isNotEmpty)
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: TextButton.icon(
+                      onPressed: () => showModalBottomSheet(
+                        context: context,
+                        isScrollControlled: true,
+                        backgroundColor: Colors.white,
+                        shape: const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+                        ),
+                        builder: (_) => ClarificationSheet(html: q.clarificationHtml),
+                      ),
+                      icon: const Icon(Icons.info_outline, size: 18),
+                      label: const Text('Nota aclaratoria'),
+                    ),
+                  ),
+              ],
+            ),
+          ),
+        ),
+        const SizedBox(height: 12),
+        for (var i = 0; i < q.answers.length; i++)
+          _AnswerTile(
+            letter: String.fromCharCode(65 + i),
+            text: q.answers[i],
+            selected: selected == i + 1,
+            state: _answerState(q, i + 1, selected),
+            onTap: () => _select(i + 1),
+          ),
+        if (widget.reviewMode)
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              OutlinedButton.icon(
+                onPressed: index > 0 ? () => _goToQuestion(index - 1) : null,
+                icon: const Icon(Icons.chevron_left),
+                label: const Text('Anterior'),
+              ),
+              OutlinedButton.icon(
+                onPressed: index < widget.test.questions.length - 1
+                    ? () => _goToQuestion(index + 1)
+                    : null,
+                icon: const Icon(Icons.chevron_right),
+                label: const Text('Siguiente'),
+              ),
+            ],
+          ),
+      ],
+    );
+  }
+
+  Widget _timerWidget() {
+    if (_hasTimeLimit) {
+      final urgent = _remainingSeconds <= 60;
+      return Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(Icons.timer_outlined, size: 16, color: urgent ? Colors.red.shade200 : Colors.white70),
+          const SizedBox(width: 4),
+          Text(
+            _formatTime(_remainingSeconds),
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: urgent ? Colors.red.shade100 : Colors.white,
+            ),
+          ),
+        ],
+      );
+    }
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        const Icon(Icons.schedule, size: 16, color: Colors.white70),
+        const SizedBox(width: 4),
+        Text(_formatTime(elapsed), style: const TextStyle(fontWeight: FontWeight.w600, color: Colors.white)),
+      ],
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final completed = answers.values.where((v) => v > 0).length;
+    final progress = (currentIndex + 1) / widget.test.questions.length;
+
+    return PopScope(
+      canPop: widget.reviewMode,
+      onPopInvokedWithResult: (didPop, _) {
+        if (!didPop && !widget.reviewMode) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Finaliza el test para ver los resultados.')),
+          );
+        }
+      },
+      child: Scaffold(
+        backgroundColor: AppTheme.pageBlue,
+        appBar: AppBar(
+          automaticallyImplyLeading: widget.reviewMode,
+          title: Text(widget.test.name, maxLines: 1, overflow: TextOverflow.ellipsis),
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [AppTheme.primary.withValues(alpha: 0.9), AppTheme.cardDark.withValues(alpha: 0.95)],
+              ),
+            ),
+          ),
+          foregroundColor: Colors.white,
+          iconTheme: const IconThemeData(color: Colors.white),
+          actions: [
+            Padding(
+              padding: const EdgeInsets.only(right: 8),
+              child: Center(child: _timerWidget()),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(right: 16),
+              child: Center(
+                child: Text(
+                  '$completed/${widget.test.questions.length}',
+                  style: const TextStyle(fontSize: 12, color: Colors.white70),
+                ),
+              ),
+            ),
+          ],
+        ),
+        bottomNavigationBar: Material(
+          elevation: 8,
+          color: Colors.white,
+          child: SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+              child: Row(
+                children: [
+                  if (widget.reviewMode) ...[
+                    TextButton(onPressed: _showIndex, child: const Text('ÍNDICE')),
+                    Text(
+                      '${currentIndex + 1}/${widget.test.questions.length}',
+                      style: const TextStyle(fontWeight: FontWeight.w600),
+                    ),
+                    const Spacer(),
+                  ] else
+                    Expanded(
+                      child: Text(
+                        _hasTimeLimit
+                            ? 'Tiempo restante: ${_formatTime(_remainingSeconds)}'
+                            : 'Tiempo: ${_formatTime(elapsed)}',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w600,
+                          color: _hasTimeLimit && _remainingSeconds <= 60
+                              ? Colors.red.shade700
+                              : Colors.black87,
+                        ),
+                      ),
+                    ),
+                  ElevatedButton(
+                    onPressed: widget.reviewMode ? _finish : _confirmFinish,
+                    child: Text(widget.reviewMode ? 'CERRAR' : 'FINALIZAR'),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+        body: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: LinearProgressIndicator(
+                  value: progress,
+                  minHeight: 6,
+                  backgroundColor: Colors.white,
+                  color: AppTheme.primary,
+                ),
+              ),
+            ),
+            Expanded(
+              child: PageView.builder(
+                controller: _pageController,
+                physics: widget.reviewMode
+                    ? const PageScrollPhysics()
+                    : const NeverScrollableScrollPhysics(),
+                itemCount: widget.test.questions.length,
+                onPageChanged: (index) => setState(() => currentIndex = index),
+                itemBuilder: (_, index) => _buildQuestionPage(index),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  _AnswerVisual _answerState(Question q, int option, int? selected) {
+    if (widget.reviewMode || (!widget.examSimulation && selected != null && selected != 0)) {
+      if (option == q.solution) return _AnswerVisual.correct;
+      if (option == selected) return _AnswerVisual.incorrect;
+    } else if (!widget.examSimulation && selected == option) {
+      if (option == q.solution) return _AnswerVisual.correct;
+      return _AnswerVisual.incorrect;
+    }
+    return _AnswerVisual.normal;
+  }
+
+  void _showIndex() {
+    showModalBottomSheet(
+      context: context,
+      builder: (c) => SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              const Text('Índice de preguntas', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+              const SizedBox(height: 12),
+              Flexible(
+                child: GridView.builder(
+                  shrinkWrap: true,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 5,
+                    mainAxisSpacing: 8,
+                    crossAxisSpacing: 8,
+                    childAspectRatio: 1,
+                  ),
+                  itemCount: widget.test.questions.length,
+                  itemBuilder: (_, i) {
+                    final q = widget.test.questions[i];
+                    final a = answers[i];
+                    AnswerCellState state;
+                    if (i == currentIndex && (a == null || a == 0)) {
+                      state = AnswerCellState.current;
+                    } else if (a == null || a == 0) {
+                      state = AnswerCellState.unanswered;
+                    } else {
+                      state = a == q.solution ? AnswerCellState.correct : AnswerCellState.incorrect;
+                    }
+                    return AnswerGridCell(
+                      order: q.order,
+                      state: state,
+                      onTap: () {
+                        _goToQuestion(i);
+                        Navigator.pop(c);
+                      },
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  String _formatTime(int seconds) {
+    final m = seconds ~/ 60;
+    final s = seconds % 60;
+    return '${m.toString().padLeft(2, '0')}:${s.toString().padLeft(2, '0')}';
+  }
+}
+
+enum _AnswerVisual { normal, correct, incorrect }
+
+class _AnswerTile extends StatelessWidget {
+  const _AnswerTile({
+    required this.letter,
+    required this.text,
+    required this.selected,
+    required this.state,
+    required this.onTap,
+  });
+
+  final String letter;
+  final String text;
+  final bool selected;
+  final _AnswerVisual state;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    Color? border;
+    Color? letterBg = Colors.grey.shade200;
+    Color? letterFg = Colors.black87;
+    Color? cardBg;
+
+    if (state == _AnswerVisual.correct) {
+      border = Colors.green.shade400;
+      letterBg = Colors.green.shade400;
+      letterFg = Colors.white;
+      cardBg = Colors.green.shade50;
+    } else if (state == _AnswerVisual.incorrect) {
+      border = Colors.red.shade400;
+      letterBg = Colors.red.shade400;
+      letterFg = Colors.white;
+      cardBg = Colors.red.shade50;
+    } else if (selected) {
+      border = AppTheme.primary;
+      letterBg = AppTheme.primary;
+      letterFg = Colors.white;
+    }
+
+    return Card(
+      color: cardBg,
+      margin: const EdgeInsets.only(bottom: 8),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+        side: BorderSide(color: border ?? Colors.transparent, width: 2),
+      ),
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(12),
+        child: Padding(
+          padding: const EdgeInsets.all(12),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              CircleAvatar(
+                radius: 16,
+                backgroundColor: letterBg,
+                child: Text(letter, style: TextStyle(color: letterFg, fontWeight: FontWeight.bold)),
+              ),
+              const SizedBox(width: 12),
+              Expanded(child: Text(text, style: const TextStyle(fontSize: 15, height: 1.35))),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "error": 0,
+  "arSections": [],
+  "law": {
+    "id": "14",
+    "code": "LO3/1981",
+    "ordinal": "LO3/1981",
+    "order": "21",
+    "order_def": "AAA21",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 3/1981, de 6 de abril, del Defensor del Pueblo.",
+    "acronim_es": "LO 3/1981 - Defensor del Pueblo"
+  },
+  "title": {
+    "id": "82",
+    "idLaw": "14",
+    "code": "TÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "order_def": "AAAA1BBB21",
+    "name_es": "Nombramiento, cese y condiciones\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "114",
+    "idTitle": "82",
+    "code": "CAPÍTULO IV",
+    "ordinal": "IV",
+    "order": "4",
+    "name_es": "De los Adjuntos del Defensor del Pueblo\r",
+    "text_es": ""
+  },
+  "qByChapter": [],
+  "qBySection": [],
+  "arArticles": [
+    {
+      "id": "1506",
+      "idLaw": "14",
+      "idTitle": "82",
+      "idChapter": "114",
+      "idSection": null,
+      "code": "Artículo 8",
+      "ordinal": "8",
+      "order": "1",
+      "name_es": "8",
+      "text_es": ""
+    }
+  ],
+  "qByArticle": []
+}

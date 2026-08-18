@@ -1,0 +1,164 @@
+{
+  "error": 0,
+  "arChapters": [],
+  "law": {
+    "id": "5",
+    "code": "CONSTITUCIÓN",
+    "ordinal": "CONSTITUCIÓN",
+    "order": "1",
+    "order_def": "AAAA1",
+    "publish": "YES",
+    "name_es": "Constitución Española de 1978",
+    "acronim_es": "Constitución Española"
+  },
+  "title": {
+    "id": "26",
+    "idLaw": "5",
+    "code": "TÍTULO VII",
+    "ordinal": "VII",
+    "order": "9",
+    "order_def": "AAAA9BBBB1",
+    "name_es": "Economía y Hacienda",
+    "text_es": "Artículos del 128 al 136"
+  },
+  "qByTitle": {
+    "26": {
+      "mainLevel": [
+        "170",
+        "171",
+        "172",
+        "173",
+        "174",
+        "175",
+        "176",
+        "177",
+        "178"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "qByChapter": [],
+  "arArticles": [
+    {
+      "id": "435",
+      "idLaw": "5",
+      "idTitle": "26",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 128",
+      "ordinal": "128",
+      "order": "1",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "436",
+      "idLaw": "5",
+      "idTitle": "26",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 129",
+      "ordinal": "129",
+      "order": "2",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "437",
+      "idLaw": "5",
+      "idTitle": "26",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 130",
+      "ordinal": "130",
+      "order": "3",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "438",
+      "idLaw": "5",
+      "idTitle": "26",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 131",
+      "ordinal": "131",
+      "order": "4",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "439",
+      "idLaw": "5",
+      "idTitle": "26",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 132",
+      "ordinal": "132",
+      "order": "5",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "440",
+      "idLaw": "5",
+      "idTitle": "26",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 133",
+      "ordinal": "133",
+      "order": "6",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "441",
+      "idLaw": "5",
+      "idTitle": "26",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 134",
+      "ordinal": "134",
+      "order": "7",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "442",
+      "idLaw": "5",
+      "idTitle": "26",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 135",
+      "ordinal": "135",
+      "order": "8",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "443",
+      "idLaw": "5",
+      "idTitle": "26",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 136",
+      "ordinal": "136",
+      "order": "9",
+      "name_es": "\r",
+      "text_es": ""
+    }
+  ],
+  "$arIdsArticles": [
+    "435",
+    "436",
+    "437",
+    "438",
+    "439",
+    "440",
+    "441",
+    "442",
+    "443"
+  ],
+  "qByArticle": []
+}

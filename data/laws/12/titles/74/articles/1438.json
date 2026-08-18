@@ -1,0 +1,39 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "12",
+    "code": "L50/1997",
+    "ordinal": "L50/1997",
+    "order": "9",
+    "order_def": "AAAA9",
+    "publish": "YES",
+    "name_es": "Ley 50/1997, de 27 de noviembre, del Gobierno",
+    "acronim_es": "Ley 50/1997 - del Gobierno"
+  },
+  "title": {
+    "id": "74",
+    "idLaw": "12",
+    "code": "TÍTULO III",
+    "ordinal": "III",
+    "order": "3",
+    "order_def": "AAAA3BBBB9",
+    "name_es": "De las normas de funcionamiento del Gobierno y de la delegación de competencias\r",
+    "text_es": ""
+  },
+  "chapter": [],
+  "section": [],
+  "article": {
+    "id": "1438",
+    "idLaw": "12",
+    "idTitle": "74",
+    "idChapter": null,
+    "idSection": null,
+    "code": "Artículo 17",
+    "ordinal": "17",
+    "order": "1",
+    "name_es": "De las normas aplicables al funcionamiento del Gobierno\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

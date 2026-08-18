@@ -1,0 +1,37 @@
+{
+  "error": 0,
+  "arSections": [],
+  "law": {
+    "id": "27",
+    "code": "L9/2017",
+    "ordinal": "L9/2017",
+    "order": "5",
+    "order_def": "AAAA5",
+    "publish": "YES",
+    "name_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público, por la que se transponen al ordenamiento jurídico español las Directivas del Parlamento Europeo y del Consejo 2014/23/UE y 2014/24/UE, de 26 de febrero de 2014.",
+    "acronim_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público."
+  },
+  "title": {
+    "id": "168",
+    "idLaw": "27",
+    "code": "DISPOSICIONES",
+    "ordinal": "DISPOSICIONES",
+    "order": "6",
+    "order_def": "AAAA6BBBB5",
+    "name_es": "Disposiciones",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "324",
+    "idTitle": "168",
+    "code": "Disposiciones ",
+    "ordinal": "",
+    "order": "1",
+    "name_es": "Disposiciones ",
+    "text_es": ""
+  },
+  "qByChapter": [],
+  "qBySection": [],
+  "arArticles": [],
+  "qByArticle": []
+}

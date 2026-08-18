@@ -1,0 +1,39 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "36",
+    "code": "LO2/1979",
+    "ordinal": "LO2/1979",
+    "order": "24",
+    "order_def": "AAA24",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 2/1979, de 3 de octubre, del Tribunal Constitucional.",
+    "acronim_es": "Ley Orgánica 2/1979, del Tribunal Constitucional."
+  },
+  "title": {
+    "id": "233",
+    "idLaw": "36",
+    "code": "TÍTULO V",
+    "ordinal": "V",
+    "order": "5",
+    "order_def": "AAAA5BBB24",
+    "name_es": "De la impugnación de disposiciones sin fuerza de Ley y resoluciones de las Comunidades Autónomas prevista en el artículo 161.2 de la Constitución.\r",
+    "text_es": ""
+  },
+  "chapter": [],
+  "section": [],
+  "article": {
+    "id": "3578",
+    "idLaw": "36",
+    "idTitle": "233",
+    "idChapter": "0",
+    "idSection": "0",
+    "code": "Artículo 77",
+    "ordinal": "77",
+    "order": "2",
+    "name_es": "Artículo 77",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

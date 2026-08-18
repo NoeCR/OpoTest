@@ -1,0 +1,86 @@
+{
+  "error": 0,
+  "arSections": [],
+  "law": {
+    "id": "14",
+    "code": "LO3/1981",
+    "ordinal": "LO3/1981",
+    "order": "21",
+    "order_def": "AAA21",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 3/1981, de 6 de abril, del Defensor del Pueblo.",
+    "acronim_es": "LO 3/1981 - Defensor del Pueblo"
+  },
+  "title": {
+    "id": "83",
+    "idLaw": "14",
+    "code": "TÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "order_def": "AAAA2BBB21",
+    "name_es": "Del procedimiento\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "117",
+    "idTitle": "83",
+    "code": "CAPÍTULO III",
+    "ordinal": "III",
+    "order": "3",
+    "name_es": "Tramitación de las quejas\r",
+    "text_es": ""
+  },
+  "qByChapter": [],
+  "qBySection": [],
+  "arArticles": [
+    {
+      "id": "1513",
+      "idLaw": "14",
+      "idTitle": "83",
+      "idChapter": "117",
+      "idSection": null,
+      "code": "Artículo 15",
+      "ordinal": "15",
+      "order": "1",
+      "name_es": "15",
+      "text_es": ""
+    },
+    {
+      "id": "1514",
+      "idLaw": "14",
+      "idTitle": "83",
+      "idChapter": "117",
+      "idSection": null,
+      "code": "Artículo 16",
+      "ordinal": "16",
+      "order": "2",
+      "name_es": "16",
+      "text_es": ""
+    },
+    {
+      "id": "1515",
+      "idLaw": "14",
+      "idTitle": "83",
+      "idChapter": "117",
+      "idSection": null,
+      "code": "Artículo 17",
+      "ordinal": "17",
+      "order": "3",
+      "name_es": "17",
+      "text_es": ""
+    },
+    {
+      "id": "1516",
+      "idLaw": "14",
+      "idTitle": "83",
+      "idChapter": "117",
+      "idSection": null,
+      "code": "Artículo 18",
+      "ordinal": "18",
+      "order": "4",
+      "name_es": "18",
+      "text_es": ""
+    }
+  ],
+  "qByArticle": []
+}

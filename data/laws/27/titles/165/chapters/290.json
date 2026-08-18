@@ -1,0 +1,181 @@
+{
+  "error": 0,
+  "arSections": [
+    {
+      "id": "292",
+      "idChapter": "290",
+      "code": "CAPÍTULO I",
+      "ordinal": "I",
+      "order": "1",
+      "name_es": "Del contrato de obras\r",
+      "text_es": ""
+    },
+    {
+      "id": "293",
+      "idChapter": "290",
+      "code": "CAPÍTULO II",
+      "ordinal": "II",
+      "order": "2",
+      "name_es": "Del contrato de concesión de obras\r",
+      "text_es": ""
+    },
+    {
+      "id": "294",
+      "idChapter": "290",
+      "code": "CAPÍTULO III",
+      "ordinal": "III",
+      "order": "3",
+      "name_es": "Del contrato de concesión de servicios\r",
+      "text_es": ""
+    },
+    {
+      "id": "295",
+      "idChapter": "290",
+      "code": "CAPÍTULO IV",
+      "ordinal": "IV",
+      "order": "4",
+      "name_es": "Del contrato de suministro\r",
+      "text_es": ""
+    },
+    {
+      "id": "296",
+      "idChapter": "290",
+      "code": "CAPÍTULO V",
+      "ordinal": "V",
+      "order": "5",
+      "name_es": "Del contrato de servicios\r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "27",
+    "code": "L9/2017",
+    "ordinal": "L9/2017",
+    "order": "5",
+    "order_def": "AAAA5",
+    "publish": "YES",
+    "name_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público, por la que se transponen al ordenamiento jurídico español las Directivas del Parlamento Europeo y del Consejo 2014/23/UE y 2014/24/UE, de 26 de febrero de 2014.",
+    "acronim_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público."
+  },
+  "title": {
+    "id": "165",
+    "idLaw": "27",
+    "code": "LIBRO SEGUNDO",
+    "ordinal": "SEGUNDO",
+    "order": "3",
+    "order_def": "AAAA3BBBB5",
+    "name_es": "De los contratos de las Administraciones Públicas\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "290",
+    "idTitle": "165",
+    "code": "TÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "De los distintos tipos de contratos de las Administraciones Públicas\r",
+    "text_es": ""
+  },
+  "qByChapter": {
+    "290": {
+      "mainLevel": [],
+      "subLevel": [
+        "879",
+        "888",
+        "887",
+        "886",
+        "885",
+        "884",
+        "883",
+        "882",
+        "881",
+        "880",
+        "968",
+        "969",
+        "970",
+        "971",
+        "972",
+        "967",
+        "966",
+        "965",
+        "892",
+        "891",
+        "890",
+        "889",
+        "996",
+        "995",
+        "994",
+        "1000",
+        "1001",
+        "1005",
+        "1006",
+        "1026"
+      ],
+      "recent": 0
+    }
+  },
+  "qBySection": {
+    "292": {
+      "mainLevel": [
+        "879",
+        "880",
+        "881",
+        "882",
+        "883",
+        "884",
+        "885",
+        "886",
+        "887",
+        "888"
+      ],
+      "subLevel": [],
+      "recent": 0
+    },
+    "293": {
+      "mainLevel": [
+        "889",
+        "890",
+        "891",
+        "892",
+        "965",
+        "966",
+        "967",
+        "968",
+        "969",
+        "970",
+        "971",
+        "972"
+      ],
+      "subLevel": [],
+      "recent": 0
+    },
+    "294": {
+      "mainLevel": [
+        "994",
+        "995",
+        "996"
+      ],
+      "subLevel": [],
+      "recent": 0
+    },
+    "295": {
+      "mainLevel": [
+        "1000",
+        "1001"
+      ],
+      "subLevel": [],
+      "recent": 0
+    },
+    "296": {
+      "mainLevel": [
+        "1005",
+        "1006",
+        "1026"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "arArticles": [],
+  "qByArticle": []
+}

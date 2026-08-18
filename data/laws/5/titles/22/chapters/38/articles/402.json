@@ -1,0 +1,47 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "5",
+    "code": "CONSTITUCIÓN",
+    "ordinal": "CONSTITUCIÓN",
+    "order": "1",
+    "order_def": "AAAA1",
+    "publish": "YES",
+    "name_es": "Constitución Española de 1978",
+    "acronim_es": "Constitución Española"
+  },
+  "title": {
+    "id": "22",
+    "idLaw": "5",
+    "code": "TÍTULO III",
+    "ordinal": "III",
+    "order": "5",
+    "order_def": "AAAA5BBBB1",
+    "name_es": "De las Cortes Generales",
+    "text_es": "Artículos del 66 al 96"
+  },
+  "chapter": {
+    "id": "38",
+    "idTitle": "22",
+    "code": "CAPÍTULO TERCERO",
+    "ordinal": "III",
+    "order": "3",
+    "name_es": "De los Tratados Internacionales",
+    "text_es": null
+  },
+  "section": [],
+  "article": {
+    "id": "402",
+    "idLaw": "5",
+    "idTitle": "22",
+    "idChapter": "38",
+    "idSection": null,
+    "code": "Artículo 95",
+    "ordinal": "95",
+    "order": "3",
+    "name_es": "\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

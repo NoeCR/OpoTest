@@ -1,0 +1,58 @@
+{
+  "error": 0,
+  "arArticles": [
+    {
+      "id": "168",
+      "idLaw": "1",
+      "idTitle": "8",
+      "idChapter": "13",
+      "idSection": "26",
+      "code": "Artículo 95",
+      "ordinal": "95",
+      "order": "1",
+      "name_es": "Requisitos y efectos.",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "1",
+    "code": "L39/2015",
+    "ordinal": "L39/2015",
+    "order": "2",
+    "order_def": "AAAA2",
+    "publish": "YES",
+    "name_es": "Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas",
+    "acronim_es": "Ley 39/2015, del Procedimiento Administrativo Común"
+  },
+  "title": {
+    "id": "8",
+    "idLaw": "1",
+    "code": "TÍTULO IV",
+    "ordinal": "IV",
+    "order": "5",
+    "order_def": "AAAA5BBBB2",
+    "name_es": "De las disposiciones sobre el procedimiento administrativo común.",
+    "text_es": "Artículos del 53 al 105"
+  },
+  "chapter": {
+    "id": "13",
+    "idTitle": "8",
+    "code": "CAPÍTULO V",
+    "ordinal": "V",
+    "order": "5",
+    "name_es": "Finalización del procedimiento.",
+    "text_es": "Artículos del 84 al 95"
+  },
+  "section": {
+    "id": "26",
+    "idChapter": "13",
+    "code": "Sección 4",
+    "ordinal": "4",
+    "order": "4",
+    "name_es": "Caducidad.",
+    "text_es": "Artículo 95"
+  },
+  "code": "Sección 4 - ",
+  "qBySection": [],
+  "qByArticle": []
+}

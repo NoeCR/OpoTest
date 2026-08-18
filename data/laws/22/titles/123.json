@@ -1,0 +1,192 @@
+{
+  "error": 0,
+  "arChapters": [
+    {
+      "id": "159",
+      "idTitle": "123",
+      "code": "CAPÍTULO I",
+      "ordinal": "I",
+      "order": "1",
+      "name_es": "Principios y reglas de programación y de gestión presupuestaria\r",
+      "text_es": ""
+    },
+    {
+      "id": "160",
+      "idTitle": "123",
+      "code": "CAPÍTULO II",
+      "ordinal": "II",
+      "order": "2",
+      "name_es": "Programación presupuestaria y objetivo de estabilidad\r",
+      "text_es": ""
+    },
+    {
+      "id": "161",
+      "idTitle": "123",
+      "code": "CAPÍTULO III",
+      "ordinal": "III",
+      "order": "3",
+      "name_es": "Contenido, elaboración y estructura\r",
+      "text_es": ""
+    },
+    {
+      "id": "162",
+      "idTitle": "123",
+      "code": "CAPÍTULO IV",
+      "ordinal": "IV",
+      "order": "4",
+      "name_es": "De los créditos y sus modificaciones\r",
+      "text_es": ""
+    },
+    {
+      "id": "163",
+      "idTitle": "123",
+      "code": "CAPÍTULO V",
+      "ordinal": "V",
+      "order": "5",
+      "name_es": "De las Entidades Públicas Empresariales, Sociedades Mercantiles Estatales y Fundaciones del sector público Estatal\r",
+      "text_es": ""
+    },
+    {
+      "id": "164",
+      "idTitle": "123",
+      "code": "CAPÍTULO VI",
+      "ordinal": "VI",
+      "order": "6",
+      "name_es": "De la Gestión presupuestaria\r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "22",
+    "code": "L47/2003",
+    "ordinal": "L47/2003",
+    "order": "6",
+    "order_def": "AAAA6",
+    "publish": "YES",
+    "name_es": "Ley 47/2003, de 26 de noviembre, General Presupuestaria.",
+    "acronim_es": "Ley 47/2003, General Presupuestaria."
+  },
+  "title": {
+    "id": "123",
+    "idLaw": "22",
+    "code": "TÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "order_def": "AAAA2BBBB6",
+    "name_es": "De los Presupuestos Generales del Estado\r",
+    "text_es": ""
+  },
+  "qByTitle": {
+    "123": {
+      "mainLevel": [],
+      "subLevel": [
+        "766",
+        "767",
+        "768",
+        "769",
+        "770",
+        "771",
+        "772",
+        "773",
+        "774",
+        "775",
+        "798",
+        "799",
+        "800",
+        "801",
+        "802",
+        "850",
+        "851",
+        "853",
+        "854",
+        "855",
+        "856",
+        "857",
+        "893",
+        "894",
+        "895",
+        "896",
+        "897",
+        "898",
+        "899",
+        "900",
+        "901",
+        "918"
+      ],
+      "recent": 0
+    }
+  },
+  "qByChapter": {
+    "159": {
+      "mainLevel": [
+        "766"
+      ],
+      "subLevel": [],
+      "recent": 0
+    },
+    "160": {
+      "mainLevel": [
+        "767",
+        "768"
+      ],
+      "subLevel": [],
+      "recent": 0
+    },
+    "161": {
+      "mainLevel": [
+        "775",
+        "774",
+        "773",
+        "772",
+        "771",
+        "770",
+        "769"
+      ],
+      "subLevel": [],
+      "recent": 0
+    },
+    "162": {
+      "mainLevel": [
+        "857",
+        "856",
+        "855",
+        "854",
+        "853",
+        "851",
+        "850",
+        "798",
+        "799",
+        "800",
+        "801",
+        "802"
+      ],
+      "subLevel": [],
+      "recent": 0
+    },
+    "163": {
+      "mainLevel": [
+        "893"
+      ],
+      "subLevel": [],
+      "recent": 0
+    },
+    "164": {
+      "mainLevel": [
+        "901",
+        "900",
+        "899",
+        "898",
+        "897",
+        "896",
+        "895",
+        "894",
+        "918"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "arArticles": [],
+  "$arIdsArticles": [],
+  "qByArticle": []
+}

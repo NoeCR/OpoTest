@@ -1,0 +1,95 @@
+{
+  "error": 0,
+  "arChapters": [],
+  "law": {
+    "id": "5",
+    "code": "CONSTITUCIÓN",
+    "ordinal": "CONSTITUCIÓN",
+    "order": "1",
+    "order_def": "AAAA1",
+    "publish": "YES",
+    "name_es": "Constitución Española de 1978",
+    "acronim_es": "Constitución Española"
+  },
+  "title": {
+    "id": "29",
+    "idLaw": "5",
+    "code": "TÍTULO X",
+    "ordinal": "X",
+    "order": "12",
+    "order_def": "AAA12BBBB1",
+    "name_es": "De la reforma constitucional",
+    "text_es": "Artículos del 166 al 169"
+  },
+  "qByTitle": {
+    "29": {
+      "mainLevel": [
+        "216",
+        "217",
+        "218",
+        "219",
+        "220"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "qByChapter": [],
+  "arArticles": [
+    {
+      "id": "476",
+      "idLaw": "5",
+      "idTitle": "29",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 169",
+      "ordinal": "169",
+      "order": "1",
+      "name_es": "\n",
+      "text_es": ""
+    },
+    {
+      "id": "473",
+      "idLaw": "5",
+      "idTitle": "29",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 166",
+      "ordinal": "166",
+      "order": "2",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "474",
+      "idLaw": "5",
+      "idTitle": "29",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 167",
+      "ordinal": "167",
+      "order": "3",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "475",
+      "idLaw": "5",
+      "idTitle": "29",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 168",
+      "ordinal": "168",
+      "order": "4",
+      "name_es": "\r",
+      "text_es": ""
+    }
+  ],
+  "$arIdsArticles": [
+    "476",
+    "473",
+    "474",
+    "475"
+  ],
+  "qByArticle": []
+}

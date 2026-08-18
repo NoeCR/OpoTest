@@ -1,0 +1,118 @@
+{
+  "error": 0,
+  "arArticles": [
+    {
+      "id": "1880",
+      "idLaw": "22",
+      "idTitle": "122",
+      "idChapter": "158",
+      "idSection": "84",
+      "code": "Artículo 20",
+      "ordinal": "20",
+      "order": "1",
+      "name_es": "Fuentes de las obligaciones.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1881",
+      "idLaw": "22",
+      "idTitle": "122",
+      "idChapter": "158",
+      "idSection": "84",
+      "code": "Artículo 21",
+      "ordinal": "21",
+      "order": "2",
+      "name_es": "Exigibilidad de las obligaciones.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1882",
+      "idLaw": "22",
+      "idTitle": "122",
+      "idChapter": "158",
+      "idSection": "84",
+      "code": "Artículo 22",
+      "ordinal": "22",
+      "order": "3",
+      "name_es": "Extinción de las obligaciones.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1883",
+      "idLaw": "22",
+      "idTitle": "122",
+      "idChapter": "158",
+      "idSection": "84",
+      "code": "Artículo 23",
+      "ordinal": "23",
+      "order": "4",
+      "name_es": "Prerrogativas.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1884",
+      "idLaw": "22",
+      "idTitle": "122",
+      "idChapter": "158",
+      "idSection": "84",
+      "code": "Artículo 24",
+      "ordinal": "24",
+      "order": "5",
+      "name_es": "Intereses de demora.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1885",
+      "idLaw": "22",
+      "idTitle": "122",
+      "idChapter": "158",
+      "idSection": "84",
+      "code": "Artículo 25",
+      "ordinal": "25",
+      "order": "6",
+      "name_es": "Prescripción de las obligaciones.\r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "22",
+    "code": "L47/2003",
+    "ordinal": "L47/2003",
+    "order": "6",
+    "order_def": "AAAA6",
+    "publish": "YES",
+    "name_es": "Ley 47/2003, de 26 de noviembre, General Presupuestaria.",
+    "acronim_es": "Ley 47/2003, General Presupuestaria."
+  },
+  "title": {
+    "id": "122",
+    "idLaw": "22",
+    "code": "TÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "order_def": "AAAA1BBBB6",
+    "name_es": "Del ámbito de aplicación y de la Hacienda Pública estatal\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "158",
+    "idTitle": "122",
+    "code": "CAPÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "Del régimen de la Hacienda Pública estatal\r",
+    "text_es": ""
+  },
+  "section": {
+    "id": "84",
+    "idChapter": "158",
+    "code": "SECCIÓN 4",
+    "ordinal": "4",
+    "order": "4",
+    "name_es": "Obligaciones de la Hacienda Pública estatal\r",
+    "text_es": ""
+  },
+  "code": "SECCIÓN 4 - ",
+  "qBySection": [],
+  "qByArticle": []
+}

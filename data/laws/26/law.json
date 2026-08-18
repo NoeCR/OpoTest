@@ -1,0 +1,144 @@
+{
+  "error": 0,
+  "arTitles": [
+    {
+      "id": "169",
+      "idLaw": "26",
+      "code": "DISPOSICIONES",
+      "ordinal": "DISPOSICIONES",
+      "order": "1",
+      "order_def": "AAAA1BBBB7",
+      "name_es": "Disposiciones",
+      "text_es": "Disposiciones"
+    },
+    {
+      "id": "153",
+      "idLaw": "26",
+      "code": "TÍTULO I",
+      "ordinal": "I",
+      "order": "2",
+      "order_def": "AAAA2BBBB7",
+      "name_es": "Planificación estratégica de los recursos humanos.",
+      "text_es": "Artículos del 105 al 111."
+    },
+    {
+      "id": "154",
+      "idLaw": "26",
+      "code": "TÍTULO II",
+      "ordinal": "II",
+      "order": "3",
+      "order_def": "AAAA3BBBB7",
+      "name_es": "Acceso al empleo público.",
+      "text_es": "Artículos del 112 al 115."
+    },
+    {
+      "id": "155",
+      "idLaw": "26",
+      "code": "TÍTULO III",
+      "ordinal": "III",
+      "order": "4",
+      "order_def": "AAAA4BBBB7",
+      "name_es": "Evaluación del desempeño y carrera profesional.",
+      "text_es": "Artículos del 116 al 122."
+    },
+    {
+      "id": "156",
+      "idLaw": "26",
+      "code": "TÍTULO IV",
+      "ordinal": "IV",
+      "order": "5",
+      "order_def": "AAAA5BBBB7",
+      "name_es": "El personal directivo público profesional.",
+      "text_es": "Artículos del 123 al 127."
+    }
+  ],
+  "law": {
+    "id": "26",
+    "code": "RDL6/2023",
+    "ordinal": "RDL6/2023",
+    "order": "7",
+    "order_def": "AAAA7",
+    "publish": "YES",
+    "name_es": "Real Decreto-ley 6/2023, de 19 de diciembre, por el que se aprueban medidas urgentes para la ejecución del Plan de Recuperación, Transformación y Resiliencia en materia de servicio público de justicia, función pública, régimen local y mecenazgo.",
+    "acronim_es": "Real Decreto-ley 6/2023, por el que se aprueban medidas urgentes."
+  },
+  "pt": true,
+  "qByLaw": {
+    "26": {
+      "mainLevel": [],
+      "subLevel": [
+        "624",
+        "625",
+        "626",
+        "627",
+        "628",
+        "629",
+        "631",
+        "632",
+        "633",
+        "635",
+        "636"
+      ],
+      "userDone": 0
+    }
+  },
+  "qByLawNew": {
+    "26": {
+      "mainLevel": [],
+      "subLevel": [
+        "624",
+        "625",
+        "626",
+        "627",
+        "628",
+        "629",
+        "631",
+        "632",
+        "633",
+        "635",
+        "636"
+      ],
+      "userDone": 0,
+      "recent": 0
+    }
+  },
+  "qByTitle": {
+    "153": {
+      "mainLevel": [
+        "624",
+        "625",
+        "626",
+        "627"
+      ],
+      "subLevel": [],
+      "recent": 0
+    },
+    "154": {
+      "mainLevel": [
+        "628",
+        "629"
+      ],
+      "subLevel": [],
+      "recent": 0
+    },
+    "155": {
+      "mainLevel": [
+        "631",
+        "632",
+        "633"
+      ],
+      "subLevel": [],
+      "recent": 0
+    },
+    "156": {
+      "mainLevel": [
+        "635",
+        "636"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "arArticles": [],
+  "qByArticle": []
+}

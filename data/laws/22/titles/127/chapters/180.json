@@ -1,0 +1,76 @@
+{
+  "error": 0,
+  "arSections": [
+    {
+      "id": "101",
+      "idChapter": "180",
+      "code": "SECCIÓN 1",
+      "ordinal": "1",
+      "order": "1",
+      "name_es": "Normas generales\r",
+      "text_es": ""
+    },
+    {
+      "id": "102",
+      "idChapter": "180",
+      "code": "SECCIÓN 2",
+      "ordinal": "2",
+      "order": "2",
+      "name_es": "Auditoría de las cuentas anuales\r",
+      "text_es": ""
+    },
+    {
+      "id": "103",
+      "idChapter": "180",
+      "code": "SECCIÓN 3",
+      "ordinal": "3",
+      "order": "3",
+      "name_es": "Auditorías públicas específicas",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "22",
+    "code": "L47/2003",
+    "ordinal": "L47/2003",
+    "order": "6",
+    "order_def": "AAAA6",
+    "publish": "YES",
+    "name_es": "Ley 47/2003, de 26 de noviembre, General Presupuestaria.",
+    "acronim_es": "Ley 47/2003, General Presupuestaria."
+  },
+  "title": {
+    "id": "127",
+    "idLaw": "22",
+    "code": "TÍTULO VI",
+    "ordinal": "VI",
+    "order": "6",
+    "order_def": "AAAA6BBBB6",
+    "name_es": "Del control de la gestión económico-financiera efectuado por la Intervención General de la Administración del Estado\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "180",
+    "idTitle": "127",
+    "code": "CAPÍTULO IV",
+    "ordinal": "IV",
+    "order": "4",
+    "name_es": "De la auditoría pública",
+    "text_es": ""
+  },
+  "qByChapter": {
+    "180": {
+      "mainLevel": [
+        "1046",
+        "1047",
+        "1048",
+        "1049"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "qBySection": [],
+  "arArticles": [],
+  "qByArticle": []
+}

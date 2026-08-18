@@ -1,0 +1,147 @@
+{
+  "error": 0,
+  "arChapters": [
+    {
+      "id": "36",
+      "idTitle": "22",
+      "code": "CAPÍTULO PRIMERO",
+      "ordinal": "I",
+      "order": "1",
+      "name_es": "De las Cámaras",
+      "text_es": null
+    },
+    {
+      "id": "37",
+      "idTitle": "22",
+      "code": "CAPÍTULO SEGUNDO",
+      "ordinal": "II",
+      "order": "2",
+      "name_es": "De la elaboración de las leyes",
+      "text_es": null
+    },
+    {
+      "id": "38",
+      "idTitle": "22",
+      "code": "CAPÍTULO TERCERO",
+      "ordinal": "III",
+      "order": "3",
+      "name_es": "De los Tratados Internacionales",
+      "text_es": null
+    }
+  ],
+  "law": {
+    "id": "5",
+    "code": "CONSTITUCIÓN",
+    "ordinal": "CONSTITUCIÓN",
+    "order": "1",
+    "order_def": "AAAA1",
+    "publish": "YES",
+    "name_es": "Constitución Española de 1978",
+    "acronim_es": "Constitución Española"
+  },
+  "title": {
+    "id": "22",
+    "idLaw": "5",
+    "code": "TÍTULO III",
+    "ordinal": "III",
+    "order": "5",
+    "order_def": "AAAA5BBBB1",
+    "name_es": "De las Cortes Generales",
+    "text_es": "Artículos del 66 al 96"
+  },
+  "qByTitle": {
+    "22": {
+      "mainLevel": [],
+      "subLevel": [
+        "95",
+        "96",
+        "97",
+        "98",
+        "99",
+        "100",
+        "101",
+        "102",
+        "103",
+        "104",
+        "105",
+        "106",
+        "107",
+        "108",
+        "109",
+        "110",
+        "111",
+        "112",
+        "113",
+        "114",
+        "115",
+        "116",
+        "117",
+        "118",
+        "119",
+        "120",
+        "121",
+        "122",
+        "123",
+        "124",
+        "125",
+        "126"
+      ],
+      "recent": 0
+    }
+  },
+  "qByChapter": {
+    "36": {
+      "mainLevel": [
+        "95",
+        "106",
+        "107",
+        "108",
+        "109",
+        "110",
+        "111",
+        "112",
+        "113",
+        "105",
+        "104",
+        "96",
+        "97",
+        "98",
+        "99",
+        "100",
+        "101",
+        "102",
+        "103"
+      ],
+      "subLevel": [],
+      "recent": 0
+    },
+    "37": {
+      "mainLevel": [
+        "123",
+        "122",
+        "121",
+        "120",
+        "119",
+        "118",
+        "117",
+        "116",
+        "115",
+        "114"
+      ],
+      "subLevel": [],
+      "recent": 0
+    },
+    "38": {
+      "mainLevel": [
+        "124",
+        "125",
+        "126"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "arArticles": [],
+  "$arIdsArticles": [],
+  "qByArticle": []
+}

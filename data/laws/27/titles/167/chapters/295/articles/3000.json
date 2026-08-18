@@ -1,0 +1,47 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "27",
+    "code": "L9/2017",
+    "ordinal": "L9/2017",
+    "order": "5",
+    "order_def": "AAAA5",
+    "publish": "YES",
+    "name_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público, por la que se transponen al ordenamiento jurídico español las Directivas del Parlamento Europeo y del Consejo 2014/23/UE y 2014/24/UE, de 26 de febrero de 2014.",
+    "acronim_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público."
+  },
+  "title": {
+    "id": "167",
+    "idLaw": "27",
+    "code": "LIBRO CUARTO",
+    "ordinal": "CUARTO",
+    "order": "5",
+    "order_def": "AAAA5BBBB5",
+    "name_es": "Organización administrativa para la gestión de la contratación\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "295",
+    "idTitle": "167",
+    "code": "TÍTULO III",
+    "ordinal": "III",
+    "order": "3",
+    "name_es": "Gestión de la publicidad contractual por medios electrónicos, informáticos y telemáticos\r",
+    "text_es": ""
+  },
+  "section": [],
+  "article": {
+    "id": "3000",
+    "idLaw": "27",
+    "idTitle": "167",
+    "idChapter": "295",
+    "idSection": null,
+    "code": "Artículo 347",
+    "ordinal": "347",
+    "order": "1",
+    "name_es": "Plataforma de Contratación del Sector Público.\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

@@ -1,0 +1,47 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "5",
+    "code": "CONSTITUCIÓN",
+    "ordinal": "CONSTITUCIÓN",
+    "order": "1",
+    "order_def": "AAAA1",
+    "publish": "YES",
+    "name_es": "Constitución Española de 1978",
+    "acronim_es": "Constitución Española"
+  },
+  "title": {
+    "id": "22",
+    "idLaw": "5",
+    "code": "TÍTULO III",
+    "ordinal": "III",
+    "order": "5",
+    "order_def": "AAAA5BBBB1",
+    "name_es": "De las Cortes Generales",
+    "text_es": "Artículos del 66 al 96"
+  },
+  "chapter": {
+    "id": "37",
+    "idTitle": "22",
+    "code": "CAPÍTULO SEGUNDO",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "De la elaboración de las leyes",
+    "text_es": null
+  },
+  "section": [],
+  "article": {
+    "id": "395",
+    "idLaw": "5",
+    "idTitle": "22",
+    "idChapter": "37",
+    "idSection": null,
+    "code": "Artículo 88",
+    "ordinal": "88",
+    "order": "8",
+    "name_es": "\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

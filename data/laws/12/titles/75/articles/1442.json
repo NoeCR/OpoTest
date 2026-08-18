@@ -1,0 +1,39 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "12",
+    "code": "L50/1997",
+    "ordinal": "L50/1997",
+    "order": "9",
+    "order_def": "AAAA9",
+    "publish": "YES",
+    "name_es": "Ley 50/1997, de 27 de noviembre, del Gobierno",
+    "acronim_es": "Ley 50/1997 - del Gobierno"
+  },
+  "title": {
+    "id": "75",
+    "idLaw": "12",
+    "code": "TÍTULO IV",
+    "ordinal": "IV",
+    "order": "4",
+    "order_def": "AAAA4BBBB9",
+    "name_es": "Del Gobierno en funciones\r",
+    "text_es": ""
+  },
+  "chapter": [],
+  "section": [],
+  "article": {
+    "id": "1442",
+    "idLaw": "12",
+    "idTitle": "75",
+    "idChapter": null,
+    "idSection": null,
+    "code": "Artículo 21",
+    "ordinal": "21",
+    "order": "1",
+    "name_es": "Del Gobierno en funciones\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

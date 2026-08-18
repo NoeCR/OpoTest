@@ -1,0 +1,182 @@
+{
+  "error": 0,
+  "arSections": [],
+  "law": {
+    "id": "7",
+    "code": "RD364/1995",
+    "ordinal": "RD364/1995",
+    "order": "18",
+    "order_def": "AAA18",
+    "publish": "YES",
+    "name_es": "Real Decreto 364/1995, de 10 de marzo, por el que se aprueba el Reglamento General de ingreso del personal al servicio de la Administración General del Estado y de provisión de puestos de trabajo y promoción profesional de los funcionarios civiles de la Administración General del Estado",
+    "acronim_es": "RD 364/1995 - Ingreso, Provisión de puestos y Promoción profesional."
+  },
+  "title": {
+    "id": "43",
+    "idLaw": "7",
+    "code": "TÍTULO III",
+    "ordinal": "III",
+    "order": "4",
+    "order_def": "AAAA4BBB18",
+    "name_es": "Provisión de puestos de trabajo\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "53",
+    "idTitle": "43",
+    "code": "CAPÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "Provisión de puestos de trabajo mediante concurso\r",
+    "text_es": ""
+  },
+  "qByChapter": [],
+  "qBySection": [],
+  "arArticles": [
+    {
+      "id": "532",
+      "idLaw": "7",
+      "idTitle": "43",
+      "idChapter": "53",
+      "idSection": null,
+      "code": "Artículo 39",
+      "ordinal": "39",
+      "order": "1",
+      "name_es": "Convocatorias de concursos\r",
+      "text_es": ""
+    },
+    {
+      "id": "533",
+      "idLaw": "7",
+      "idTitle": "43",
+      "idChapter": "53",
+      "idSection": null,
+      "code": "Artículo 40",
+      "ordinal": "40",
+      "order": "2",
+      "name_es": "Órganos competentes\r",
+      "text_es": ""
+    },
+    {
+      "id": "534",
+      "idLaw": "7",
+      "idTitle": "43",
+      "idChapter": "53",
+      "idSection": null,
+      "code": "Artículo 41",
+      "ordinal": "41",
+      "order": "3",
+      "name_es": "Requisitos y condiciones de participación\r",
+      "text_es": ""
+    },
+    {
+      "id": "535",
+      "idLaw": "7",
+      "idTitle": "43",
+      "idChapter": "53",
+      "idSection": null,
+      "code": "Artículo 42",
+      "ordinal": "42",
+      "order": "4",
+      "name_es": "Presentación de solicitudes de participación\r",
+      "text_es": ""
+    },
+    {
+      "id": "536",
+      "idLaw": "7",
+      "idTitle": "43",
+      "idChapter": "53",
+      "idSection": null,
+      "code": "Artículo 43",
+      "ordinal": "43",
+      "order": "5",
+      "name_es": "Discapacidades\r",
+      "text_es": ""
+    },
+    {
+      "id": "537",
+      "idLaw": "7",
+      "idTitle": "43",
+      "idChapter": "53",
+      "idSection": null,
+      "code": "Artículo 44",
+      "ordinal": "44",
+      "order": "6",
+      "name_es": "Méritos\r",
+      "text_es": ""
+    },
+    {
+      "id": "538",
+      "idLaw": "7",
+      "idTitle": "43",
+      "idChapter": "53",
+      "idSection": null,
+      "code": "Artículo 45",
+      "ordinal": "45",
+      "order": "7",
+      "name_es": "Concursos específicos\r",
+      "text_es": ""
+    },
+    {
+      "id": "539",
+      "idLaw": "7",
+      "idTitle": "43",
+      "idChapter": "53",
+      "idSection": null,
+      "code": "Artículo 46",
+      "ordinal": "46",
+      "order": "8",
+      "name_es": "Comisiones de Valoración\r",
+      "text_es": ""
+    },
+    {
+      "id": "540",
+      "idLaw": "7",
+      "idTitle": "43",
+      "idChapter": "53",
+      "idSection": null,
+      "code": "Artículo 47",
+      "ordinal": "47",
+      "order": "9",
+      "name_es": "Resolución\r",
+      "text_es": ""
+    },
+    {
+      "id": "541",
+      "idLaw": "7",
+      "idTitle": "43",
+      "idChapter": "53",
+      "idSection": null,
+      "code": "Artículo 48",
+      "ordinal": "48",
+      "order": "10",
+      "name_es": "Toma de posesión\r",
+      "text_es": ""
+    },
+    {
+      "id": "542",
+      "idLaw": "7",
+      "idTitle": "43",
+      "idChapter": "53",
+      "idSection": null,
+      "code": "Artículo 49",
+      "ordinal": "49",
+      "order": "11",
+      "name_es": "Destinos\r",
+      "text_es": ""
+    },
+    {
+      "id": "543",
+      "idLaw": "7",
+      "idTitle": "43",
+      "idChapter": "53",
+      "idSection": null,
+      "code": "Artículo 50",
+      "ordinal": "50",
+      "order": "12",
+      "name_es": "Remoción del puesto de trabajo\r",
+      "text_es": ""
+    }
+  ],
+  "qByArticle": []
+}

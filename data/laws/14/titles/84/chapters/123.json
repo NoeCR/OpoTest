@@ -1,0 +1,50 @@
+{
+  "error": 0,
+  "arSections": [],
+  "law": {
+    "id": "14",
+    "code": "LO3/1981",
+    "ordinal": "LO3/1981",
+    "order": "21",
+    "order_def": "AAA21",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 3/1981, de 6 de abril, del Defensor del Pueblo.",
+    "acronim_es": "LO 3/1981 - Defensor del Pueblo"
+  },
+  "title": {
+    "id": "84",
+    "idLaw": "14",
+    "code": "TÍTULO III",
+    "ordinal": "III",
+    "order": "3",
+    "order_def": "AAAA3BBB21",
+    "name_es": "De las resoluciones\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "123",
+    "idTitle": "84",
+    "code": "CAPÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "Notificaciones y comunicaciones\r",
+    "text_es": ""
+  },
+  "qByChapter": [],
+  "qBySection": [],
+  "arArticles": [
+    {
+      "id": "1529",
+      "idLaw": "14",
+      "idTitle": "84",
+      "idChapter": "123",
+      "idSection": null,
+      "code": "Artículo 31",
+      "ordinal": "31",
+      "order": "1",
+      "name_es": "31",
+      "text_es": ""
+    }
+  ],
+  "qByArticle": []
+}

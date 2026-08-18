@@ -1,0 +1,135 @@
+{
+  "error": 0,
+  "arChapters": [],
+  "law": {
+    "id": "30",
+    "code": "L19/2013",
+    "ordinal": "L19/2013",
+    "order": "27",
+    "order_def": "AAA27",
+    "publish": "YES",
+    "name_es": "Ley 19/2013, de 9 de diciembre, de transparencia, acceso a la información pública y buen gobierno.",
+    "acronim_es": "Ley 19/2013, de 9 de diciembre, de transparencia, acceso a la información pública y buen gobierno."
+  },
+  "title": {
+    "id": "180",
+    "idLaw": "30",
+    "code": "TÍTULO II",
+    "ordinal": "II",
+    "order": "3",
+    "order_def": "AAAA3BBB27",
+    "name_es": "Buen gobierno.\r",
+    "text_es": ""
+  },
+  "qByTitle": [],
+  "qByChapter": [],
+  "arArticles": [
+    {
+      "id": "3183",
+      "idLaw": "30",
+      "idTitle": "180",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 25",
+      "ordinal": "25",
+      "order": "1",
+      "name_es": "Ámbito de aplicación.\r",
+      "text_es": ""
+    },
+    {
+      "id": "3184",
+      "idLaw": "30",
+      "idTitle": "180",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 26",
+      "ordinal": "26",
+      "order": "2",
+      "name_es": "Principios de buen gobierno.\r",
+      "text_es": ""
+    },
+    {
+      "id": "3185",
+      "idLaw": "30",
+      "idTitle": "180",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 27",
+      "ordinal": "27",
+      "order": "3",
+      "name_es": "Infracciones y sanciones en materia de conflicto de intereses.\r",
+      "text_es": ""
+    },
+    {
+      "id": "3186",
+      "idLaw": "30",
+      "idTitle": "180",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 28",
+      "ordinal": "28",
+      "order": "4",
+      "name_es": "Infracciones en materia de gestión económico-presupuestaria.\r",
+      "text_es": ""
+    },
+    {
+      "id": "3187",
+      "idLaw": "30",
+      "idTitle": "180",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 29",
+      "ordinal": "29",
+      "order": "5",
+      "name_es": "Infracciones disciplinarias.\r",
+      "text_es": ""
+    },
+    {
+      "id": "3188",
+      "idLaw": "30",
+      "idTitle": "180",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 30",
+      "ordinal": "30",
+      "order": "6",
+      "name_es": "Sanciones.\r",
+      "text_es": ""
+    },
+    {
+      "id": "3189",
+      "idLaw": "30",
+      "idTitle": "180",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 31",
+      "ordinal": "31",
+      "order": "7",
+      "name_es": "Órgano competente y procedimiento.\r",
+      "text_es": ""
+    },
+    {
+      "id": "3190",
+      "idLaw": "30",
+      "idTitle": "180",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 32",
+      "ordinal": "32",
+      "order": "8",
+      "name_es": "Prescripción.\r",
+      "text_es": ""
+    }
+  ],
+  "$arIdsArticles": [
+    "3183",
+    "3184",
+    "3185",
+    "3186",
+    "3187",
+    "3188",
+    "3189",
+    "3190"
+  ],
+  "qByArticle": []
+}

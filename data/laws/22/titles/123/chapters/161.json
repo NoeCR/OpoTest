@@ -1,0 +1,79 @@
+{
+  "error": 0,
+  "arSections": [
+    {
+      "id": "85",
+      "idChapter": "161",
+      "code": "SECCIÓN 1",
+      "ordinal": "1",
+      "order": "1",
+      "name_es": "Contenido y principios de ordenación\r",
+      "text_es": ""
+    },
+    {
+      "id": "86",
+      "idChapter": "161",
+      "code": "SECCIÓN 2",
+      "ordinal": "2",
+      "order": "2",
+      "name_es": "Elaboración del presupuesto\r",
+      "text_es": ""
+    },
+    {
+      "id": "87",
+      "idChapter": "161",
+      "code": "SECCIÓN 3",
+      "ordinal": "3",
+      "order": "3",
+      "name_es": "Estructuras presupuestarias\r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "22",
+    "code": "L47/2003",
+    "ordinal": "L47/2003",
+    "order": "6",
+    "order_def": "AAAA6",
+    "publish": "YES",
+    "name_es": "Ley 47/2003, de 26 de noviembre, General Presupuestaria.",
+    "acronim_es": "Ley 47/2003, General Presupuestaria."
+  },
+  "title": {
+    "id": "123",
+    "idLaw": "22",
+    "code": "TÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "order_def": "AAAA2BBBB6",
+    "name_es": "De los Presupuestos Generales del Estado\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "161",
+    "idTitle": "123",
+    "code": "CAPÍTULO III",
+    "ordinal": "III",
+    "order": "3",
+    "name_es": "Contenido, elaboración y estructura\r",
+    "text_es": ""
+  },
+  "qByChapter": {
+    "161": {
+      "mainLevel": [
+        "769",
+        "770",
+        "771",
+        "772",
+        "773",
+        "774",
+        "775"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "qBySection": [],
+  "arArticles": [],
+  "qByArticle": []
+}

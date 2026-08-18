@@ -1,0 +1,58 @@
+{
+  "error": 0,
+  "arArticles": [
+    {
+      "id": "3290",
+      "idLaw": "31",
+      "idTitle": "190",
+      "idChapter": "329",
+      "idSection": "327",
+      "code": "Artículo 10",
+      "ordinal": "10",
+      "order": "1",
+      "name_es": "Estrategia estatal para la igualdad de trato y no discriminación de las personas LGTBI.\r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "31",
+    "code": "L4/2023",
+    "ordinal": "L4/2023",
+    "order": "20",
+    "order_def": "AAA20",
+    "publish": "YES",
+    "name_es": "Ley 4/2023, de 28 de febrero, para la igualdad real y efectiva de las personas trans y para la garantía de los derechos de las personas LGTBI.",
+    "acronim_es": "Ley 4/2023, de 28 de febrero, para la igualdad real y efectiva de las personas trans y para la garantía de los derechos de las personas LGTBI."
+  },
+  "title": {
+    "id": "190",
+    "idLaw": "31",
+    "code": "TÍTULO I",
+    "ordinal": "I",
+    "order": "2",
+    "order_def": "AAAA2BBB20",
+    "name_es": "Actuación de los poderes públicos.\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "329",
+    "idTitle": "190",
+    "code": "CAPÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "Políticas públicas para promover la igualdad efectiva de las personas LGTBI.\r",
+    "text_es": ""
+  },
+  "section": {
+    "id": "327",
+    "idChapter": "329",
+    "code": "SECCIÓN 1",
+    "ordinal": "1",
+    "order": "1",
+    "name_es": "Estrategia estatal para la igualdad de trato y no discriminación de las personas LGTBI.\r",
+    "text_es": ""
+  },
+  "code": "SECCIÓN 1 - ",
+  "qBySection": [],
+  "qByArticle": []
+}

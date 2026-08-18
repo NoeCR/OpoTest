@@ -1,0 +1,39 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "5",
+    "code": "CONSTITUCIÓN",
+    "ordinal": "CONSTITUCIÓN",
+    "order": "1",
+    "order_def": "AAAA1",
+    "publish": "YES",
+    "name_es": "Constitución Española de 1978",
+    "acronim_es": "Constitución Española"
+  },
+  "title": {
+    "id": "21",
+    "idLaw": "5",
+    "code": "TÍTULO II",
+    "ordinal": "II",
+    "order": "4",
+    "order_def": "AAAA4BBBB1",
+    "name_es": "De la Corona",
+    "text_es": "Artículos del 56 al 65"
+  },
+  "chapter": [],
+  "section": [],
+  "article": {
+    "id": "371",
+    "idLaw": "5",
+    "idTitle": "21",
+    "idChapter": null,
+    "idSection": null,
+    "code": "Artículo 64",
+    "ordinal": "64",
+    "order": "9",
+    "name_es": "\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

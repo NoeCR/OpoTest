@@ -1,0 +1,193 @@
+{
+  "error": 0,
+  "arChapters": [
+    {
+      "id": "9",
+      "idTitle": "8",
+      "code": "CAPÍTULO I",
+      "ordinal": "I",
+      "order": "1",
+      "name_es": "Garantías del procedimiento.",
+      "text_es": "Artículo 53"
+    },
+    {
+      "id": "10",
+      "idTitle": "8",
+      "code": "CAPÍTULO II",
+      "ordinal": "II",
+      "order": "2",
+      "name_es": "Iniciación del procedimiento.",
+      "text_es": "Artículos del 54 al 69"
+    },
+    {
+      "id": "11",
+      "idTitle": "8",
+      "code": "CAPÍTULO III",
+      "ordinal": "III",
+      "order": "3",
+      "name_es": "Ordenación del procedimiento.",
+      "text_es": "Artículos del 70 al 74"
+    },
+    {
+      "id": "12",
+      "idTitle": "8",
+      "code": "CAPÍTULO IV",
+      "ordinal": "IV",
+      "order": "4",
+      "name_es": "Instrucción del procedimiento.",
+      "text_es": "Artículos del 75 al 83"
+    },
+    {
+      "id": "13",
+      "idTitle": "8",
+      "code": "CAPÍTULO V",
+      "ordinal": "V",
+      "order": "5",
+      "name_es": "Finalización del procedimiento.",
+      "text_es": "Artículos del 84 al 95"
+    },
+    {
+      "id": "14",
+      "idTitle": "8",
+      "code": "CAPÍTULO VI",
+      "ordinal": "VI",
+      "order": "6",
+      "name_es": "De la tramitación simplificada del procedimiento administrativo común.",
+      "text_es": "Artículo 96"
+    },
+    {
+      "id": "15",
+      "idTitle": "8",
+      "code": "CAPÍTULO VII",
+      "ordinal": "VII",
+      "order": "7",
+      "name_es": "Ejecución.",
+      "text_es": "Artículos del 97 al 105"
+    }
+  ],
+  "law": {
+    "id": "1",
+    "code": "L39/2015",
+    "ordinal": "L39/2015",
+    "order": "2",
+    "order_def": "AAAA2",
+    "publish": "YES",
+    "name_es": "Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas",
+    "acronim_es": "Ley 39/2015, del Procedimiento Administrativo Común"
+  },
+  "title": {
+    "id": "8",
+    "idLaw": "1",
+    "code": "TÍTULO IV",
+    "ordinal": "IV",
+    "order": "5",
+    "order_def": "AAAA5BBBB2",
+    "name_es": "De las disposiciones sobre el procedimiento administrativo común.",
+    "text_es": "Artículos del 53 al 105"
+  },
+  "qByTitle": {
+    "8": {
+      "mainLevel": [],
+      "subLevel": [
+        "358",
+        "356",
+        "357",
+        "359",
+        "360",
+        "361",
+        "363",
+        "365",
+        "366",
+        "367",
+        "364",
+        "368",
+        "369",
+        "370",
+        "371",
+        "372",
+        "373",
+        "374",
+        "375",
+        "377",
+        "376",
+        "378",
+        "379",
+        "380",
+        "381"
+      ],
+      "recent": 0
+    }
+  },
+  "qByChapter": {
+    "9": {
+      "mainLevel": [
+        "358"
+      ],
+      "subLevel": [],
+      "recent": 0
+    },
+    "10": {
+      "mainLevel": [
+        "363",
+        "361",
+        "360",
+        "359",
+        "357",
+        "356"
+      ],
+      "subLevel": [],
+      "recent": 0
+    },
+    "11": {
+      "mainLevel": [
+        "365",
+        "366",
+        "367"
+      ],
+      "subLevel": [],
+      "recent": 0
+    },
+    "12": {
+      "mainLevel": [
+        "370",
+        "369",
+        "368",
+        "364"
+      ],
+      "subLevel": [],
+      "recent": 0
+    },
+    "13": {
+      "mainLevel": [
+        "377",
+        "375",
+        "374",
+        "373",
+        "372",
+        "371"
+      ],
+      "subLevel": [],
+      "recent": 0
+    },
+    "14": {
+      "mainLevel": [
+        "376"
+      ],
+      "subLevel": [],
+      "recent": 0
+    },
+    "15": {
+      "mainLevel": [
+        "378",
+        "379",
+        "380",
+        "381"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "arArticles": [],
+  "$arIdsArticles": [],
+  "qByArticle": []
+}

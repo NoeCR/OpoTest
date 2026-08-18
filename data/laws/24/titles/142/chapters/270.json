@@ -1,0 +1,146 @@
+{
+  "error": 0,
+  "arSections": [],
+  "law": {
+    "id": "24",
+    "code": "LO3/2007",
+    "ordinal": "LO3/2007",
+    "order": "10",
+    "order_def": "AAA10",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres.",
+    "acronim_es": "Ley Orgánica 3/2007- Igualdad efectiva de mujeres y hombres."
+  },
+  "title": {
+    "id": "142",
+    "idLaw": "24",
+    "code": "TÍTULO II",
+    "ordinal": "II",
+    "order": "3",
+    "order_def": "AAAA3BBB10",
+    "name_es": "Políticas públicas para la igualdad.\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "270",
+    "idTitle": "142",
+    "code": "CAPÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "name_es": "Principios generales.\r",
+    "text_es": ""
+  },
+  "qByChapter": [],
+  "qBySection": [],
+  "arArticles": [
+    {
+      "id": "2245",
+      "idLaw": "24",
+      "idTitle": "142",
+      "idChapter": "270",
+      "idSection": null,
+      "code": "Artículo 14",
+      "ordinal": "14",
+      "order": "1",
+      "name_es": "Criterios generales de actuación de los Poderes Públicos.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2246",
+      "idLaw": "24",
+      "idTitle": "142",
+      "idChapter": "270",
+      "idSection": null,
+      "code": "Artículo 15",
+      "ordinal": "15",
+      "order": "2",
+      "name_es": "Transversalidad del principio de igualdad de trato entre mujeres y hombres.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2247",
+      "idLaw": "24",
+      "idTitle": "142",
+      "idChapter": "270",
+      "idSection": null,
+      "code": "Artículo 16",
+      "ordinal": "16",
+      "order": "3",
+      "name_es": "Nombramientos realizados por los Poderes Públicos.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2248",
+      "idLaw": "24",
+      "idTitle": "142",
+      "idChapter": "270",
+      "idSection": null,
+      "code": "Artículo 17",
+      "ordinal": "17",
+      "order": "4",
+      "name_es": "Plan Estratégico de Igualdad de Oportunidades.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2249",
+      "idLaw": "24",
+      "idTitle": "142",
+      "idChapter": "270",
+      "idSection": null,
+      "code": "Artículo 18",
+      "ordinal": "18",
+      "order": "5",
+      "name_es": "Informe periódico.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2250",
+      "idLaw": "24",
+      "idTitle": "142",
+      "idChapter": "270",
+      "idSection": null,
+      "code": "Artículo 19",
+      "ordinal": "19",
+      "order": "6",
+      "name_es": "Informes de impacto de género.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2251",
+      "idLaw": "24",
+      "idTitle": "142",
+      "idChapter": "270",
+      "idSection": null,
+      "code": "Artículo 20",
+      "ordinal": "20",
+      "order": "7",
+      "name_es": "Adecuación de las estadísticas y estudios.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2252",
+      "idLaw": "24",
+      "idTitle": "142",
+      "idChapter": "270",
+      "idSection": null,
+      "code": "Artículo 21",
+      "ordinal": "21",
+      "order": "8",
+      "name_es": "Colaboración entre las Administraciones públicas.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2253",
+      "idLaw": "24",
+      "idTitle": "142",
+      "idChapter": "270",
+      "idSection": null,
+      "code": "Artículo 22",
+      "ordinal": "22",
+      "order": "9",
+      "name_es": "Acciones de planificación equitativa de los tiempos.\r",
+      "text_es": ""
+    }
+  ],
+  "qByArticle": []
+}

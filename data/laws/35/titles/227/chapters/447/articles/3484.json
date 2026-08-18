@@ -1,0 +1,47 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "35",
+    "code": "L38/2003",
+    "ordinal": "L38/2003",
+    "order": "28",
+    "order_def": "AAA28",
+    "publish": "YES",
+    "name_es": "Ley 38/2003, de 17 de noviembre, General de Subvenciones.",
+    "acronim_es": "Ley 38/2003, de 17 de noviembre, General de Subvenciones."
+  },
+  "title": {
+    "id": "227",
+    "idLaw": "35",
+    "code": "TÍTULO IV",
+    "ordinal": "IV",
+    "order": "5",
+    "order_def": "AAAA5BBB28",
+    "name_es": "Infracciones y sanciones administrativas en materia de subvenciones,\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "447",
+    "idTitle": "227",
+    "code": "CAPÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "name_es": "De las infracciones administrativas\r",
+    "text_es": ""
+  },
+  "section": [],
+  "article": {
+    "id": "3484",
+    "idLaw": "35",
+    "idTitle": "227",
+    "idChapter": "447",
+    "idSection": null,
+    "code": "Artículo 56",
+    "ordinal": "56",
+    "order": "5",
+    "name_es": "Infracciones leves\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

@@ -1,0 +1,88 @@
+{
+  "error": 0,
+  "arChapters": [
+    {
+      "id": "168",
+      "idTitle": "125",
+      "code": "CAPÍTULO I",
+      "ordinal": "I",
+      "order": "1",
+      "name_es": "Normas Generales\r",
+      "text_es": ""
+    },
+    {
+      "id": "169",
+      "idTitle": "125",
+      "code": "CAPÍTULO II",
+      "ordinal": "II",
+      "order": "2",
+      "name_es": "De la Deuda del Estado\r",
+      "text_es": ""
+    },
+    {
+      "id": "170",
+      "idTitle": "125",
+      "code": "CAPÍTULO III",
+      "ordinal": "III",
+      "order": "3",
+      "name_es": "De la Gestión de la Tesorería del Estado\r",
+      "text_es": ""
+    },
+    {
+      "id": "171",
+      "idTitle": "125",
+      "code": "CAPÍTULO IV",
+      "ordinal": "IV",
+      "order": "4",
+      "name_es": "Del endeudamiento de los organismos y entidades integrantes del sector público institucional y de la gestión de tesorería de los organismos autónomos\r",
+      "text_es": ""
+    },
+    {
+      "id": "172",
+      "idTitle": "125",
+      "code": "CAPÍTULO V",
+      "ordinal": "V",
+      "order": "5",
+      "name_es": "De los avales del Estado\r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "22",
+    "code": "L47/2003",
+    "ordinal": "L47/2003",
+    "order": "6",
+    "order_def": "AAAA6",
+    "publish": "YES",
+    "name_es": "Ley 47/2003, de 26 de noviembre, General Presupuestaria.",
+    "acronim_es": "Ley 47/2003, General Presupuestaria."
+  },
+  "title": {
+    "id": "125",
+    "idLaw": "22",
+    "code": "TÍTULO IV",
+    "ordinal": "IV",
+    "order": "4",
+    "order_def": "AAAA4BBBB6",
+    "name_es": "Del Tesoro Público, de la Deuda del Estado y de las Operaciones Financieras\r",
+    "text_es": ""
+  },
+  "qByTitle": {
+    "125": {
+      "mainLevel": [
+        "948",
+        "949",
+        "950",
+        "975",
+        "976",
+        "977"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "qByChapter": [],
+  "arArticles": [],
+  "$arIdsArticles": [],
+  "qByArticle": []
+}

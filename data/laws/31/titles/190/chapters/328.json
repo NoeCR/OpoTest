@@ -1,0 +1,110 @@
+{
+  "error": 0,
+  "arSections": [],
+  "law": {
+    "id": "31",
+    "code": "L4/2023",
+    "ordinal": "L4/2023",
+    "order": "20",
+    "order_def": "AAA20",
+    "publish": "YES",
+    "name_es": "Ley 4/2023, de 28 de febrero, para la igualdad real y efectiva de las personas trans y para la garantía de los derechos de las personas LGTBI.",
+    "acronim_es": "Ley 4/2023, de 28 de febrero, para la igualdad real y efectiva de las personas trans y para la garantía de los derechos de las personas LGTBI."
+  },
+  "title": {
+    "id": "190",
+    "idLaw": "31",
+    "code": "TÍTULO I",
+    "ordinal": "I",
+    "order": "2",
+    "order_def": "AAAA2BBB20",
+    "name_es": "Actuación de los poderes públicos.\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "328",
+    "idTitle": "190",
+    "code": "CAPÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "name_es": "Criterios y líneas generales de actuación de los poderes públicos y órgano de participación ciudadana.\r",
+    "text_es": ""
+  },
+  "qByChapter": [],
+  "qBySection": [],
+  "arArticles": [
+    {
+      "id": "3284",
+      "idLaw": "31",
+      "idTitle": "190",
+      "idChapter": "328",
+      "idSection": null,
+      "code": "Artículo 4",
+      "ordinal": "4",
+      "order": "1",
+      "name_es": "Deber de protección.\r",
+      "text_es": ""
+    },
+    {
+      "id": "3285",
+      "idLaw": "31",
+      "idTitle": "190",
+      "idChapter": "328",
+      "idSection": null,
+      "code": "Artículo 5",
+      "ordinal": "5",
+      "order": "2",
+      "name_es": "Reconocimiento y apoyo institucional.\r",
+      "text_es": ""
+    },
+    {
+      "id": "3286",
+      "idLaw": "31",
+      "idTitle": "190",
+      "idChapter": "328",
+      "idSection": null,
+      "code": "Artículo 6",
+      "ordinal": "6",
+      "order": "3",
+      "name_es": "Divulgación y sensibilización.\r",
+      "text_es": ""
+    },
+    {
+      "id": "3287",
+      "idLaw": "31",
+      "idTitle": "190",
+      "idChapter": "328",
+      "idSection": null,
+      "code": "Artículo 7",
+      "ordinal": "7",
+      "order": "4",
+      "name_es": "Estadísticas y estudios.\r",
+      "text_es": ""
+    },
+    {
+      "id": "3288",
+      "idLaw": "31",
+      "idTitle": "190",
+      "idChapter": "328",
+      "idSection": null,
+      "code": "Artículo 8",
+      "ordinal": "8",
+      "order": "5",
+      "name_es": "Colaboración entre Administraciones públicas.\r",
+      "text_es": ""
+    },
+    {
+      "id": "3289",
+      "idLaw": "31",
+      "idTitle": "190",
+      "idChapter": "328",
+      "idSection": null,
+      "code": "Artículo 9",
+      "ordinal": "9",
+      "order": "6",
+      "name_es": "Consejo de Participación de las Personas LGTBI.\r",
+      "text_es": ""
+    }
+  ],
+  "qByArticle": []
+}

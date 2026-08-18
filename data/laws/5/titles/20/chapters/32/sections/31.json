@@ -1,0 +1,249 @@
+{
+  "error": 0,
+  "arArticles": [
+    {
+      "id": "322",
+      "idLaw": "5",
+      "idTitle": "20",
+      "idChapter": "32",
+      "idSection": "31",
+      "code": "Artículo 15",
+      "ordinal": "15",
+      "order": "1",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "323",
+      "idLaw": "5",
+      "idTitle": "20",
+      "idChapter": "32",
+      "idSection": "31",
+      "code": "Artículo 16",
+      "ordinal": "16",
+      "order": "2",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "324",
+      "idLaw": "5",
+      "idTitle": "20",
+      "idChapter": "32",
+      "idSection": "31",
+      "code": "Artículo 17",
+      "ordinal": "17",
+      "order": "3",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "325",
+      "idLaw": "5",
+      "idTitle": "20",
+      "idChapter": "32",
+      "idSection": "31",
+      "code": "Artículo 18",
+      "ordinal": "18",
+      "order": "4",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "326",
+      "idLaw": "5",
+      "idTitle": "20",
+      "idChapter": "32",
+      "idSection": "31",
+      "code": "Artículo 19",
+      "ordinal": "19",
+      "order": "5",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "327",
+      "idLaw": "5",
+      "idTitle": "20",
+      "idChapter": "32",
+      "idSection": "31",
+      "code": "Artículo 20",
+      "ordinal": "20",
+      "order": "6",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "328",
+      "idLaw": "5",
+      "idTitle": "20",
+      "idChapter": "32",
+      "idSection": "31",
+      "code": "Artículo 21",
+      "ordinal": "21",
+      "order": "7",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "329",
+      "idLaw": "5",
+      "idTitle": "20",
+      "idChapter": "32",
+      "idSection": "31",
+      "code": "Artículo 22",
+      "ordinal": "22",
+      "order": "8",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "330",
+      "idLaw": "5",
+      "idTitle": "20",
+      "idChapter": "32",
+      "idSection": "31",
+      "code": "Artículo 23",
+      "ordinal": "23",
+      "order": "9",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "331",
+      "idLaw": "5",
+      "idTitle": "20",
+      "idChapter": "32",
+      "idSection": "31",
+      "code": "Artículo 24",
+      "ordinal": "24",
+      "order": "10",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "332",
+      "idLaw": "5",
+      "idTitle": "20",
+      "idChapter": "32",
+      "idSection": "31",
+      "code": "Artículo 25",
+      "ordinal": "25",
+      "order": "11",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "333",
+      "idLaw": "5",
+      "idTitle": "20",
+      "idChapter": "32",
+      "idSection": "31",
+      "code": "Artículo 26",
+      "ordinal": "26",
+      "order": "12",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "334",
+      "idLaw": "5",
+      "idTitle": "20",
+      "idChapter": "32",
+      "idSection": "31",
+      "code": "Artículo 27",
+      "ordinal": "27",
+      "order": "13",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "335",
+      "idLaw": "5",
+      "idTitle": "20",
+      "idChapter": "32",
+      "idSection": "31",
+      "code": "Artículo 28",
+      "ordinal": "28",
+      "order": "14",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "336",
+      "idLaw": "5",
+      "idTitle": "20",
+      "idChapter": "32",
+      "idSection": "31",
+      "code": "Artículo 29",
+      "ordinal": "29",
+      "order": "15",
+      "name_es": "\r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "5",
+    "code": "CONSTITUCIÓN",
+    "ordinal": "CONSTITUCIÓN",
+    "order": "1",
+    "order_def": "AAAA1",
+    "publish": "YES",
+    "name_es": "Constitución Española de 1978",
+    "acronim_es": "Constitución Española"
+  },
+  "title": {
+    "id": "20",
+    "idLaw": "5",
+    "code": "TÍTULO I",
+    "ordinal": "I",
+    "order": "3",
+    "order_def": "AAAA3BBBB1",
+    "name_es": "De los derechos y deberes fundamentales",
+    "text_es": "Artículos del 10 al 55"
+  },
+  "chapter": {
+    "id": "32",
+    "idTitle": "20",
+    "code": "CAPÍTULO SEGUNDO",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "Derechos y libertades",
+    "text_es": null
+  },
+  "section": {
+    "id": "31",
+    "idChapter": "32",
+    "code": "Sección 1",
+    "ordinal": "1",
+    "order": "1",
+    "name_es": "De los derechos fundamentales y de las libertades públicas",
+    "text_es": null
+  },
+  "code": "Sección 1 - ",
+  "qBySection": {
+    "31": {
+      "mainLevel": [
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45",
+        "46",
+        "47",
+        "48",
+        "49",
+        "50",
+        "51",
+        "52",
+        "53",
+        "54",
+        "55"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "qByArticle": []
+}

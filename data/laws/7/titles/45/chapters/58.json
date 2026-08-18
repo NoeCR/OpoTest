@@ -1,0 +1,74 @@
+{
+  "error": 0,
+  "arSections": [],
+  "law": {
+    "id": "7",
+    "code": "RD364/1995",
+    "ordinal": "RD364/1995",
+    "order": "18",
+    "order_def": "AAA18",
+    "publish": "YES",
+    "name_es": "Real Decreto 364/1995, de 10 de marzo, por el que se aprueba el Reglamento General de ingreso del personal al servicio de la Administración General del Estado y de provisión de puestos de trabajo y promoción profesional de los funcionarios civiles de la Administración General del Estado",
+    "acronim_es": "RD 364/1995 - Ingreso, Provisión de puestos y Promoción profesional."
+  },
+  "title": {
+    "id": "45",
+    "idLaw": "7",
+    "code": "TÍTULO V",
+    "ordinal": "V",
+    "order": "6",
+    "order_def": "AAAA6BBB18",
+    "name_es": "Promoción interna\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "58",
+    "idTitle": "45",
+    "code": "CAPÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "Promoción desde Cuerpos o Escalas de un grupo de titulación a otro del inmediato superior\r",
+    "text_es": ""
+  },
+  "qByChapter": [],
+  "qBySection": [],
+  "arArticles": [
+    {
+      "id": "569",
+      "idLaw": "7",
+      "idTitle": "45",
+      "idChapter": "58",
+      "idSection": null,
+      "code": "Artículo 77",
+      "ordinal": "77",
+      "order": "1",
+      "name_es": "Características de las pruebas\r",
+      "text_es": ""
+    },
+    {
+      "id": "570",
+      "idLaw": "7",
+      "idTitle": "45",
+      "idChapter": "58",
+      "idSection": null,
+      "code": "Artículo 78",
+      "ordinal": "78",
+      "order": "2",
+      "name_es": "Derechos de los funcionarios de promoción interna\r",
+      "text_es": ""
+    },
+    {
+      "id": "571",
+      "idLaw": "7",
+      "idTitle": "45",
+      "idChapter": "58",
+      "idSection": null,
+      "code": "Artículo 79",
+      "ordinal": "79",
+      "order": "3",
+      "name_es": "Acumulación de vacantes\r",
+      "text_es": ""
+    }
+  ],
+  "qByArticle": []
+}

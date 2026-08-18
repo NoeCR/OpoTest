@@ -1,0 +1,47 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "1",
+    "code": "L39/2015",
+    "ordinal": "L39/2015",
+    "order": "2",
+    "order_def": "AAAA2",
+    "publish": "YES",
+    "name_es": "Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas",
+    "acronim_es": "Ley 39/2015, del Procedimiento Administrativo Común"
+  },
+  "title": {
+    "id": "6",
+    "idLaw": "1",
+    "code": "TÍTULO II",
+    "ordinal": "II",
+    "order": "3",
+    "order_def": "AAAA3BBBB2",
+    "name_es": "De la actividad de las Administraciones Públicas.",
+    "text_es": "Artículos del 13 al 33"
+  },
+  "chapter": {
+    "id": "4",
+    "idTitle": "6",
+    "code": "CAPÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "name_es": "Normas generales de actuación.",
+    "text_es": "Artículos del 13 al 28"
+  },
+  "section": [],
+  "article": {
+    "id": "97",
+    "idLaw": "1",
+    "idTitle": "6",
+    "idChapter": "4",
+    "idSection": null,
+    "code": "Artículo 24",
+    "ordinal": "24",
+    "order": "12",
+    "name_es": "Silencio administrativo en procedimientos iniciados a solicitud del interesado.",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

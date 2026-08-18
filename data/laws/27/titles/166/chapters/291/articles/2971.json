@@ -1,0 +1,47 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "27",
+    "code": "L9/2017",
+    "ordinal": "L9/2017",
+    "order": "5",
+    "order_def": "AAAA5",
+    "publish": "YES",
+    "name_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público, por la que se transponen al ordenamiento jurídico español las Directivas del Parlamento Europeo y del Consejo 2014/23/UE y 2014/24/UE, de 26 de febrero de 2014.",
+    "acronim_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público."
+  },
+  "title": {
+    "id": "166",
+    "idLaw": "27",
+    "code": "LIBRO TERCERO",
+    "ordinal": "TERCERO",
+    "order": "4",
+    "order_def": "AAAA4BBBB5",
+    "name_es": "De los contratos de otros entes del sector público\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "291",
+    "idTitle": "166",
+    "code": "TÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "name_es": "Contratos de los poderes adjudicadores que no tengan la condición de Administraciones Públicas\r",
+    "text_es": ""
+  },
+  "section": [],
+  "article": {
+    "id": "2971",
+    "idLaw": "27",
+    "idTitle": "166",
+    "idChapter": "291",
+    "idSection": null,
+    "code": "Artículo 318",
+    "ordinal": "318",
+    "order": "3",
+    "name_es": "Adjudicación de contratos no sujetos a regulación armonizada.\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

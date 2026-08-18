@@ -1,0 +1,192 @@
+{
+  "error": 0,
+  "arChapters": [],
+  "law": {
+    "id": "5",
+    "code": "CONSTITUCIÓN",
+    "ordinal": "CONSTITUCIÓN",
+    "order": "1",
+    "order_def": "AAAA1",
+    "publish": "YES",
+    "name_es": "Constitución Española de 1978",
+    "acronim_es": "Constitución Española"
+  },
+  "title": {
+    "id": "25",
+    "idLaw": "5",
+    "code": "TÍTULO VI",
+    "ordinal": "VI",
+    "order": "8",
+    "order_def": "AAAA8BBBB1",
+    "name_es": "Del Poder Judicial",
+    "text_es": "Artículos del 117 al 127"
+  },
+  "qByTitle": {
+    "25": {
+      "mainLevel": [
+        "151",
+        "152",
+        "153",
+        "154",
+        "155",
+        "156",
+        "157",
+        "158",
+        "159",
+        "160",
+        "161"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "qByChapter": [],
+  "arArticles": [
+    {
+      "id": "424",
+      "idLaw": "5",
+      "idTitle": "25",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 117",
+      "ordinal": "117",
+      "order": "1",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "425",
+      "idLaw": "5",
+      "idTitle": "25",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 118",
+      "ordinal": "118",
+      "order": "2",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "426",
+      "idLaw": "5",
+      "idTitle": "25",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 119",
+      "ordinal": "119",
+      "order": "3",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "427",
+      "idLaw": "5",
+      "idTitle": "25",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 120",
+      "ordinal": "120",
+      "order": "4",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "428",
+      "idLaw": "5",
+      "idTitle": "25",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 121",
+      "ordinal": "121",
+      "order": "5",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "429",
+      "idLaw": "5",
+      "idTitle": "25",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 122",
+      "ordinal": "122",
+      "order": "6",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "430",
+      "idLaw": "5",
+      "idTitle": "25",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 123",
+      "ordinal": "123",
+      "order": "7",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "431",
+      "idLaw": "5",
+      "idTitle": "25",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 124",
+      "ordinal": "124",
+      "order": "8",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "432",
+      "idLaw": "5",
+      "idTitle": "25",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 125",
+      "ordinal": "125",
+      "order": "9",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "433",
+      "idLaw": "5",
+      "idTitle": "25",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 126",
+      "ordinal": "126",
+      "order": "10",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "434",
+      "idLaw": "5",
+      "idTitle": "25",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 127",
+      "ordinal": "127",
+      "order": "11",
+      "name_es": "\r",
+      "text_es": ""
+    }
+  ],
+  "$arIdsArticles": [
+    "424",
+    "425",
+    "426",
+    "427",
+    "428",
+    "429",
+    "430",
+    "431",
+    "432",
+    "433",
+    "434"
+  ],
+  "qByArticle": []
+}

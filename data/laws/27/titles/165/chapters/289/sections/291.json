@@ -1,0 +1,212 @@
+{
+  "error": 0,
+  "arArticles": [
+    {
+      "id": "2871",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "289",
+      "idSection": "291",
+      "code": "Artículo 218",
+      "ordinal": "218",
+      "order": "1",
+      "name_es": "Sistemas para la racionalización de la contratación de las Administraciones Públicas.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2872",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "289",
+      "idSection": "291",
+      "code": "Artículo 219",
+      "ordinal": "219",
+      "order": "2",
+      "name_es": "Funcionalidad y límites.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2873",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "289",
+      "idSection": "291",
+      "code": "Artículo 220",
+      "ordinal": "220",
+      "order": "3",
+      "name_es": "Procedimiento de celebración de acuerdos marco.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2874",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "289",
+      "idSection": "291",
+      "code": "Artículo 221",
+      "ordinal": "221",
+      "order": "4",
+      "name_es": "Adjudicación de contratos basados en un acuerdo marco.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2875",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "289",
+      "idSection": "291",
+      "code": "Artículo 222",
+      "ordinal": "222",
+      "order": "5",
+      "name_es": "Modificación de los acuerdos marco y de los contratos basados en un acuerdo marco\r",
+      "text_es": ""
+    },
+    {
+      "id": "2876",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "289",
+      "idSection": "291",
+      "code": "Artículo 223",
+      "ordinal": "223",
+      "order": "6",
+      "name_es": "Delimitación.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2877",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "289",
+      "idSection": "291",
+      "code": "Artículo 224",
+      "ordinal": "224",
+      "order": "7",
+      "name_es": "Implementación\r",
+      "text_es": ""
+    },
+    {
+      "id": "2878",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "289",
+      "idSection": "291",
+      "code": "Artículo 225",
+      "ordinal": "225",
+      "order": "8",
+      "name_es": "Incorporación de empresas al sistema.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2879",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "289",
+      "idSection": "291",
+      "code": "Artículo 226",
+      "ordinal": "226",
+      "order": "9",
+      "name_es": "Adjudicación de los contratos específicos en el marco de un sistema dinámico de adquisición\r",
+      "text_es": ""
+    },
+    {
+      "id": "2880",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "289",
+      "idSection": "291",
+      "code": "Artículo 227",
+      "ordinal": "227",
+      "order": "10",
+      "name_es": "Funcionalidad y principios de actuación\r",
+      "text_es": ""
+    },
+    {
+      "id": "2881",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "289",
+      "idSection": "291",
+      "code": "Artículo 228",
+      "ordinal": "228",
+      "order": "11",
+      "name_es": "Creación de centrales de contratación por las Comunidades Autónomas y Entidades Locales\r",
+      "text_es": ""
+    },
+    {
+      "id": "2882",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "289",
+      "idSection": "291",
+      "code": "Artículo 229",
+      "ordinal": "229",
+      "order": "12",
+      "name_es": "Régimen general\r",
+      "text_es": ""
+    },
+    {
+      "id": "2883",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "289",
+      "idSection": "291",
+      "code": "Artículo 230",
+      "ordinal": "230",
+      "order": "13",
+      "name_es": "Adquisición centralizada de equipos y sistemas para el tratamiento de la información\r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "27",
+    "code": "L9/2017",
+    "ordinal": "L9/2017",
+    "order": "5",
+    "order_def": "AAAA5",
+    "publish": "YES",
+    "name_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público, por la que se transponen al ordenamiento jurídico español las Directivas del Parlamento Europeo y del Consejo 2014/23/UE y 2014/24/UE, de 26 de febrero de 2014.",
+    "acronim_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público."
+  },
+  "title": {
+    "id": "165",
+    "idLaw": "27",
+    "code": "LIBRO SEGUNDO",
+    "ordinal": "SEGUNDO",
+    "order": "3",
+    "order_def": "AAAA3BBBB5",
+    "name_es": "De los contratos de las Administraciones Públicas\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "289",
+    "idTitle": "165",
+    "code": "TÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "name_es": "Disposiciones generales\r",
+    "text_es": ""
+  },
+  "section": {
+    "id": "291",
+    "idChapter": "289",
+    "code": "CAPÍTULO II",
+    "ordinal": "II",
+    "order": "4",
+    "name_es": "Racionalización técnica de la contratación\r",
+    "text_es": ""
+  },
+  "code": "CAPÍTULO II - ",
+  "qBySection": {
+    "291": {
+      "mainLevel": [
+        "834",
+        "835",
+        "849"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "qByArticle": []
+}

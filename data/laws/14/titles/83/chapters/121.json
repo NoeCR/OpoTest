@@ -1,0 +1,50 @@
+{
+  "error": 0,
+  "arSections": [],
+  "law": {
+    "id": "14",
+    "code": "LO3/1981",
+    "ordinal": "LO3/1981",
+    "order": "21",
+    "order_def": "AAA21",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 3/1981, de 6 de abril, del Defensor del Pueblo.",
+    "acronim_es": "LO 3/1981 - Defensor del Pueblo"
+  },
+  "title": {
+    "id": "83",
+    "idLaw": "14",
+    "code": "TÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "order_def": "AAAA2BBB21",
+    "name_es": "Del procedimiento\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "121",
+    "idTitle": "83",
+    "code": "CAPÍTULO VII",
+    "ordinal": "VII",
+    "order": "7",
+    "name_es": "Gastos causados a particulares\r",
+    "text_es": ""
+  },
+  "qByChapter": [],
+  "qBySection": [],
+  "arArticles": [
+    {
+      "id": "1525",
+      "idLaw": "14",
+      "idTitle": "83",
+      "idChapter": "121",
+      "idSection": null,
+      "code": "Artículo 27",
+      "ordinal": "27",
+      "order": "1",
+      "name_es": "27",
+      "text_es": ""
+    }
+  ],
+  "qByArticle": []
+}

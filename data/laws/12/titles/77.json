@@ -1,0 +1,44 @@
+{
+  "error": 0,
+  "arChapters": [],
+  "law": {
+    "id": "12",
+    "code": "L50/1997",
+    "ordinal": "L50/1997",
+    "order": "9",
+    "order_def": "AAAA9",
+    "publish": "YES",
+    "name_es": "Ley 50/1997, de 27 de noviembre, del Gobierno",
+    "acronim_es": "Ley 50/1997 - del Gobierno"
+  },
+  "title": {
+    "id": "77",
+    "idLaw": "12",
+    "code": "TÍTULO VI",
+    "ordinal": "VI",
+    "order": "6",
+    "order_def": "AAAA6BBBB9",
+    "name_es": "Del control del Gobierno",
+    "text_es": ""
+  },
+  "qByTitle": [],
+  "qByChapter": [],
+  "arArticles": [
+    {
+      "id": "1450",
+      "idLaw": "12",
+      "idTitle": "77",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 29",
+      "ordinal": "29",
+      "order": "1",
+      "name_es": "Del control de los actos del Gobierno",
+      "text_es": ""
+    }
+  ],
+  "$arIdsArticles": [
+    "1450"
+  ],
+  "qByArticle": []
+}

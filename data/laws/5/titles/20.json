@@ -1,0 +1,209 @@
+{
+  "error": 0,
+  "arChapters": [
+    {
+      "id": "31",
+      "idTitle": "20",
+      "code": "CAPÍTULO PRIMERO",
+      "ordinal": "I",
+      "order": "1",
+      "name_es": "De los españoles y los extranjeros",
+      "text_es": null
+    },
+    {
+      "id": "32",
+      "idTitle": "20",
+      "code": "CAPÍTULO SEGUNDO",
+      "ordinal": "II",
+      "order": "2",
+      "name_es": "Derechos y libertades",
+      "text_es": null
+    },
+    {
+      "id": "33",
+      "idTitle": "20",
+      "code": "CAPÍTULO TERCERO",
+      "ordinal": "III",
+      "order": "3",
+      "name_es": "De los principios rectores de la política social y económica",
+      "text_es": null
+    },
+    {
+      "id": "34",
+      "idTitle": "20",
+      "code": "CAPÍTULO CUARTO",
+      "ordinal": "IV",
+      "order": "4",
+      "name_es": "De las garantías de las libertades y derechos fundamentales",
+      "text_es": null
+    },
+    {
+      "id": "35",
+      "idTitle": "20",
+      "code": "CAPÍTULO QUINTO",
+      "ordinal": "V",
+      "order": "5",
+      "name_es": "De la suspensión de los derechos y libertades",
+      "text_es": null
+    }
+  ],
+  "law": {
+    "id": "5",
+    "code": "CONSTITUCIÓN",
+    "ordinal": "CONSTITUCIÓN",
+    "order": "1",
+    "order_def": "AAAA1",
+    "publish": "YES",
+    "name_es": "Constitución Española de 1978",
+    "acronim_es": "Constitución Española"
+  },
+  "title": {
+    "id": "20",
+    "idLaw": "5",
+    "code": "TÍTULO I",
+    "ordinal": "I",
+    "order": "3",
+    "order_def": "AAAA3BBBB1",
+    "name_es": "De los derechos y deberes fundamentales",
+    "text_es": "Artículos del 10 al 55"
+  },
+  "qByTitle": {
+    "20": {
+      "mainLevel": [],
+      "subLevel": [
+        "34",
+        "35",
+        "36",
+        "37",
+        "38",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45",
+        "46",
+        "47",
+        "48",
+        "49",
+        "50",
+        "51",
+        "52",
+        "53",
+        "54",
+        "55",
+        "56",
+        "57",
+        "58",
+        "59",
+        "60",
+        "61",
+        "62",
+        "63",
+        "64",
+        "65",
+        "66",
+        "67",
+        "68",
+        "69",
+        "70",
+        "72"
+      ],
+      "recent": 0
+    }
+  },
+  "qByChapter": {
+    "31": {
+      "mainLevel": [
+        "35",
+        "36",
+        "37"
+      ],
+      "subLevel": [],
+      "recent": 0
+    },
+    "32": {
+      "mainLevel": [],
+      "subLevel": [
+        "38",
+        "49",
+        "50",
+        "51",
+        "52",
+        "53",
+        "54",
+        "55",
+        "48",
+        "47",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45",
+        "46",
+        "59",
+        "58",
+        "57",
+        "56"
+      ],
+      "recent": 0
+    },
+    "33": {
+      "mainLevel": [
+        "65",
+        "64",
+        "63",
+        "62",
+        "61",
+        "60"
+      ],
+      "subLevel": [],
+      "recent": 0
+    },
+    "34": {
+      "mainLevel": [
+        "66",
+        "67",
+        "68"
+      ],
+      "subLevel": [],
+      "recent": 0
+    },
+    "35": {
+      "mainLevel": [
+        "69",
+        "70",
+        "72"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "arArticles": [
+    {
+      "id": "317",
+      "idLaw": "5",
+      "idTitle": "20",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 10",
+      "ordinal": "10",
+      "order": "1",
+      "name_es": "\r",
+      "text_es": ""
+    }
+  ],
+  "$arIdsArticles": [
+    "317"
+  ],
+  "qByArticle": {
+    "317": {
+      "mainLevel": [
+        "34"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  }
+}

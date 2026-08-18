@@ -1,0 +1,74 @@
+{
+  "error": 0,
+  "arSections": [
+    {
+      "id": "44",
+      "idChapter": "75",
+      "code": "SECCIÓN 1",
+      "ordinal": "1",
+      "order": "1",
+      "name_es": "Disposiciones generales",
+      "text_es": null
+    },
+    {
+      "id": "45",
+      "idChapter": "75",
+      "code": "SECCIÓN 2",
+      "ordinal": "2",
+      "order": "2",
+      "name_es": "Organismos autónomos estatales",
+      "text_es": null
+    },
+    {
+      "id": "46",
+      "idChapter": "75",
+      "code": "SECCIÓN 3",
+      "ordinal": "3",
+      "order": "3",
+      "name_es": "Las entidades públicas empresariales de ámbito estatal",
+      "text_es": null
+    },
+    {
+      "id": "47",
+      "idChapter": "75",
+      "code": "SECCIÓN 4",
+      "ordinal": "4",
+      "order": "4",
+      "name_es": "Agencias estatales",
+      "text_es": null
+    }
+  ],
+  "law": {
+    "id": "10",
+    "code": "L40/2015",
+    "ordinal": "L40/2015",
+    "order": "3",
+    "order_def": "AAAA3",
+    "publish": "YES",
+    "name_es": "Ley 40/2015, de 1 de octubre, de Régimen Jurídico del Sector Público.",
+    "acronim_es": "Ley 40/2015 - Régimen Jurídico del Sector Público."
+  },
+  "title": {
+    "id": "64",
+    "idLaw": "10",
+    "code": "TÍTULO II",
+    "ordinal": "II",
+    "order": "3",
+    "order_def": "AAAA3BBBB3",
+    "name_es": "Organización y funcionamiento del sector público institucional\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "75",
+    "idTitle": "64",
+    "code": "CAPÍTULO III",
+    "ordinal": "III",
+    "order": "3",
+    "name_es": "De los organismos públicos estatales\r",
+    "text_es": ""
+  },
+  "qByChapter": [],
+  "qBySection": [],
+  "arArticles": [],
+  "qByArticle": []
+}

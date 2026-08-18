@@ -1,0 +1,142 @@
+{
+  "error": 0,
+  "arArticles": [
+    {
+      "id": "2664",
+      "idLaw": "27",
+      "idTitle": "163",
+      "idChapter": "283",
+      "idSection": "304",
+      "code": "Artículo 11",
+      "ordinal": "11",
+      "order": "2",
+      "name_es": "Otros negocios o contratos excluidos.",
+      "text_es": ""
+    },
+    {
+      "id": "2663",
+      "idLaw": "27",
+      "idTitle": "163",
+      "idChapter": "283",
+      "idSection": "304",
+      "code": "Artículo 10",
+      "ordinal": "10",
+      "order": "3",
+      "name_es": "Negocios y contratos excluidos en el ámbito financiero.",
+      "text_es": ""
+    },
+    {
+      "id": "2662",
+      "idLaw": "27",
+      "idTitle": "163",
+      "idChapter": "283",
+      "idSection": "304",
+      "code": "Artículo 9",
+      "ordinal": "9",
+      "order": "4",
+      "name_es": "Relaciones jurídicas, negocios y contratos excluidos en el ámbito del dominio público y en el ámbito patrimonial.",
+      "text_es": ""
+    },
+    {
+      "id": "2661",
+      "idLaw": "27",
+      "idTitle": "163",
+      "idChapter": "283",
+      "idSection": "304",
+      "code": "Artículo 8",
+      "ordinal": "8",
+      "order": "5",
+      "name_es": "Negocios y contratos excluidos en el ámbito de la Investigación, el Desarrollo y la Innovación.",
+      "text_es": ""
+    },
+    {
+      "id": "2660",
+      "idLaw": "27",
+      "idTitle": "163",
+      "idChapter": "283",
+      "idSection": "304",
+      "code": "Artículo 7",
+      "ordinal": "7",
+      "order": "6",
+      "name_es": "Negocios jurídicos y contratos excluidos en el ámbito internacional.",
+      "text_es": ""
+    },
+    {
+      "id": "2659",
+      "idLaw": "27",
+      "idTitle": "163",
+      "idChapter": "283",
+      "idSection": "304",
+      "code": "Artículo 6",
+      "ordinal": "6",
+      "order": "7",
+      "name_es": "Convenios y encomiendas de gestión.",
+      "text_es": ""
+    },
+    {
+      "id": "2658",
+      "idLaw": "27",
+      "idTitle": "163",
+      "idChapter": "283",
+      "idSection": "304",
+      "code": "Artículo 5",
+      "ordinal": "5",
+      "order": "8",
+      "name_es": "Negocios jurídicos y contratos excluidos en el ámbito de la Defensa y de la Seguridad.",
+      "text_es": ""
+    },
+    {
+      "id": "2657",
+      "idLaw": "27",
+      "idTitle": "163",
+      "idChapter": "283",
+      "idSection": "304",
+      "code": "Artículo 4",
+      "ordinal": "4",
+      "order": "9",
+      "name_es": "Régimen aplicable a los negocios jurídicos excluidos.",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "27",
+    "code": "L9/2017",
+    "ordinal": "L9/2017",
+    "order": "5",
+    "order_def": "AAAA5",
+    "publish": "YES",
+    "name_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público, por la que se transponen al ordenamiento jurídico español las Directivas del Parlamento Europeo y del Consejo 2014/23/UE y 2014/24/UE, de 26 de febrero de 2014.",
+    "acronim_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público."
+  },
+  "title": {
+    "id": "163",
+    "idLaw": "27",
+    "code": "TÍTULO PRELIMINAR",
+    "ordinal": "PRELIMINAR",
+    "order": "1",
+    "order_def": "AAAA1BBBB5",
+    "name_es": "Disposiciones generales\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "283",
+    "idTitle": "163",
+    "code": "CAPÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "name_es": "Objeto y ámbito de aplicación de la Ley\r",
+    "text_es": ""
+  },
+  "section": {
+    "id": "304",
+    "idChapter": "283",
+    "code": "SECCIÓN 2",
+    "ordinal": "2",
+    "order": "2",
+    "name_es": "Negocios y contratos excluidos.\r",
+    "text_es": ""
+  },
+  "code": "SECCIÓN 2 - ",
+  "qBySection": [],
+  "qByArticle": []
+}

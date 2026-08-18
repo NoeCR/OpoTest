@@ -1,0 +1,98 @@
+{
+  "error": 0,
+  "arSections": [],
+  "law": {
+    "id": "34",
+    "code": "RD33/1986",
+    "ordinal": "RD33/1986",
+    "order": "23",
+    "order_def": "AAA23",
+    "publish": "YES",
+    "name_es": "Real Decreto 33/1986, de 10 de enero, por el que se aprueba el Reglamento de Régimen Disciplinario de los Funcionarios de la Administración del Estado.",
+    "acronim_es": "Real Decreto 33/1986 - Régimen Disciplinario de los Funcionarios de la Administración del Estado."
+  },
+  "title": {
+    "id": "220",
+    "idLaw": "34",
+    "code": "TITULO I",
+    "ordinal": "I",
+    "order": "1",
+    "order_def": "AAAA1BBB23",
+    "name_es": "Régimen Disciplinario\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "338",
+    "idTitle": "220",
+    "code": "CAPÍTULO III",
+    "ordinal": "III",
+    "order": "3",
+    "name_es": "Personas responsables.\r",
+    "text_es": ""
+  },
+  "qByChapter": [],
+  "qBySection": [],
+  "arArticles": [
+    {
+      "id": "3385",
+      "idLaw": "34",
+      "idTitle": "220",
+      "idChapter": "338",
+      "idSection": null,
+      "code": "Artículo 9",
+      "ordinal": "9",
+      "order": "1",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "3386",
+      "idLaw": "34",
+      "idTitle": "220",
+      "idChapter": "338",
+      "idSection": null,
+      "code": "Artículo 10",
+      "ordinal": "10",
+      "order": "2",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "3387",
+      "idLaw": "34",
+      "idTitle": "220",
+      "idChapter": "338",
+      "idSection": null,
+      "code": "Artículo 11",
+      "ordinal": "11",
+      "order": "3",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "3388",
+      "idLaw": "34",
+      "idTitle": "220",
+      "idChapter": "338",
+      "idSection": null,
+      "code": "Artículo 12",
+      "ordinal": "12",
+      "order": "4",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "3389",
+      "idLaw": "34",
+      "idTitle": "220",
+      "idChapter": "338",
+      "idSection": null,
+      "code": "Artículo 13",
+      "ordinal": "13",
+      "order": "5",
+      "name_es": "\r",
+      "text_es": ""
+    }
+  ],
+  "qByArticle": []
+}

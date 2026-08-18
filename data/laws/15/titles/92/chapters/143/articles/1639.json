@@ -1,0 +1,47 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "15",
+    "code": "L7/1985",
+    "ordinal": "L7/1985",
+    "order": "26",
+    "order_def": "AAA26",
+    "publish": "YES",
+    "name_es": "Ley 7/1985, de 2 de abril, reguladora de las Bases del Régimen Local",
+    "acronim_es": "Ley 7/1985 - Bases del Régimen Local"
+  },
+  "title": {
+    "id": "92",
+    "idLaw": "15",
+    "code": "TÍTULO VII",
+    "ordinal": "VII",
+    "order": "7",
+    "order_def": "AAAA7BBB26",
+    "name_es": "Personal al servicio de las entidades locales\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "143",
+    "idTitle": "92",
+    "code": "CAPÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "Disposiciones comunes a los funcionarios de carrera\r",
+    "text_es": ""
+  },
+  "section": [],
+  "article": {
+    "id": "1639",
+    "idLaw": "15",
+    "idTitle": "92",
+    "idChapter": "143",
+    "idSection": null,
+    "code": "Artículo 92 bis",
+    "ordinal": "92 bis",
+    "order": "2",
+    "name_es": "Funcionarios de administración local con habilitación de carácter nacional\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

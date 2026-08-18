@@ -1,0 +1,47 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "15",
+    "code": "L7/1985",
+    "ordinal": "L7/1985",
+    "order": "26",
+    "order_def": "AAA26",
+    "publish": "YES",
+    "name_es": "Ley 7/1985, de 2 de abril, reguladora de las Bases del Régimen Local",
+    "acronim_es": "Ley 7/1985 - Bases del Régimen Local"
+  },
+  "title": {
+    "id": "90",
+    "idLaw": "15",
+    "code": "TÍTULO V",
+    "ordinal": "V",
+    "order": "5",
+    "order_def": "AAAA5BBB26",
+    "name_es": "Disposiciones comunes a las entidades locales\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "138",
+    "idTitle": "90",
+    "code": "CAPÍTULO V",
+    "ordinal": "V",
+    "order": "5",
+    "name_es": "Estatuto de los miembros de las Corporaciones locales\r",
+    "text_es": ""
+  },
+  "section": [],
+  "article": {
+    "id": "1613",
+    "idLaw": "15",
+    "idTitle": "90",
+    "idChapter": "138",
+    "idSection": null,
+    "code": "Artículo 73",
+    "ordinal": "73",
+    "order": "1",
+    "name_es": "\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

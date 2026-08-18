@@ -1,0 +1,94 @@
+{
+  "error": 0,
+  "arSections": [],
+  "law": {
+    "id": "22",
+    "code": "L47/2003",
+    "ordinal": "L47/2003",
+    "order": "6",
+    "order_def": "AAAA6",
+    "publish": "YES",
+    "name_es": "Ley 47/2003, de 26 de noviembre, General Presupuestaria.",
+    "acronim_es": "Ley 47/2003, General Presupuestaria."
+  },
+  "title": {
+    "id": "122",
+    "idLaw": "22",
+    "code": "TÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "order_def": "AAAA1BBBB6",
+    "name_es": "Del ámbito de aplicación y de la Hacienda Pública estatal\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "157",
+    "idTitle": "122",
+    "code": "CAPÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "name_es": "Ámbito de aplicación y organización del sector público estatal\r",
+    "text_es": ""
+  },
+  "qByChapter": {
+    "157": {
+      "mainLevel": [
+        "760"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "qBySection": [],
+  "arArticles": [
+    {
+      "id": "1861",
+      "idLaw": "22",
+      "idTitle": "122",
+      "idChapter": "157",
+      "idSection": null,
+      "code": "Artículo 1",
+      "ordinal": "1",
+      "order": "1",
+      "name_es": "Objeto.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1862",
+      "idLaw": "22",
+      "idTitle": "122",
+      "idChapter": "157",
+      "idSection": null,
+      "code": "Artículo 2",
+      "ordinal": "2",
+      "order": "2",
+      "name_es": "Sector público estatal.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1863",
+      "idLaw": "22",
+      "idTitle": "122",
+      "idChapter": "157",
+      "idSection": null,
+      "code": "Artículo 3",
+      "ordinal": "3",
+      "order": "3",
+      "name_es": "Sector público administrativo, empresarial y fundacional.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1864",
+      "idLaw": "22",
+      "idTitle": "122",
+      "idChapter": "157",
+      "idSection": null,
+      "code": "Artículo 4",
+      "ordinal": "4",
+      "order": "4",
+      "name_es": "Régimen jurídico aplicable.\r",
+      "text_es": ""
+    }
+  ],
+  "qByArticle": []
+}

@@ -1,0 +1,255 @@
+{
+  "error": 0,
+  "arArticles": [
+    {
+      "id": "2884",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "292",
+      "code": "Artículo 231",
+      "ordinal": "231",
+      "order": "1",
+      "name_es": "Proyecto de obras.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2885",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "292",
+      "code": "Artículo 232",
+      "ordinal": "232",
+      "order": "2",
+      "name_es": "Clasificación de las obras.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2886",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "292",
+      "code": "Artículo 233",
+      "ordinal": "233",
+      "order": "3",
+      "name_es": "Contenido de los proyectos y responsabilidad derivada de su elaboración.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2887",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "292",
+      "code": "Artículo 234",
+      "ordinal": "234",
+      "order": "4",
+      "name_es": "Presentación del proyecto por el empresario.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2888",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "292",
+      "code": "Artículo 235",
+      "ordinal": "235",
+      "order": "5",
+      "name_es": "Supervisión de proyectos.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2889",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "292",
+      "code": "Artículo 236",
+      "ordinal": "236",
+      "order": "6",
+      "name_es": "Replanteo del proyecto.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2890",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "292",
+      "code": "Artículo 237",
+      "ordinal": "237",
+      "order": "7",
+      "name_es": "Comprobación del replanteo.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2891",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "292",
+      "code": "Artículo 238",
+      "ordinal": "238",
+      "order": "8",
+      "name_es": "Ejecución de las obras y responsabilidad del contratista\r",
+      "text_es": ""
+    },
+    {
+      "id": "2892",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "292",
+      "code": "Artículo 239",
+      "ordinal": "239",
+      "order": "9",
+      "name_es": "Fuerza mayor.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2893",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "292",
+      "code": "Artículo 240",
+      "ordinal": "240",
+      "order": "10",
+      "name_es": "Certificaciones y abonos a cuenta\r",
+      "text_es": ""
+    },
+    {
+      "id": "2894",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "292",
+      "code": "Artículo 241",
+      "ordinal": "241",
+      "order": "11",
+      "name_es": "Obras a tanto alzado y obras con precio cerrado\r",
+      "text_es": ""
+    },
+    {
+      "id": "2895",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "292",
+      "code": "Artículo 242",
+      "ordinal": "242",
+      "order": "12",
+      "name_es": "Modificación del contrato de obras\r",
+      "text_es": ""
+    },
+    {
+      "id": "2896",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "292",
+      "code": "Artículo 243",
+      "ordinal": "243",
+      "order": "13",
+      "name_es": "Recepción y plazo de garantía\r",
+      "text_es": ""
+    },
+    {
+      "id": "2897",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "292",
+      "code": "Artículo 244",
+      "ordinal": "244",
+      "order": "14",
+      "name_es": "Responsabilidad por vicios ocultos\r",
+      "text_es": ""
+    },
+    {
+      "id": "2898",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "292",
+      "code": "Artículo 245",
+      "ordinal": "245",
+      "order": "15",
+      "name_es": "Causas de resolución\r",
+      "text_es": ""
+    },
+    {
+      "id": "2899",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "292",
+      "code": "Artículo 246",
+      "ordinal": "246",
+      "order": "16",
+      "name_es": "Efectos de la resolución\r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "27",
+    "code": "L9/2017",
+    "ordinal": "L9/2017",
+    "order": "5",
+    "order_def": "AAAA5",
+    "publish": "YES",
+    "name_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público, por la que se transponen al ordenamiento jurídico español las Directivas del Parlamento Europeo y del Consejo 2014/23/UE y 2014/24/UE, de 26 de febrero de 2014.",
+    "acronim_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público."
+  },
+  "title": {
+    "id": "165",
+    "idLaw": "27",
+    "code": "LIBRO SEGUNDO",
+    "ordinal": "SEGUNDO",
+    "order": "3",
+    "order_def": "AAAA3BBBB5",
+    "name_es": "De los contratos de las Administraciones Públicas\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "290",
+    "idTitle": "165",
+    "code": "TÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "De los distintos tipos de contratos de las Administraciones Públicas\r",
+    "text_es": ""
+  },
+  "section": {
+    "id": "292",
+    "idChapter": "290",
+    "code": "CAPÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "name_es": "Del contrato de obras\r",
+    "text_es": ""
+  },
+  "code": "CAPÍTULO I - ",
+  "qBySection": {
+    "292": {
+      "mainLevel": [
+        "879",
+        "880",
+        "881",
+        "882",
+        "883",
+        "884",
+        "885",
+        "886",
+        "887",
+        "888"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "qByArticle": []
+}

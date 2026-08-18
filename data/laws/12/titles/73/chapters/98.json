@@ -1,0 +1,86 @@
+{
+  "error": 0,
+  "arSections": [],
+  "law": {
+    "id": "12",
+    "code": "L50/1997",
+    "ordinal": "L50/1997",
+    "order": "9",
+    "order_def": "AAAA9",
+    "publish": "YES",
+    "name_es": "Ley 50/1997, de 27 de noviembre, del Gobierno",
+    "acronim_es": "Ley 50/1997 - del Gobierno"
+  },
+  "title": {
+    "id": "73",
+    "idLaw": "12",
+    "code": "TÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "order_def": "AAAA2BBBB9",
+    "name_es": "Del estatuto de los miembros del Gobierno, de los Secretarios de Estado y de los Directores de los Gabinetes\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "98",
+    "idTitle": "73",
+    "code": "CAPÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "name_es": "De los miembros del Gobierno\r",
+    "text_es": ""
+  },
+  "qByChapter": [],
+  "qBySection": [],
+  "arArticles": [
+    {
+      "id": "1432",
+      "idLaw": "12",
+      "idTitle": "73",
+      "idChapter": "98",
+      "idSection": null,
+      "code": "Artículo 11",
+      "ordinal": "11",
+      "order": "1",
+      "name_es": "De los requisitos de acceso al cargo\r",
+      "text_es": ""
+    },
+    {
+      "id": "1433",
+      "idLaw": "12",
+      "idTitle": "73",
+      "idChapter": "98",
+      "idSection": null,
+      "code": "Artículo 12",
+      "ordinal": "12",
+      "order": "2",
+      "name_es": "Del nombramiento y cese\r",
+      "text_es": ""
+    },
+    {
+      "id": "1434",
+      "idLaw": "12",
+      "idTitle": "73",
+      "idChapter": "98",
+      "idSection": null,
+      "code": "Artículo 13",
+      "ordinal": "13",
+      "order": "3",
+      "name_es": "De la suplencia\r",
+      "text_es": ""
+    },
+    {
+      "id": "1435",
+      "idLaw": "12",
+      "idTitle": "73",
+      "idChapter": "98",
+      "idSection": null,
+      "code": "Artículo 14",
+      "ordinal": "14",
+      "order": "4",
+      "name_es": "Del régimen de incompatibilidades de los miembros del Gobierno\r",
+      "text_es": ""
+    }
+  ],
+  "qByArticle": []
+}

@@ -1,0 +1,106 @@
+{
+  "error": 0,
+  "arArticles": [
+    {
+      "id": "2026",
+      "idLaw": "22",
+      "idTitle": "127",
+      "idChapter": "180",
+      "idSection": "101",
+      "code": "Artículo 162",
+      "ordinal": "162",
+      "order": "1",
+      "name_es": "Definición.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2027",
+      "idLaw": "22",
+      "idTitle": "127",
+      "idChapter": "180",
+      "idSection": "101",
+      "code": "Artículo 163",
+      "ordinal": "163",
+      "order": "2",
+      "name_es": "Ámbito.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2028",
+      "idLaw": "22",
+      "idTitle": "127",
+      "idChapter": "180",
+      "idSection": "101",
+      "code": "Artículo 164",
+      "ordinal": "164",
+      "order": "3",
+      "name_es": "Formas de ejercicio.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2029",
+      "idLaw": "22",
+      "idTitle": "127",
+      "idChapter": "180",
+      "idSection": "101",
+      "code": "Artículo 165",
+      "ordinal": "165",
+      "order": "4",
+      "name_es": "Plan anual de auditorías.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2030",
+      "idLaw": "22",
+      "idTitle": "127",
+      "idChapter": "180",
+      "idSection": "101",
+      "code": "Artículo 166",
+      "ordinal": "166",
+      "order": "5",
+      "name_es": "Informes de auditoría.\r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "22",
+    "code": "L47/2003",
+    "ordinal": "L47/2003",
+    "order": "6",
+    "order_def": "AAAA6",
+    "publish": "YES",
+    "name_es": "Ley 47/2003, de 26 de noviembre, General Presupuestaria.",
+    "acronim_es": "Ley 47/2003, General Presupuestaria."
+  },
+  "title": {
+    "id": "127",
+    "idLaw": "22",
+    "code": "TÍTULO VI",
+    "ordinal": "VI",
+    "order": "6",
+    "order_def": "AAAA6BBBB6",
+    "name_es": "Del control de la gestión económico-financiera efectuado por la Intervención General de la Administración del Estado\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "180",
+    "idTitle": "127",
+    "code": "CAPÍTULO IV",
+    "ordinal": "IV",
+    "order": "4",
+    "name_es": "De la auditoría pública",
+    "text_es": ""
+  },
+  "section": {
+    "id": "101",
+    "idChapter": "180",
+    "code": "SECCIÓN 1",
+    "ordinal": "1",
+    "order": "1",
+    "name_es": "Normas generales\r",
+    "text_es": ""
+  },
+  "code": "SECCIÓN 1 - ",
+  "qBySection": [],
+  "qByArticle": []
+}

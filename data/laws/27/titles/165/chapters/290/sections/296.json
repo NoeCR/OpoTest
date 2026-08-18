@@ -1,0 +1,152 @@
+{
+  "error": 0,
+  "arArticles": [
+    {
+      "id": "2961",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "296",
+      "code": "Artículo 308",
+      "ordinal": "308",
+      "order": "1",
+      "name_es": "Contenido y límites\r",
+      "text_es": ""
+    },
+    {
+      "id": "2962",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "296",
+      "code": "Artículo 309",
+      "ordinal": "309",
+      "order": "2",
+      "name_es": "Determinación del precio\r",
+      "text_es": ""
+    },
+    {
+      "id": "2963",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "296",
+      "code": "Artículo 310",
+      "ordinal": "310",
+      "order": "3",
+      "name_es": "Régimen de contratación para actividades docentes.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2964",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "296",
+      "code": "Artículo 311",
+      "ordinal": "311",
+      "order": "4",
+      "name_es": "Ejecución, responsabilidad del contratista y cumplimiento de los contratos de servicios.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2965",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "296",
+      "code": "Artículo 312",
+      "ordinal": "312",
+      "order": "5",
+      "name_es": "Especialidades de los contratos de servicios que conlleven prestaciones directas a favor de la ciudadanía\r",
+      "text_es": ""
+    },
+    {
+      "id": "2966",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "296",
+      "code": "Artículo 313",
+      "ordinal": "313",
+      "order": "6",
+      "name_es": "Causas y efectos de la resolución\r",
+      "text_es": ""
+    },
+    {
+      "id": "2967",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "296",
+      "code": "Artículo 314",
+      "ordinal": "314",
+      "order": "7",
+      "name_es": "Subsanación de errores y corrección de deficiencias\r",
+      "text_es": ""
+    },
+    {
+      "id": "2968",
+      "idLaw": "27",
+      "idTitle": "165",
+      "idChapter": "290",
+      "idSection": "296",
+      "code": "Artículo 315",
+      "ordinal": "315",
+      "order": "8",
+      "name_es": "Indemnizaciones por desviaciones en la ejecución de obras y responsabilidad por defectos o errores del proyecto.\r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "27",
+    "code": "L9/2017",
+    "ordinal": "L9/2017",
+    "order": "5",
+    "order_def": "AAAA5",
+    "publish": "YES",
+    "name_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público, por la que se transponen al ordenamiento jurídico español las Directivas del Parlamento Europeo y del Consejo 2014/23/UE y 2014/24/UE, de 26 de febrero de 2014.",
+    "acronim_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público."
+  },
+  "title": {
+    "id": "165",
+    "idLaw": "27",
+    "code": "LIBRO SEGUNDO",
+    "ordinal": "SEGUNDO",
+    "order": "3",
+    "order_def": "AAAA3BBBB5",
+    "name_es": "De los contratos de las Administraciones Públicas\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "290",
+    "idTitle": "165",
+    "code": "TÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "De los distintos tipos de contratos de las Administraciones Públicas\r",
+    "text_es": ""
+  },
+  "section": {
+    "id": "296",
+    "idChapter": "290",
+    "code": "CAPÍTULO V",
+    "ordinal": "V",
+    "order": "5",
+    "name_es": "Del contrato de servicios\r",
+    "text_es": ""
+  },
+  "code": "CAPÍTULO V - ",
+  "qBySection": {
+    "296": {
+      "mainLevel": [
+        "1005",
+        "1006",
+        "1026"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "qByArticle": []
+}

@@ -1,0 +1,50 @@
+{
+  "error": 0,
+  "arSections": [],
+  "law": {
+    "id": "10",
+    "code": "L40/2015",
+    "ordinal": "L40/2015",
+    "order": "3",
+    "order_def": "AAAA3",
+    "publish": "YES",
+    "name_es": "Ley 40/2015, de 1 de octubre, de Régimen Jurídico del Sector Público.",
+    "acronim_es": "Ley 40/2015 - Régimen Jurídico del Sector Público."
+  },
+  "title": {
+    "id": "65",
+    "idLaw": "10",
+    "code": "TÍTULO III",
+    "ordinal": "III",
+    "order": "4",
+    "order_def": "AAAA4BBBB3",
+    "name_es": "Relaciones interadministrativas",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "81",
+    "idTitle": "65",
+    "code": "CAPÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "name_es": "Principios generales de las relaciones interadministrativas\r",
+    "text_es": ""
+  },
+  "qByChapter": [],
+  "qBySection": [],
+  "arArticles": [
+    {
+      "id": "1403",
+      "idLaw": "10",
+      "idTitle": "65",
+      "idChapter": "81",
+      "idSection": null,
+      "code": "Artículo 140",
+      "ordinal": "140",
+      "order": "1",
+      "name_es": "Principios de las relaciones interadministrativas\r",
+      "text_es": ""
+    }
+  ],
+  "qByArticle": []
+}

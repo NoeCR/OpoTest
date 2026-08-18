@@ -1,0 +1,16 @@
+{
+  "source": "https://glados-cakeserver.com/",
+  "exportedAt": "2026-08-17T07:58:51.434Z",
+  "schemaVersion": 1,
+  "stats": {
+    "laws": 31,
+    "testIds": 833,
+    "testsExported": 833,
+    "testsFailed": 0,
+    "questionsApprox": 14508
+  },
+  "sync": {
+    "recommendedIntervalDays": 7,
+    "lastExport": "2026-08-17T07:58:51.434Z"
+  }
+}

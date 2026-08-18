@@ -1,0 +1,70 @@
+{
+  "error": 0,
+  "arArticles": [
+    {
+      "id": "1330",
+      "idLaw": "10",
+      "idTitle": "63",
+      "idChapter": "71",
+      "idSection": "40",
+      "code": "Artículo 72",
+      "ordinal": "72",
+      "order": "1",
+      "name_es": "Los Delegados del Gobierno en las Comunidades Autónomas\r",
+      "text_es": ""
+    },
+    {
+      "id": "1331",
+      "idLaw": "10",
+      "idTitle": "63",
+      "idChapter": "71",
+      "idSection": "40",
+      "code": "Artículo 73",
+      "ordinal": "73",
+      "order": "2",
+      "name_es": "Competencias de los Delegados del Gobierno en las Comunidades Autónomas\r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "10",
+    "code": "L40/2015",
+    "ordinal": "L40/2015",
+    "order": "3",
+    "order_def": "AAAA3",
+    "publish": "YES",
+    "name_es": "Ley 40/2015, de 1 de octubre, de Régimen Jurídico del Sector Público.",
+    "acronim_es": "Ley 40/2015 - Régimen Jurídico del Sector Público."
+  },
+  "title": {
+    "id": "63",
+    "idLaw": "10",
+    "code": "TÍTULO I",
+    "ordinal": "I",
+    "order": "2",
+    "order_def": "AAAA2BBBB3",
+    "name_es": "Administración General del Estado\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "71",
+    "idTitle": "63",
+    "code": "CAPÍTULO III",
+    "ordinal": "III",
+    "order": "3",
+    "name_es": "Órganos territoriales\r",
+    "text_es": ""
+  },
+  "section": {
+    "id": "40",
+    "idChapter": "71",
+    "code": "SECCIÓN 2",
+    "ordinal": "2",
+    "order": "2",
+    "name_es": "Los Delegados del Gobierno en las Comunidades Autónomas",
+    "text_es": null
+  },
+  "code": "SECCIÓN 2 - ",
+  "qBySection": [],
+  "qByArticle": []
+}

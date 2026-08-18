@@ -1,0 +1,39 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "24",
+    "code": "LO3/2007",
+    "ordinal": "LO3/2007",
+    "order": "10",
+    "order_def": "AAA10",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres.",
+    "acronim_es": "Ley Orgánica 3/2007- Igualdad efectiva de mujeres y hombres."
+  },
+  "title": {
+    "id": "143",
+    "idLaw": "24",
+    "code": "TÍTULO III",
+    "ordinal": "III",
+    "order": "4",
+    "order_def": "AAAA4BBB10",
+    "name_es": "Igualdad y medios de comunicación.\r",
+    "text_es": ""
+  },
+  "chapter": [],
+  "section": [],
+  "article": {
+    "id": "2270",
+    "idLaw": "24",
+    "idTitle": "143",
+    "idChapter": null,
+    "idSection": null,
+    "code": "Artículo 39",
+    "ordinal": "39",
+    "order": "4",
+    "name_es": "La igualdad en los medios de comunicación social de titularidad privada.\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

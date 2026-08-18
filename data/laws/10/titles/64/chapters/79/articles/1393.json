@@ -1,0 +1,47 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "10",
+    "code": "L40/2015",
+    "ordinal": "L40/2015",
+    "order": "3",
+    "order_def": "AAAA3",
+    "publish": "YES",
+    "name_es": "Ley 40/2015, de 1 de octubre, de Régimen Jurídico del Sector Público.",
+    "acronim_es": "Ley 40/2015 - Régimen Jurídico del Sector Público."
+  },
+  "title": {
+    "id": "64",
+    "idLaw": "10",
+    "code": "TÍTULO II",
+    "ordinal": "II",
+    "order": "3",
+    "order_def": "AAAA3BBBB3",
+    "name_es": "Organización y funcionamiento del sector público institucional\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "79",
+    "idTitle": "64",
+    "code": "CAPÍTULO VII",
+    "ordinal": "VII",
+    "order": "7",
+    "name_es": "De las fundaciones del sector público estatal\r",
+    "text_es": ""
+  },
+  "section": [],
+  "article": {
+    "id": "1393",
+    "idLaw": "10",
+    "idTitle": "64",
+    "idChapter": "79",
+    "idSection": null,
+    "code": "Artículo 130",
+    "ordinal": "130",
+    "order": "3",
+    "name_es": "Régimen jurídico\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

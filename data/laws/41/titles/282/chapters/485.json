@@ -1,0 +1,134 @@
+{
+  "error": 0,
+  "arSections": [],
+  "law": {
+    "id": "41",
+    "code": "LO2/1982",
+    "ordinal": "LO2/1982",
+    "order": "25",
+    "order_def": "AAA25",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 2/1982, de 12 de mayo, del Tribunal de Cuentas.",
+    "acronim_es": "Ley Orgánica 2/1982, de 12 de mayo, del Tribunal de Cuentas."
+  },
+  "title": {
+    "id": "282",
+    "idLaw": "41",
+    "code": "TÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "order_def": "AAAA1BBB25",
+    "name_es": "Fiscalización económico-financiera y jurisdicción contable\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "485",
+    "idTitle": "282",
+    "code": "CAPÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "name_es": "El Tribunal de Cuentas. Competencias y funciones\r",
+    "text_es": ""
+  },
+  "qByChapter": [],
+  "qBySection": [],
+  "arArticles": [
+    {
+      "id": "3894",
+      "idLaw": "41",
+      "idTitle": "282",
+      "idChapter": "485",
+      "idSection": null,
+      "code": "Artículo 1",
+      "ordinal": "1",
+      "order": "1",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "3895",
+      "idLaw": "41",
+      "idTitle": "282",
+      "idChapter": "485",
+      "idSection": null,
+      "code": "Artículo 2",
+      "ordinal": "2",
+      "order": "2",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "3896",
+      "idLaw": "41",
+      "idTitle": "282",
+      "idChapter": "485",
+      "idSection": null,
+      "code": "Artículo 3",
+      "ordinal": "3",
+      "order": "3",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "3897",
+      "idLaw": "41",
+      "idTitle": "282",
+      "idChapter": "485",
+      "idSection": null,
+      "code": "Artículo 4",
+      "ordinal": "4",
+      "order": "4",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "3898",
+      "idLaw": "41",
+      "idTitle": "282",
+      "idChapter": "485",
+      "idSection": null,
+      "code": "Artículo 5",
+      "ordinal": "5",
+      "order": "5",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "3899",
+      "idLaw": "41",
+      "idTitle": "282",
+      "idChapter": "485",
+      "idSection": null,
+      "code": "Artículo 6",
+      "ordinal": "6",
+      "order": "6",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "3900",
+      "idLaw": "41",
+      "idTitle": "282",
+      "idChapter": "485",
+      "idSection": null,
+      "code": "Artículo 7",
+      "ordinal": "7",
+      "order": "7",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "3901",
+      "idLaw": "41",
+      "idTitle": "282",
+      "idChapter": "485",
+      "idSection": null,
+      "code": "Artículo 8",
+      "ordinal": "8",
+      "order": "8",
+      "name_es": "\r",
+      "text_es": ""
+    }
+  ],
+  "qByArticle": []
+}

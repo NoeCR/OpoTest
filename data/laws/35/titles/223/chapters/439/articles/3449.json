@@ -1,0 +1,47 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "35",
+    "code": "L38/2003",
+    "ordinal": "L38/2003",
+    "order": "28",
+    "order_def": "AAA28",
+    "publish": "YES",
+    "name_es": "Ley 38/2003, de 17 de noviembre, General de Subvenciones.",
+    "acronim_es": "Ley 38/2003, de 17 de noviembre, General de Subvenciones."
+  },
+  "title": {
+    "id": "223",
+    "idLaw": "35",
+    "code": "TÍTULO PRELIMINAR",
+    "ordinal": "PRELIMINAR",
+    "order": "1",
+    "order_def": "AAAA1BBB28",
+    "name_es": "Disposiciones generales.\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "439",
+    "idTitle": "223",
+    "code": "CAPÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "Disposiciones comunes a las subvenciones públicas\r",
+    "text_es": ""
+  },
+  "section": [],
+  "article": {
+    "id": "3449",
+    "idLaw": "35",
+    "idTitle": "223",
+    "idChapter": "439",
+    "idSection": null,
+    "code": "Artículo 21",
+    "ordinal": "21",
+    "order": "14",
+    "name_es": "Régimen de garantías\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

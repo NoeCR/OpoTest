@@ -1,0 +1,50 @@
+{
+  "error": 0,
+  "arSections": [],
+  "law": {
+    "id": "26",
+    "code": "RDL6/2023",
+    "ordinal": "RDL6/2023",
+    "order": "7",
+    "order_def": "AAAA7",
+    "publish": "YES",
+    "name_es": "Real Decreto-ley 6/2023, de 19 de diciembre, por el que se aprueban medidas urgentes para la ejecución del Plan de Recuperación, Transformación y Resiliencia en materia de servicio público de justicia, función pública, régimen local y mecenazgo.",
+    "acronim_es": "Real Decreto-ley 6/2023, por el que se aprueban medidas urgentes."
+  },
+  "title": {
+    "id": "155",
+    "idLaw": "26",
+    "code": "TÍTULO III",
+    "ordinal": "III",
+    "order": "4",
+    "order_def": "AAAA4BBBB7",
+    "name_es": "Evaluación del desempeño y carrera profesional.",
+    "text_es": "Artículos del 116 al 122."
+  },
+  "chapter": {
+    "id": "282",
+    "idTitle": "155",
+    "code": "CAPÍTULO II",
+    "ordinal": "II",
+    "order": "1",
+    "name_es": "Carrera profesional.",
+    "text_es": "Artículo 122."
+  },
+  "qByChapter": [],
+  "qBySection": [],
+  "arArticles": [
+    {
+      "id": "2331",
+      "idLaw": "26",
+      "idTitle": "155",
+      "idChapter": "282",
+      "idSection": null,
+      "code": "Artículo 122",
+      "ordinal": "122",
+      "order": "1",
+      "name_es": "Carrera horizontal.\r",
+      "text_es": ""
+    }
+  ],
+  "qByArticle": []
+}

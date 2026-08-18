@@ -1,0 +1,132 @@
+{
+  "error": 0,
+  "arChapters": [],
+  "law": {
+    "id": "12",
+    "code": "L50/1997",
+    "ordinal": "L50/1997",
+    "order": "9",
+    "order_def": "AAAA9",
+    "publish": "YES",
+    "name_es": "Ley 50/1997, de 27 de noviembre, del Gobierno",
+    "acronim_es": "Ley 50/1997 - del Gobierno"
+  },
+  "title": {
+    "id": "76",
+    "idLaw": "12",
+    "code": "TÍTULO V",
+    "ordinal": "V",
+    "order": "5",
+    "order_def": "AAAA5BBBB9",
+    "name_es": "De la iniciativa legislativa y la potestad reglamentaria del Gobierno\r",
+    "text_es": ""
+  },
+  "qByTitle": {
+    "76": {
+      "mainLevel": [
+        "233",
+        "234",
+        "819"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "qByChapter": [],
+  "arArticles": [
+    {
+      "id": "1443",
+      "idLaw": "12",
+      "idTitle": "76",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 22",
+      "ordinal": "22",
+      "order": "1",
+      "name_es": "Del ejercicio de la iniciativa legislativa y la potestad reglamentaria del Gobierno\r",
+      "text_es": ""
+    },
+    {
+      "id": "1444",
+      "idLaw": "12",
+      "idTitle": "76",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 23",
+      "ordinal": "23",
+      "order": "2",
+      "name_es": "Disposiciones de entrada en vigor\r",
+      "text_es": ""
+    },
+    {
+      "id": "1445",
+      "idLaw": "12",
+      "idTitle": "76",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 24",
+      "ordinal": "24",
+      "order": "3",
+      "name_es": "De la forma y jerarquía de las disposiciones y resoluciones del Gobierno de la Nación y de sus miembros\r",
+      "text_es": ""
+    },
+    {
+      "id": "1446",
+      "idLaw": "12",
+      "idTitle": "76",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 25",
+      "ordinal": "25",
+      "order": "4",
+      "name_es": "Plan Anual Normativo\r",
+      "text_es": ""
+    },
+    {
+      "id": "1447",
+      "idLaw": "12",
+      "idTitle": "76",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 26",
+      "ordinal": "26",
+      "order": "5",
+      "name_es": "Procedimiento de elaboración de normas con rango de Ley y reglamentos\r",
+      "text_es": ""
+    },
+    {
+      "id": "1448",
+      "idLaw": "12",
+      "idTitle": "76",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 27",
+      "ordinal": "27",
+      "order": "6",
+      "name_es": "Tramitación urgente de iniciativas normativas en el ámbito de la Administración General del Estado\r",
+      "text_es": ""
+    },
+    {
+      "id": "1449",
+      "idLaw": "12",
+      "idTitle": "76",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 28",
+      "ordinal": "28",
+      "order": "7",
+      "name_es": "Informe anual de evaluación\r",
+      "text_es": ""
+    }
+  ],
+  "$arIdsArticles": [
+    "1443",
+    "1444",
+    "1445",
+    "1446",
+    "1447",
+    "1448",
+    "1449"
+  ],
+  "qByArticle": []
+}

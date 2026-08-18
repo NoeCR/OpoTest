@@ -1,0 +1,70 @@
+{
+  "error": 0,
+  "arArticles": [
+    {
+      "id": "3334",
+      "idLaw": "31",
+      "idTitle": "191",
+      "idChapter": "331",
+      "idSection": "339",
+      "code": "Artículo 54",
+      "ordinal": "54",
+      "order": "1",
+      "name_es": "Fomento del empleo de las personas trans.\r",
+      "text_es": ""
+    },
+    {
+      "id": "3335",
+      "idLaw": "31",
+      "idTitle": "191",
+      "idChapter": "331",
+      "idSection": "339",
+      "code": "Artículo 55",
+      "ordinal": "55",
+      "order": "2",
+      "name_es": "Integración sociolaboral de las personas trans.\r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "31",
+    "code": "L4/2023",
+    "ordinal": "L4/2023",
+    "order": "20",
+    "order_def": "AAA20",
+    "publish": "YES",
+    "name_es": "Ley 4/2023, de 28 de febrero, para la igualdad real y efectiva de las personas trans y para la garantía de los derechos de las personas LGTBI.",
+    "acronim_es": "Ley 4/2023, de 28 de febrero, para la igualdad real y efectiva de las personas trans y para la garantía de los derechos de las personas LGTBI."
+  },
+  "title": {
+    "id": "191",
+    "idLaw": "31",
+    "code": "TÍTULO II",
+    "ordinal": "II",
+    "order": "3",
+    "order_def": "AAAA3BBB20",
+    "name_es": "Medidas para la igualdad real y efectiva de las personas trans.\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "331",
+    "idTitle": "191",
+    "code": "CAPÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "Políticas públicas para promover la igualdad real y efectiva de las personas trans.\r",
+    "text_es": ""
+  },
+  "section": {
+    "id": "339",
+    "idChapter": "331",
+    "code": "SECCIÓN 2",
+    "ordinal": "2",
+    "order": "2",
+    "name_es": "Medidas en el ámbito laboral para promover la igualdad real y efectiva de las personas trans.\r",
+    "text_es": ""
+  },
+  "code": "SECCIÓN 2 - ",
+  "qBySection": [],
+  "qByArticle": []
+}

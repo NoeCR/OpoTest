@@ -1,0 +1,39 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "8",
+    "code": "RD365/1995",
+    "ordinal": "RD365/1995",
+    "order": "19",
+    "order_def": "AAA19",
+    "publish": "YES",
+    "name_es": "Real Decreto 365/1995, de 10 de marzo, por el que se aprueba el Reglamento de situaciones administrativas de los funcionarios civiles de la Administración General del Estado.",
+    "acronim_es": "RD 365/1995 - Situaciones Administrativas"
+  },
+  "title": {
+    "id": "53",
+    "idLaw": "8",
+    "code": "CAPÍTULO VIII",
+    "ordinal": "VIII",
+    "order": "8",
+    "order_def": "AAAA8BBB19",
+    "name_es": "Excedencia voluntaria\r",
+    "text_es": ""
+  },
+  "chapter": [],
+  "section": [],
+  "article": {
+    "id": "589",
+    "idLaw": "8",
+    "idTitle": "53",
+    "idChapter": null,
+    "idSection": null,
+    "code": "Artículo 17",
+    "ordinal": "17",
+    "order": "3",
+    "name_es": "Excedencia voluntaria por agrupación familiar\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

@@ -1,0 +1,47 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "24",
+    "code": "LO3/2007",
+    "ordinal": "LO3/2007",
+    "order": "10",
+    "order_def": "AAA10",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 3/2007, de 22 de marzo, para la igualdad efectiva de mujeres y hombres.",
+    "acronim_es": "Ley Orgánica 3/2007- Igualdad efectiva de mujeres y hombres."
+  },
+  "title": {
+    "id": "145",
+    "idLaw": "24",
+    "code": "TÍTULO V",
+    "ordinal": "V",
+    "order": "6",
+    "order_def": "AAAA6BBB10",
+    "name_es": "El principio de igualdad en el empleo público.\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "277",
+    "idTitle": "145",
+    "code": "CAPÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "El principio de presencia equilibrada en la Administración General del Estado y en los organismos públicos vinculados o dependientes de ella.\r",
+    "text_es": ""
+  },
+  "section": [],
+  "article": {
+    "id": "2283",
+    "idLaw": "24",
+    "idTitle": "145",
+    "idChapter": "277",
+    "idSection": null,
+    "code": "Artículo 52",
+    "ordinal": "52",
+    "order": "1",
+    "name_es": "Titulares de órganos directivos.\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

@@ -1,0 +1,167 @@
+{
+  "error": 0,
+  "arChapters": [],
+  "law": {
+    "id": "5",
+    "code": "CONSTITUCIÓN",
+    "ordinal": "CONSTITUCIÓN",
+    "order": "1",
+    "order_def": "AAAA1",
+    "publish": "YES",
+    "name_es": "Constitución Española de 1978",
+    "acronim_es": "Constitución Española"
+  },
+  "title": {
+    "id": "24",
+    "idLaw": "5",
+    "code": "TÍTULO V",
+    "ordinal": "V",
+    "order": "7",
+    "order_def": "AAAA7BBBB1",
+    "name_es": "De las relaciones entre el Gobierno y las Cortes Generales",
+    "text_es": "Artículos del 108 al 116"
+  },
+  "qByTitle": {
+    "24": {
+      "mainLevel": [
+        "139",
+        "140",
+        "141",
+        "142",
+        "143",
+        "144",
+        "145",
+        "146",
+        "147",
+        "148",
+        "149",
+        "150"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "qByChapter": [],
+  "arArticles": [
+    {
+      "id": "415",
+      "idLaw": "5",
+      "idTitle": "24",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 108",
+      "ordinal": "108",
+      "order": "1",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "416",
+      "idLaw": "5",
+      "idTitle": "24",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 109",
+      "ordinal": "109",
+      "order": "2",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "417",
+      "idLaw": "5",
+      "idTitle": "24",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 110",
+      "ordinal": "110",
+      "order": "3",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "418",
+      "idLaw": "5",
+      "idTitle": "24",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 111",
+      "ordinal": "111",
+      "order": "4",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "419",
+      "idLaw": "5",
+      "idTitle": "24",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 112",
+      "ordinal": "112",
+      "order": "5",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "420",
+      "idLaw": "5",
+      "idTitle": "24",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 113",
+      "ordinal": "113",
+      "order": "6",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "421",
+      "idLaw": "5",
+      "idTitle": "24",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 114",
+      "ordinal": "114",
+      "order": "7",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "422",
+      "idLaw": "5",
+      "idTitle": "24",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 115",
+      "ordinal": "115",
+      "order": "8",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "423",
+      "idLaw": "5",
+      "idTitle": "24",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 116",
+      "ordinal": "116",
+      "order": "9",
+      "name_es": "\r",
+      "text_es": ""
+    }
+  ],
+  "$arIdsArticles": [
+    "415",
+    "416",
+    "417",
+    "418",
+    "419",
+    "420",
+    "421",
+    "422",
+    "423"
+  ],
+  "qByArticle": []
+}

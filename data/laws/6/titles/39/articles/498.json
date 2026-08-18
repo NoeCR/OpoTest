@@ -1,0 +1,39 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "6",
+    "code": "L53/1984",
+    "ordinal": "L53/1984",
+    "order": "31",
+    "order_def": "AAA31",
+    "publish": "YES",
+    "name_es": "Ley 53/1984, de 26 de diciembre, de Incompatibilidades del Personal al Servicio de las Administraciones Públicas",
+    "acronim_es": "Ley 53/1984 - Incompatibilidades"
+  },
+  "title": {
+    "id": "39",
+    "idLaw": "6",
+    "code": "CAPÍTULO V",
+    "ordinal": "V",
+    "order": "5",
+    "order_def": "AAAA5BBB31",
+    "name_es": "Disposiciones comunes",
+    "text_es": ""
+  },
+  "chapter": [],
+  "section": [],
+  "article": {
+    "id": "498",
+    "idLaw": "6",
+    "idTitle": "39",
+    "idChapter": null,
+    "idSection": null,
+    "code": "Artículo 17",
+    "ordinal": "17",
+    "order": "2",
+    "name_es": "\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

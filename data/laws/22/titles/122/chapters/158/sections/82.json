@@ -1,0 +1,166 @@
+{
+  "error": 0,
+  "arArticles": [
+    {
+      "id": "1869",
+      "idLaw": "22",
+      "idTitle": "122",
+      "idChapter": "158",
+      "idSection": "82",
+      "code": "Artículo 9",
+      "ordinal": "9",
+      "order": "1",
+      "name_es": "Normas generales.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1870",
+      "idLaw": "22",
+      "idTitle": "122",
+      "idChapter": "158",
+      "idSection": "82",
+      "code": "Artículo 10",
+      "ordinal": "10",
+      "order": "2",
+      "name_es": "Prerrogativas correspondientes a los derechos de naturaleza pública de la Hacienda Pública estatal.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1871",
+      "idLaw": "22",
+      "idTitle": "122",
+      "idChapter": "158",
+      "idSection": "82",
+      "code": "Artículo 11",
+      "ordinal": "11",
+      "order": "3",
+      "name_es": "Nacimiento, adquisición y extinción de los derechos de naturaleza pública de la Hacienda Pública estatal.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1872",
+      "idLaw": "22",
+      "idTitle": "122",
+      "idChapter": "158",
+      "idSection": "82",
+      "code": "Artículo 12",
+      "ordinal": "12",
+      "order": "4",
+      "name_es": "Providencia de apremio y suspensión del procedimiento de apremio.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1873",
+      "idLaw": "22",
+      "idTitle": "122",
+      "idChapter": "158",
+      "idSection": "82",
+      "code": "Artículo 13",
+      "ordinal": "13",
+      "order": "5",
+      "name_es": "Aplazamiento o fraccionamiento de las cantidades adeudadas a la Hacienda Pública estatal.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1874",
+      "idLaw": "22",
+      "idTitle": "122",
+      "idChapter": "158",
+      "idSection": "82",
+      "code": "Artículo 14",
+      "ordinal": "14",
+      "order": "6",
+      "name_es": "Compensación de deudas.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1875",
+      "idLaw": "22",
+      "idTitle": "122",
+      "idChapter": "158",
+      "idSection": "82",
+      "code": "Artículo 15",
+      "ordinal": "15",
+      "order": "7",
+      "name_es": "Prescripción de los derechos de la Hacienda Pública estatal.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1876",
+      "idLaw": "22",
+      "idTitle": "122",
+      "idChapter": "158",
+      "idSection": "82",
+      "code": "Artículo 16",
+      "ordinal": "16",
+      "order": "8",
+      "name_es": "Derechos económicos de baja cuantía.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1877",
+      "idLaw": "22",
+      "idTitle": "122",
+      "idChapter": "158",
+      "idSection": "82",
+      "code": "Artículo 17",
+      "ordinal": "17",
+      "order": "9",
+      "name_es": "Intereses de demora.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1878",
+      "idLaw": "22",
+      "idTitle": "122",
+      "idChapter": "158",
+      "idSection": "82",
+      "code": "Artículo 18",
+      "ordinal": "18",
+      "order": "10",
+      "name_es": "Gestión de derechos de naturaleza pública de la Seguridad Social y de las entidades del sector público estatal no integrantes de la Hacienda Pública estatal.\r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "22",
+    "code": "L47/2003",
+    "ordinal": "L47/2003",
+    "order": "6",
+    "order_def": "AAAA6",
+    "publish": "YES",
+    "name_es": "Ley 47/2003, de 26 de noviembre, General Presupuestaria.",
+    "acronim_es": "Ley 47/2003, General Presupuestaria."
+  },
+  "title": {
+    "id": "122",
+    "idLaw": "22",
+    "code": "TÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "order_def": "AAAA1BBBB6",
+    "name_es": "Del ámbito de aplicación y de la Hacienda Pública estatal\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "158",
+    "idTitle": "122",
+    "code": "CAPÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "Del régimen de la Hacienda Pública estatal\r",
+    "text_es": ""
+  },
+  "section": {
+    "id": "82",
+    "idChapter": "158",
+    "code": "SECCIÓN 2",
+    "ordinal": "2",
+    "order": "2",
+    "name_es": "Régimen jurídico de los derechos de naturaleza pública de la Hacienda Pública estatal\r",
+    "text_es": ""
+  },
+  "code": "SECCIÓN 2 - ",
+  "qBySection": [],
+  "qByArticle": []
+}

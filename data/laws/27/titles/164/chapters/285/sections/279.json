@@ -1,0 +1,70 @@
+{
+  "error": 0,
+  "arArticles": [
+    {
+      "id": "2687",
+      "idLaw": "27",
+      "idTitle": "164",
+      "idChapter": "285",
+      "idSection": "279",
+      "code": "Artículo 34",
+      "ordinal": "34",
+      "order": "1",
+      "name_es": "Libertad de pactos.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2688",
+      "idLaw": "27",
+      "idTitle": "164",
+      "idChapter": "285",
+      "idSection": "279",
+      "code": "Artículo 35",
+      "ordinal": "35",
+      "order": "2",
+      "name_es": "Contenido mínimo del contrato.\r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "27",
+    "code": "L9/2017",
+    "ordinal": "L9/2017",
+    "order": "5",
+    "order_def": "AAAA5",
+    "publish": "YES",
+    "name_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público, por la que se transponen al ordenamiento jurídico español las Directivas del Parlamento Europeo y del Consejo 2014/23/UE y 2014/24/UE, de 26 de febrero de 2014.",
+    "acronim_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público."
+  },
+  "title": {
+    "id": "164",
+    "idLaw": "27",
+    "code": "LIBRO PRIMERO",
+    "ordinal": "PRIMERO",
+    "order": "2",
+    "order_def": "AAAA2BBBB5",
+    "name_es": "Configuración general de la contratación del sector público y elementos estructurales de los contratos\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "285",
+    "idTitle": "164",
+    "code": "TÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "name_es": "Disposiciones generales sobre la contratación del sector público\r",
+    "text_es": ""
+  },
+  "section": {
+    "id": "279",
+    "idChapter": "285",
+    "code": "CAPÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "Libertad de pactos y contenido mínimo del contrato.\r",
+    "text_es": ""
+  },
+  "code": "CAPÍTULO II - ",
+  "qBySection": [],
+  "qByArticle": []
+}

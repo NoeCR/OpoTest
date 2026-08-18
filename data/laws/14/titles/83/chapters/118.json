@@ -1,0 +1,74 @@
+{
+  "error": 0,
+  "arSections": [],
+  "law": {
+    "id": "14",
+    "code": "LO3/1981",
+    "ordinal": "LO3/1981",
+    "order": "21",
+    "order_def": "AAA21",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 3/1981, de 6 de abril, del Defensor del Pueblo.",
+    "acronim_es": "LO 3/1981 - Defensor del Pueblo"
+  },
+  "title": {
+    "id": "83",
+    "idLaw": "14",
+    "code": "TÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "order_def": "AAAA2BBB21",
+    "name_es": "Del procedimiento\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "118",
+    "idTitle": "83",
+    "code": "CAPÍTULO IV",
+    "ordinal": "IV",
+    "order": "4",
+    "name_es": "Obligación de colaboración de los organismos requeridos\r",
+    "text_es": ""
+  },
+  "qByChapter": [],
+  "qBySection": [],
+  "arArticles": [
+    {
+      "id": "1517",
+      "idLaw": "14",
+      "idTitle": "83",
+      "idChapter": "118",
+      "idSection": null,
+      "code": "Artículo 19",
+      "ordinal": "19",
+      "order": "1",
+      "name_es": "19",
+      "text_es": ""
+    },
+    {
+      "id": "1518",
+      "idLaw": "14",
+      "idTitle": "83",
+      "idChapter": "118",
+      "idSection": null,
+      "code": "Artículo 20",
+      "ordinal": "20",
+      "order": "2",
+      "name_es": "20",
+      "text_es": ""
+    },
+    {
+      "id": "1519",
+      "idLaw": "14",
+      "idTitle": "83",
+      "idChapter": "118",
+      "idSection": null,
+      "code": "Artículo 21",
+      "ordinal": "21",
+      "order": "3",
+      "name_es": "21",
+      "text_es": ""
+    }
+  ],
+  "qByArticle": []
+}

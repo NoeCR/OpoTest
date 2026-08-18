@@ -1,0 +1,106 @@
+{
+  "error": 0,
+  "arSections": [],
+  "law": {
+    "id": "22",
+    "code": "L47/2003",
+    "ordinal": "L47/2003",
+    "order": "6",
+    "order_def": "AAAA6",
+    "publish": "YES",
+    "name_es": "Ley 47/2003, de 26 de noviembre, General Presupuestaria.",
+    "acronim_es": "Ley 47/2003, General Presupuestaria."
+  },
+  "title": {
+    "id": "123",
+    "idLaw": "22",
+    "code": "TÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "order_def": "AAAA2BBBB6",
+    "name_es": "De los Presupuestos Generales del Estado\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "163",
+    "idTitle": "123",
+    "code": "CAPÍTULO V",
+    "ordinal": "V",
+    "order": "5",
+    "name_es": "De las Entidades Públicas Empresariales, Sociedades Mercantiles Estatales y Fundaciones del sector público Estatal\r",
+    "text_es": ""
+  },
+  "qByChapter": {
+    "163": {
+      "mainLevel": [
+        "893"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "qBySection": [],
+  "arArticles": [
+    {
+      "id": "1925",
+      "idLaw": "22",
+      "idTitle": "123",
+      "idChapter": "163",
+      "idSection": null,
+      "code": "Artículo 64",
+      "ordinal": "64",
+      "order": "1",
+      "name_es": "Presupuesto.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1926",
+      "idLaw": "22",
+      "idTitle": "123",
+      "idChapter": "163",
+      "idSection": null,
+      "code": "Artículo 65",
+      "ordinal": "65",
+      "order": "2",
+      "name_es": "Artículo 65. Programa de actuación plurianual.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1927",
+      "idLaw": "22",
+      "idTitle": "123",
+      "idChapter": "163",
+      "idSection": null,
+      "code": "Artículo 66",
+      "ordinal": "66",
+      "order": "3",
+      "name_es": "Tramitación.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1928",
+      "idLaw": "22",
+      "idTitle": "123",
+      "idChapter": "163",
+      "idSection": null,
+      "code": "Artículo 67",
+      "ordinal": "67",
+      "order": "4",
+      "name_es": "Modificaciones Presupuestarias.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1929",
+      "idLaw": "22",
+      "idTitle": "123",
+      "idChapter": "163",
+      "idSection": null,
+      "code": "Artículo 68",
+      "ordinal": "68",
+      "order": "5",
+      "name_es": "Contratos-Programa con el Estado.\r",
+      "text_es": ""
+    }
+  ],
+  "qByArticle": []
+}

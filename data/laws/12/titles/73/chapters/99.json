@@ -1,0 +1,50 @@
+{
+  "error": 0,
+  "arSections": [],
+  "law": {
+    "id": "12",
+    "code": "L50/1997",
+    "ordinal": "L50/1997",
+    "order": "9",
+    "order_def": "AAAA9",
+    "publish": "YES",
+    "name_es": "Ley 50/1997, de 27 de noviembre, del Gobierno",
+    "acronim_es": "Ley 50/1997 - del Gobierno"
+  },
+  "title": {
+    "id": "73",
+    "idLaw": "12",
+    "code": "TÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "order_def": "AAAA2BBBB9",
+    "name_es": "Del estatuto de los miembros del Gobierno, de los Secretarios de Estado y de los Directores de los Gabinetes\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "99",
+    "idTitle": "73",
+    "code": "CAPÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "De los Secretarios de Estado\r",
+    "text_es": ""
+  },
+  "qByChapter": [],
+  "qBySection": [],
+  "arArticles": [
+    {
+      "id": "1436",
+      "idLaw": "12",
+      "idTitle": "73",
+      "idChapter": "99",
+      "idSection": null,
+      "code": "Artículo 15",
+      "ordinal": "15",
+      "order": "1",
+      "name_es": "Del nombramiento, cese, suplencia e incompatibilidades de los Secretarios de Estado\r",
+      "text_es": ""
+    }
+  ],
+  "qByArticle": []
+}

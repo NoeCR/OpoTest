@@ -1,0 +1,106 @@
+{
+  "error": 0,
+  "arArticles": [
+    {
+      "id": "2676",
+      "idLaw": "27",
+      "idTitle": "163",
+      "idChapter": "284",
+      "idSection": "306",
+      "code": "Artículo 23",
+      "ordinal": "23",
+      "order": "6",
+      "name_es": "Contratos subvencionados sujetos a una regulación armonizada.",
+      "text_es": ""
+    },
+    {
+      "id": "2675",
+      "idLaw": "27",
+      "idTitle": "163",
+      "idChapter": "284",
+      "idSection": "306",
+      "code": "Artículo 22",
+      "ordinal": "22",
+      "order": "7",
+      "name_es": "Contratos de servicios sujetos a una regulación armonizada: umbral.",
+      "text_es": ""
+    },
+    {
+      "id": "2674",
+      "idLaw": "27",
+      "idTitle": "163",
+      "idChapter": "284",
+      "idSection": "306",
+      "code": "Artículo 21",
+      "ordinal": "21",
+      "order": "8",
+      "name_es": "Contratos de suministro sujetos a una regulación armonizada: Umbral.",
+      "text_es": ""
+    },
+    {
+      "id": "2673",
+      "idLaw": "27",
+      "idTitle": "163",
+      "idChapter": "284",
+      "idSection": "306",
+      "code": "Artículo 20",
+      "ordinal": "20",
+      "order": "9",
+      "name_es": "Contratos de obras, de concesión de obras y de concesión de servicios sujetos a una regulación armonizada: Umbral.",
+      "text_es": ""
+    },
+    {
+      "id": "2672",
+      "idLaw": "27",
+      "idTitle": "163",
+      "idChapter": "284",
+      "idSection": "306",
+      "code": "Artículo 19",
+      "ordinal": "19",
+      "order": "10",
+      "name_es": "Delimitación general.",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "27",
+    "code": "L9/2017",
+    "ordinal": "L9/2017",
+    "order": "5",
+    "order_def": "AAAA5",
+    "publish": "YES",
+    "name_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público, por la que se transponen al ordenamiento jurídico español las Directivas del Parlamento Europeo y del Consejo 2014/23/UE y 2014/24/UE, de 26 de febrero de 2014.",
+    "acronim_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público."
+  },
+  "title": {
+    "id": "163",
+    "idLaw": "27",
+    "code": "TÍTULO PRELIMINAR",
+    "ordinal": "PRELIMINAR",
+    "order": "1",
+    "order_def": "AAAA1BBBB5",
+    "name_es": "Disposiciones generales\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "284",
+    "idTitle": "163",
+    "code": "CAPÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "Contratos del sector público\r",
+    "text_es": ""
+  },
+  "section": {
+    "id": "306",
+    "idChapter": "284",
+    "code": "SECCIÓN 2",
+    "ordinal": "2",
+    "order": "2",
+    "name_es": "Contratos sujetos a una regulación armonizada.\r",
+    "text_es": ""
+  },
+  "code": "SECCIÓN 2 - ",
+  "qBySection": [],
+  "qByArticle": []
+}

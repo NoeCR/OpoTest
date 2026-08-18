@@ -1,0 +1,135 @@
+{
+  "error": 0,
+  "arChapters": [],
+  "law": {
+    "id": "7",
+    "code": "RD364/1995",
+    "ordinal": "RD364/1995",
+    "order": "18",
+    "order_def": "AAA18",
+    "publish": "YES",
+    "name_es": "Real Decreto 364/1995, de 10 de marzo, por el que se aprueba el Reglamento General de ingreso del personal al servicio de la Administración General del Estado y de provisión de puestos de trabajo y promoción profesional de los funcionarios civiles de la Administración General del Estado",
+    "acronim_es": "RD 364/1995 - Ingreso, Provisión de puestos y Promoción profesional."
+  },
+  "title": {
+    "id": "42",
+    "idLaw": "7",
+    "code": "TÍTULO II",
+    "ordinal": "II",
+    "order": "3",
+    "order_def": "AAAA3BBB18",
+    "name_es": "Selección del personal laboral\r",
+    "text_es": ""
+  },
+  "qByTitle": [],
+  "qByChapter": [],
+  "arArticles": [
+    {
+      "id": "959",
+      "idLaw": "7",
+      "idTitle": "42",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 28",
+      "ordinal": "28",
+      "order": "1",
+      "name_es": "Régimen aplicable\r",
+      "text_es": ""
+    },
+    {
+      "id": "960",
+      "idLaw": "7",
+      "idTitle": "42",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 29",
+      "ordinal": "29",
+      "order": "2",
+      "name_es": "Convocatorias y sistemas selectivos\r",
+      "text_es": ""
+    },
+    {
+      "id": "961",
+      "idLaw": "7",
+      "idTitle": "42",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 30",
+      "ordinal": "30",
+      "order": "3",
+      "name_es": "Órganos de selección\r",
+      "text_es": ""
+    },
+    {
+      "id": "962",
+      "idLaw": "7",
+      "idTitle": "42",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 31",
+      "ordinal": "31",
+      "order": "4",
+      "name_es": "Solicitudes y anuncio de las pruebas\r",
+      "text_es": ""
+    },
+    {
+      "id": "963",
+      "idLaw": "7",
+      "idTitle": "42",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 32",
+      "ordinal": "32",
+      "order": "5",
+      "name_es": "Propuesta de aprobados\r",
+      "text_es": ""
+    },
+    {
+      "id": "964",
+      "idLaw": "7",
+      "idTitle": "42",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 33",
+      "ordinal": "33",
+      "order": "6",
+      "name_es": "Adquisición de la condición de personal laboral fijo\r",
+      "text_es": ""
+    },
+    {
+      "id": "965",
+      "idLaw": "7",
+      "idTitle": "42",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 34",
+      "ordinal": "34",
+      "order": "7",
+      "name_es": "Discapacidades\r",
+      "text_es": ""
+    },
+    {
+      "id": "966",
+      "idLaw": "7",
+      "idTitle": "42",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 35",
+      "ordinal": "35",
+      "order": "8",
+      "name_es": "Contratación de personal laboral no permanente\r",
+      "text_es": ""
+    }
+  ],
+  "$arIdsArticles": [
+    "959",
+    "960",
+    "961",
+    "962",
+    "963",
+    "964",
+    "965",
+    "966"
+  ],
+  "qByArticle": []
+}

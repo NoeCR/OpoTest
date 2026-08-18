@@ -1,0 +1,39 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "15",
+    "code": "L7/1985",
+    "ordinal": "L7/1985",
+    "order": "26",
+    "order_def": "AAA26",
+    "publish": "YES",
+    "name_es": "Ley 7/1985, de 2 de abril, reguladora de las Bases del Régimen Local",
+    "acronim_es": "Ley 7/1985 - Bases del Régimen Local"
+  },
+  "title": {
+    "id": "93",
+    "idLaw": "15",
+    "code": "TÍTULO VIII",
+    "ordinal": "VIII",
+    "order": "8",
+    "order_def": "AAAA8BBB26",
+    "name_es": "Haciendas locales\r",
+    "text_es": ""
+  },
+  "chapter": [],
+  "section": [],
+  "article": {
+    "id": "1667",
+    "idLaw": "15",
+    "idTitle": "93",
+    "idChapter": null,
+    "idSection": null,
+    "code": "Artículo 116 ter",
+    "ordinal": "116 ter",
+    "order": "14",
+    "name_es": "Coste efectivo de los servicios\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

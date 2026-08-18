@@ -1,0 +1,106 @@
+{
+  "error": 0,
+  "arArticles": [
+    {
+      "id": "3565",
+      "idLaw": "36",
+      "idTitle": "232",
+      "idChapter": "459",
+      "idSection": "345",
+      "code": "Artículo 68",
+      "ordinal": "68",
+      "order": "1",
+      "name_es": "Artículo 68",
+      "text_es": ""
+    },
+    {
+      "id": "3566",
+      "idLaw": "36",
+      "idTitle": "232",
+      "idChapter": "459",
+      "idSection": "345",
+      "code": "Artículo 69",
+      "ordinal": "69",
+      "order": "2",
+      "name_es": "Artículo 69",
+      "text_es": ""
+    },
+    {
+      "id": "3567",
+      "idLaw": "36",
+      "idTitle": "232",
+      "idChapter": "459",
+      "idSection": "345",
+      "code": "Artículo 70",
+      "ordinal": "70",
+      "order": "3",
+      "name_es": "Artículo 70",
+      "text_es": ""
+    },
+    {
+      "id": "3568",
+      "idLaw": "36",
+      "idTitle": "232",
+      "idChapter": "459",
+      "idSection": "345",
+      "code": "Artículo 71",
+      "ordinal": "71",
+      "order": "4",
+      "name_es": "Artículo 71",
+      "text_es": ""
+    },
+    {
+      "id": "3569",
+      "idLaw": "36",
+      "idTitle": "232",
+      "idChapter": "459",
+      "idSection": "345",
+      "code": "Artículo 72",
+      "ordinal": "72",
+      "order": "5",
+      "name_es": "Artículo 72",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "36",
+    "code": "LO2/1979",
+    "ordinal": "LO2/1979",
+    "order": "24",
+    "order_def": "AAA24",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 2/1979, de 3 de octubre, del Tribunal Constitucional.",
+    "acronim_es": "Ley Orgánica 2/1979, del Tribunal Constitucional."
+  },
+  "title": {
+    "id": "232",
+    "idLaw": "36",
+    "code": "TÍTULO IV",
+    "ordinal": "IV",
+    "order": "4",
+    "order_def": "AAAA4BBB24",
+    "name_es": "De los conflictos constitucionales.\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "459",
+    "idTitle": "232",
+    "code": "CAPÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "De los conflictos entre el Estado y las Comunidades Autónomas o de éstas entre sí.\r",
+    "text_es": ""
+  },
+  "section": {
+    "id": "345",
+    "idChapter": "459",
+    "code": "SECCIÓN 2",
+    "ordinal": "2",
+    "order": "2",
+    "name_es": "Conflictos negativos.",
+    "text_es": ""
+  },
+  "code": "SECCIÓN 2 - ",
+  "qBySection": [],
+  "qByArticle": []
+}

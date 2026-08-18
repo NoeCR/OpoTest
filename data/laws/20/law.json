@@ -1,0 +1,420 @@
+{
+  "error": 0,
+  "arTitles": [],
+  "law": {
+    "id": "20",
+    "code": "RD951/2005",
+    "ordinal": "RD951/2005",
+    "order": "17",
+    "order_def": "AAA17",
+    "publish": "YES",
+    "name_es": "Real Decreto 951/2005, de 29 de julio, por el que se establece el marco general para la mejora de la calidad en la Administración General del Estado.",
+    "acronim_es": "RD 951/2005 - Marco general mejora de la calidad en la AGE"
+  },
+  "pt": true,
+  "qByLaw": {
+    "20": {
+      "mainLevel": [
+        "262",
+        "263",
+        "264",
+        "266",
+        "267"
+      ],
+      "subLevel": [],
+      "userDone": 0
+    }
+  },
+  "qByLawNew": {
+    "20": {
+      "mainLevel": {
+        "test": [
+          "262",
+          "263",
+          "264",
+          "266",
+          "267"
+        ]
+      },
+      "subLevel": [],
+      "userDone": 0,
+      "recent": 0
+    }
+  },
+  "qByTitle": [],
+  "arArticles": [
+    {
+      "id": "1768",
+      "idLaw": "20",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 1",
+      "ordinal": "1",
+      "order": "1",
+      "name_es": "Objeto.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1769",
+      "idLaw": "20",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 2",
+      "ordinal": "2",
+      "order": "2",
+      "name_es": "Marco general para la mejora de la calidad en la Administración General del Estado.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1770",
+      "idLaw": "20",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 3",
+      "ordinal": "3",
+      "order": "3",
+      "name_es": "Programas de calidad.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1771",
+      "idLaw": "20",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 4",
+      "ordinal": "4",
+      "order": "4",
+      "name_es": "Ámbito de aplicación.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1772",
+      "idLaw": "20",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 5",
+      "ordinal": "5",
+      "order": "5",
+      "name_es": "Definición.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1773",
+      "idLaw": "20",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 6",
+      "ordinal": "6",
+      "order": "6",
+      "name_es": "Garantías de fiabilidad y seguridad.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1774",
+      "idLaw": "20",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 7",
+      "ordinal": "7",
+      "order": "7",
+      "name_es": "Resultados.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1775",
+      "idLaw": "20",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 8",
+      "ordinal": "8",
+      "order": "8",
+      "name_es": "Definición.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1776",
+      "idLaw": "20",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 9",
+      "ordinal": "9",
+      "order": "9",
+      "name_es": "Estructura y contenido de las cartas de servicios.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1777",
+      "idLaw": "20",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 10",
+      "ordinal": "10",
+      "order": "10",
+      "name_es": "Elaboración y gestión de la carta de servicios.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1778",
+      "idLaw": "20",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 11",
+      "ordinal": "11",
+      "order": "11",
+      "name_es": "Aprobación y difusión de la carta de servicios.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1779",
+      "idLaw": "20",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 12",
+      "ordinal": "12",
+      "order": "12",
+      "name_es": "Seguimiento de las cartas de servicios.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1780",
+      "idLaw": "20",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 13",
+      "ordinal": "13",
+      "order": "13",
+      "name_es": "Cartas de servicios electrónicos.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1781",
+      "idLaw": "20",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 14",
+      "ordinal": "14",
+      "order": "14",
+      "name_es": "Definición.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1782",
+      "idLaw": "20",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 15",
+      "ordinal": "15",
+      "order": "15",
+      "name_es": "Presentación y tramitación de las quejas y sugerencias.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1783",
+      "idLaw": "20",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 16",
+      "ordinal": "16",
+      "order": "16",
+      "name_es": "Contestación.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1784",
+      "idLaw": "20",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 17",
+      "ordinal": "17",
+      "order": "17",
+      "name_es": "Actuaciones de las unidades responsables.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1785",
+      "idLaw": "20",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 18",
+      "ordinal": "18",
+      "order": "18",
+      "name_es": "Seguimiento.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1786",
+      "idLaw": "20",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 19",
+      "ordinal": "19",
+      "order": "19",
+      "name_es": "Efectos.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1787",
+      "idLaw": "20",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 20",
+      "ordinal": "20",
+      "order": "20",
+      "name_es": "Definición y objeto.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1788",
+      "idLaw": "20",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 21",
+      "ordinal": "21",
+      "order": "21",
+      "name_es": "Desarrollo.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1789",
+      "idLaw": "20",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 22",
+      "ordinal": "22",
+      "order": "22",
+      "name_es": "Objeto.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1790",
+      "idLaw": "20",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 23",
+      "ordinal": "23",
+      "order": "23",
+      "name_es": "Reconocimiento a la excelencia.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1791",
+      "idLaw": "20",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 24",
+      "ordinal": "24",
+      "order": "24",
+      "name_es": "Premios a la calidad e innovación en la gestión pública.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1792",
+      "idLaw": "20",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 25",
+      "ordinal": "25",
+      "order": "25",
+      "name_es": "Características de los premios.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1793",
+      "idLaw": "20",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 26",
+      "ordinal": "26",
+      "order": "26",
+      "name_es": "Creación y fines.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1794",
+      "idLaw": "20",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 27",
+      "ordinal": "27",
+      "order": "27",
+      "name_es": "Recogida y análisis de datos.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1795",
+      "idLaw": "20",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 28",
+      "ordinal": "28",
+      "order": "28",
+      "name_es": "Información y participación social.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1796",
+      "idLaw": "20",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 29",
+      "ordinal": "29",
+      "order": "29",
+      "name_es": "Competencias generales.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1797",
+      "idLaw": "20",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 30",
+      "ordinal": "30",
+      "order": "30",
+      "name_es": "Funciones de la Agencia Estatal de Evaluación de las Políticas Públicas y la Calidad de los servicios.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1798",
+      "idLaw": "20",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 31",
+      "ordinal": "31",
+      "order": "31",
+      "name_es": "Incentivos al rendimiento.",
+      "text_es": ""
+    }
+  ],
+  "qByArticle": []
+}

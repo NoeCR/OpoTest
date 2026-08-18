@@ -1,0 +1,39 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "44",
+    "code": "LO1/2004",
+    "ordinal": "LO1/2004",
+    "order": "29",
+    "order_def": "AAA29",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 1/2004, de 28 de diciembre, de Medidas de Protección Integral contra la Violencia de Género.",
+    "acronim_es": "Ley Orgánica 1/2004 Medidas de Protección contra la Violencia de Género."
+  },
+  "title": {
+    "id": "303",
+    "idLaw": "44",
+    "code": "TÍTULO IV",
+    "ordinal": "IV",
+    "order": "5",
+    "order_def": "AAAA5BBB29",
+    "name_es": "Tutela Penal\r",
+    "text_es": ""
+  },
+  "chapter": [],
+  "section": [],
+  "article": {
+    "id": "4014",
+    "idLaw": "44",
+    "idTitle": "303",
+    "idChapter": null,
+    "idSection": null,
+    "code": "Artículo 39",
+    "ordinal": "39",
+    "order": "7",
+    "name_es": "Protección contra las coacciones.\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

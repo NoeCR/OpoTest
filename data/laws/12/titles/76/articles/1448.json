@@ -1,0 +1,39 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "12",
+    "code": "L50/1997",
+    "ordinal": "L50/1997",
+    "order": "9",
+    "order_def": "AAAA9",
+    "publish": "YES",
+    "name_es": "Ley 50/1997, de 27 de noviembre, del Gobierno",
+    "acronim_es": "Ley 50/1997 - del Gobierno"
+  },
+  "title": {
+    "id": "76",
+    "idLaw": "12",
+    "code": "TÍTULO V",
+    "ordinal": "V",
+    "order": "5",
+    "order_def": "AAAA5BBBB9",
+    "name_es": "De la iniciativa legislativa y la potestad reglamentaria del Gobierno\r",
+    "text_es": ""
+  },
+  "chapter": [],
+  "section": [],
+  "article": {
+    "id": "1448",
+    "idLaw": "12",
+    "idTitle": "76",
+    "idChapter": null,
+    "idSection": null,
+    "code": "Artículo 27",
+    "ordinal": "27",
+    "order": "6",
+    "name_es": "Tramitación urgente de iniciativas normativas en el ámbito de la Administración General del Estado\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

@@ -1,0 +1,70 @@
+{
+  "error": 0,
+  "arArticles": [
+    {
+      "id": "1995",
+      "idLaw": "22",
+      "idTitle": "126",
+      "idChapter": "175",
+      "idSection": "99",
+      "code": "Artículo 133",
+      "ordinal": "133",
+      "order": "1",
+      "name_es": "Las cuentas económicas del sector público.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1996",
+      "idLaw": "22",
+      "idTitle": "126",
+      "idChapter": "175",
+      "idSection": "99",
+      "code": "Artículo 134",
+      "ordinal": "134",
+      "order": "2",
+      "name_es": "Seguimiento de la situación de desequilibrio financiero.\r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "22",
+    "code": "L47/2003",
+    "ordinal": "L47/2003",
+    "order": "6",
+    "order_def": "AAAA6",
+    "publish": "YES",
+    "name_es": "Ley 47/2003, de 26 de noviembre, General Presupuestaria.",
+    "acronim_es": "Ley 47/2003, General Presupuestaria."
+  },
+  "title": {
+    "id": "126",
+    "idLaw": "22",
+    "code": "TÍTULO V",
+    "ordinal": "V",
+    "order": "5",
+    "order_def": "AAAA5BBBB6",
+    "name_es": "Contabilidad del sector público estatal\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "175",
+    "idTitle": "126",
+    "code": "CAPÍTULO III",
+    "ordinal": "III",
+    "order": "3",
+    "name_es": "Información contable\r",
+    "text_es": ""
+  },
+  "section": {
+    "id": "99",
+    "idChapter": "175",
+    "code": "SECCIÓN 3",
+    "ordinal": "3",
+    "order": "3",
+    "name_es": "Información sobre el objetivo de estabilidad y equilibrio financiero\r",
+    "text_es": ""
+  },
+  "code": "SECCIÓN 3 - ",
+  "qBySection": [],
+  "qByArticle": []
+}

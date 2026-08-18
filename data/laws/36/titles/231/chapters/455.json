@@ -1,0 +1,122 @@
+{
+  "error": 0,
+  "arSections": [],
+  "law": {
+    "id": "36",
+    "code": "LO2/1979",
+    "ordinal": "LO2/1979",
+    "order": "24",
+    "order_def": "AAA24",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 2/1979, de 3 de octubre, del Tribunal Constitucional.",
+    "acronim_es": "Ley Orgánica 2/1979, del Tribunal Constitucional."
+  },
+  "title": {
+    "id": "231",
+    "idLaw": "36",
+    "code": "TÍTULO III",
+    "ordinal": "III",
+    "order": "3",
+    "order_def": "AAAA3BBB24",
+    "name_es": "Del recurso de amparo constitucional.\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "455",
+    "idTitle": "231",
+    "code": "CAPÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "name_es": "De la procedencia e interposición del recurso de amparo constitucional.\r",
+    "text_es": ""
+  },
+  "qByChapter": [],
+  "qBySection": [],
+  "arArticles": [
+    {
+      "id": "3538",
+      "idLaw": "36",
+      "idTitle": "231",
+      "idChapter": "455",
+      "idSection": null,
+      "code": "Artículo 41",
+      "ordinal": "41",
+      "order": "1",
+      "name_es": "Artículo 41",
+      "text_es": ""
+    },
+    {
+      "id": "3539",
+      "idLaw": "36",
+      "idTitle": "231",
+      "idChapter": "455",
+      "idSection": null,
+      "code": "Artículo 42",
+      "ordinal": "42",
+      "order": "2",
+      "name_es": "Artículo 42",
+      "text_es": ""
+    },
+    {
+      "id": "3540",
+      "idLaw": "36",
+      "idTitle": "231",
+      "idChapter": "455",
+      "idSection": null,
+      "code": "Artículo 43",
+      "ordinal": "43",
+      "order": "3",
+      "name_es": "Artículo 43",
+      "text_es": ""
+    },
+    {
+      "id": "3541",
+      "idLaw": "36",
+      "idTitle": "231",
+      "idChapter": "455",
+      "idSection": null,
+      "code": "Artículo 44",
+      "ordinal": "44",
+      "order": "4",
+      "name_es": "Artículo 44",
+      "text_es": ""
+    },
+    {
+      "id": "3542",
+      "idLaw": "36",
+      "idTitle": "231",
+      "idChapter": "455",
+      "idSection": null,
+      "code": "Artículo 45",
+      "ordinal": "45",
+      "order": "5",
+      "name_es": "Artículo 45",
+      "text_es": ""
+    },
+    {
+      "id": "3543",
+      "idLaw": "36",
+      "idTitle": "231",
+      "idChapter": "455",
+      "idSection": null,
+      "code": "Artículo 46",
+      "ordinal": "46",
+      "order": "6",
+      "name_es": "Artículo 46",
+      "text_es": ""
+    },
+    {
+      "id": "3544",
+      "idLaw": "36",
+      "idTitle": "231",
+      "idChapter": "455",
+      "idSection": null,
+      "code": "Artículo 47",
+      "ordinal": "47",
+      "order": "7",
+      "name_es": "Artículo 47",
+      "text_es": ""
+    }
+  ],
+  "qByArticle": []
+}

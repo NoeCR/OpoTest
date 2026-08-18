@@ -1,0 +1,47 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "14",
+    "code": "LO3/1981",
+    "ordinal": "LO3/1981",
+    "order": "21",
+    "order_def": "AAA21",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 3/1981, de 6 de abril, del Defensor del Pueblo.",
+    "acronim_es": "LO 3/1981 - Defensor del Pueblo"
+  },
+  "title": {
+    "id": "82",
+    "idLaw": "14",
+    "code": "TÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "order_def": "AAAA1BBB21",
+    "name_es": "Nombramiento, cese y condiciones\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "111",
+    "idTitle": "82",
+    "code": "CAPÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "name_es": "Carácter y elección\r",
+    "text_es": ""
+  },
+  "section": [],
+  "article": {
+    "id": "1502",
+    "idLaw": "14",
+    "idTitle": "82",
+    "idChapter": "111",
+    "idSection": null,
+    "code": "Artículo 4",
+    "ordinal": "4",
+    "order": "4",
+    "name_es": "4",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

@@ -1,0 +1,103 @@
+{
+  "error": 0,
+  "arChapters": [
+    {
+      "id": "115",
+      "idTitle": "83",
+      "code": "CAPÍTULO I",
+      "ordinal": "I",
+      "order": "1",
+      "name_es": "Iniciación y contenido de la investigación\r",
+      "text_es": ""
+    },
+    {
+      "id": "116",
+      "idTitle": "83",
+      "code": "CAPÍTULO II",
+      "ordinal": "II",
+      "order": "2",
+      "name_es": "Ámbito de competencias\r",
+      "text_es": ""
+    },
+    {
+      "id": "117",
+      "idTitle": "83",
+      "code": "CAPÍTULO III",
+      "ordinal": "III",
+      "order": "3",
+      "name_es": "Tramitación de las quejas\r",
+      "text_es": ""
+    },
+    {
+      "id": "118",
+      "idTitle": "83",
+      "code": "CAPÍTULO IV",
+      "ordinal": "IV",
+      "order": "4",
+      "name_es": "Obligación de colaboración de los organismos requeridos\r",
+      "text_es": ""
+    },
+    {
+      "id": "119",
+      "idTitle": "83",
+      "code": "CAPÍTULO V",
+      "ordinal": "V",
+      "order": "5",
+      "name_es": "Sobre documentos reservados\r",
+      "text_es": ""
+    },
+    {
+      "id": "120",
+      "idTitle": "83",
+      "code": "CAPÍTULO VI",
+      "ordinal": "VI",
+      "order": "6",
+      "name_es": "Responsabilidades de las autoridades y funcionarios\r",
+      "text_es": ""
+    },
+    {
+      "id": "121",
+      "idTitle": "83",
+      "code": "CAPÍTULO VII",
+      "ordinal": "VII",
+      "order": "7",
+      "name_es": "Gastos causados a particulares\r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "14",
+    "code": "LO3/1981",
+    "ordinal": "LO3/1981",
+    "order": "21",
+    "order_def": "AAA21",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 3/1981, de 6 de abril, del Defensor del Pueblo.",
+    "acronim_es": "LO 3/1981 - Defensor del Pueblo"
+  },
+  "title": {
+    "id": "83",
+    "idLaw": "14",
+    "code": "TÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "order_def": "AAAA2BBB21",
+    "name_es": "Del procedimiento\r",
+    "text_es": ""
+  },
+  "qByTitle": {
+    "83": {
+      "mainLevel": [
+        "827",
+        "828",
+        "829"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "qByChapter": [],
+  "arArticles": [],
+  "$arIdsArticles": [],
+  "qByArticle": []
+}

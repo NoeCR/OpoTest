@@ -1,0 +1,178 @@
+{
+  "error": 0,
+  "arChapters": [],
+  "law": {
+    "id": "5",
+    "code": "CONSTITUCIÓN",
+    "ordinal": "CONSTITUCIÓN",
+    "order": "1",
+    "order_def": "AAAA1",
+    "publish": "YES",
+    "name_es": "Constitución Española de 1978",
+    "acronim_es": "Constitución Española"
+  },
+  "title": {
+    "id": "19",
+    "idLaw": "5",
+    "code": "TÍTULO PRELIMINAR",
+    "ordinal": "PRELIMINAR",
+    "order": "2",
+    "order_def": "AAAA2BBBB1",
+    "name_es": "Título Preliminar",
+    "text_es": "Artículos del 1 al 9"
+  },
+  "qByTitle": {
+    "19": {
+      "mainLevel": [
+        "24",
+        "25",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30",
+        "31",
+        "32",
+        "33"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "qByChapter": [],
+  "arArticles": [
+    {
+      "id": "308",
+      "idLaw": "5",
+      "idTitle": "19",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 1",
+      "ordinal": "1",
+      "order": "1",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "309",
+      "idLaw": "5",
+      "idTitle": "19",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 2",
+      "ordinal": "2",
+      "order": "2",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "310",
+      "idLaw": "5",
+      "idTitle": "19",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 3",
+      "ordinal": "3",
+      "order": "3",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "311",
+      "idLaw": "5",
+      "idTitle": "19",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 4",
+      "ordinal": "4",
+      "order": "4",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "312",
+      "idLaw": "5",
+      "idTitle": "19",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 5",
+      "ordinal": "5",
+      "order": "5",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "313",
+      "idLaw": "5",
+      "idTitle": "19",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 6",
+      "ordinal": "6",
+      "order": "6",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "314",
+      "idLaw": "5",
+      "idTitle": "19",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 7",
+      "ordinal": "7",
+      "order": "7",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "315",
+      "idLaw": "5",
+      "idTitle": "19",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 8",
+      "ordinal": "8",
+      "order": "8",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "316",
+      "idLaw": "5",
+      "idTitle": "19",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 9",
+      "ordinal": "9",
+      "order": "9",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "1256",
+      "idLaw": "5",
+      "idTitle": "19",
+      "idChapter": "0",
+      "idSection": "0",
+      "code": "Preámbulo",
+      "ordinal": "Preámbulo",
+      "order": "10",
+      "name_es": "Preámbulo",
+      "text_es": "Preámbulo"
+    }
+  ],
+  "$arIdsArticles": [
+    "308",
+    "309",
+    "310",
+    "311",
+    "312",
+    "313",
+    "314",
+    "315",
+    "316",
+    "1256"
+  ],
+  "qByArticle": []
+}

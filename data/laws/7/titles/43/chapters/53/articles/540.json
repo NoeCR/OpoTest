@@ -1,0 +1,47 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "7",
+    "code": "RD364/1995",
+    "ordinal": "RD364/1995",
+    "order": "18",
+    "order_def": "AAA18",
+    "publish": "YES",
+    "name_es": "Real Decreto 364/1995, de 10 de marzo, por el que se aprueba el Reglamento General de ingreso del personal al servicio de la Administración General del Estado y de provisión de puestos de trabajo y promoción profesional de los funcionarios civiles de la Administración General del Estado",
+    "acronim_es": "RD 364/1995 - Ingreso, Provisión de puestos y Promoción profesional."
+  },
+  "title": {
+    "id": "43",
+    "idLaw": "7",
+    "code": "TÍTULO III",
+    "ordinal": "III",
+    "order": "4",
+    "order_def": "AAAA4BBB18",
+    "name_es": "Provisión de puestos de trabajo\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "53",
+    "idTitle": "43",
+    "code": "CAPÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "Provisión de puestos de trabajo mediante concurso\r",
+    "text_es": ""
+  },
+  "section": [],
+  "article": {
+    "id": "540",
+    "idLaw": "7",
+    "idTitle": "43",
+    "idChapter": "53",
+    "idSection": null,
+    "code": "Artículo 47",
+    "ordinal": "47",
+    "order": "9",
+    "name_es": "Resolución\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

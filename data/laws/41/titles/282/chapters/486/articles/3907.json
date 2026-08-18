@@ -1,0 +1,47 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "41",
+    "code": "LO2/1982",
+    "ordinal": "LO2/1982",
+    "order": "25",
+    "order_def": "AAA25",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 2/1982, de 12 de mayo, del Tribunal de Cuentas.",
+    "acronim_es": "Ley Orgánica 2/1982, de 12 de mayo, del Tribunal de Cuentas."
+  },
+  "title": {
+    "id": "282",
+    "idLaw": "41",
+    "code": "TÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "order_def": "AAAA1BBB25",
+    "name_es": "Fiscalización económico-financiera y jurisdicción contable\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "486",
+    "idTitle": "282",
+    "code": "CAPÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "La función fiscalizadora del Tribunal\r",
+    "text_es": ""
+  },
+  "section": [],
+  "article": {
+    "id": "3907",
+    "idLaw": "41",
+    "idTitle": "282",
+    "idChapter": "486",
+    "idSection": null,
+    "code": "Artículo 14",
+    "ordinal": "14",
+    "order": "6",
+    "name_es": "\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

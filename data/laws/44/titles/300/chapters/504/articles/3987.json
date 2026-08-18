@@ -1,0 +1,47 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "44",
+    "code": "LO1/2004",
+    "ordinal": "LO1/2004",
+    "order": "29",
+    "order_def": "AAA29",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 1/2004, de 28 de diciembre, de Medidas de Protección Integral contra la Violencia de Género.",
+    "acronim_es": "Ley Orgánica 1/2004 Medidas de Protección contra la Violencia de Género."
+  },
+  "title": {
+    "id": "300",
+    "idLaw": "44",
+    "code": "TÍTULO I",
+    "ordinal": "I",
+    "order": "2",
+    "order_def": "AAAA2BBB29",
+    "name_es": "Medidas de sensibilización, prevención y detección\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "504",
+    "idTitle": "300",
+    "code": "CAPÍTULO III",
+    "ordinal": "III",
+    "order": "3",
+    "name_es": "En el ámbito sanitario\r",
+    "text_es": ""
+  },
+  "section": [],
+  "article": {
+    "id": "3987",
+    "idLaw": "44",
+    "idTitle": "300",
+    "idChapter": "504",
+    "idSection": null,
+    "code": "Artículo 15",
+    "ordinal": "15",
+    "order": "1",
+    "name_es": "Sensibilización y formación.\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

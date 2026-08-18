@@ -1,0 +1,47 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "36",
+    "code": "LO2/1979",
+    "ordinal": "LO2/1979",
+    "order": "24",
+    "order_def": "AAA24",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 2/1979, de 3 de octubre, del Tribunal Constitucional.",
+    "acronim_es": "Ley Orgánica 2/1979, del Tribunal Constitucional."
+  },
+  "title": {
+    "id": "231",
+    "idLaw": "36",
+    "code": "TÍTULO III",
+    "ordinal": "III",
+    "order": "3",
+    "order_def": "AAAA3BBB24",
+    "name_es": "Del recurso de amparo constitucional.\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "455",
+    "idTitle": "231",
+    "code": "CAPÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "name_es": "De la procedencia e interposición del recurso de amparo constitucional.\r",
+    "text_es": ""
+  },
+  "section": [],
+  "article": {
+    "id": "3538",
+    "idLaw": "36",
+    "idTitle": "231",
+    "idChapter": "455",
+    "idSection": null,
+    "code": "Artículo 41",
+    "ordinal": "41",
+    "order": "1",
+    "name_es": "Artículo 41",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

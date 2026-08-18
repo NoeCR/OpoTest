@@ -1,0 +1,216 @@
+{
+  "error": 0,
+  "arTitles": [],
+  "law": {
+    "id": "17",
+    "code": "RD366/2007",
+    "ordinal": "RD366/2007",
+    "order": "14",
+    "order_def": "AAA14",
+    "publish": "YES",
+    "name_es": "Real Decreto 366/2007, de 16 de marzo, por el que se establecen las condiciones de accesibilidad y no discriminación de las personas con discapacidad en sus relaciones con la Administración General del Estado.",
+    "acronim_es": "RD 366/2007 - Accesibilidad y no discriminación personas con discapacidad relaciones AGE"
+  },
+  "pt": true,
+  "qByLaw": {
+    "17": {
+      "mainLevel": [
+        "163",
+        "164",
+        "165",
+        "166",
+        "167"
+      ],
+      "subLevel": [],
+      "userDone": 0
+    }
+  },
+  "qByLawNew": {
+    "17": {
+      "mainLevel": {
+        "test": [
+          "163",
+          "164",
+          "165",
+          "166",
+          "167"
+        ]
+      },
+      "subLevel": [],
+      "userDone": 0,
+      "recent": 0
+    }
+  },
+  "qByTitle": [],
+  "arArticles": [
+    {
+      "id": "1709",
+      "idLaw": "17",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 1",
+      "ordinal": "1",
+      "order": "1",
+      "name_es": "Objeto y ámbito de aplicación.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1710",
+      "idLaw": "17",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 2",
+      "ordinal": "2",
+      "order": "2",
+      "name_es": "Principios y acciones de la Administración General del Estado en sus relaciones con los ciudadanos con discapacidad.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1711",
+      "idLaw": "17",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 3",
+      "ordinal": "3",
+      "order": "3",
+      "name_es": "Determinación de las Oficinas de Atención al Ciudadano.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1712",
+      "idLaw": "17",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 4",
+      "ordinal": "4",
+      "order": "4",
+      "name_es": "Ubicación de las Oficinas de Atención al Ciudadano.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1713",
+      "idLaw": "17",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 5",
+      "ordinal": "5",
+      "order": "5",
+      "name_es": "Acceso a las Oficinas.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1714",
+      "idLaw": "17",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 6",
+      "ordinal": "6",
+      "order": "6",
+      "name_es": "Recepción en las Oficinas de Atención al Ciudadano.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1715",
+      "idLaw": "17",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 7",
+      "ordinal": "7",
+      "order": "7",
+      "name_es": "Señalización interior accesible.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1716",
+      "idLaw": "17",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 8",
+      "ordinal": "8",
+      "order": "8",
+      "name_es": "Configuración de los puestos de atención.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1717",
+      "idLaw": "17",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 9",
+      "ordinal": "9",
+      "order": "9",
+      "name_es": "Sistemas interactivos de información.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1718",
+      "idLaw": "17",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 10",
+      "ordinal": "10",
+      "order": "10",
+      "name_es": "Elementos complementarios de accesibilidad en las Oficinas de Atención al Ciudadano.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1719",
+      "idLaw": "17",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 11",
+      "ordinal": "11",
+      "order": "11",
+      "name_es": "Excepciones.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1720",
+      "idLaw": "17",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 12",
+      "ordinal": "12",
+      "order": "12",
+      "name_es": "Disponibilidad de documentos e impresos.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1721",
+      "idLaw": "17",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 13",
+      "ordinal": "13",
+      "order": "13",
+      "name_es": "Accesibilidad del contenido y estructura de documentos e impresos.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1722",
+      "idLaw": "17",
+      "idTitle": null,
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 14",
+      "ordinal": "14",
+      "order": "14",
+      "name_es": "Prestación de servicios de atención.",
+      "text_es": ""
+    }
+  ],
+  "qByArticle": []
+}

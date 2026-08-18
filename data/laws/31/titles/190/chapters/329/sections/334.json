@@ -1,0 +1,118 @@
+{
+  "error": 0,
+  "arArticles": [
+    {
+      "id": "3310",
+      "idLaw": "31",
+      "idTitle": "190",
+      "idChapter": "329",
+      "idSection": "334",
+      "code": "Artículo 30",
+      "ordinal": "30",
+      "order": "1",
+      "name_es": "Protección frente a la discriminación de las familias LGTBI.\r",
+      "text_es": ""
+    },
+    {
+      "id": "3311",
+      "idLaw": "31",
+      "idTitle": "190",
+      "idChapter": "329",
+      "idSection": "334",
+      "code": "Artículo 31",
+      "ordinal": "31",
+      "order": "2",
+      "name_es": "Personas menores de edad en familias LGTBI.\r",
+      "text_es": ""
+    },
+    {
+      "id": "3312",
+      "idLaw": "31",
+      "idTitle": "190",
+      "idChapter": "329",
+      "idSection": "334",
+      "code": "Artículo 32",
+      "ordinal": "32",
+      "order": "3",
+      "name_es": "Integración familiar y social de personas menores de edad y jóvenes LGTBI.\r",
+      "text_es": ""
+    },
+    {
+      "id": "3313",
+      "idLaw": "31",
+      "idTitle": "190",
+      "idChapter": "329",
+      "idSection": "334",
+      "code": "Artículo 33",
+      "ordinal": "33",
+      "order": "4",
+      "name_es": "Formación, información, asesoramiento y apoyo.\r",
+      "text_es": ""
+    },
+    {
+      "id": "3314",
+      "idLaw": "31",
+      "idTitle": "190",
+      "idChapter": "329",
+      "idSection": "334",
+      "code": "Artículo 34",
+      "ordinal": "34",
+      "order": "5",
+      "name_es": "Instituto de la Juventud O.A.\r",
+      "text_es": ""
+    },
+    {
+      "id": "3315",
+      "idLaw": "31",
+      "idTitle": "190",
+      "idChapter": "329",
+      "idSection": "334",
+      "code": "Artículo 35",
+      "ordinal": "35",
+      "order": "6",
+      "name_es": "Adopción y acogimiento familiar.\r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "31",
+    "code": "L4/2023",
+    "ordinal": "L4/2023",
+    "order": "20",
+    "order_def": "AAA20",
+    "publish": "YES",
+    "name_es": "Ley 4/2023, de 28 de febrero, para la igualdad real y efectiva de las personas trans y para la garantía de los derechos de las personas LGTBI.",
+    "acronim_es": "Ley 4/2023, de 28 de febrero, para la igualdad real y efectiva de las personas trans y para la garantía de los derechos de las personas LGTBI."
+  },
+  "title": {
+    "id": "190",
+    "idLaw": "31",
+    "code": "TÍTULO I",
+    "ordinal": "I",
+    "order": "2",
+    "order_def": "AAAA2BBB20",
+    "name_es": "Actuación de los poderes públicos.\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "329",
+    "idTitle": "190",
+    "code": "CAPÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "Políticas públicas para promover la igualdad efectiva de las personas LGTBI.\r",
+    "text_es": ""
+  },
+  "section": {
+    "id": "334",
+    "idChapter": "329",
+    "code": "SECCIÓN 8",
+    "ordinal": "8",
+    "order": "8",
+    "name_es": "Medidas en el ámbito de la familia, la infancia y la juventud.\r",
+    "text_es": ""
+  },
+  "code": "SECCIÓN 8 - ",
+  "qBySection": [],
+  "qByArticle": []
+}

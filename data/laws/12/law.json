@@ -1,0 +1,187 @@
+{
+  "error": 0,
+  "arTitles": [
+    {
+      "id": "72",
+      "idLaw": "12",
+      "code": "TÍTULO I",
+      "ordinal": "I",
+      "order": "1",
+      "order_def": "AAAA1BBBB9",
+      "name_es": "Del Gobierno composición, organización y órganos de colaboración y apoyo\r",
+      "text_es": ""
+    },
+    {
+      "id": "73",
+      "idLaw": "12",
+      "code": "TÍTULO II",
+      "ordinal": "II",
+      "order": "2",
+      "order_def": "AAAA2BBBB9",
+      "name_es": "Del estatuto de los miembros del Gobierno, de los Secretarios de Estado y de los Directores de los Gabinetes\r",
+      "text_es": ""
+    },
+    {
+      "id": "74",
+      "idLaw": "12",
+      "code": "TÍTULO III",
+      "ordinal": "III",
+      "order": "3",
+      "order_def": "AAAA3BBBB9",
+      "name_es": "De las normas de funcionamiento del Gobierno y de la delegación de competencias\r",
+      "text_es": ""
+    },
+    {
+      "id": "75",
+      "idLaw": "12",
+      "code": "TÍTULO IV",
+      "ordinal": "IV",
+      "order": "4",
+      "order_def": "AAAA4BBBB9",
+      "name_es": "Del Gobierno en funciones\r",
+      "text_es": ""
+    },
+    {
+      "id": "76",
+      "idLaw": "12",
+      "code": "TÍTULO V",
+      "ordinal": "V",
+      "order": "5",
+      "order_def": "AAAA5BBBB9",
+      "name_es": "De la iniciativa legislativa y la potestad reglamentaria del Gobierno\r",
+      "text_es": ""
+    },
+    {
+      "id": "77",
+      "idLaw": "12",
+      "code": "TÍTULO VI",
+      "ordinal": "VI",
+      "order": "6",
+      "order_def": "AAAA6BBBB9",
+      "name_es": "Del control del Gobierno",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "12",
+    "code": "L50/1997",
+    "ordinal": "L50/1997",
+    "order": "9",
+    "order_def": "AAAA9",
+    "publish": "YES",
+    "name_es": "Ley 50/1997, de 27 de noviembre, del Gobierno",
+    "acronim_es": "Ley 50/1997 - del Gobierno"
+  },
+  "pt": true,
+  "qByLaw": {
+    "12": {
+      "mainLevel": [
+        "822",
+        "823",
+        "824",
+        "825"
+      ],
+      "subLevel": [
+        "224",
+        "225",
+        "226",
+        "227",
+        "228",
+        "815",
+        "229",
+        "230",
+        "816",
+        "231",
+        "817",
+        "232",
+        "818",
+        "233",
+        "234",
+        "819"
+      ],
+      "userDone": 0
+    }
+  },
+  "qByLawNew": {
+    "12": {
+      "mainLevel": {
+        "exam": [
+          "822",
+          "823",
+          "824",
+          "825"
+        ]
+      },
+      "subLevel": [
+        "224",
+        "225",
+        "226",
+        "227",
+        "228",
+        "815",
+        "229",
+        "230",
+        "816",
+        "231",
+        "817",
+        "232",
+        "818",
+        "233",
+        "234",
+        "819"
+      ],
+      "userDone": 0,
+      "recent": 0
+    }
+  },
+  "qByTitle": {
+    "72": {
+      "mainLevel": [
+        "224",
+        "225",
+        "226",
+        "227",
+        "228",
+        "815"
+      ],
+      "subLevel": [],
+      "recent": 0
+    },
+    "73": {
+      "mainLevel": [
+        "229",
+        "230",
+        "816"
+      ],
+      "subLevel": [],
+      "recent": 0
+    },
+    "74": {
+      "mainLevel": [
+        "231",
+        "817"
+      ],
+      "subLevel": [],
+      "recent": 0
+    },
+    "75": {
+      "mainLevel": [
+        "232",
+        "818"
+      ],
+      "subLevel": [],
+      "recent": 0
+    },
+    "76": {
+      "mainLevel": [
+        "233",
+        "234",
+        "819"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "arArticles": [],
+  "qByArticle": []
+}

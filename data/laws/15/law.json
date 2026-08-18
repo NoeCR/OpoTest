@@ -1,0 +1,240 @@
+{
+  "error": 0,
+  "arTitles": [
+    {
+      "id": "86",
+      "idLaw": "15",
+      "code": "TÍTULO I",
+      "ordinal": "I",
+      "order": "1",
+      "order_def": "AAAA1BBB26",
+      "name_es": "Disposiciones generales\r",
+      "text_es": ""
+    },
+    {
+      "id": "87",
+      "idLaw": "15",
+      "code": "TÍTULO II",
+      "ordinal": "II",
+      "order": "2",
+      "order_def": "AAAA2BBB26",
+      "name_es": "El Municipio\r",
+      "text_es": ""
+    },
+    {
+      "id": "88",
+      "idLaw": "15",
+      "code": "TÍTULO III",
+      "ordinal": "III",
+      "order": "3",
+      "order_def": "AAAA3BBB26",
+      "name_es": "La Provincia\r",
+      "text_es": ""
+    },
+    {
+      "id": "89",
+      "idLaw": "15",
+      "code": "TÍTULO IV",
+      "ordinal": "IV",
+      "order": "4",
+      "order_def": "AAAA4BBB26",
+      "name_es": "Otras entidades locales\r",
+      "text_es": ""
+    },
+    {
+      "id": "90",
+      "idLaw": "15",
+      "code": "TÍTULO V",
+      "ordinal": "V",
+      "order": "5",
+      "order_def": "AAAA5BBB26",
+      "name_es": "Disposiciones comunes a las entidades locales\r",
+      "text_es": ""
+    },
+    {
+      "id": "91",
+      "idLaw": "15",
+      "code": "TÍTULO VI",
+      "ordinal": "VI",
+      "order": "6",
+      "order_def": "AAAA6BBB26",
+      "name_es": "Bienes, actividades y servicios y contratación\r",
+      "text_es": ""
+    },
+    {
+      "id": "92",
+      "idLaw": "15",
+      "code": "TÍTULO VII",
+      "ordinal": "VII",
+      "order": "7",
+      "order_def": "AAAA7BBB26",
+      "name_es": "Personal al servicio de las entidades locales\r",
+      "text_es": ""
+    },
+    {
+      "id": "93",
+      "idLaw": "15",
+      "code": "TÍTULO VIII",
+      "ordinal": "VIII",
+      "order": "8",
+      "order_def": "AAAA8BBB26",
+      "name_es": "Haciendas locales\r",
+      "text_es": ""
+    },
+    {
+      "id": "94",
+      "idLaw": "15",
+      "code": "TÍTULO IX",
+      "ordinal": "IX",
+      "order": "9",
+      "order_def": "AAAA9BBB26",
+      "name_es": "Organizaciones para la cooperación entre las Administraciones Públicas en materia de Administración Local\r",
+      "text_es": ""
+    },
+    {
+      "id": "95",
+      "idLaw": "15",
+      "code": "TÍTULO X",
+      "ordinal": "X",
+      "order": "10",
+      "order_def": "AAA10BBB26",
+      "name_es": "Régimen de organización de los municipios de gran población\r",
+      "text_es": ""
+    },
+    {
+      "id": "96",
+      "idLaw": "15",
+      "code": "TÍTULO XI",
+      "ordinal": "XI",
+      "order": "11",
+      "order_def": "AAA11BBB26",
+      "name_es": "Tipificación de las infracciones y sanciones por las Entidades Locales en determinadas materias",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "15",
+    "code": "L7/1985",
+    "ordinal": "L7/1985",
+    "order": "26",
+    "order_def": "AAA26",
+    "publish": "YES",
+    "name_es": "Ley 7/1985, de 2 de abril, reguladora de las Bases del Régimen Local",
+    "acronim_es": "Ley 7/1985 - Bases del Régimen Local"
+  },
+  "pt": true,
+  "qByLaw": {
+    "15": {
+      "mainLevel": [],
+      "subLevel": [
+        "877",
+        "916",
+        "929",
+        "930",
+        "931",
+        "944",
+        "945",
+        "946",
+        "951",
+        "952",
+        "953",
+        "959",
+        "1008",
+        "1009",
+        "1010",
+        "1011",
+        "960",
+        "961",
+        "962",
+        "963",
+        "964",
+        "979",
+        "980"
+      ],
+      "userDone": 0
+    }
+  },
+  "qByLawNew": {
+    "15": {
+      "mainLevel": [],
+      "subLevel": [
+        "877",
+        "916",
+        "929",
+        "930",
+        "931",
+        "944",
+        "945",
+        "946",
+        "951",
+        "952",
+        "953",
+        "959",
+        "1008",
+        "1009",
+        "1010",
+        "1011",
+        "960",
+        "961",
+        "962",
+        "963",
+        "964",
+        "979",
+        "980"
+      ],
+      "userDone": 0,
+      "recent": 0
+    }
+  },
+  "qByTitle": {
+    "86": {
+      "mainLevel": [
+        "877"
+      ],
+      "subLevel": [],
+      "recent": 0
+    },
+    "87": {
+      "mainLevel": [],
+      "subLevel": [
+        "916",
+        "929",
+        "930",
+        "931",
+        "944",
+        "945",
+        "946",
+        "951",
+        "952",
+        "953",
+        "959"
+      ],
+      "recent": 0
+    },
+    "88": {
+      "mainLevel": [
+        "1008",
+        "1009",
+        "1010",
+        "1011"
+      ],
+      "subLevel": [],
+      "recent": 0
+    },
+    "95": {
+      "mainLevel": [
+        "960",
+        "961",
+        "962",
+        "963",
+        "964",
+        "979",
+        "980"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "arArticles": [],
+  "qByArticle": []
+}

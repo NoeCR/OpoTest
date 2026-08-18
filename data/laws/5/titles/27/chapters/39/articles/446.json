@@ -1,0 +1,47 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "5",
+    "code": "CONSTITUCIÓN",
+    "ordinal": "CONSTITUCIÓN",
+    "order": "1",
+    "order_def": "AAAA1",
+    "publish": "YES",
+    "name_es": "Constitución Española de 1978",
+    "acronim_es": "Constitución Española"
+  },
+  "title": {
+    "id": "27",
+    "idLaw": "5",
+    "code": "TÍTULO VIII",
+    "ordinal": "VIII",
+    "order": "10",
+    "order_def": "AAA10BBBB1",
+    "name_es": "De la Organización Territorial del Estado",
+    "text_es": "Artículos del 137 al 158"
+  },
+  "chapter": {
+    "id": "39",
+    "idTitle": "27",
+    "code": "CAPÍTULO PRIMERO",
+    "ordinal": "I",
+    "order": "1",
+    "name_es": "Principios generales",
+    "text_es": null
+  },
+  "section": [],
+  "article": {
+    "id": "446",
+    "idLaw": "5",
+    "idTitle": "27",
+    "idChapter": "39",
+    "idSection": null,
+    "code": "Artículo 139",
+    "ordinal": "139",
+    "order": "3",
+    "name_es": "\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

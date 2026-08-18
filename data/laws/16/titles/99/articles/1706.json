@@ -1,0 +1,39 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "16",
+    "code": "RD208/1996",
+    "ordinal": "RD208/1996",
+    "order": "13",
+    "order_def": "AAA13",
+    "publish": "YES",
+    "name_es": "Real Decreto 208/1996, de 9 de febrero, por el que se regulan los servicios de información administrativa y atención al ciudadano.",
+    "acronim_es": "RD 208/1996 - Información administrativa y atención al ciudadano"
+  },
+  "title": {
+    "id": "99",
+    "idLaw": "16",
+    "code": "CAPÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "order_def": "AAAA2BBB13",
+    "name_es": "Organización de la información administrativa",
+    "text_es": ""
+  },
+  "chapter": [],
+  "section": [],
+  "article": {
+    "id": "1706",
+    "idLaw": "16",
+    "idTitle": "99",
+    "idChapter": null,
+    "idSection": null,
+    "code": "Artículo 12",
+    "ordinal": "12",
+    "order": "8",
+    "name_es": "Composición.\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

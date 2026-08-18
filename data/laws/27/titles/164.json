@@ -1,0 +1,176 @@
+{
+  "error": 0,
+  "arChapters": [
+    {
+      "id": "285",
+      "idTitle": "164",
+      "code": "TÍTULO I",
+      "ordinal": "I",
+      "order": "1",
+      "name_es": "Disposiciones generales sobre la contratación del sector público\r",
+      "text_es": ""
+    },
+    {
+      "id": "286",
+      "idTitle": "164",
+      "code": "TÍTULO II",
+      "ordinal": "II",
+      "order": "2",
+      "name_es": "Partes en el contrato\r",
+      "text_es": ""
+    },
+    {
+      "id": "287",
+      "idTitle": "164",
+      "code": "TÍTULO III",
+      "ordinal": "III",
+      "order": "3",
+      "name_es": "Objeto, presupuesto base de licitación, valor estimado, precio del contrato y su revisión\r",
+      "text_es": ""
+    },
+    {
+      "id": "288",
+      "idTitle": "164",
+      "code": "TÍTULO IV",
+      "ordinal": "IV",
+      "order": "4",
+      "name_es": "Garantías exigibles en la contratación del sector público\r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "27",
+    "code": "L9/2017",
+    "ordinal": "L9/2017",
+    "order": "5",
+    "order_def": "AAAA5",
+    "publish": "YES",
+    "name_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público, por la que se transponen al ordenamiento jurídico español las Directivas del Parlamento Europeo y del Consejo 2014/23/UE y 2014/24/UE, de 26 de febrero de 2014.",
+    "acronim_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público."
+  },
+  "title": {
+    "id": "164",
+    "idLaw": "27",
+    "code": "LIBRO PRIMERO",
+    "ordinal": "PRIMERO",
+    "order": "2",
+    "order_def": "AAAA2BBBB5",
+    "name_es": "Configuración general de la contratación del sector público y elementos estructurales de los contratos\r",
+    "text_es": ""
+  },
+  "qByTitle": {
+    "164": {
+      "mainLevel": [],
+      "subLevel": [
+        "669",
+        "670",
+        "671",
+        "672",
+        "673",
+        "675",
+        "676",
+        "677",
+        "678",
+        "679",
+        "680",
+        "681",
+        "682",
+        "683",
+        "695",
+        "696",
+        "697",
+        "698",
+        "699",
+        "700",
+        "701",
+        "702",
+        "703",
+        "704",
+        "705",
+        "706",
+        "707",
+        "708",
+        "710",
+        "711",
+        "712",
+        "713",
+        "714",
+        "715",
+        "716",
+        "728",
+        "729",
+        "730",
+        "731"
+      ],
+      "recent": 0
+    }
+  },
+  "qByChapter": {
+    "285": {
+      "mainLevel": [
+        "669",
+        "683",
+        "682",
+        "681",
+        "680",
+        "679",
+        "678",
+        "677",
+        "676",
+        "675",
+        "673",
+        "672",
+        "671",
+        "670"
+      ],
+      "subLevel": [],
+      "recent": 0
+    },
+    "286": {
+      "mainLevel": [
+        "704",
+        "705",
+        "706",
+        "707",
+        "708",
+        "710",
+        "703",
+        "702",
+        "701",
+        "700",
+        "699",
+        "698",
+        "697",
+        "696",
+        "695"
+      ],
+      "subLevel": [],
+      "recent": 0
+    },
+    "287": {
+      "mainLevel": [],
+      "subLevel": [
+        "714",
+        "713",
+        "712",
+        "711",
+        "715",
+        "716"
+      ],
+      "recent": 0
+    },
+    "288": {
+      "mainLevel": [
+        "728",
+        "729",
+        "730",
+        "731"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "arArticles": [],
+  "$arIdsArticles": [],
+  "qByArticle": []
+}

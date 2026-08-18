@@ -1,0 +1,47 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "44",
+    "code": "LO1/2004",
+    "ordinal": "LO1/2004",
+    "order": "29",
+    "order_def": "AAA29",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 1/2004, de 28 de diciembre, de Medidas de Protección Integral contra la Violencia de Género.",
+    "acronim_es": "Ley Orgánica 1/2004 Medidas de Protección contra la Violencia de Género."
+  },
+  "title": {
+    "id": "304",
+    "idLaw": "44",
+    "code": "TÍTULO V",
+    "ordinal": "V",
+    "order": "6",
+    "order_def": "AAAA6BBB29",
+    "name_es": "Tutela Judicial",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "510",
+    "idTitle": "304",
+    "code": "CAPÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "name_es": "De los Juzgados de Violencia sobre la Mujer\r",
+    "text_es": ""
+  },
+  "section": [],
+  "article": {
+    "id": "4026",
+    "idLaw": "44",
+    "idTitle": "304",
+    "idChapter": "510",
+    "idSection": null,
+    "code": "Artículo 51",
+    "ordinal": "51",
+    "order": "9",
+    "name_es": "Plazas servidas por Magistrados.\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

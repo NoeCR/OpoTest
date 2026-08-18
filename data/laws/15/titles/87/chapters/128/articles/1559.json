@@ -1,0 +1,47 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "15",
+    "code": "L7/1985",
+    "ordinal": "L7/1985",
+    "order": "26",
+    "order_def": "AAA26",
+    "publish": "YES",
+    "name_es": "Ley 7/1985, de 2 de abril, reguladora de las Bases del Régimen Local",
+    "acronim_es": "Ley 7/1985 - Bases del Régimen Local"
+  },
+  "title": {
+    "id": "87",
+    "idLaw": "15",
+    "code": "TÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "order_def": "AAAA2BBB26",
+    "name_es": "El Municipio\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "128",
+    "idTitle": "87",
+    "code": "CAPÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "Organización\r",
+    "text_es": ""
+  },
+  "section": [],
+  "article": {
+    "id": "1559",
+    "idLaw": "15",
+    "idTitle": "87",
+    "idChapter": "128",
+    "idSection": null,
+    "code": "Artículo 24",
+    "ordinal": "24",
+    "order": "6",
+    "name_es": "\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

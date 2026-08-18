@@ -1,0 +1,57 @@
+{
+  "error": 0,
+  "arChapters": [],
+  "law": {
+    "id": "7",
+    "code": "RD364/1995",
+    "ordinal": "RD364/1995",
+    "order": "18",
+    "order_def": "AAA18",
+    "publish": "YES",
+    "name_es": "Real Decreto 364/1995, de 10 de marzo, por el que se aprueba el Reglamento General de ingreso del personal al servicio de la Administración General del Estado y de provisión de puestos de trabajo y promoción profesional de los funcionarios civiles de la Administración General del Estado",
+    "acronim_es": "RD 364/1995 - Ingreso, Provisión de puestos y Promoción profesional."
+  },
+  "title": {
+    "id": "40",
+    "idLaw": "7",
+    "code": "PRELIMINAR ",
+    "ordinal": "",
+    "order": "1",
+    "order_def": "AAAA1BBB18",
+    "name_es": "\r",
+    "text_es": ""
+  },
+  "qByTitle": [],
+  "qByChapter": [],
+  "arArticles": [
+    {
+      "id": "502",
+      "idLaw": "7",
+      "idTitle": "40",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 1",
+      "ordinal": "1",
+      "order": "1",
+      "name_es": "Ámbito de aplicación\r",
+      "text_es": ""
+    },
+    {
+      "id": "503",
+      "idLaw": "7",
+      "idTitle": "40",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 2",
+      "ordinal": "2",
+      "order": "2",
+      "name_es": "Planificación de Recursos Humanos\r",
+      "text_es": ""
+    }
+  ],
+  "$arIdsArticles": [
+    "502",
+    "503"
+  ],
+  "qByArticle": []
+}

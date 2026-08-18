@@ -1,0 +1,47 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "36",
+    "code": "LO2/1979",
+    "ordinal": "LO2/1979",
+    "order": "24",
+    "order_def": "AAA24",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 2/1979, de 3 de octubre, del Tribunal Constitucional.",
+    "acronim_es": "Ley Orgánica 2/1979, del Tribunal Constitucional."
+  },
+  "title": {
+    "id": "229",
+    "idLaw": "36",
+    "code": "TÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "order_def": "AAAA1BBB24",
+    "name_es": "Del Tribunal Constitucional.\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "450",
+    "idTitle": "229",
+    "code": "CAPÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "De los Magistrados del Tribunal Constitucional.\r",
+    "text_es": ""
+  },
+  "section": [],
+  "article": {
+    "id": "3516",
+    "idLaw": "36",
+    "idTitle": "229",
+    "idChapter": "450",
+    "idSection": null,
+    "code": "Artículo 19",
+    "ordinal": "19",
+    "order": "4",
+    "name_es": "Artículo 19",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

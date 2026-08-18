@@ -1,0 +1,96 @@
+{
+  "error": 0,
+  "arTitles": [
+    {
+      "id": "282",
+      "idLaw": "41",
+      "code": "TÍTULO I",
+      "ordinal": "I",
+      "order": "1",
+      "order_def": "AAAA1BBB25",
+      "name_es": "Fiscalización económico-financiera y jurisdicción contable\r",
+      "text_es": ""
+    },
+    {
+      "id": "283",
+      "idLaw": "41",
+      "code": "TÍTULO II",
+      "ordinal": "II",
+      "order": "2",
+      "order_def": "AAAA2BBB25",
+      "name_es": "Composición y organización del Tribunal de Cuentas\r",
+      "text_es": ""
+    },
+    {
+      "id": "284",
+      "idLaw": "41",
+      "code": "TÍTULO III",
+      "ordinal": "III",
+      "order": "3",
+      "order_def": "AAAA3BBB25",
+      "name_es": "Los miembros del Tribunal y el personal a su servicio\r",
+      "text_es": ""
+    },
+    {
+      "id": "285",
+      "idLaw": "41",
+      "code": "TÍTULO IV",
+      "ordinal": "IV",
+      "order": "4",
+      "order_def": "AAAA4BBB25",
+      "name_es": "La responsabilidad contable\r",
+      "text_es": ""
+    },
+    {
+      "id": "286",
+      "idLaw": "41",
+      "code": "TÍTULO V",
+      "ordinal": "V",
+      "order": "5",
+      "order_def": "AAAA5BBB25",
+      "name_es": "Funcionamiento del Tribunal",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "41",
+    "code": "LO2/1982",
+    "ordinal": "LO2/1982",
+    "order": "25",
+    "order_def": "AAA25",
+    "publish": "YES",
+    "name_es": "Ley Orgánica 2/1982, de 12 de mayo, del Tribunal de Cuentas.",
+    "acronim_es": "Ley Orgánica 2/1982, de 12 de mayo, del Tribunal de Cuentas."
+  },
+  "pt": true,
+  "qByLaw": {
+    "41": {
+      "mainLevel": [
+        "870",
+        "871",
+        "872",
+        "873"
+      ],
+      "subLevel": [],
+      "userDone": 0
+    }
+  },
+  "qByLawNew": {
+    "41": {
+      "mainLevel": {
+        "test": [
+          "870",
+          "871",
+          "872",
+          "873"
+        ]
+      },
+      "subLevel": [],
+      "userDone": 0,
+      "recent": 0
+    }
+  },
+  "qByTitle": [],
+  "arArticles": [],
+  "qByArticle": []
+}

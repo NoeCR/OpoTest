@@ -1,0 +1,80 @@
+{
+  "error": 0,
+  "arChapters": [
+    {
+      "id": "1",
+      "idTitle": "2",
+      "code": "CAPÍTULO I",
+      "ordinal": "I",
+      "order": "1",
+      "name_es": "La capacidad de obrar y el concepto de interesado",
+      "text_es": "Artículos del 3 al 8"
+    },
+    {
+      "id": "3",
+      "idTitle": "2",
+      "code": "CAPÍTULO II",
+      "ordinal": "II",
+      "order": "2",
+      "name_es": "Identificación y firma de los interesados en el procedimiento administrativo.",
+      "text_es": "Artículos del 9 al 12"
+    }
+  ],
+  "law": {
+    "id": "1",
+    "code": "L39/2015",
+    "ordinal": "L39/2015",
+    "order": "2",
+    "order_def": "AAAA2",
+    "publish": "YES",
+    "name_es": "Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas",
+    "acronim_es": "Ley 39/2015, del Procedimiento Administrativo Común"
+  },
+  "title": {
+    "id": "2",
+    "idLaw": "1",
+    "code": "TÍTULO I",
+    "ordinal": "I",
+    "order": "2",
+    "order_def": "AAAA2BBBB2",
+    "name_es": "De los interesados en el procedimiento.",
+    "text_es": "Artículos del 3 al 12"
+  },
+  "qByTitle": {
+    "2": {
+      "mainLevel": [],
+      "subLevel": [
+        "282",
+        "283",
+        "284",
+        "285",
+        "286",
+        "287"
+      ],
+      "recent": 0
+    }
+  },
+  "qByChapter": {
+    "1": {
+      "mainLevel": [
+        "282",
+        "283",
+        "284"
+      ],
+      "subLevel": [],
+      "recent": 0
+    },
+    "3": {
+      "mainLevel": [
+        "285",
+        "286",
+        "287"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "arArticles": [],
+  "$arIdsArticles": [],
+  "qByArticle": []
+}

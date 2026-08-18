@@ -1,0 +1,96 @@
+{
+  "error": 0,
+  "arChapters": [],
+  "law": {
+    "id": "6",
+    "code": "L53/1984",
+    "ordinal": "L53/1984",
+    "order": "31",
+    "order_def": "AAA31",
+    "publish": "YES",
+    "name_es": "Ley 53/1984, de 26 de diciembre, de Incompatibilidades del Personal al Servicio de las Administraciones Públicas",
+    "acronim_es": "Ley 53/1984 - Incompatibilidades"
+  },
+  "title": {
+    "id": "39",
+    "idLaw": "6",
+    "code": "CAPÍTULO V",
+    "ordinal": "V",
+    "order": "5",
+    "order_def": "AAAA5BBB31",
+    "name_es": "Disposiciones comunes",
+    "text_es": ""
+  },
+  "qByTitle": [],
+  "qByChapter": [],
+  "arArticles": [
+    {
+      "id": "497",
+      "idLaw": "6",
+      "idTitle": "39",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 16",
+      "ordinal": "16",
+      "order": "1",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "498",
+      "idLaw": "6",
+      "idTitle": "39",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 17",
+      "ordinal": "17",
+      "order": "2",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "499",
+      "idLaw": "6",
+      "idTitle": "39",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 18",
+      "ordinal": "18",
+      "order": "3",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "500",
+      "idLaw": "6",
+      "idTitle": "39",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 19",
+      "ordinal": "19",
+      "order": "4",
+      "name_es": "\r",
+      "text_es": ""
+    },
+    {
+      "id": "501",
+      "idLaw": "6",
+      "idTitle": "39",
+      "idChapter": null,
+      "idSection": null,
+      "code": "Artículo 20",
+      "ordinal": "20",
+      "order": "5",
+      "name_es": "",
+      "text_es": ""
+    }
+  ],
+  "$arIdsArticles": [
+    "497",
+    "498",
+    "499",
+    "500",
+    "501"
+  ],
+  "qByArticle": []
+}

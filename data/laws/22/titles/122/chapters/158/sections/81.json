@@ -1,0 +1,94 @@
+{
+  "error": 0,
+  "arArticles": [
+    {
+      "id": "1865",
+      "idLaw": "22",
+      "idTitle": "122",
+      "idChapter": "158",
+      "idSection": "81",
+      "code": "Artículo 5",
+      "ordinal": "5",
+      "order": "1",
+      "name_es": "Concepto y derechos integrantes de la Hacienda Pública estatal.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1866",
+      "idLaw": "22",
+      "idTitle": "122",
+      "idChapter": "158",
+      "idSection": "81",
+      "code": "Artículo 6",
+      "ordinal": "6",
+      "order": "2",
+      "name_es": "Normas comunes a los derechos de la Hacienda Pública estatal.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1867",
+      "idLaw": "22",
+      "idTitle": "122",
+      "idChapter": "158",
+      "idSection": "81",
+      "code": "Artículo 7",
+      "ordinal": "7",
+      "order": "3",
+      "name_es": "Límites a que están sujetos los derechos de la Hacienda Pública estatal.\r",
+      "text_es": ""
+    },
+    {
+      "id": "1868",
+      "idLaw": "22",
+      "idTitle": "122",
+      "idChapter": "158",
+      "idSection": "81",
+      "code": "Artículo 8",
+      "ordinal": "8",
+      "order": "4",
+      "name_es": "Ejercicio de acciones judiciales por la Hacienda Pública estatal.\r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "22",
+    "code": "L47/2003",
+    "ordinal": "L47/2003",
+    "order": "6",
+    "order_def": "AAAA6",
+    "publish": "YES",
+    "name_es": "Ley 47/2003, de 26 de noviembre, General Presupuestaria.",
+    "acronim_es": "Ley 47/2003, General Presupuestaria."
+  },
+  "title": {
+    "id": "122",
+    "idLaw": "22",
+    "code": "TÍTULO I",
+    "ordinal": "I",
+    "order": "1",
+    "order_def": "AAAA1BBBB6",
+    "name_es": "Del ámbito de aplicación y de la Hacienda Pública estatal\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "158",
+    "idTitle": "122",
+    "code": "CAPÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "Del régimen de la Hacienda Pública estatal\r",
+    "text_es": ""
+  },
+  "section": {
+    "id": "81",
+    "idChapter": "158",
+    "code": "SECCIÓN 1",
+    "ordinal": "1",
+    "order": "1",
+    "name_es": "Derechos de la Hacienda Pública estatal\r",
+    "text_es": ""
+  },
+  "code": "SECCIÓN 1 - ",
+  "qBySection": [],
+  "qByArticle": []
+}

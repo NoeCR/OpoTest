@@ -1,0 +1,91 @@
+{
+  "error": 0,
+  "arArticles": [
+    {
+      "id": "2756",
+      "idLaw": "27",
+      "idTitle": "164",
+      "idChapter": "287",
+      "idSection": "287",
+      "code": "Artículo 103",
+      "ordinal": "103",
+      "order": "1",
+      "name_es": "Procedencia y límites.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2757",
+      "idLaw": "27",
+      "idTitle": "164",
+      "idChapter": "287",
+      "idSection": "287",
+      "code": "Artículo 104",
+      "ordinal": "104",
+      "order": "2",
+      "name_es": "Revisión en casos de demora en la ejecución.\r",
+      "text_es": ""
+    },
+    {
+      "id": "2758",
+      "idLaw": "27",
+      "idTitle": "164",
+      "idChapter": "287",
+      "idSection": "287",
+      "code": "Artículo 105",
+      "ordinal": "105",
+      "order": "3",
+      "name_es": "Pago del importe de la revisión.\r",
+      "text_es": ""
+    }
+  ],
+  "law": {
+    "id": "27",
+    "code": "L9/2017",
+    "ordinal": "L9/2017",
+    "order": "5",
+    "order_def": "AAAA5",
+    "publish": "YES",
+    "name_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público, por la que se transponen al ordenamiento jurídico español las Directivas del Parlamento Europeo y del Consejo 2014/23/UE y 2014/24/UE, de 26 de febrero de 2014.",
+    "acronim_es": "Ley 9/2017, de 8 de noviembre, de Contratos del Sector Público."
+  },
+  "title": {
+    "id": "164",
+    "idLaw": "27",
+    "code": "LIBRO PRIMERO",
+    "ordinal": "PRIMERO",
+    "order": "2",
+    "order_def": "AAAA2BBBB5",
+    "name_es": "Configuración general de la contratación del sector público y elementos estructurales de los contratos\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "287",
+    "idTitle": "164",
+    "code": "TÍTULO III",
+    "ordinal": "III",
+    "order": "3",
+    "name_es": "Objeto, presupuesto base de licitación, valor estimado, precio del contrato y su revisión\r",
+    "text_es": ""
+  },
+  "section": {
+    "id": "287",
+    "idChapter": "287",
+    "code": "CAPÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "Revisión de precios en los contratos de las entidades del Sector Público\r",
+    "text_es": ""
+  },
+  "code": "CAPÍTULO II - ",
+  "qBySection": {
+    "287": {
+      "mainLevel": [
+        "715",
+        "716"
+      ],
+      "subLevel": [],
+      "recent": 0
+    }
+  },
+  "qByArticle": []
+}

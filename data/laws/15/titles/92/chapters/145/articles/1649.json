@@ -1,0 +1,47 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "15",
+    "code": "L7/1985",
+    "ordinal": "L7/1985",
+    "order": "26",
+    "order_def": "AAA26",
+    "publish": "YES",
+    "name_es": "Ley 7/1985, de 2 de abril, reguladora de las Bases del Régimen Local",
+    "acronim_es": "Ley 7/1985 - Bases del Régimen Local"
+  },
+  "title": {
+    "id": "92",
+    "idLaw": "15",
+    "code": "TÍTULO VII",
+    "ordinal": "VII",
+    "order": "7",
+    "order_def": "AAAA7BBB26",
+    "name_es": "Personal al servicio de las entidades locales\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "145",
+    "idTitle": "92",
+    "code": "CAPÍTULO IV",
+    "ordinal": "IV",
+    "order": "4",
+    "name_es": "Selección de los restantes funcionarios y reglas sobre provisión de\r",
+    "text_es": ""
+  },
+  "section": [],
+  "article": {
+    "id": "1649",
+    "idLaw": "15",
+    "idTitle": "92",
+    "idChapter": "145",
+    "idSection": null,
+    "code": "Artículo 102",
+    "ordinal": "102",
+    "order": "3",
+    "name_es": "\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

@@ -1,0 +1,47 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "1",
+    "code": "L39/2015",
+    "ordinal": "L39/2015",
+    "order": "2",
+    "order_def": "AAAA2",
+    "publish": "YES",
+    "name_es": "Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas",
+    "acronim_es": "Ley 39/2015, del Procedimiento Administrativo Común"
+  },
+  "title": {
+    "id": "2",
+    "idLaw": "1",
+    "code": "TÍTULO I",
+    "ordinal": "I",
+    "order": "2",
+    "order_def": "AAAA2BBBB2",
+    "name_es": "De los interesados en el procedimiento.",
+    "text_es": "Artículos del 3 al 12"
+  },
+  "chapter": {
+    "id": "3",
+    "idTitle": "2",
+    "code": "CAPÍTULO II",
+    "ordinal": "II",
+    "order": "2",
+    "name_es": "Identificación y firma de los interesados en el procedimiento administrativo.",
+    "text_es": "Artículos del 9 al 12"
+  },
+  "section": [],
+  "article": {
+    "id": "82",
+    "idLaw": "1",
+    "idTitle": "2",
+    "idChapter": "3",
+    "idSection": null,
+    "code": "Artículo 9",
+    "ordinal": "9",
+    "order": "1",
+    "name_es": "Sistemas de identificación de los interesados en el procedimiento.",
+    "text_es": ""
+  },
+  "qByArticle": []
+}

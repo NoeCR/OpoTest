@@ -1,0 +1,47 @@
+{
+  "error": 0,
+  "arArticles": [],
+  "law": {
+    "id": "34",
+    "code": "RD33/1986",
+    "ordinal": "RD33/1986",
+    "order": "23",
+    "order_def": "AAA23",
+    "publish": "YES",
+    "name_es": "Real Decreto 33/1986, de 10 de enero, por el que se aprueba el Reglamento de Régimen Disciplinario de los Funcionarios de la Administración del Estado.",
+    "acronim_es": "Real Decreto 33/1986 - Régimen Disciplinario de los Funcionarios de la Administración del Estado."
+  },
+  "title": {
+    "id": "221",
+    "idLaw": "34",
+    "code": "TITULO II",
+    "ordinal": "II",
+    "order": "2",
+    "order_def": "AAAA2BBB23",
+    "name_es": "Tramitación\r",
+    "text_es": ""
+  },
+  "chapter": {
+    "id": "343",
+    "idTitle": "221",
+    "code": "CAPÍTULO III",
+    "ordinal": "III",
+    "order": "3",
+    "name_es": "Iniciación.\r",
+    "text_es": ""
+  },
+  "section": [],
+  "article": {
+    "id": "3422",
+    "idLaw": "34",
+    "idTitle": "221",
+    "idChapter": "343",
+    "idSection": null,
+    "code": "Artículo 46",
+    "ordinal": "46",
+    "order": "20",
+    "name_es": "\r",
+    "text_es": ""
+  },
+  "qByArticle": []
+}
