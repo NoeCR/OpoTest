@@ -39,6 +39,51 @@ List<String> allTestIdsFromQMap(dynamic qMap, String key) {
   return testIdsFromQMap(qMap, key, includeSubLevel: true).toSet().toList();
 }
 
+/// Agrega tests del título desde qByTitle, capítulos y artículos del payload.
+List<String> allTestIdsForTitlePayload(Map<String, dynamic>? payload, String titleId) {
+  if (payload == null) return [];
+  final ids = <String>{};
+  ids.addAll(allTestIdsFromQMap(payload['qByTitle'], titleId));
+  for (final chapter in mapsOf(payload['arChapters'])) {
+    final chapterId = chapter['id']?.toString() ?? '';
+    if (chapterId.isEmpty) continue;
+    ids.addAll(allTestIdsFromQMap(payload['qByChapter'], chapterId));
+  }
+  for (final group in articleTestGroups(payload)) {
+    ids.addAll(group.testIds);
+  }
+  return ids.toList();
+}
+
+List<String> titleLevelTestIds(Map<String, dynamic> payload, String titleId) {
+  return allTestIdsFromQMap(payload['qByTitle'], titleId);
+}
+
+bool titleHasTests(Map<String, dynamic>? payload, String titleId) {
+  return allTestIdsForTitlePayload(payload, titleId).isNotEmpty;
+}
+
+/// true si el título tiene capítulos/secciones/artículos con tests propios.
+bool titleUsesHierarchy(Map<String, dynamic> payload, String titleId) {
+  if (articleTestGroups(payload).isNotEmpty) return true;
+  for (final chapter in mapsOf(payload['arChapters'])) {
+    final chapterId = chapter['id']?.toString() ?? '';
+    if (chapterId.isEmpty) continue;
+    if (allTestIdsFromQMap(payload['qByChapter'], chapterId).isNotEmpty) return true;
+  }
+  return false;
+}
+
+bool chapterUsesHierarchy(Map<String, dynamic> payload, String chapterId) {
+  if (articleTestGroups(payload).isNotEmpty) return true;
+  for (final section in mapsOf(payload['arSections'])) {
+    final sectionId = section['id']?.toString() ?? '';
+    if (sectionId.isEmpty) continue;
+    if (allTestIdsFromQMap(payload['qBySection'], sectionId).isNotEmpty) return true;
+  }
+  return false;
+}
+
 String cleanText(dynamic value) => (value?.toString() ?? '').replaceAll('\r', '').trim();
 
 class ProgressCounts {

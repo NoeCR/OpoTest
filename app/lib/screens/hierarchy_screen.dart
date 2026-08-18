@@ -43,7 +43,7 @@ class _HierarchyScreenState extends State<HierarchyScreen> {
     final list = mapsOf(raw);
     list.sort((a, b) => (int.tryParse(a['order']?.toString() ?? '0') ?? 0)
         .compareTo(int.tryParse(b['order']?.toString() ?? '0') ?? 0));
-    return list;
+    return list.where((folder) => _folderTestIds(folder).isNotEmpty).toList();
   }
 
   @override
@@ -85,22 +85,11 @@ class _HierarchyScreenState extends State<HierarchyScreen> {
         };
     if (!mounted) return;
 
-    final sections = mapsOf(chapterPayload['arSections']);
-    final articles = articleTestGroups(chapterPayload);
     final headerTitle = _folderLabel(chapter);
     final headerSubtitle = _folderSubtitle(chapter);
+    final chapterTests = allTestIdsFromQMap(chapterPayload['qByChapter'], id);
 
-    if (sections.isEmpty && articles.isEmpty) {
-      await context.pushPage(
-        TitleTestsScreen(
-          lawId: widget.lawId,
-          titleId: widget.titleId,
-          headerTitle: headerTitle,
-          headerSubtitle: headerSubtitle,
-          chapterId: id,
-        ),
-      );
-    } else {
+    if (chapterUsesHierarchy(chapterPayload, id)) {
       await context.pushPage(
         HierarchyScreen(
           lawId: widget.lawId,
@@ -111,13 +100,24 @@ class _HierarchyScreenState extends State<HierarchyScreen> {
           chapterId: id,
         ),
       );
+    } else if (chapterTests.isNotEmpty) {
+      await context.pushPage(
+        TitleTestsScreen(
+          lawId: widget.lawId,
+          titleId: widget.titleId,
+          headerTitle: headerTitle,
+          headerSubtitle: headerSubtitle,
+          testIds: chapterTests,
+        ),
+      );
     }
     if (mounted) await _loadProgress();
   }
 
   Future<void> _openSection(Map<String, dynamic> section) async {
     final id = section['id']?.toString() ?? '';
-    final ids = testIdsFromQMap(widget.payload['qBySection'], id);
+    final ids = allTestIdsFromQMap(widget.payload['qBySection'], id);
+    if (ids.isEmpty) return;
     await context.pushPage(
       TitleTestsScreen(
         lawId: widget.lawId,
@@ -153,6 +153,9 @@ class _HierarchyScreenState extends State<HierarchyScreen> {
   }
 
   String _folderFooter(Map<String, dynamic> folder) {
+    final ids = _folderTestIds(folder);
+    if (ids.length == 1) return '1 test';
+    if (ids.isNotEmpty) return '${ids.length} tests';
     final name = cleanText(folder['name_es']);
     final code = cleanText(folder['code']);
     if (name.isNotEmpty && name != code) return name;
@@ -177,25 +180,32 @@ class _HierarchyScreenState extends State<HierarchyScreen> {
             gradient: AppDecorations.darkHeaderGradient,
           ),
           Expanded(
-            child: ListView(
-              padding: const EdgeInsets.fromLTRB(16, 16, 16, 24),
-              children: [
-                for (final article in articles)
-                  TopicProgressCard(
-                    title: article.code,
-                    footerLabel: article.testIds.length == 1 ? '1 test' : '${article.testIds.length} tests',
-                    progress: progressCounts(article.testIds, _attempted),
-                    onTap: () => _openArticle(article),
+            child: folders.isEmpty && articles.isEmpty
+                ? const Center(
+                    child: Padding(
+                      padding: EdgeInsets.all(24),
+                      child: Text('No hay tests en este bloque', textAlign: TextAlign.center),
+                    ),
+                  )
+                : ListView(
+                    padding: const EdgeInsets.fromLTRB(16, 16, 16, 24),
+                    children: [
+                      for (final article in articles)
+                        TopicProgressCard(
+                          title: article.code,
+                          footerLabel: article.testIds.length == 1 ? '1 test' : '${article.testIds.length} tests',
+                          progress: progressCounts(article.testIds, _attempted),
+                          onTap: () => _openArticle(article),
+                        ),
+                      for (final folder in folders)
+                        TopicProgressCard(
+                          title: _folderLabel(folder),
+                          footerLabel: _folderFooter(folder),
+                          progress: progressCounts(_folderTestIds(folder), _attempted),
+                          onTap: () => _isChapter ? _openSection(folder) : _openChapter(folder),
+                        ),
+                    ],
                   ),
-                for (final folder in folders)
-                  TopicProgressCard(
-                    title: _folderLabel(folder),
-                    footerLabel: _folderFooter(folder),
-                    progress: progressCounts(_folderTestIds(folder), _attempted),
-                    onTap: () => _isChapter ? _openSection(folder) : _openChapter(folder),
-                  ),
-              ],
-            ),
           ),
         ],
       ),

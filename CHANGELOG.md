@@ -6,20 +6,19 @@ Este formato sigue una estructura inspirada en [Keep a Changelog](https://keepac
 
 ## [Unreleased]
 
-### Added
-- Estrategia de importación no destructiva para tests oficiales, preservando tests personalizados (`source=custom`).
-- Nueva pestaña de contenido: **Preguntas propias**.
-- Tests unitarios para utilidades de jerarquía/progreso (`test/qmap_test.dart`).
+---
+
+## [1.0.1] - 2026-08-18
 
 ### Changed
-- UI de tarjetas con mejor contraste en el bloque inferior.
-- Recuperación de métricas visuales en tarjetas de test (nota media y mejor nota).
-- Pantalla de resultados ajustada para evitar solapes en cabecera.
-- Render de notas aclaratorias mejorado para resaltar contenido relevante.
+- Opciones de respuesta sin prefijos A/B/C/D; la selección se indica con el borde.
+- Cabecera de Perfil sin avatar superpuesto que se cortaba.
+- Desplazamiento lateral entre preguntas durante un test activo.
+- Subtítulos descriptivos en la jerarquía del temario (estilo Testea).
+- Lista de títulos muestra solo bloques con tests; navegación directa a tests cuando los capítulos no tienen tests propios.
 
 ### Fixed
-- Correcciones de recarga de progreso al volver de sesiones/test.
-- Ajustes de responsive para reducir riesgo de overflow en portrait/landscape.
+- Tests inaccesibles en leyes con capítulos estructurales pero tests a nivel de título (p. ej. LO3/1981).
 
 ---
 

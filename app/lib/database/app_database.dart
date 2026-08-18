@@ -269,12 +269,11 @@ class AppDatabase {
 
   Future<List<String>> testIdsForTitle(String titleId, Map<String, dynamic>? titlePayload) async {
     if (titlePayload == null) return [];
+    final ids = allTestIdsForTitlePayload(titlePayload, titleId);
+    if (ids.isNotEmpty) return ids;
     final chapters = mapsOf(titlePayload['arChapters']);
     final articles = articleTestGroups(titlePayload);
     if (chapters.isNotEmpty || articles.isNotEmpty) return [];
-    final ids = testIdsFromQMap(titlePayload['qByTitle'], titleId);
-    if (ids.isNotEmpty) return ids;
-    if (asStringMap(titlePayload['qByChapter'])?.isNotEmpty ?? false) return [];
     final rows = await db.query('tests', where: 'title_id = ?', whereArgs: [titleId]);
     return rows.map((r) => r['id'] as String).toList();
   }

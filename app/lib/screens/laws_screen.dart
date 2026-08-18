@@ -230,9 +230,9 @@ class _LawContentScreenState extends State<LawContentScreen> {
         ? cleanText(title?['name_es'])
         : cleanText(titleRow['name']);
 
-    final chapters = mapsOf(payload['arChapters']);
-    final articles = articleTestGroups(payload);
-    if (chapters.isNotEmpty || articles.isNotEmpty) {
+    final titleTests = titleLevelTestIds(payload, titleId);
+
+    if (titleUsesHierarchy(payload, titleId)) {
       await context.pushPage(
         HierarchyScreen(
           lawId: widget.lawId,
@@ -249,6 +249,7 @@ class _LawContentScreenState extends State<LawContentScreen> {
           titleId: titleId,
           headerTitle: headerTitle,
           headerSubtitle: headerSubtitle.isNotEmpty ? headerSubtitle : null,
+          testIds: titleTests,
         ),
       );
     }
@@ -261,7 +262,7 @@ class _LawContentScreenState extends State<LawContentScreen> {
   }
 
   ProgressCounts _titleProgress(String titleId, Map<String, dynamic>? extra) {
-    return progressCounts(allTestIdsFromQMap(extra?['qByTitle'], titleId), _attempted);
+    return progressCounts(allTestIdsForTitlePayload(extra, titleId), _attempted);
   }
 
   String _titleFooter(Map<String, dynamic>? extra, String code, String name) {
@@ -333,11 +334,28 @@ class _LawContentScreenState extends State<LawContentScreen> {
       );
     }
 
+    final titlesWithTests = _titles.where((t) {
+      Map<String, dynamic>? extra;
+      try {
+        extra = jsonDecode(t['payload'] as String) as Map<String, dynamic>;
+      } catch (_) {}
+      return titleHasTests(extra, t['id'] as String);
+    }).toList();
+
+    if (titlesWithTests.isEmpty) {
+      return const Center(
+        child: Padding(
+          padding: EdgeInsets.all(24),
+          child: Text('No hay tests en esta ley', textAlign: TextAlign.center),
+        ),
+      );
+    }
+
     return ListView.builder(
       padding: const EdgeInsets.fromLTRB(16, 12, 16, 24),
-      itemCount: _titles.length,
+      itemCount: titlesWithTests.length,
       itemBuilder: (context, i) {
-        final t = _titles[i];
+        final t = titlesWithTests[i];
         Map<String, dynamic>? extra;
         try {
           extra = jsonDecode(t['payload'] as String) as Map<String, dynamic>;
