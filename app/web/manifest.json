@@ -1,6 +1,6 @@
 {
-    "name": "testea_local",
-    "short_name": "testea_local",
+    "name": "OpoTest",
+    "short_name": "OpoTest",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

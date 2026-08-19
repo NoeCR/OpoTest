@@ -81,7 +81,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
         padding: EdgeInsets.zero,
         children: [
           GradientHeader(
-            title: 'Testea Local',
+            title: 'OpoTest',
             subtitle: _questionCount != null
                 ? 'Más de $_questionCount preguntas disponibles'
                 : 'Cargando temario...',
@@ -96,99 +96,133 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
           ),
           Padding(
             padding: const EdgeInsets.all(16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                _HomeTile(
-                  gradient: AppDecorations.headerGradient,
-                  icon: Icons.menu_book_rounded,
-                  title: 'Nuevo test',
-                  subtitle: 'Explorar legislación y temario',
-                  onTap: () => context.pushPage(const LawsScreen()).then((_) => _loadMeta()),
-                ),
-                const SizedBox(height: 12),
-                GridView.count(
-                  crossAxisCount: 2,
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  mainAxisSpacing: 12,
-                  crossAxisSpacing: 12,
-                  childAspectRatio: 1.05,
-                  children: [
-                    _HomeTile(
-                      icon: Icons.shuffle_rounded,
-                      iconColor: AppTheme.accentPurple,
-                      title: 'Test aleatorio',
-                      subtitle: state.contentReady ? 'Empieza al azar' : 'Importa temario',
-                      enabled: state.contentReady,
-                      onTap: state.contentReady ? _startRandomTest : null,
+            child: LayoutBuilder(
+              builder: (context, constraints) {
+                final width = constraints.maxWidth;
+                final compact = width >= 520;
+                final SliverGridDelegate gridDelegate;
+
+                if (width < 520) {
+                  gridDelegate = const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 12,
+                    crossAxisSpacing: 12,
+                    childAspectRatio: 1.05,
+                  );
+                } else {
+                  final extent = width < 900 ? 220.0 : 200.0;
+                  gridDelegate = SliverGridDelegateWithMaxCrossAxisExtent(
+                    maxCrossAxisExtent: extent,
+                    mainAxisSpacing: 12,
+                    crossAxisSpacing: 12,
+                    childAspectRatio: width >= 900 ? 1.14 : 1.08,
+                  );
+                }
+
+                return Align(
+                  alignment: Alignment.topCenter,
+                  child: ConstrainedBox(
+                    constraints: const BoxConstraints(maxWidth: 1040),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        _HomeTile(
+                          gradient: AppDecorations.headerGradient,
+                          icon: Icons.menu_book_rounded,
+                          title: 'Nuevo test',
+                          subtitle: 'Explorar legislación y temario',
+                          compact: compact,
+                          onTap: () => context.pushPage(const LawsScreen()).then((_) => _loadMeta()),
+                        ),
+                        const SizedBox(height: 12),
+                        GridView(
+                          gridDelegate: gridDelegate,
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          children: [
+                            _HomeTile(
+                              icon: Icons.shuffle_rounded,
+                              iconColor: AppTheme.accentPurple,
+                              title: 'Test aleatorio',
+                              subtitle: state.contentReady ? 'Empieza al azar' : 'Importa temario',
+                              enabled: state.contentReady,
+                              compact: compact,
+                              onTap: state.contentReady ? _startRandomTest : null,
+                            ),
+                            _HomeTile(
+                              icon: Icons.bar_chart_rounded,
+                              iconColor: AppTheme.primary,
+                              title: 'Estadísticas',
+                              subtitle: 'Historial de intentos',
+                              compact: compact,
+                              onTap: () => context.pushPage(const StatisticsScreen()).then((_) => _loadMeta()),
+                            ),
+                            _HomeTile(
+                              icon: Icons.replay_rounded,
+                              iconColor: AppTheme.accentOrange,
+                              title: 'Reintentar último',
+                              subtitle: _lastAttempt != null
+                                  ? (_lastAttempt!['test_name'] as String? ?? 'Test').split(' ').take(3).join(' ')
+                                  : 'Sin intentos',
+                              enabled: _lastAttempt != null,
+                              compact: compact,
+                              onTap: _lastAttempt == null
+                                  ? null
+                                  : () => TestLauncher.start(
+                                        context,
+                                        testId: _lastAttempt!['test_id'] as String,
+                                      ),
+                            ),
+                            _HomeTile(
+                              icon: Icons.settings_rounded,
+                              iconColor: AppTheme.cardDark,
+                              title: 'Configuración',
+                              subtitle: 'Tests y temario',
+                              compact: compact,
+                              onTap: () async {
+                                await context.pushPage(const SettingsScreen());
+                                _loadMeta();
+                              },
+                            ),
+                          ],
+                        ),
+                        if (state.lastImport != null) ...[
+                          const SizedBox(height: 16),
+                          Text(
+                            '${state.laws.length} leyes · ${state.lastImport!.tests} tests importados',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: state.contentReady ? Colors.black45 : Colors.orange.shade800,
+                              fontSize: 12,
+                              fontWeight: state.contentReady ? FontWeight.normal : FontWeight.w600,
+                            ),
+                          ),
+                        ] else if (state.laws.isEmpty) ...[
+                          const SizedBox(height: 16),
+                          Container(
+                            margin: const EdgeInsets.symmetric(horizontal: 8),
+                            padding: const EdgeInsets.all(12),
+                            decoration: BoxDecoration(
+                              color: AppTheme.primary.withValues(alpha: 0.08),
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: Text(
+                              state.error ??
+                                  'Temario no importado. En Android ejecuta scripts/push-data-android.ps1 y reinicia la app.',
+                              textAlign: TextAlign.center,
+                              style: const TextStyle(color: Colors.black87, fontSize: 12),
+                            ),
+                          ),
+                        ],
+                        if (state.error != null) ...[
+                          const SizedBox(height: 8),
+                          Text(state.error!, style: const TextStyle(color: Colors.red), textAlign: TextAlign.center),
+                        ],
+                      ],
                     ),
-                    _HomeTile(
-                      icon: Icons.bar_chart_rounded,
-                      iconColor: AppTheme.primary,
-                      title: 'Estadísticas',
-                      subtitle: 'Historial de intentos',
-                      onTap: () => context.pushPage(const StatisticsScreen()).then((_) => _loadMeta()),
-                    ),
-                    _HomeTile(
-                      icon: Icons.replay_rounded,
-                      iconColor: AppTheme.accentOrange,
-                      title: 'Reintentar último',
-                      subtitle: _lastAttempt != null
-                          ? (_lastAttempt!['test_name'] as String? ?? 'Test').split(' ').take(3).join(' ')
-                          : 'Sin intentos',
-                      enabled: _lastAttempt != null,
-                      onTap: _lastAttempt == null
-                          ? null
-                          : () => TestLauncher.start(
-                                context,
-                                testId: _lastAttempt!['test_id'] as String,
-                              ),
-                    ),
-                    _HomeTile(
-                      icon: Icons.settings_rounded,
-                      iconColor: AppTheme.cardDark,
-                      title: 'Configuración',
-                      subtitle: 'Tests y temario',
-                      onTap: () async {
-                        await context.pushPage(const SettingsScreen());
-                        _loadMeta();
-                      },
-                    ),
-                  ],
-                ),
-          if (state.lastImport != null) ...[
-            const SizedBox(height: 16),
-            Text(
-              '${state.laws.length} leyes · ${state.lastImport!.tests} tests importados',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: state.contentReady ? Colors.black45 : Colors.orange.shade800,
-                fontSize: 12,
-                fontWeight: state.contentReady ? FontWeight.normal : FontWeight.w600,
-              ),
-            ),
-          ] else if (state.laws.isEmpty) ...[
-            const SizedBox(height: 16),
-            Container(
-              margin: const EdgeInsets.symmetric(horizontal: 8),
-              padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                color: AppTheme.primary.withValues(alpha: 0.08),
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Text(
-                state.error ?? 'Temario no importado. En Android ejecuta scripts/push-data-android.ps1 y reinicia la app.',
-                textAlign: TextAlign.center,
-                style: const TextStyle(color: Colors.black87, fontSize: 12),
-              ),
-            ),
-          ],
-                if (state.error != null) ...[
-                  const SizedBox(height: 8),
-                  Text(state.error!, style: const TextStyle(color: Colors.red), textAlign: TextAlign.center),
-                ],
-              ],
+                  ),
+                );
+              },
             ),
           ),
         ],
@@ -203,6 +237,7 @@ class _HomeTile extends StatelessWidget {
     required this.subtitle,
     this.onTap,
     this.enabled = true,
+    this.compact = false,
     this.gradient,
     this.icon,
     this.iconColor,
@@ -212,6 +247,7 @@ class _HomeTile extends StatelessWidget {
   final String subtitle;
   final VoidCallback? onTap;
   final bool enabled;
+  final bool compact;
   final Gradient? gradient;
   final IconData? icon;
   final Color? iconColor;
@@ -219,16 +255,20 @@ class _HomeTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final onDark = gradient != null;
+    final padding = compact ? 12.0 : 14.0;
+    final iconBox = compact ? 32.0 : 36.0;
+    final iconSize = compact ? 18.0 : 20.0;
+    final titleSize = compact ? 14.0 : 15.0;
     final child = Padding(
-      padding: const EdgeInsets.all(14),
+      padding: EdgeInsets.all(padding),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           if (icon != null) ...[
             Container(
-              width: 36,
-              height: 36,
+              width: iconBox,
+              height: iconBox,
               decoration: BoxDecoration(
                 color: onDark
                     ? Colors.white.withValues(alpha: 0.2)
@@ -237,16 +277,16 @@ class _HomeTile extends StatelessWidget {
               ),
               child: Icon(
                 icon,
-                size: 20,
+                size: iconSize,
                 color: onDark ? Colors.white : (iconColor ?? AppTheme.primary),
               ),
             ),
-            const SizedBox(height: 10),
+            SizedBox(height: compact ? 8 : 10),
           ],
           Text(
             title,
             style: TextStyle(
-              fontSize: 15,
+              fontSize: titleSize,
               fontWeight: FontWeight.bold,
               color: enabled ? (onDark ? Colors.white : Colors.black87) : Colors.grey,
             ),
@@ -257,7 +297,7 @@ class _HomeTile extends StatelessWidget {
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
             style: TextStyle(
-              fontSize: 12,
+              fontSize: compact ? 11 : 12,
               color: enabled ? (onDark ? Colors.white70 : Colors.black54) : Colors.grey,
             ),
           ),

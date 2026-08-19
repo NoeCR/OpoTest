@@ -12,7 +12,7 @@ class TesteaApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Testea Local',
+      title: 'OpoTest',
       theme: AppTheme.light(),
       home: const _RootGate(),
       debugShowCheckedModeBanner: false,

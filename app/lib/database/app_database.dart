@@ -328,24 +328,32 @@ class AppDatabase {
     final placeholders = List.filled(testIds.length, '?').join(',');
     final rows = await db.query(
       'attempts',
-      columns: ['test_id', 'percent_score'],
+      columns: ['test_id', 'percent_score', 'finished_at'],
       where: 'user_id = ? AND test_id IN ($placeholders)',
       whereArgs: [userId, ...testIds],
+      orderBy: 'finished_at ASC',
     );
 
     final byTest = <String, List<double>>{};
+    final lastByTest = <String, double>{};
     for (final row in rows) {
       final id = row['test_id']?.toString();
       if (id == null) continue;
       final percent = (row['percent_score'] as num?)?.toDouble() ?? 0;
       (byTest[id] ??= []).add(percent);
+      lastByTest[id] = percent;
     }
 
     for (final entry in byTest.entries) {
       final percents = entry.value;
       final avg = percents.reduce((a, b) => a + b) / percents.length;
       final best = percents.reduce((a, b) => a > b ? a : b);
-      out[entry.key] = TestStats(avgPercent: avg, bestPercent: best, attempts: percents.length);
+      out[entry.key] = TestStats(
+        avgPercent: avg,
+        bestPercent: best,
+        lastPercent: lastByTest[entry.key],
+        attempts: percents.length,
+      );
     }
     return out;
   }

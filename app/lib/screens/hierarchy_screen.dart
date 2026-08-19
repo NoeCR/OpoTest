@@ -153,15 +153,11 @@ class _HierarchyScreenState extends State<HierarchyScreen> {
   }
 
   String _folderFooter(Map<String, dynamic> folder) {
-    final ids = _folderTestIds(folder);
-    if (ids.length == 1) return '1 test';
-    if (ids.isNotEmpty) return '${ids.length} tests';
-    final name = cleanText(folder['name_es']);
-    final code = cleanText(folder['code']);
-    if (name.isNotEmpty && name != code) return name;
+    final subtitle = _folderSubtitle(folder);
+    if (subtitle != null && subtitle.isNotEmpty) return subtitle;
     final text = cleanText(folder['text_es']);
     if (text.isNotEmpty) return text;
-    return _isChapter ? 'Tests de la sección' : 'Tests del capítulo';
+    return '';
   }
 
   @override
@@ -193,7 +189,7 @@ class _HierarchyScreenState extends State<HierarchyScreen> {
                       for (final article in articles)
                         TopicProgressCard(
                           title: article.code,
-                          footerLabel: article.testIds.length == 1 ? '1 test' : '${article.testIds.length} tests',
+                          footerLabel: '',
                           progress: progressCounts(article.testIds, _attempted),
                           onTap: () => _openArticle(article),
                         ),
