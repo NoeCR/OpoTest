@@ -8,10 +8,12 @@ class ContentKindTabs extends StatelessWidget {
     super.key,
     required this.selected,
     required this.onSelected,
+    this.counts,
   });
 
   final ContentKind selected;
   final ValueChanged<ContentKind> onSelected;
+  final Map<ContentKind, int>? counts;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +27,7 @@ class ContentKindTabs extends StatelessWidget {
             for (final kind in ContentKind.values) ...[
               if (kind != ContentKind.values.first) const SizedBox(width: 8),
               _TabChip(
-                label: kind.label,
+                label: _labelFor(kind),
                 selected: kind == selected,
                 onTap: () => onSelected(kind),
               ),
@@ -34,6 +36,12 @@ class ContentKindTabs extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  String _labelFor(ContentKind kind) {
+    final count = counts?[kind];
+    if (count == null) return kind.label;
+    return '${kind.label} ($count)';
   }
 }
 

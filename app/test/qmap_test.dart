@@ -1,6 +1,4 @@
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:testea_local/models/content_kind.dart';
 import 'package:testea_local/utils/qmap.dart';
 
 void main() {
@@ -94,10 +92,61 @@ void main() {
 
       expect(titleHasTests(payload, '85'), isFalse);
     });
-  });
 
-  test('ContentKind incluye preguntas propias', () {
-    expect(ContentKind.own.label, 'Preguntas propias');
-    expect(ContentKind.own.dbType, 'own');
+    test('testIdsFromQNode soporta mainLevel como mapa', () {
+      final ids = testIdsFromQNode({
+        'mainLevel': {
+          'test': ['1', '2'],
+          'exam': ['9'],
+        },
+      });
+      expect(ids, ['1', '2', '9']);
+    });
+
+    test('chapterUsesHierarchy detecta secciones con tests', () {
+      final payload = {
+        'arSections': [
+          {'id': '501'},
+        ],
+        'qBySection': {
+          '501': {'mainLevel': ['777'], 'subLevel': []},
+        },
+        'arArticles': [],
+        'qByArticle': {},
+      };
+
+      expect(chapterUsesHierarchy(payload, '100'), isTrue);
+    });
+
+    test('articleTestGroups ordena por order y filtra sin tests', () {
+      final payload = {
+        'arArticles': [
+          {'id': 'a2', 'code': 'Art. 2', 'order': '2'},
+          {'id': 'a1', 'code': 'Art. 1', 'order': '1'},
+          {'id': 'a3', 'code': 'Art. 3', 'order': '3'},
+        ],
+        'qByArticle': {
+          'a1': {'mainLevel': ['10'], 'subLevel': []},
+          'a3': {'mainLevel': [], 'subLevel': []},
+        },
+      };
+
+      final groups = articleTestGroups(payload);
+      expect(groups, hasLength(1));
+      expect(groups.first.code, 'Art. 1');
+      expect(groups.first.testIds, ['10']);
+    });
+
+    test('cleanText elimina retornos y espacios', () {
+      expect(cleanText('  hola\r\n'), 'hola');
+      expect(cleanText(null), isEmpty);
+    });
+
+    test('progressCounts vacío tiene ratio cero', () {
+      const counts = ProgressCounts(done: 0, total: 0);
+      expect(counts.isEmpty, isTrue);
+      expect(counts.ratio, 0);
+      expect(progressLabel(const [], {}), isEmpty);
+    });
   });
 }

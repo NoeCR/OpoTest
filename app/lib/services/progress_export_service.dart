@@ -19,6 +19,7 @@ class ProgressExportService {
   Future<ProgressExportResult> exportUserProgress({
     required LocalUser user,
     required List<Map<String, dynamic>> rawAttempts,
+    Directory? targetDir,
   }) async {
     final attempts = rawAttempts.map(_normalizeAttempt).toList();
     final summary = _buildSummary(attempts);
@@ -38,9 +39,7 @@ class ProgressExportService {
       'attempts': attempts,
     };
 
-    final dir = await getApplicationDocumentsDirectory();
-    final exportsDir = Directory(p.join(dir.path, 'exports'));
-    if (!exportsDir.existsSync()) exportsDir.createSync(recursive: true);
+    final exportsDir = targetDir ?? await _defaultExportsDir();
 
     final stamp = DateTime.now().toIso8601String().replaceAll(':', '-').split('.').first;
     final safeName = user.name.replaceAll(RegExp(r'[^\w\-]+'), '_').toLowerCase();
@@ -49,6 +48,13 @@ class ProgressExportService {
     await file.writeAsString(const JsonEncoder.withIndent('  ').convert(payload));
 
     return ProgressExportResult(file: file, summary: summary);
+  }
+
+  Future<Directory> _defaultExportsDir() async {
+    final dir = await getApplicationDocumentsDirectory();
+    final exportsDir = Directory(p.join(dir.path, 'exports'));
+    if (!exportsDir.existsSync()) exportsDir.createSync(recursive: true);
+    return exportsDir;
   }
 
   Map<String, dynamic> _normalizeAttempt(Map<String, dynamic> row) {

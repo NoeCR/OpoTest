@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -24,84 +25,107 @@ class AppDatabase {
     if (_db != null) return;
     final dir = await getApplicationDocumentsDirectory();
     final path = p.join(dir.path, 'testea_local.db');
-    _db = await openDatabase(
+    _db = await _openDatabase(path);
+  }
+
+  /// Inicializa SQLite en memoria para tests (solo FFI).
+  @visibleForTesting
+  static Future<void> initForTest() async {
+    sqfliteFfiInit();
+    databaseFactory = databaseFactoryFfi;
+    await disposeForTest();
+    _db = await _openDatabase(inMemoryDatabasePath);
+  }
+
+  @visibleForTesting
+  static Future<void> disposeForTest() async {
+    await _db?.close();
+    _db = null;
+  }
+
+  static Future<Database> _openDatabase(String path) {
+    return openDatabase(
       path,
       version: 2,
-      onCreate: (db, version) async {
-        await db.execute('''
-          CREATE TABLE users (
-            id TEXT PRIMARY KEY,
-            name TEXT NOT NULL,
-            created_at TEXT NOT NULL
-          )
-        ''');
-        await db.execute('''
-          CREATE TABLE laws (
-            id TEXT PRIMARY KEY,
-            code TEXT,
-            name TEXT,
-            order_idx INTEGER,
-            payload TEXT
-          )
-        ''');
-        await db.execute('''
-          CREATE TABLE titles (
-            id TEXT PRIMARY KEY,
-            law_id TEXT,
-            code TEXT,
-            name TEXT,
-            order_idx INTEGER,
-            payload TEXT
-          )
-        ''');
-        await db.execute('''
-          CREATE TABLE tests (
-            id TEXT PRIMARY KEY,
-            title_id TEXT,
-            law_id TEXT,
-            chapter_id TEXT,
-            section_id TEXT,
-            article_id TEXT,
-            name TEXT,
-            type TEXT,
-            source TEXT NOT NULL DEFAULT 'official',
-            index_num INTEGER,
-            payload TEXT
-          )
-        ''');
-        await db.execute('''
-          CREATE TABLE attempts (
-            id TEXT PRIMARY KEY,
-            user_id TEXT,
-            test_id TEXT,
-            test_name TEXT,
-            finished_at TEXT,
-            duration_seconds INTEGER,
-            net_score REAL,
-            percent_score REAL,
-            answers_json TEXT,
-            exam_simulation INTEGER,
-            error_format INTEGER
-          )
-        ''');
-        await db.execute('''
-          CREATE TABLE sync_meta (
-            key TEXT PRIMARY KEY,
-            value TEXT
-          )
-        ''');
-      },
-      onUpgrade: (db, oldVersion, newVersion) async {
-        if (oldVersion < 2) {
-          await db.execute("ALTER TABLE tests ADD COLUMN chapter_id TEXT DEFAULT ''");
-          await db.execute("ALTER TABLE tests ADD COLUMN section_id TEXT DEFAULT ''");
-          await db.execute("ALTER TABLE tests ADD COLUMN article_id TEXT DEFAULT ''");
-          await db.execute(
-            "ALTER TABLE tests ADD COLUMN source TEXT NOT NULL DEFAULT 'official'",
-          );
-        }
-      },
+      onCreate: _onCreate,
+      onUpgrade: _onUpgrade,
     );
+  }
+
+  static Future<void> _onCreate(Database db, int version) async {
+    await db.execute('''
+      CREATE TABLE users (
+        id TEXT PRIMARY KEY,
+        name TEXT NOT NULL,
+        created_at TEXT NOT NULL
+      )
+    ''');
+    await db.execute('''
+      CREATE TABLE laws (
+        id TEXT PRIMARY KEY,
+        code TEXT,
+        name TEXT,
+        order_idx INTEGER,
+        payload TEXT
+      )
+    ''');
+    await db.execute('''
+      CREATE TABLE titles (
+        id TEXT PRIMARY KEY,
+        law_id TEXT,
+        code TEXT,
+        name TEXT,
+        order_idx INTEGER,
+        payload TEXT
+      )
+    ''');
+    await db.execute('''
+      CREATE TABLE tests (
+        id TEXT PRIMARY KEY,
+        title_id TEXT,
+        law_id TEXT,
+        chapter_id TEXT,
+        section_id TEXT,
+        article_id TEXT,
+        name TEXT,
+        type TEXT,
+        source TEXT NOT NULL DEFAULT 'official',
+        index_num INTEGER,
+        payload TEXT
+      )
+    ''');
+    await db.execute('''
+      CREATE TABLE attempts (
+        id TEXT PRIMARY KEY,
+        user_id TEXT,
+        test_id TEXT,
+        test_name TEXT,
+        finished_at TEXT,
+        duration_seconds INTEGER,
+        net_score REAL,
+        percent_score REAL,
+        answers_json TEXT,
+        exam_simulation INTEGER,
+        error_format INTEGER
+      )
+    ''');
+    await db.execute('''
+      CREATE TABLE sync_meta (
+        key TEXT PRIMARY KEY,
+        value TEXT
+      )
+    ''');
+  }
+
+  static Future<void> _onUpgrade(Database db, int oldVersion, int newVersion) async {
+    if (oldVersion < 2) {
+      await db.execute("ALTER TABLE tests ADD COLUMN chapter_id TEXT DEFAULT ''");
+      await db.execute("ALTER TABLE tests ADD COLUMN section_id TEXT DEFAULT ''");
+      await db.execute("ALTER TABLE tests ADD COLUMN article_id TEXT DEFAULT ''");
+      await db.execute(
+        "ALTER TABLE tests ADD COLUMN source TEXT NOT NULL DEFAULT 'official'",
+      );
+    }
   }
 
   static Database get db {
@@ -447,11 +471,21 @@ class AppDatabase {
 
   /// IDs de tests temario (`type = test`) agrupados por ley.
   Future<Map<String, List<String>>> testIdsGroupedByLaw() async {
+    return _idsGroupedByLaw(types: const ['test']);
+  }
+
+  /// IDs de todo el contenido practicable (tests, exámenes y oficiales) por ley.
+  Future<Map<String, List<String>>> contentIdsGroupedByLaw() async {
+    return _idsGroupedByLaw(types: const ['test', 'exam', 'realexam']);
+  }
+
+  Future<Map<String, List<String>>> _idsGroupedByLaw({required List<String> types}) async {
+    final placeholders = List.filled(types.length, '?').join(', ');
     final rows = await db.query(
       'tests',
       columns: ['id', 'law_id'],
-      where: 'type = ?',
-      whereArgs: ['test'],
+      where: 'type IN ($placeholders)',
+      whereArgs: types,
       orderBy: 'law_id, index_num, CAST(id AS INTEGER)',
     );
     final grouped = <String, List<String>>{};
@@ -477,12 +511,24 @@ class AppDatabase {
   Future<List<String>> _qByLawTypeIds(String lawId, String type) async {
     final qByLaw = await _qByLawMap();
     final node = asStringMap(qByLaw?[lawId]);
-    final main = node?['mainLevel'];
+    if (node == null) return [];
+
+    final main = node['mainLevel'];
     if (main is Map) {
       final list = main[type];
-      if (list is List) return list.map((e) => e.toString()).toList();
+      if (list is List && list.isNotEmpty) {
+        return list.map((e) => e.toString()).toList();
+      }
     } else if (main is List && type == 'test') {
       return main.map((e) => e.toString()).toList();
+    }
+
+    // Constitución y otras leyes pueden listar tests en subLevel sin bucket mainLevel.test.
+    if (type == 'test') {
+      final sub = node['subLevel'];
+      if (sub is List && sub.isNotEmpty) {
+        return sub.map((e) => e.toString()).toList();
+      }
     }
     return [];
   }

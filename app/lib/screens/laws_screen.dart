@@ -32,7 +32,7 @@ class _LawsScreenState extends State<LawsScreen> {
     final db = context.read<AppDatabase>();
     final userId = context.read<AppState>().activeUser?.id;
     final laws = await db.getLaws();
-    final testsByLaw = await db.testIdsGroupedByLaw();
+    final testsByLaw = await db.contentIdsGroupedByLaw();
     final attempted = userId == null ? <String>{} : await db.attemptedTestIds(userId);
     final progressByLaw = <String, ProgressCounts>{
       for (final entry in testsByLaw.entries)
@@ -254,6 +254,21 @@ class _LawContentScreenState extends State<LawContentScreen> {
     if (mounted) await _load();
   }
 
+  int get _testsTabCount {
+    if (_lawTestIds.isNotEmpty && _titles.isEmpty) return _lawTestIds.length;
+    var total = 0;
+    for (final t in _titles) {
+      Map<String, dynamic>? extra;
+      try {
+        extra = jsonDecode(t['payload'] as String) as Map<String, dynamic>;
+      } catch (_) {}
+      if (titleHasTests(extra, t['id'] as String)) {
+        total += allTestIdsForTitlePayload(extra, t['id'] as String).length;
+      }
+    }
+    return total;
+  }
+
   ProgressCounts _titleProgress(String titleId, Map<String, dynamic>? extra) {
     return progressCounts(allTestIdsForTitlePayload(extra, titleId), _attempted);
   }
@@ -283,6 +298,12 @@ class _LawContentScreenState extends State<LawContentScreen> {
           ContentKindTabs(
             selected: _kind,
             onSelected: (kind) => setState(() => _kind = kind),
+            counts: {
+              ContentKind.tests: _testsTabCount,
+              ContentKind.exams: _examIds.length,
+              ContentKind.official: _officialIds.length,
+              ContentKind.own: _ownIds.length,
+            },
           ),
           Expanded(child: _buildBody()),
         ],
