@@ -8,6 +8,13 @@ Este formato sigue una estructura inspirada en [Keep a Changelog](https://keepac
 
 ---
 
+## [1.6.1] - 2026-08-20
+
+### Added
+- Editor de notas aclaratorias en tests propios con negrita, cursiva y vista previa HTML.
+
+---
+
 ## [1.6.0] - 2026-08-20
 
 ### Added

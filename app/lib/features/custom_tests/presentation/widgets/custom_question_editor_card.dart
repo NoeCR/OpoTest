@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../domain/custom_question_draft.dart';
+import 'clarification_html_editor.dart';
 
 class CustomQuestionEditorCard extends StatefulWidget {
   const CustomQuestionEditorCard({
@@ -146,14 +147,7 @@ class _CustomQuestionEditorCardState extends State<CustomQuestionEditorCard> {
               },
             ),
             const SizedBox(height: 12),
-            TextField(
-              decoration: const InputDecoration(
-                labelText: 'Notas aclaratorias (opcional)',
-                border: OutlineInputBorder(),
-                alignLabelWithHint: true,
-              ),
-              minLines: 2,
-              maxLines: 5,
+            ClarificationHtmlEditor(
               controller: _clarificationCtrl,
               onChanged: (_) => _emit(),
             ),
