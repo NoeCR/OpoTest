@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../database/app_database.dart';
+import '../features/custom_tests/presentation/custom_tests_hub_screen.dart';
 import '../navigation/app_navigation.dart';
 import '../state/app_state.dart';
 import '../theme/app_theme.dart';
@@ -133,6 +134,15 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                           subtitle: 'Explorar legislación y temario',
                           compact: compact,
                           onTap: () => context.pushPage(const LawsScreen()).then((_) => _loadMeta()),
+                        ),
+                        const SizedBox(height: 12),
+                        _HomeTile(
+                          icon: Icons.edit_note_rounded,
+                          iconColor: AppTheme.accentPurple,
+                          title: 'Tests propios',
+                          subtitle: 'Crear, editar y practicar',
+                          compact: compact,
+                          onTap: () => context.pushPage(const CustomTestsHubScreen()).then((_) => _loadMeta()),
                         ),
                         const SizedBox(height: 12),
                         GridView(

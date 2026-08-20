@@ -436,7 +436,13 @@ class AppDatabase {
 
   /// Devuelve IDs de tests disponibles en el temario local.
   Future<List<String>> getAllTestIds() async {
-    final rows = await db.query('tests', columns: ['id'], orderBy: 'index_num');
+    final rows = await db.query(
+      'tests',
+      columns: ['id'],
+      where: 'source != ? OR source IS NULL',
+      whereArgs: [testSourceCustom],
+      orderBy: 'index_num',
+    );
     return rows.map((r) => r['id'] as String).toList();
   }
 
@@ -576,5 +582,78 @@ class AppDatabase {
     final rows = await db.query('sync_meta', where: 'key = ?', whereArgs: [key], limit: 1);
     if (rows.isEmpty) return null;
     return rows.first['value'] as String?;
+  }
+
+  // --- Tests propios (source = custom) ---
+
+  Future<void> upsertCustomTest(Map<String, dynamic> json) async {
+    final def = TestDefinition.fromApiJson(json);
+    if (def.id.isEmpty) return;
+
+    final testMap = json['test'] as Map<String, dynamic>? ?? {};
+    await db.insert(
+      'tests',
+      {
+        'id': def.id,
+        'title_id': '',
+        'law_id': testMap['idLaw']?.toString() ?? '',
+        'chapter_id': '',
+        'section_id': '',
+        'article_id': '',
+        'name': def.name,
+        'type': testMap['type']?.toString() ?? 'own',
+        'source': testSourceCustom,
+        'index_num': DateTime.now().millisecondsSinceEpoch,
+        'payload': jsonEncode(json),
+      },
+      conflictAlgorithm: ConflictAlgorithm.replace,
+    );
+    await _invalidateQuestionCountCache();
+  }
+
+  Future<void> deleteCustomTest(String testId) async {
+    await db.delete('attempts', where: 'test_id = ?', whereArgs: [testId]);
+    await db.delete(
+      'tests',
+      where: 'id = ? AND source = ?',
+      whereArgs: [testId, testSourceCustom],
+    );
+    await _invalidateQuestionCountCache();
+  }
+
+  Future<Map<String, dynamic>?> getCustomTestRow(String testId) async {
+    final rows = await db.query(
+      'tests',
+      where: 'id = ? AND source = ?',
+      whereArgs: [testId, testSourceCustom],
+      limit: 1,
+    );
+    if (rows.isEmpty) return null;
+    return _customTestRowFromDb(rows.first);
+  }
+
+  Future<List<Map<String, dynamic>>> listCustomTestRows({String? lawId}) async {
+    final rows = await db.query(
+      'tests',
+      where: lawId == null ? 'source = ?' : 'source = ? AND law_id = ?',
+      whereArgs: lawId == null ? [testSourceCustom] : [testSourceCustom, lawId],
+      orderBy: 'name COLLATE NOCASE',
+    );
+    return rows.map(_customTestRowFromDb).toList();
+  }
+
+  Map<String, dynamic> _customTestRowFromDb(Map<String, dynamic> row) {
+    final payload = jsonDecode(row['payload'] as String) as Map<String, dynamic>;
+    final test = payload['test'] as Map<String, dynamic>? ?? {};
+    return {
+      'id': row['id'] as String,
+      'law_id': row['law_id'] as String,
+      'law_code': test['law_code']?.toString() ?? '',
+      'payload': payload,
+    };
+  }
+
+  Future<void> _invalidateQuestionCountCache() async {
+    await db.delete('sync_meta', where: 'key = ?', whereArgs: ['question_count']);
   }
 }

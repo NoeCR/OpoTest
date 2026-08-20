@@ -84,6 +84,8 @@ void main() {
       expect(grouped['5'], ['8001', '8002', '8003']);
       final testsOnly = await db.testIdsGroupedByLaw();
       expect(testsOnly['5'], ['8001']);
+    });
+
     test('testIdsForLawType soporta qByLaw legacy con lista mainLevel', () async {
       await db.setSyncMeta(
         'q_by_law',
