@@ -1,0 +1,79 @@
+import '../models/law_sort_mode.dart';
+import 'qmap.dart';
+
+enum LawCodeCategory { ley, decreto, constitucion, other }
+
+LawCodeCategory lawCodeCategory(String code) {
+  final normalized = cleanText(code).toUpperCase();
+  if (normalized.contains('CONSTITU')) return LawCodeCategory.constitucion;
+  if (_startsWithLawPrefix(normalized)) return LawCodeCategory.ley;
+  if (_startsWithDecretoPrefix(normalized)) return LawCodeCategory.decreto;
+  return LawCodeCategory.other;
+}
+
+bool _startsWithLawPrefix(String code) {
+  return RegExp(r'^L\d').hasMatch(code) ||
+      RegExp(r'^LO\d').hasMatch(code) ||
+      RegExp(r'^RDL\d').hasMatch(code);
+}
+
+bool _startsWithDecretoPrefix(String code) {
+  return RegExp(r'^RD\d').hasMatch(code) || RegExp(r'^RUE\d').hasMatch(code);
+}
+
+int _categoryRank(LawCodeCategory category, LawSortMode mode) {
+  return switch (mode) {
+    LawSortMode.leyesFirst => switch (category) {
+        LawCodeCategory.ley => 0,
+        LawCodeCategory.constitucion => 1,
+        LawCodeCategory.decreto => 2,
+        LawCodeCategory.other => 3,
+      },
+    LawSortMode.decretosFirst => switch (category) {
+        LawCodeCategory.decreto => 0,
+        LawCodeCategory.ley => 1,
+        LawCodeCategory.constitucion => 2,
+        LawCodeCategory.other => 3,
+      },
+    _ => 0,
+  };
+}
+
+int _orderIndex(Map<String, dynamic> law) =>
+    (law['order_idx'] as num?)?.toInt() ?? 0;
+
+String _lawCode(Map<String, dynamic> law) =>
+    cleanText(law['code']?.toString() ?? law['name']?.toString());
+
+double _progressRatio(Map<String, dynamic> law, Map<String, ProgressCounts> progressByLaw) {
+  final id = law['id']?.toString() ?? '';
+  return progressByLaw[id]?.ratio ?? 0;
+}
+
+List<Map<String, dynamic>> sortLaws(
+  List<Map<String, dynamic>> laws,
+  LawSortMode mode,
+  Map<String, ProgressCounts> progressByLaw,
+) {
+  final sorted = List<Map<String, dynamic>>.from(laws);
+  sorted.sort((a, b) {
+    final primary = switch (mode) {
+      LawSortMode.temario => _orderIndex(a).compareTo(_orderIndex(b)),
+      LawSortMode.progressDesc =>
+        _progressRatio(b, progressByLaw).compareTo(_progressRatio(a, progressByLaw)),
+      LawSortMode.progressAsc =>
+        _progressRatio(a, progressByLaw).compareTo(_progressRatio(b, progressByLaw)),
+      LawSortMode.leyesFirst || LawSortMode.decretosFirst => () {
+          final catCmp = _categoryRank(lawCodeCategory(_lawCode(a)), mode)
+              .compareTo(_categoryRank(lawCodeCategory(_lawCode(b)), mode));
+          if (catCmp != 0) return catCmp;
+          return _lawCode(a).toUpperCase().compareTo(_lawCode(b).toUpperCase());
+        }(),
+      LawSortMode.nombre =>
+        _lawCode(a).toUpperCase().compareTo(_lawCode(b).toUpperCase()),
+    };
+    if (primary != 0) return primary;
+    return _orderIndex(a).compareTo(_orderIndex(b));
+  });
+  return sorted;
+}

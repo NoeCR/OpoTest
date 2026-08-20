@@ -2,21 +2,27 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../database/app_database.dart';
 import '../models/content_kind.dart';
+import '../models/law_sort_mode.dart';
 import '../models/test_stats.dart';
 import '../navigation/app_navigation.dart';
 import '../services/test_launcher.dart';
 import '../state/app_state.dart';
 import '../theme/app_theme.dart';
+import '../utils/law_sort.dart';
 import '../utils/qmap.dart';
 import '../widgets/app_decorations.dart';
 import '../widgets/content_kind_tabs.dart';
+import '../widgets/law_sort_bar.dart';
 import '../widgets/test_picker_card.dart';
 import '../widgets/topic_progress_card.dart';
 import 'hierarchy_screen.dart';
 import 'title_tests_screen.dart';
+
+const _lawSortPrefKey = 'laws_sort_mode';
 
 class LawsScreen extends StatefulWidget {
   const LawsScreen({super.key});
@@ -27,6 +33,25 @@ class LawsScreen extends StatefulWidget {
 
 class _LawsScreenState extends State<LawsScreen> {
   int _reloadToken = 0;
+  LawSortMode _sortMode = LawSortMode.temario;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadSortMode();
+  }
+
+  Future<void> _loadSortMode() async {
+    final prefs = await SharedPreferences.getInstance();
+    final mode = lawSortModeFromStorage(prefs.getString(_lawSortPrefKey));
+    if (mounted) setState(() => _sortMode = mode);
+  }
+
+  Future<void> _setSortMode(LawSortMode mode) async {
+    setState(() => _sortMode = mode);
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(_lawSortPrefKey, mode.storageKey);
+  }
 
   Future<_LawsListData> _loadLawsList() async {
     final db = context.read<AppDatabase>();
@@ -56,6 +81,10 @@ class _LawsScreenState extends State<LawsScreen> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           const GradientHeader(title: 'Legislación', subtitle: 'Selecciona una ley'),
+          LawSortBar(
+            selected: _sortMode,
+            onSelected: _setSortMode,
+          ),
           Expanded(
             child: FutureBuilder<_LawsListData>(
               key: ValueKey(_reloadToken),
@@ -99,8 +128,9 @@ class _LawsScreenState extends State<LawsScreen> {
                   final lawId = law['id'] as String;
                   return (progressByLaw[lawId]?.total ?? 0) > 0;
                 }).toList();
+                final sortedLaws = sortLaws(lawsWithTests, _sortMode, progressByLaw);
 
-                if (lawsWithTests.isEmpty) {
+                if (sortedLaws.isEmpty) {
                   return const Center(
                     child: Padding(
                       padding: EdgeInsets.all(24),
@@ -111,9 +141,9 @@ class _LawsScreenState extends State<LawsScreen> {
 
                 return ListView.builder(
                   padding: const EdgeInsets.fromLTRB(16, 12, 16, 24),
-                  itemCount: lawsWithTests.length,
+                  itemCount: sortedLaws.length,
                   itemBuilder: (context, i) {
-                    final law = lawsWithTests[i];
+                    final law = sortedLaws[i];
                     final lawId = law['id'] as String;
                     final code = law['code'] as String? ?? '';
                     final name = law['name'] as String? ?? '';
