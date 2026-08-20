@@ -8,6 +8,15 @@ Este formato sigue una estructura inspirada en [Keep a Changelog](https://keepac
 
 ---
 
+## [1.6.3] - 2026-08-20
+
+### Fixed
+- Permiso `INTERNET` en builds release de Android (comprobar actualizaciones).
+- Script `push-data-android.ps1` compatible con APK release (sin `run-as`).
+- Mensajes de error comprensibles en importación, sync, backup y arranque.
+
+---
+
 ## [1.6.2] - 2026-08-20
 
 ### Changed

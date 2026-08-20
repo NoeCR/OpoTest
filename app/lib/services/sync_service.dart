@@ -1,4 +1,6 @@
+import 'dart:async';
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:http/http.dart' as http;
 
@@ -10,12 +12,28 @@ class SyncService {
   final AppDatabase _db;
   static const baseUrl = 'https://glados-cakeserver.com/';
   static const intervalDays = 7;
+  static const _requestTimeout = Duration(seconds: 20);
 
   Future<Map<String, dynamic>?> checkRemoteVersion() async {
-    final res = await http.get(
-      Uri.parse('${baseUrl}api/testea/get-options/'),
-      headers: {'Accept': 'application/json'},
-    );
+    final http.Response res;
+    try {
+      res = await http
+          .get(
+            Uri.parse('${baseUrl}api/testea/get-options/'),
+            headers: {'Accept': 'application/json'},
+          )
+          .timeout(_requestTimeout);
+    } on SocketException catch (e) {
+      throw StateError(
+        'Sin conexión al servidor (${e.message}). '
+        'Comprueba WiFi/datos móviles e inténtalo de nuevo.',
+      );
+    } on TimeoutException {
+      throw StateError(
+        'Tiempo de espera agotado al contactar $baseUrl. '
+        'Comprueba tu conexión e inténtalo de nuevo.',
+      );
+    }
     if (res.statusCode != 200) {
       throw StateError('HTTP ${res.statusCode}');
     }

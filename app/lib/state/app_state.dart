@@ -5,6 +5,7 @@ import '../app_constants.dart';
 import '../database/app_database.dart';
 import '../models/local_user.dart';
 import '../services/content_importer.dart';
+import '../utils/user_facing_error.dart';
 
 class AppState extends ChangeNotifier {
   AppState(this._db);
@@ -41,7 +42,7 @@ class AppState extends ChangeNotifier {
       await _refreshContentStats();
       await _ensureContentImported();
     } catch (e, st) {
-      error = e.toString();
+      error = UserFacingError.message(e, context: UserErrorContext.bootstrap);
       debugPrint('Bootstrap error: $e\n$st');
     } finally {
       await _refreshContentStats();
@@ -57,7 +58,7 @@ class AppState extends ChangeNotifier {
     try {
       dataPath = await ContentImporter.resolveDataPath();
     } catch (e) {
-      error = e.toString();
+      error = UserFacingError.message(e, context: UserErrorContext.import);
       return;
     }
 
@@ -97,7 +98,8 @@ class AppState extends ChangeNotifier {
   void _validateContentState() {
     final tests = lastImport?.tests ?? 0;
     if (laws.isEmpty) {
-      error ??= 'Temario no importado. En Android ejecuta scripts/push-data-android.ps1 y reinicia la app.';
+      error ??= 'Temario no importado. En Android ejecuta scripts/push-data-android.ps1 '
+          '(después de instalar el APK en release) y reinicia la app.';
       return;
     }
     if (tests == 0) {
@@ -133,7 +135,7 @@ class AppState extends ChangeNotifier {
         }
       }
     } catch (e, st) {
-      error = e.toString();
+      error = UserFacingError.message(e, context: UserErrorContext.import);
       debugPrint('Import error: $e\n$st');
       rethrow;
     } finally {
@@ -158,7 +160,7 @@ class AppState extends ChangeNotifier {
       );
       debugPrint('${AppConstants.name} test-only import done: $tests tests');
     } catch (e, st) {
-      error = e.toString();
+      error = UserFacingError.message(e, context: UserErrorContext.import);
       debugPrint('Test-only import error: $e\n$st');
       rethrow;
     } finally {

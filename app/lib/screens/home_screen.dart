@@ -222,15 +222,11 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                             ),
                             child: Text(
                               state.error ??
-                                  'Temario no importado. En Android ejecuta scripts/push-data-android.ps1 y reinicia la app.',
+                                  'Temario no importado. Ve a Configuración e importa el contenido.',
                               textAlign: TextAlign.center,
                               style: const TextStyle(color: Colors.black87, fontSize: 12),
                             ),
                           ),
-                        ],
-                        if (state.error != null) ...[
-                          const SizedBox(height: 8),
-                          Text(state.error!, style: const TextStyle(color: Colors.red), textAlign: TextAlign.center),
                         ],
                       ],
                     ),

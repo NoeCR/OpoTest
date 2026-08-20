@@ -3,3 +3,4 @@ data/.export-progress.json
 data/export.log
 capture/traffic.flow
 capture/requests.jsonl
+releases/*.apk

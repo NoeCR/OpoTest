@@ -9,6 +9,7 @@ import '../services/sync_service.dart';
 import '../services/test_preferences.dart';
 import '../state/app_state.dart';
 import '../theme/app_theme.dart';
+import '../utils/user_facing_error.dart';
 import '../widgets/app_decorations.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -58,19 +59,25 @@ class _SettingsScreenState extends State<SettingsScreen> {
       } catch (_) {
         dataPath = _pathController.text.trim();
         if (dataPath.isEmpty) {
-          setState(() => status = 'Error: temario no encontrado. Ejecuta push-data-android.ps1');
+          setState(() => status = UserFacingError.message(
+                StateError('Temario no encontrado'),
+                context: UserErrorContext.import,
+              ));
           return;
         }
       }
       final r = await state.importContent(dataPath);
       if (!mounted) return;
       if (r.tests == 0) {
-        setState(() => status = 'Error: 0 tests importados. Reinicia con flutter run para aplicar la última versión.');
+        setState(() => status = UserFacingError.message(
+              StateError('No se importó ningún test'),
+              context: UserErrorContext.import,
+            ));
       } else {
         setState(() => status = 'Listo: ${r.laws} leyes, ${r.titles} títulos, ${r.tests} tests');
       }
     } catch (e) {
-      setState(() => status = 'Error: $e');
+      setState(() => status = UserFacingError.message(e, context: UserErrorContext.import));
     } finally {
       setState(() => _importing = false);
     }
@@ -83,7 +90,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       final info = await sync.checkRemoteVersion();
       setState(() => status = 'Servidor: ver ${info?['ver'] ?? '?'} · sync cada ${SyncService.intervalDays} días');
     } catch (e) {
-      setState(() => status = 'Sync error: $e');
+      setState(() => status = UserFacingError.message(e, context: UserErrorContext.sync));
     }
   }
 

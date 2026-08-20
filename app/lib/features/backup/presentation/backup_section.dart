@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../theme/app_theme.dart';
+import '../../../utils/user_facing_error.dart';
 import '../../../widgets/app_decorations.dart';
 import '../application/content_backup_service.dart';
 import '../application/progress_backup_service.dart';
@@ -26,11 +27,11 @@ class _BackupSectionState extends State<BackupSection> {
     try {
       await action();
     } on BackupValidationException catch (e) {
-      widget.onChanged('Error: $e');
+      widget.onChanged(e.message);
     } on BackupFileCancelledException {
       widget.onChanged('Importación cancelada.');
     } catch (e) {
-      widget.onChanged('Error: $e');
+      widget.onChanged(UserFacingError.message(e, context: UserErrorContext.backup));
     } finally {
       if (mounted) setState(() => _busy = false);
     }
