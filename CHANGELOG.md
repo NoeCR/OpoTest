@@ -8,6 +8,13 @@ Este formato sigue una estructura inspirada en [Keep a Changelog](https://keepac
 
 ---
 
+## [1.6.2] - 2026-08-20
+
+### Changed
+- Nuevo icono de aplicación OpoTest en Android, iOS, Windows, macOS y web.
+
+---
+
 ## [1.6.1] - 2026-08-20
 
 ### Added
