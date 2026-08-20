@@ -9,7 +9,7 @@ import '../theme/app_theme.dart';
 import '../widgets/app_decorations.dart';
 import '../widgets/score_stars.dart';
 import 'settings_screen.dart';
-import 'statistics_screen.dart';
+import 'test_history_screen.dart';
 import 'users_screen.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -133,11 +133,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
             },
           ),
           _ProfileTile(
-            icon: Icons.bar_chart_outlined,
-            title: 'Estadísticas',
-            subtitle: 'Historial de tests completados',
+            icon: Icons.history_outlined,
+            title: 'Historial',
+            subtitle: 'Tests completados, notas y fechas',
             onTap: () async {
-              await context.pushPage(const StatisticsScreen());
+              await context.pushPage(const TestHistoryScreen());
               _loadStats();
             },
           ),

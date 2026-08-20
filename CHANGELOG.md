@@ -8,6 +8,17 @@ Este formato sigue una estructura inspirada en [Keep a Changelog](https://keepac
 
 ---
 
+## [1.5.0] - 2026-08-20
+
+### Added
+- Sección **Historial** con tests realizados, notas, fechas y duración agrupados por periodo.
+- Detalle de cada intento con revisión completa de respuestas.
+
+### Changed
+- «Estadísticas» sustituida por Historial en Home y Perfil.
+
+---
+
 ## [1.4.0] - 2026-08-20
 
 ### Added

@@ -511,6 +511,17 @@ class AppDatabase {
     );
   }
 
+  Future<TestAttempt?> getAttempt(String id) async {
+    final rows = await db.query('attempts', where: 'id = ?', whereArgs: [id], limit: 1);
+    if (rows.isEmpty) return null;
+    return TestAttempt.fromMap(rows.first);
+  }
+
+  Future<List<TestAttempt>> attemptsForUserModel(String userId, {String? testId}) async {
+    final rows = await attemptsForUser(userId, testId: testId);
+    return rows.map(TestAttempt.fromMap).toList();
+  }
+
   /// Devuelve IDs de tests disponibles en el temario local.
   Future<List<String>> getAllTestIds() async {
     final rows = await db.query(
@@ -1049,32 +1060,5 @@ class AppDatabase {
     };
   }
 
-  TestAttempt _attemptFromBackupRow(Map<String, dynamic> row) {
-    Map<int, int> answers = {};
-    final rawAnswers = row['answers'];
-    if (rawAnswers is Map) {
-      answers = rawAnswers.map(
-        (k, v) => MapEntry(int.parse(k.toString()), (v as num).toInt()),
-      );
-    } else {
-      try {
-        final decoded = jsonDecode(row['answers_json'] as String? ?? '{}') as Map<String, dynamic>;
-        answers = decoded.map((k, v) => MapEntry(int.parse(k), (v as num).toInt()));
-      } catch (_) {}
-    }
-
-    return TestAttempt(
-      id: row['id'] as String,
-      userId: row['user_id'] as String,
-      testId: row['test_id'] as String,
-      testName: row['test_name'] as String? ?? '',
-      finishedAt: DateTime.parse(row['finished_at'] as String),
-      durationSeconds: (row['duration_seconds'] as num?)?.toInt() ?? 0,
-      netScore: (row['net_score'] as num?)?.toDouble() ?? 0,
-      percentScore: (row['percent_score'] as num?)?.toDouble() ?? 0,
-      answers: answers,
-      examSimulation: row['exam_simulation'] == true || row['exam_simulation'] == 1,
-      errorFormat: (row['error_format'] as num?)?.toInt() ?? 0,
-    );
-  }
+  TestAttempt _attemptFromBackupRow(Map<String, dynamic> row) => TestAttempt.fromMap(row);
 }

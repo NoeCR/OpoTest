@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 class LocalUser {
   final String id;
   final String name;
@@ -48,4 +50,33 @@ class TestAttempt {
     required this.examSimulation,
     required this.errorFormat,
   });
+
+  factory TestAttempt.fromMap(Map<String, dynamic> row) {
+    Map<int, int> answers = {};
+    final rawAnswers = row['answers'];
+    if (rawAnswers is Map) {
+      answers = rawAnswers.map(
+        (k, v) => MapEntry(int.parse(k.toString()), (v as num).toInt()),
+      );
+    } else {
+      try {
+        final decoded = jsonDecode(row['answers_json'] as String? ?? '{}') as Map<String, dynamic>;
+        answers = decoded.map((k, v) => MapEntry(int.parse(k), (v as num).toInt()));
+      } catch (_) {}
+    }
+
+    return TestAttempt(
+      id: row['id'] as String,
+      userId: row['user_id'] as String,
+      testId: row['test_id'] as String,
+      testName: row['test_name'] as String? ?? '',
+      finishedAt: DateTime.parse(row['finished_at'] as String),
+      durationSeconds: (row['duration_seconds'] as num?)?.toInt() ?? 0,
+      netScore: (row['net_score'] as num?)?.toDouble() ?? 0,
+      percentScore: (row['percent_score'] as num?)?.toDouble() ?? 0,
+      answers: answers,
+      examSimulation: row['exam_simulation'] == true || row['exam_simulation'] == 1,
+      errorFormat: (row['error_format'] as num?)?.toInt() ?? 0,
+    );
+  }
 }

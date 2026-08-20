@@ -209,6 +209,65 @@ void main() {
       expect(grouped['20'], ['6003']);
     });
 
+    test('getAttempt recupera un intento por id', () async {
+      await db.upsertOfficialTest(sampleTestJson(id: '9101'));
+      const attemptId = 'att-history-1';
+      await db.saveAttempt(TestAttempt(
+        id: attemptId,
+        userId: user.id,
+        testId: '9101',
+        testName: 'Test historial',
+        finishedAt: DateTime.parse('2026-08-15T14:30:00'),
+        durationSeconds: 180,
+        netScore: 7,
+        percentScore: 70,
+        answers: const {0: 1, 1: 2},
+        examSimulation: false,
+        errorFormat: 100,
+      ));
+
+      final loaded = await db.getAttempt(attemptId);
+      expect(loaded, isNotNull);
+      expect(loaded!.testName, 'Test historial');
+      expect(loaded.percentScore, 70);
+      expect(loaded.answers, {0: 1, 1: 2});
+    });
+
+    test('attemptsForUserModel devuelve intentos ordenados', () async {
+      await db.upsertOfficialTest(sampleTestJson(id: '9102'));
+      await db.saveAttempt(TestAttempt(
+        id: 'att-old',
+        userId: user.id,
+        testId: '9102',
+        testName: 'Antiguo',
+        finishedAt: DateTime.parse('2026-08-01T10:00:00'),
+        durationSeconds: 60,
+        netScore: 5,
+        percentScore: 50,
+        answers: const {},
+        examSimulation: false,
+        errorFormat: 0,
+      ));
+      await db.saveAttempt(TestAttempt(
+        id: 'att-new',
+        userId: user.id,
+        testId: '9102',
+        testName: 'Reciente',
+        finishedAt: DateTime.parse('2026-08-20T10:00:00'),
+        durationSeconds: 60,
+        netScore: 9,
+        percentScore: 90,
+        answers: const {},
+        examSimulation: false,
+        errorFormat: 0,
+      ));
+
+      final attempts = await db.attemptsForUserModel(user.id);
+      expect(attempts, hasLength(2));
+      expect(attempts.first.id, 'att-new');
+      expect(attempts.last.id, 'att-old');
+    });
+
     test('toggleMarkedQuestion marca y desmarca preguntas', () async {
       await db.upsertOfficialTest(sampleTestJson(id: '9001'));
       expect(await db.isQuestionMarked(user.id, '9001', 0), isFalse);

@@ -12,7 +12,7 @@ import '../widgets/app_decorations.dart';
 import '../services/test_launcher.dart';
 import 'laws_screen.dart';
 import 'settings_screen.dart';
-import 'statistics_screen.dart';
+import 'test_history_screen.dart';
 import 'review_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -169,12 +169,12 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                               onTap: state.contentReady ? _startRandomTest : null,
                             ),
                             _HomeTile(
-                              icon: Icons.bar_chart_rounded,
+                              icon: Icons.history_rounded,
                               iconColor: AppTheme.primary,
-                              title: 'Estadísticas',
-                              subtitle: 'Historial de intentos',
+                              title: 'Historial',
+                              subtitle: 'Tests realizados y notas',
                               compact: compact,
-                              onTap: () => context.pushPage(const StatisticsScreen()).then((_) => _loadMeta()),
+                              onTap: () => context.pushPage(const TestHistoryScreen()).then((_) => _loadMeta()),
                             ),
                             _HomeTile(
                               icon: Icons.replay_rounded,
