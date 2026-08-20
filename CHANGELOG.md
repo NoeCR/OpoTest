@@ -8,6 +8,19 @@ Este formato sigue una estructura inspirada en [Keep a Changelog](https://keepac
 
 ---
 
+## [1.2.0] - 2026-08-20
+
+### Added
+- Tests propios: crear, editar y eliminar tests manuales por ley.
+- Hub en Home y editor con preguntas, respuestas y notas aclaratorias.
+- Los tests propios aparecen en la pestaña «Preguntas propias» de cada ley.
+- Arquitectura desacoplada (`domain`, `data`, `application`, `presentation`) con tests unitarios.
+
+### Changed
+- El test aleatorio excluye tests propios.
+
+---
+
 ## [1.0.2] - 2026-08-18
 
 ### Changed
