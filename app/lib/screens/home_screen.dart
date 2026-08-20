@@ -1,10 +1,9 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../database/app_database.dart';
 import '../features/custom_tests/presentation/custom_tests_hub_screen.dart';
+import '../features/random_tests/presentation/random_test_hub_screen.dart';
 import '../navigation/app_navigation.dart';
 import '../state/app_state.dart';
 import '../theme/app_theme.dart';
@@ -27,23 +26,9 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
   Map<String, dynamic>? _lastAttempt;
   int _markedCount = 0;
 
-  Future<void> _startRandomTest() async {
-    final messenger = ScaffoldMessenger.of(context);
-    final db = context.read<AppDatabase>();
-    final tests = await db.getAllTestIds();
-    if (tests.isEmpty) {
-      if (!mounted) return;
-      messenger.showSnackBar(
-        const SnackBar(content: Text('No hay tests importados. Importa el temario en Configuración.')),
-      );
-      return;
-    }
-
-    final pick = Random().nextInt(tests.length);
-    final testId = tests[pick];
-
-    if (!mounted) return;
-    await TestLauncher.start(context, testId: testId);
+  Future<void> _openRandomHub() async {
+    if (!context.read<AppState>().contentReady) return;
+    await context.pushPage(const RandomTestHubScreen());
   }
 
   @override
@@ -163,10 +148,10 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                               icon: Icons.shuffle_rounded,
                               iconColor: AppTheme.accentPurple,
                               title: 'Test aleatorio',
-                              subtitle: state.contentReady ? 'Empieza al azar' : 'Importa temario',
+                              subtitle: state.contentReady ? 'Elige modo de práctica' : 'Importa temario',
                               enabled: state.contentReady,
                               compact: compact,
-                              onTap: state.contentReady ? _startRandomTest : null,
+                              onTap: state.contentReady ? _openRandomHub : null,
                             ),
                             _HomeTile(
                               icon: Icons.history_rounded,

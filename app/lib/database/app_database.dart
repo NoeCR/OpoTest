@@ -534,6 +534,25 @@ class AppDatabase {
     return rows.map((r) => r['id'] as String).toList();
   }
 
+  Future<List<({String id, String lawId, String name})>> getOfficialTestsMeta() async {
+    final rows = await db.query(
+      'tests',
+      columns: ['id', 'law_id', 'name'],
+      where: 'source = ? OR source IS NULL',
+      whereArgs: [testSourceOfficial],
+      orderBy: 'index_num',
+    );
+    return rows
+        .map(
+          (r) => (
+            id: r['id'] as String,
+            lawId: r['law_id']?.toString() ?? '',
+            name: r['name']?.toString() ?? 'Test',
+          ),
+        )
+        .toList();
+  }
+
   /// Nombre del título (sección) al que pertenece un test.
   Future<String?> getTitleNameForTest(String testId) async {
     final rows = await db.rawQuery(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../database/app_database.dart';
+import '../models/question.dart';
 import '../navigation/app_navigation.dart';
 import '../screens/test_session_screen.dart';
 import 'test_preferences.dart';
@@ -25,6 +26,23 @@ class TestLauncher {
       );
       return;
     }
+
+    await context.pushPage(
+      TestSessionScreen(
+        test: test,
+        errorFormat: prefs.errorFormat,
+        durationMinutes: prefs.durationMinutes,
+        examSimulation: prefs.examSimulation,
+      ),
+      transition: AppTransition.fade,
+    );
+  }
+
+  static Future<void> startWithDefinition(
+    BuildContext context, {
+    required TestDefinition test,
+  }) async {
+    final prefs = context.read<TestPreferences>();
 
     await context.pushPage(
       TestSessionScreen(

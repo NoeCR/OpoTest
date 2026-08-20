@@ -8,6 +8,14 @@ Este formato sigue una estructura inspirada en [Keep a Changelog](https://keepac
 
 ---
 
+## [1.6.0] - 2026-08-20
+
+### Added
+- Hub de **Test aleatorio** con modos: al azar, temario practicado, refrescar olvidados, más fallos recientes y mixto multisección.
+- Selección inteligente basada en historial de intentos (fechas, duración y errores).
+
+---
+
 ## [1.5.0] - 2026-08-20
 
 ### Added
