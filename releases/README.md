@@ -1,10 +1,13 @@
 # OpoTest — instalación en Android
 
-## APK
+## Paquete para compartir
 
-| Archivo | Versión |
-|---------|---------|
-| `OpoTest-v1.6.3-android.apk` | 1.6.3 |
+| Archivo | Descripción | Tamaño aprox. |
+|---------|-------------|---------------|
+| `OpoTest-v1.6.3-android.apk` | Aplicación | ~24 MB |
+| `OpoTest-content-v1.6.3.json` | Temario completo (leyes + tests oficiales) | ~28 MB |
+
+Envía **ambos archivos** a quien quiera probar la app.
 
 ## Instalar la app
 
@@ -12,19 +15,31 @@
 2. En el dispositivo, permite **instalar apps desconocidas** para el navegador o gestor de archivos que uses.
 3. Abre el APK y confirma la instalación.
 
-## Temario (contenido)
+## Importar el temario (JSON)
 
-El APK **no incluye** el temario (~30 MB). Tras instalar:
+1. Copia `OpoTest-content-v1.6.3.json` al móvil.
+2. Abre OpoTest → **Perfil → Configuración → Copias de seguridad**.
+3. Pulsa **Importar contenido** y selecciona el JSON.
+4. Espera a que termine (puede tardar 1–2 min). Verás un resumen con leyes y tests importados.
 
-- **Opción A — copia de contenido:** si tienes un backup exportado desde OpoTest, ve a **Perfil → Configuración → Copias de seguridad → Importar contenido**.
-- **Opción B — desarrollo/ADB:** con el móvil conectado por USB, desde el repositorio ejecuta:
-  ```powershell
-  flutter install --release -d <ID_DISPOSITIVO>
-  .\scripts\push-data-android.ps1 -Device <ID_DISPOSITIVO>
-  ```
-  (Ejecuta el push **después** de instalar; reinstalar borra los datos copiados.)
+No hace falta ordenador ni cables: solo el APK y este JSON.
 
-4. Abre la app y, si hace falta, pulsa **Importar temario** en Configuración.
+## Regenerar el JSON (mantenedores)
+
+Desde la raíz del repositorio, con la carpeta `data/` exportada:
+
+```powershell
+.\scripts\export-content-backup.ps1 -Version 1.6.3
+```
+
+## Alternativa ADB (solo desarrollo)
+
+```powershell
+flutter install --release -d <ID_DISPOSITIVO>
+.\scripts\push-data-android.ps1 -Device <ID_DISPOSITIVO>
+```
+
+(Ejecuta el push **después** de instalar; reinstalar borra los datos copiados.)
 
 ## Requisitos
 

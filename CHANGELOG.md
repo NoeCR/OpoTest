@@ -8,6 +8,14 @@ Este formato sigue una estructura inspirada en [Keep a Changelog](https://keepac
 
 ---
 
+## [1.6.4] - 2026-08-20
+
+### Added
+- Script `export-content-backup.ps1` para generar JSON de contenido importable (APK + JSON sin ADB).
+- Guía de distribución actualizada en `releases/README.md`.
+
+---
+
 ## [1.6.3] - 2026-08-20
 
 ### Fixed
