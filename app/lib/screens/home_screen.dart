@@ -13,6 +13,7 @@ import '../services/test_launcher.dart';
 import 'laws_screen.dart';
 import 'settings_screen.dart';
 import 'statistics_screen.dart';
+import 'review_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -24,6 +25,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
   int? _questionCount;
   Map<String, dynamic>? _lastAttempt;
+  int _markedCount = 0;
 
   Future<void> _startRandomTest() async {
     final messenger = ScaffoldMessenger.of(context);
@@ -68,7 +70,14 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
     if (user == null) return;
     final q = await db.countQuestions();
     final last = await db.getLastAttempt(user.id);
-    if (mounted) setState(() { _questionCount = q; _lastAttempt = last; });
+    final marked = await db.countMarkedQuestions(user.id);
+    if (mounted) {
+      setState(() {
+        _questionCount = q;
+        _lastAttempt = last;
+        _markedCount = marked;
+      });
+    }
   }
 
   @override
@@ -182,6 +191,16 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                                         context,
                                         testId: _lastAttempt!['test_id'] as String,
                                       ),
+                            ),
+                            _HomeTile(
+                              icon: Icons.bookmark_rounded,
+                              iconColor: AppTheme.accentOrange,
+                              title: 'Revisión',
+                              subtitle: _markedCount > 0
+                                  ? '$_markedCount preguntas marcadas'
+                                  : 'Estudia tus marcas',
+                              compact: compact,
+                              onTap: () => context.pushPage(const ReviewScreen()).then((_) => _loadMeta()),
                             ),
                             _HomeTile(
                               icon: Icons.settings_rounded,

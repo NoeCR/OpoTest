@@ -8,6 +8,15 @@ Este formato sigue una estructura inspirada en [Keep a Changelog](https://keepac
 
 ---
 
+## [1.4.0] - 2026-08-20
+
+### Added
+- Marcar preguntas para revisión durante un test (icono de marcador en cada pregunta).
+- Sección **Revisión** en Home con listado y modo estudio (respuestas, nota aclaratoria, navegación).
+- Persistencia de marcas por usuario e inclusión en backup de progreso (v3).
+
+---
+
 ## [1.3.0] - 2026-08-20
 
 ### Added

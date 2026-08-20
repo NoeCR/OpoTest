@@ -209,6 +209,57 @@ void main() {
       expect(grouped['20'], ['6003']);
     });
 
+    test('toggleMarkedQuestion marca y desmarca preguntas', () async {
+      await db.upsertOfficialTest(sampleTestJson(id: '9001'));
+      expect(await db.isQuestionMarked(user.id, '9001', 0), isFalse);
+
+      final marked = await db.toggleMarkedQuestion(
+        userId: user.id,
+        testId: '9001',
+        questionIndex: 0,
+      );
+      expect(marked, isTrue);
+      expect(await db.countMarkedQuestions(user.id), 1);
+      expect(await db.markedQuestionIndices(user.id, '9001'), {0});
+
+      final unmarked = await db.toggleMarkedQuestion(
+        userId: user.id,
+        testId: '9001',
+        questionIndex: 0,
+      );
+      expect(unmarked, isFalse);
+      expect(await db.countMarkedQuestions(user.id), 0);
+    });
+
+    test('exportProgressSnapshot incluye marked_questions', () async {
+      await db.upsertOfficialTest(sampleTestJson(id: '9002'));
+      await db.toggleMarkedQuestion(
+        userId: user.id,
+        testId: '9002',
+        questionIndex: 1,
+      );
+
+      final snapshot = await db.exportProgressSnapshot(userId: user.id);
+      final marked = snapshot['marked_questions'] as List;
+      expect(marked, hasLength(1));
+      expect(marked.first['test_id'], '9002');
+      expect(marked.first['question_index'], 1);
+    });
+
+    test('importProgressSnapshot restaura marked_questions', () async {
+      await db.upsertOfficialTest(sampleTestJson(id: '9003'));
+      await db.toggleMarkedQuestion(
+        userId: user.id,
+        testId: '9003',
+        questionIndex: 0,
+      );
+      final snapshot = await db.exportProgressSnapshot(userId: user.id);
+      await AppDatabase.db.delete('marked_questions');
+
+      await db.importProgressSnapshot(snapshot);
+      expect(await db.isQuestionMarked(user.id, '9003', 0), isTrue);
+    });
+
     test('deleteUserData elimina usuario e intentos', () async {
       await db.upsertOfficialTest(sampleTestJson(id: '7001'));
       await db.saveAttempt(TestAttempt(
@@ -225,9 +276,16 @@ void main() {
         errorFormat: 0,
       ));
 
+      await db.toggleMarkedQuestion(
+        userId: user.id,
+        testId: '7001',
+        questionIndex: 0,
+      );
+
       await db.deleteUserData(user.id);
       expect(await db.getUsers(), isEmpty);
       expect(await db.attemptsForUser(user.id), isEmpty);
+      expect(await db.countMarkedQuestions(user.id), 0);
     });
   });
 }

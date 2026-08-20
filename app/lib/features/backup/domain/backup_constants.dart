@@ -2,7 +2,7 @@ const contentBackupKind = 'content_backup';
 const progressBackupKind = 'progress_backup';
 
 const contentBackupVersion = 1;
-const progressBackupVersion = 2;
+const progressBackupVersion = 3;
 
 /// Compatibilidad con export de progreso v1 (perfil).
 const progressBackupLegacyVersion = 1;

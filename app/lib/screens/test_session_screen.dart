@@ -48,6 +48,7 @@ class _TestSessionScreenState extends State<TestSessionScreen> {
   late PageController _pageController;
   Timer? _timer;
   bool _advancing = false;
+  Set<int> _markedIndices = {};
 
   bool get _hasTimeLimit => !widget.reviewMode && widget.durationMinutes > 0;
   int get _timeLimitSeconds => widget.durationMinutes * 60;
@@ -61,6 +62,7 @@ class _TestSessionScreenState extends State<TestSessionScreen> {
     answers = Map.from(widget.initialAnswers);
     elapsed = widget.initialElapsed;
     _pageController = PageController(initialPage: widget.initialIndex);
+    _loadMarkedQuestions();
     if (!widget.reviewMode) {
       _timer = Timer.periodic(const Duration(seconds: 1), (_) {
         setState(() => elapsed++);
@@ -79,6 +81,35 @@ class _TestSessionScreenState extends State<TestSessionScreen> {
   }
 
   bool get showClarification => widget.reviewMode || !widget.examSimulation;
+
+  Future<void> _loadMarkedQuestions() async {
+    final user = context.read<AppState>().activeUser;
+    if (user == null) return;
+    final marked = await context.read<AppDatabase>().markedQuestionIndices(
+          user.id,
+          widget.test.id,
+        );
+    if (mounted) setState(() => _markedIndices = marked);
+  }
+
+  Future<void> _toggleMarked(int index) async {
+    final user = context.read<AppState>().activeUser;
+    if (user == null) return;
+    final marked = await context.read<AppDatabase>().toggleMarkedQuestion(
+          userId: user.id,
+          testId: widget.test.id,
+          questionIndex: index,
+        );
+    if (mounted) {
+      setState(() {
+        if (marked) {
+          _markedIndices.add(index);
+        } else {
+          _markedIndices.remove(index);
+        }
+      });
+    }
+  }
 
   void _goToQuestion(int index, {bool animate = true}) {
     if (index < 0 || index >= widget.test.questions.length) return;
@@ -192,9 +223,33 @@ class _TestSessionScreenState extends State<TestSessionScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  '${q.order}. ${q.text}',
-                  style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w600, height: 1.35),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: Text(
+                        '${q.order}. ${q.text}',
+                        style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w600, height: 1.35),
+                      ),
+                    ),
+                    IconButton(
+                      tooltip: _markedIndices.contains(index)
+                          ? 'Quitar de revisión'
+                          : 'Marcar para revisión',
+                      visualDensity: VisualDensity.compact,
+                      padding: EdgeInsets.zero,
+                      constraints: const BoxConstraints(minWidth: 36, minHeight: 36),
+                      onPressed: () => _toggleMarked(index),
+                      icon: Icon(
+                        _markedIndices.contains(index)
+                            ? Icons.bookmark_rounded
+                            : Icons.bookmark_outline_rounded,
+                        color: _markedIndices.contains(index)
+                            ? AppTheme.accentOrange
+                            : Colors.grey.shade500,
+                      ),
+                    ),
+                  ],
                 ),
                 if (showClarification && q.clarificationHtml.isNotEmpty)
                   Align(

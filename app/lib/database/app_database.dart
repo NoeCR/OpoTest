@@ -8,6 +8,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
 import '../models/local_user.dart';
+import '../models/marked_question.dart';
 import '../models/question.dart';
 import '../models/test_stats.dart';
 import '../utils/qmap.dart';
@@ -46,7 +47,7 @@ class AppDatabase {
   static Future<Database> _openDatabase(String path) {
     return openDatabase(
       path,
-      version: 2,
+      version: 3,
       onCreate: _onCreate,
       onUpgrade: _onUpgrade,
     );
@@ -115,6 +116,19 @@ class AppDatabase {
         value TEXT
       )
     ''');
+    await _createMarkedQuestionsTable(db);
+  }
+
+  static Future<void> _createMarkedQuestionsTable(Database db) async {
+    await db.execute('''
+      CREATE TABLE marked_questions (
+        user_id TEXT NOT NULL,
+        test_id TEXT NOT NULL,
+        question_index INTEGER NOT NULL,
+        marked_at TEXT NOT NULL,
+        PRIMARY KEY (user_id, test_id, question_index)
+      )
+    ''');
   }
 
   static Future<void> _onUpgrade(Database db, int oldVersion, int newVersion) async {
@@ -125,6 +139,9 @@ class AppDatabase {
       await db.execute(
         "ALTER TABLE tests ADD COLUMN source TEXT NOT NULL DEFAULT 'official'",
       );
+    }
+    if (oldVersion < 3) {
+      await _createMarkedQuestionsTable(db);
     }
   }
 
@@ -145,6 +162,7 @@ class AppDatabase {
 
   Future<void> deleteUserData(String userId) async {
     await db.delete('attempts', where: 'user_id = ?', whereArgs: [userId]);
+    await db.delete('marked_questions', where: 'user_id = ?', whereArgs: [userId]);
     await db.delete('users', where: 'id = ?', whereArgs: [userId]);
   }
 
@@ -886,7 +904,85 @@ class AppDatabase {
       'users': users.map((u) => u.toMap()).toList(),
       'active_user_id': activeId,
       'attempts': attempts,
+      'marked_questions': await _markedQuestionsForExport(userId),
     };
+  }
+
+  Future<List<Map<String, dynamic>>> _markedQuestionsForExport(String? userId) async {
+    final rows = userId == null
+        ? await db.query('marked_questions', orderBy: 'marked_at DESC')
+        : await db.query(
+            'marked_questions',
+            where: 'user_id = ?',
+            whereArgs: [userId],
+            orderBy: 'marked_at DESC',
+          );
+    return rows;
+  }
+
+  Future<int> countMarkedQuestions(String userId) async {
+    final result = await db.rawQuery(
+      'SELECT COUNT(*) AS c FROM marked_questions WHERE user_id = ?',
+      [userId],
+    );
+    return (result.first['c'] as num?)?.toInt() ?? 0;
+  }
+
+  Future<List<MarkedQuestion>> markedQuestionsForUser(String userId) async {
+    final rows = await db.query(
+      'marked_questions',
+      where: 'user_id = ?',
+      whereArgs: [userId],
+      orderBy: 'marked_at DESC',
+    );
+    return rows.map((r) => MarkedQuestion.fromMap(r)).toList();
+  }
+
+  Future<Set<int>> markedQuestionIndices(String userId, String testId) async {
+    final rows = await db.query(
+      'marked_questions',
+      columns: ['question_index'],
+      where: 'user_id = ? AND test_id = ?',
+      whereArgs: [userId, testId],
+    );
+    return rows.map((r) => (r['question_index'] as num).toInt()).toSet();
+  }
+
+  Future<bool> isQuestionMarked(String userId, String testId, int questionIndex) async {
+    final rows = await db.query(
+      'marked_questions',
+      where: 'user_id = ? AND test_id = ? AND question_index = ?',
+      whereArgs: [userId, testId, questionIndex],
+      limit: 1,
+    );
+    return rows.isNotEmpty;
+  }
+
+  Future<bool> toggleMarkedQuestion({
+    required String userId,
+    required String testId,
+    required int questionIndex,
+  }) async {
+    final exists = await isQuestionMarked(userId, testId, questionIndex);
+    if (exists) {
+      await db.delete(
+        'marked_questions',
+        where: 'user_id = ? AND test_id = ? AND question_index = ?',
+        whereArgs: [userId, testId, questionIndex],
+      );
+      return false;
+    }
+    await db.insert(
+      'marked_questions',
+      MarkedQuestion(
+        userId: userId,
+        testId: testId,
+        questionIndex: questionIndex,
+        markedAt: DateTime.now(),
+      ).toMap(),
+      conflictAlgorithm: ConflictAlgorithm.replace,
+    );
+    return true;
   }
 
   Future<Map<String, int>> importProgressSnapshot(
@@ -896,6 +992,7 @@ class AppDatabase {
     var users = 0;
     var attempts = 0;
     var missingTests = 0;
+    var markedQuestions = 0;
 
     final userRows = backup['users'] as List? ?? [];
     if (backup['user'] is Map && userRows.isEmpty) {
@@ -907,6 +1004,7 @@ class AppDatabase {
       final user = LocalUser.fromMap(map);
       if (replaceExistingUsers) {
         await db.delete('attempts', where: 'user_id = ?', whereArgs: [user.id]);
+        await db.delete('marked_questions', where: 'user_id = ?', whereArgs: [user.id]);
       }
       await upsertUser(user);
       users++;
@@ -930,10 +1028,24 @@ class AppDatabase {
       await setActiveUserId(activeId);
     }
 
+    final markedRows = backup['marked_questions'] as List? ?? [];
+    for (final raw in markedRows) {
+      final row = Map<String, dynamic>.from(raw as Map);
+      final marked = MarkedQuestion.fromMap(row);
+      if (!knownTests.contains(marked.testId)) missingTests++;
+      await db.insert(
+        'marked_questions',
+        marked.toMap(),
+        conflictAlgorithm: ConflictAlgorithm.replace,
+      );
+      markedQuestions++;
+    }
+
     return {
       'users': users,
       'attempts': attempts,
       'missing_tests': missingTests,
+      'marked_questions': markedQuestions,
     };
   }
 
