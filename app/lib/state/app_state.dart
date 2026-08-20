@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:uuid/uuid.dart';
 
+import '../app_constants.dart';
 import '../database/app_database.dart';
 import '../models/local_user.dart';
 import '../services/content_importer.dart';
@@ -119,9 +120,9 @@ class AppState extends ChangeNotifier {
     try {
       final importer = ContentImporter(_db);
       final dataPath = path ?? await ContentImporter.resolveDataPath();
-      debugPrint('Testea import from: $dataPath');
+      debugPrint('${AppConstants.name} import from: $dataPath');
       lastImport = await importer.importFromDirectory(dataPath);
-      debugPrint('Testea import done: ${lastImport!.laws} laws, ${lastImport!.tests} tests');
+      debugPrint('${AppConstants.name} import done: ${lastImport!.laws} laws, ${lastImport!.tests} tests');
       if (lastImport!.tests == 0) {
         final onDisk = await ContentImporter.countJsonTests(dataPath);
         if (onDisk > 0) {
@@ -148,14 +149,14 @@ class AppState extends ChangeNotifier {
     try {
       final importer = ContentImporter(_db);
       final dataPath = path ?? await ContentImporter.resolveDataPath();
-      debugPrint('Testea test-only import from: $dataPath');
+      debugPrint('${AppConstants.name} test-only import from: $dataPath');
       final tests = await importer.importTestsOnly(dataPath);
       lastImport = ImportResult(
         laws: laws.length,
         titles: await _db.countTitles(),
         tests: tests,
       );
-      debugPrint('Testea test-only import done: $tests tests');
+      debugPrint('${AppConstants.name} test-only import done: $tests tests');
     } catch (e, st) {
       error = e.toString();
       debugPrint('Test-only import error: $e\n$st');

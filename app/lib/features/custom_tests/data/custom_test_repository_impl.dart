@@ -1,5 +1,6 @@
 import '../../../database/app_database.dart';
 import '../../../models/question.dart';
+import '../domain/custom_law.dart';
 import '../domain/custom_test_draft.dart';
 import '../domain/custom_test_repository.dart';
 import 'custom_test_payload_builder.dart';
@@ -37,15 +38,42 @@ class CustomTestRepositoryImpl implements CustomTestRepository {
     if (row == null) return null;
     final payload = row['payload'] as Map<String, dynamic>;
     final lawCode = row['law_code'] as String? ?? '';
-    return _payloadBuilder.draftFromPayload(payload, lawCode: lawCode);
+    final draft = _payloadBuilder.draftFromPayload(payload, lawCode: lawCode);
+    if (isCustomLawId(draft.lawId)) {
+      return draft.copyWith(customLawName: draft.lawName);
+    }
+    return draft;
   }
 
   @override
   Future<String> save(CustomTestDraft draft) async {
-    final testId = draft.isEditing ? draft.id! : generateCustomTestId();
-    final payload = _payloadBuilder.build(testId: testId, draft: draft);
+    final resolved = await _resolveLaw(draft);
+    final testId = resolved.isEditing ? resolved.id! : generateCustomTestId();
+    final payload = _payloadBuilder.build(testId: testId, draft: resolved);
     await _db.upsertCustomTest(payload);
     return testId;
+  }
+
+  Future<CustomTestDraft> _resolveLaw(CustomTestDraft draft) async {
+    if (isCustomLawOthersOption(draft.lawId)) {
+      final lawId = generateCustomLawId();
+      final name = draft.effectiveCustomLawName;
+      await _db.upsertCustomLaw(id: lawId, name: name);
+      return draft.copyWith(
+        lawId: lawId,
+        lawCode: name,
+        lawName: name,
+        customLawName: name,
+      );
+    }
+
+    if (isCustomLawId(draft.lawId)) {
+      final name = draft.effectiveCustomLawName;
+      await _db.upsertCustomLaw(id: draft.lawId, name: name);
+      return draft.copyWith(lawCode: name, lawName: name, customLawName: name);
+    }
+
+    return draft;
   }
 
   @override

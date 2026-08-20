@@ -1,76 +1,63 @@
 import 'dart:convert';
-import 'dart:io';
 
-import 'package:path/path.dart' as p;
-import 'package:path_provider/path_provider.dart';
+import '../../../database/app_database.dart';
+import '../../../app_constants.dart';
+import '../domain/backup_constants.dart';
+import '../domain/backup_repository.dart';
 
-import '../app_constants.dart';
-import '../features/backup/domain/backup_constants.dart';
-import '../models/local_user.dart';
+class ProgressBackupRepositoryImpl implements ProgressBackupRepository {
+  ProgressBackupRepositoryImpl(this._db);
 
-class ProgressExportResult {
-  const ProgressExportResult({required this.file, required this.summary});
+  final AppDatabase _db;
 
-  final File file;
-  final Map<String, dynamic> summary;
-}
-
-/// @deprecated Usar [ProgressBackupService]. Se mantiene para tests legacy.
-class ProgressExportService {
-  static const exportVersion = progressBackupVersion;
-
-  Future<ProgressExportResult> exportUserProgress({
-    required LocalUser user,
-    required List<Map<String, dynamic>> rawAttempts,
-    Directory? targetDir,
-  }) async {
-    final attempts = rawAttempts
-        .map(_normalizeAttempt)
-        .map((row) => {...row, 'user_id': row['user_id'] ?? user.id})
+  @override
+  Future<Map<String, dynamic>> buildExportPayload({String? userId}) async {
+    final snapshot = await _db.exportProgressSnapshot(userId: userId);
+    final attempts = (snapshot['attempts'] as List)
+        .map((row) => _normalizeAttempt(Map<String, dynamic>.from(row as Map)))
         .toList();
     final summary = _buildSummary(attempts);
     final byTest = _buildByTest(attempts);
 
-    final payload = {
+    return {
       'app': AppConstants.id,
       'kind': progressBackupKind,
       'version': progressBackupVersion,
       'exported_at': DateTime.now().toIso8601String(),
-      'users': [user.toMap()],
-      'user': {
-        'id': user.id,
-        'name': user.name,
-        'created_at': user.createdAt.toIso8601String(),
-      },
+      'users': snapshot['users'],
+      if (userId == null) 'active_user_id': snapshot['active_user_id'],
       'summary': summary,
       'by_test': byTest,
       'attempts': attempts,
     };
-
-    final exportsDir = targetDir ?? await _defaultExportsDir();
-
-    final stamp = DateTime.now().toIso8601String().replaceAll(':', '-').split('.').first;
-    final safeName = user.name.replaceAll(RegExp(r'[^\w\-]+'), '_').toLowerCase();
-    final fileName = 'opotest_${safeName}_$stamp.json';
-    final file = File(p.join(exportsDir.path, fileName));
-    await file.writeAsString(const JsonEncoder.withIndent('  ').convert(payload));
-
-    return ProgressExportResult(file: file, summary: summary);
   }
 
-  Future<Directory> _defaultExportsDir() async {
-    final dir = await getApplicationDocumentsDirectory();
-    final exportsDir = Directory(p.join(dir.path, 'exports'));
-    if (!exportsDir.existsSync()) exportsDir.createSync(recursive: true);
-    return exportsDir;
+  @override
+  Future<ProgressImportResult> importPayload(
+    Map<String, dynamic> payload, {
+    bool replaceExistingUsers = false,
+  }) async {
+    final stats = await _db.importProgressSnapshot(
+      payload,
+      replaceExistingUsers: replaceExistingUsers,
+    );
+    return ProgressImportResult(
+      users: stats['users'] ?? 0,
+      attempts: stats['attempts'] ?? 0,
+      missingTests: stats['missing_tests'] ?? 0,
+    );
   }
 
   Map<String, dynamic> _normalizeAttempt(Map<String, dynamic> row) {
     Map<String, dynamic> answers = {};
-    try {
-      final raw = jsonDecode(row['answers_json'] as String? ?? '{}') as Map<String, dynamic>;
-      answers = raw.map((k, v) => MapEntry(k, v));
-    } catch (_) {}
+    if (row['answers'] is Map) {
+      answers = (row['answers'] as Map).map((k, v) => MapEntry(k.toString(), v));
+    } else {
+      try {
+        final raw = jsonDecode(row['answers_json'] as String? ?? '{}') as Map<String, dynamic>;
+        answers = raw.map((k, v) => MapEntry(k.toString(), v));
+      } catch (_) {}
+    }
 
     return {
       'id': row['id'],

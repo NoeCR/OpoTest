@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
+import 'package:testea_local/app_constants.dart';
 import 'package:testea_local/models/local_user.dart';
 import 'package:testea_local/services/progress_export_service.dart';
 
@@ -67,8 +68,9 @@ void main() {
       expect(result.summary['average_percent'], 90.0);
 
       final payload = jsonDecode(await result.file.readAsString()) as Map<String, dynamic>;
-      expect(payload['app'], 'testea_local');
+      expect(payload['app'], AppConstants.id);
       expect(payload['version'], ProgressExportService.exportVersion);
+      expect(payload['kind'], 'progress_backup');
       expect(payload['user']['name'], 'Ana Test');
       expect(payload['by_test'], hasLength(1));
 

@@ -1,3 +1,4 @@
+import 'custom_law.dart';
 import 'custom_test_draft.dart';
 
 class CustomTestValidationException implements Exception {
@@ -10,8 +11,14 @@ class CustomTestValidationException implements Exception {
 }
 
 void validateCustomTestDraft(CustomTestDraft draft) {
-  if (draft.lawId.trim().isEmpty) {
-    throw CustomTestValidationException('Selecciona una ley.');
+  if (isCustomLawOthersOption(draft.lawId)) {
+    if (draft.effectiveCustomLawName.isEmpty) {
+      throw CustomTestValidationException('Indica el nombre de la sección.');
+    }
+  } else if (draft.lawId.trim().isEmpty) {
+    throw CustomTestValidationException('Selecciona una ley o sección.');
+  } else if (isCustomLawId(draft.lawId) && draft.effectiveCustomLawName.isEmpty) {
+    throw CustomTestValidationException('Indica el nombre de la sección.');
   }
   if (draft.name.trim().isEmpty) {
     throw CustomTestValidationException('Indica un nombre para el test.');

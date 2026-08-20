@@ -8,6 +8,18 @@ Este formato sigue una estructura inspirada en [Keep a Changelog](https://keepac
 
 ---
 
+## [1.3.0] - 2026-08-20
+
+### Added
+- Copias de seguridad de contenido y progreso (export/import JSON) en Configuración.
+- Import de progreso con opción fusionar o reemplazar intentos del perfil.
+- Secciones propias «Otros» al crear tests custom; aparecen en Legislación.
+
+### Changed
+- Rebrand a OpoTest en exports, logs e identidad visible (compatibilidad con backups `testea_local`).
+
+---
+
 ## [1.2.0] - 2026-08-20
 
 ### Added

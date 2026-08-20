@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../database/app_database.dart';
 import '../navigation/app_navigation.dart';
-import '../services/progress_export_service.dart';
+import '../features/backup/application/progress_backup_service.dart';
 import '../state/app_state.dart';
 import '../theme/app_theme.dart';
 import '../widgets/app_decorations.dart';
@@ -109,25 +109,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
             subtitle: 'Resumen + intentos en carpeta exports/',
             onTap: () async {
               final user = state.activeUser!;
-              final attempts = await context.read<AppState>().attemptsForUser(user.id);
-              final result = await ProgressExportService().exportUserProgress(
-                user: user,
-                rawAttempts: attempts,
-              );
+              final result = await context.read<ProgressBackupService>().exportUser(user: user);
               if (!context.mounted) return;
-              final s = result.summary;
+              final s = result.stats;
               await showDialog<void>(
                 context: context,
                 builder: (c) => AlertDialog(
                   title: const Text('Progreso exportado'),
                   content: SelectableText(
-                    attempts.isEmpty
-                        ? 'Archivo creado (sin intentos aún):\n${result.file.path}'
+                    (s['total_attempts'] as int? ?? 0) == 0
+                        ? 'Archivo creado (sin intentos aún):\n${result.filePath}'
                         : 'Intentos: ${s['total_attempts']}\n'
                             'Tests distintos: ${s['unique_tests']}\n'
                             'Media: ${s['average_percent']}%\n'
                             'Mejor: ${s['best_percent']}%\n\n'
-                            '${result.file.path}',
+                            '${result.filePath}',
                   ),
                   actions: [
                     TextButton(onPressed: () => Navigator.pop(c), child: const Text('Cerrar')),

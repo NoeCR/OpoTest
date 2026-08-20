@@ -57,7 +57,7 @@ class _LawsScreenState extends State<LawsScreen> {
     final db = context.read<AppDatabase>();
     final userId = context.read<AppState>().activeUser?.id;
     final laws = await db.getLaws();
-    final testsByLaw = await db.contentIdsGroupedByLaw();
+    final testsByLaw = await db.allContentIdsGroupedByLaw();
     final attempted = userId == null ? <String>{} : await db.attemptedTestIds(userId);
     final progressByLaw = <String, ProgressCounts>{
       for (final entry in testsByLaw.entries)
@@ -204,6 +204,7 @@ class _LawContentScreenState extends State<LawContentScreen> {
   List<String> _lawTestIds = [];
   Map<String, TestStats> _stats = {};
   bool _loading = true;
+  bool _defaultKindApplied = false;
 
   @override
   void initState() {
@@ -235,6 +236,14 @@ class _LawContentScreenState extends State<LawContentScreen> {
       _ownIds = ownIds;
       _attempted = attempted;
       _stats = stats;
+      if (!_defaultKindApplied &&
+          lawTestIds.isEmpty &&
+          examIds.isEmpty &&
+          officialIds.isEmpty &&
+          ownIds.isNotEmpty) {
+        _kind = ContentKind.own;
+        _defaultKindApplied = true;
+      }
       _loading = false;
     });
   }

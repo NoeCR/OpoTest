@@ -267,6 +267,57 @@ class AppDatabase {
   Future<List<Map<String, dynamic>>> getLaws() =>
       db.query('laws', orderBy: 'order_idx');
 
+  Future<void> upsertCustomLaw({
+    required String id,
+    required String name,
+  }) async {
+    final trimmed = name.trim();
+    if (trimmed.isEmpty || !id.startsWith('custom_law_')) return;
+
+    await db.insert(
+      'laws',
+      {
+        'id': id,
+        'code': trimmed,
+        'name': trimmed,
+        'order_idx': 900000 + (DateTime.now().millisecondsSinceEpoch % 100000),
+        'payload': jsonEncode({
+          'id': id,
+          'code': trimmed,
+          'name_es': trimmed,
+          'custom': true,
+        }),
+      },
+      conflictAlgorithm: ConflictAlgorithm.replace,
+    );
+  }
+
+  Future<Map<String, List<String>>> customTestIdsGroupedByLaw() async {
+    final rows = await db.query(
+      'tests',
+      columns: ['id', 'law_id'],
+      where: 'source = ?',
+      whereArgs: [testSourceCustom],
+      orderBy: 'law_id, index_num',
+    );
+    final grouped = <String, List<String>>{};
+    for (final row in rows) {
+      final lawId = row['law_id']?.toString();
+      if (lawId == null || lawId.isEmpty) continue;
+      grouped.putIfAbsent(lawId, () => []).add(row['id'] as String);
+    }
+    return grouped;
+  }
+
+  Future<Map<String, List<String>>> allContentIdsGroupedByLaw() async {
+    final grouped = await contentIdsGroupedByLaw();
+    final customGrouped = await customTestIdsGroupedByLaw();
+    for (final entry in customGrouped.entries) {
+      grouped.putIfAbsent(entry.key, () => []).addAll(entry.value);
+    }
+    return grouped;
+  }
+
   Future<Map<String, dynamic>?> getTitle(String id) async {
     final rows = await db.query('titles', where: 'id = ?', whereArgs: [id], limit: 1);
     if (rows.isEmpty) return null;
@@ -410,19 +461,27 @@ class AppDatabase {
   }
 
   Future<void> saveAttempt(TestAttempt attempt) async {
-    await db.insert('attempts', {
-      'id': attempt.id,
-      'user_id': attempt.userId,
-      'test_id': attempt.testId,
-      'test_name': attempt.testName,
-      'finished_at': attempt.finishedAt.toIso8601String(),
-      'duration_seconds': attempt.durationSeconds,
-      'net_score': attempt.netScore,
-      'percent_score': attempt.percentScore,
-      'answers_json': jsonEncode(attempt.answers.map((k, v) => MapEntry(k.toString(), v))),
-      'exam_simulation': attempt.examSimulation ? 1 : 0,
-      'error_format': attempt.errorFormat,
-    });
+    await upsertAttempt(attempt);
+  }
+
+  Future<void> upsertAttempt(TestAttempt attempt) async {
+    await db.insert(
+      'attempts',
+      {
+        'id': attempt.id,
+        'user_id': attempt.userId,
+        'test_id': attempt.testId,
+        'test_name': attempt.testName,
+        'finished_at': attempt.finishedAt.toIso8601String(),
+        'duration_seconds': attempt.durationSeconds,
+        'net_score': attempt.netScore,
+        'percent_score': attempt.percentScore,
+        'answers_json': jsonEncode(attempt.answers.map((k, v) => MapEntry(k.toString(), v))),
+        'exam_simulation': attempt.examSimulation ? 1 : 0,
+        'error_format': attempt.errorFormat,
+      },
+      conflictAlgorithm: ConflictAlgorithm.replace,
+    );
   }
 
   Future<List<Map<String, dynamic>>> attemptsForUser(String userId, {String? testId}) async {
@@ -655,5 +714,255 @@ class AppDatabase {
 
   Future<void> _invalidateQuestionCountCache() async {
     await db.delete('sync_meta', where: 'key = ?', whereArgs: ['question_count']);
+  }
+
+  // --- Copias de seguridad (export/import) ---
+
+  Future<List<Map<String, dynamic>>> getAllAttempts() async {
+    return db.query('attempts', orderBy: 'finished_at DESC');
+  }
+
+  Future<Map<String, dynamic>> exportContentSnapshot() async {
+    final laws = await db.query('laws', orderBy: 'order_idx');
+    final titles = await db.query('titles', orderBy: 'order_idx');
+    final tests = await db.query('tests', orderBy: 'index_num');
+    final qByLaw = await getSyncMeta('q_by_law');
+    final questionCount = await getSyncMeta('question_count');
+
+    Map<String, dynamic>? decodePayload(String? raw) {
+      if (raw == null || raw.isEmpty) return null;
+      try {
+        return jsonDecode(raw) as Map<String, dynamic>;
+      } catch (_) {
+        return null;
+      }
+    }
+
+    final officialCount = tests.where((t) => t['source'] != testSourceCustom).length;
+    final customCount = tests.where((t) => t['source'] == testSourceCustom).length;
+
+    return {
+      'laws': laws
+          .map(
+            (row) => {
+              'id': row['id'],
+              'code': row['code'],
+              'name': row['name'],
+              'order_idx': row['order_idx'],
+              'payload': decodePayload(row['payload'] as String?) ?? {},
+            },
+          )
+          .toList(),
+      'titles': titles
+          .map(
+            (row) => {
+              'id': row['id'],
+              'law_id': row['law_id'],
+              'code': row['code'],
+              'name': row['name'],
+              'order_idx': row['order_idx'],
+              'payload': decodePayload(row['payload'] as String?) ?? {},
+            },
+          )
+          .toList(),
+      'tests': tests
+          .map(
+            (row) => {
+              'id': row['id'],
+              'title_id': row['title_id'],
+              'law_id': row['law_id'],
+              'chapter_id': row['chapter_id'],
+              'section_id': row['section_id'],
+              'article_id': row['article_id'],
+              'name': row['name'],
+              'type': row['type'],
+              'source': row['source'],
+              'index_num': row['index_num'],
+              'payload': decodePayload(row['payload'] as String?) ?? {},
+            },
+          )
+          .toList(),
+      'sync_meta': {
+        if (qByLaw != null) 'q_by_law': jsonDecode(qByLaw),
+        if (questionCount != null) 'question_count': questionCount,
+      },
+      'stats': {
+        'laws': laws.length,
+        'titles': titles.length,
+        'tests_official': officialCount,
+        'tests_custom': customCount,
+      },
+    };
+  }
+
+  Future<Map<String, int>> importContentSnapshot(Map<String, dynamic> backup) async {
+    var laws = 0;
+    var titles = 0;
+    var testsOfficial = 0;
+    var testsCustom = 0;
+    var testsSkipped = 0;
+
+    for (final raw in backup['laws'] as List? ?? []) {
+      final row = Map<String, dynamic>.from(raw as Map);
+      await db.insert(
+        'laws',
+        {
+          'id': row['id'].toString(),
+          'code': row['code']?.toString() ?? '',
+          'name': row['name']?.toString() ?? '',
+          'order_idx': (row['order_idx'] as num?)?.toInt() ?? 0,
+          'payload': jsonEncode(row['payload'] ?? {}),
+        },
+        conflictAlgorithm: ConflictAlgorithm.replace,
+      );
+      laws++;
+    }
+
+    for (final raw in backup['titles'] as List? ?? []) {
+      final row = Map<String, dynamic>.from(raw as Map);
+      await db.insert(
+        'titles',
+        {
+          'id': row['id'].toString(),
+          'law_id': row['law_id']?.toString() ?? '',
+          'code': row['code']?.toString() ?? '',
+          'name': row['name']?.toString() ?? '',
+          'order_idx': (row['order_idx'] as num?)?.toInt() ?? 0,
+          'payload': jsonEncode(row['payload'] ?? {}),
+        },
+        conflictAlgorithm: ConflictAlgorithm.replace,
+      );
+      titles++;
+    }
+
+    for (final raw in backup['tests'] as List? ?? []) {
+      final row = Map<String, dynamic>.from(raw as Map);
+      final payload = Map<String, dynamic>.from(row['payload'] as Map? ?? {});
+      final source = row['source']?.toString() ?? testSourceOfficial;
+      if (source == testSourceCustom) {
+        await upsertCustomTest(payload);
+        testsCustom++;
+      } else {
+        final inserted = await upsertOfficialTest(payload);
+        if (inserted) {
+          testsOfficial++;
+        } else {
+          testsSkipped++;
+        }
+      }
+    }
+
+    final meta = backup['sync_meta'] as Map<String, dynamic>? ?? {};
+    final qByLaw = meta['q_by_law'];
+    if (qByLaw != null) {
+      await setSyncMeta('q_by_law', jsonEncode(qByLaw));
+    }
+    final questionCount = meta['question_count'];
+    if (questionCount != null) {
+      await setSyncMeta('question_count', questionCount.toString());
+    } else {
+      await _invalidateQuestionCountCache();
+    }
+
+    return {
+      'laws': laws,
+      'titles': titles,
+      'tests_official': testsOfficial,
+      'tests_custom': testsCustom,
+      'tests_skipped': testsSkipped,
+    };
+  }
+
+  Future<Map<String, dynamic>> exportProgressSnapshot({String? userId}) async {
+    final users = userId == null
+        ? await getUsers()
+        : (await getUsers()).where((u) => u.id == userId).toList();
+    final attempts = userId == null
+        ? await getAllAttempts()
+        : await attemptsForUser(userId);
+    final activeId = await activeUserId();
+
+    return {
+      'users': users.map((u) => u.toMap()).toList(),
+      'active_user_id': activeId,
+      'attempts': attempts,
+    };
+  }
+
+  Future<Map<String, int>> importProgressSnapshot(
+    Map<String, dynamic> backup, {
+    bool replaceExistingUsers = false,
+  }) async {
+    var users = 0;
+    var attempts = 0;
+    var missingTests = 0;
+
+    final userRows = backup['users'] as List? ?? [];
+    if (backup['user'] is Map && userRows.isEmpty) {
+      userRows.add(backup['user']);
+    }
+
+    for (final raw in userRows) {
+      final map = Map<String, dynamic>.from(raw as Map);
+      final user = LocalUser.fromMap(map);
+      if (replaceExistingUsers) {
+        await db.delete('attempts', where: 'user_id = ?', whereArgs: [user.id]);
+      }
+      await upsertUser(user);
+      users++;
+    }
+
+    final attemptRows = backup['attempts'] as List? ?? [];
+    final knownTests = {
+      for (final row in await db.query('tests', columns: ['id'])) row['id'] as String,
+    };
+
+    for (final raw in attemptRows) {
+      final row = Map<String, dynamic>.from(raw as Map);
+      final attempt = _attemptFromBackupRow(row);
+      if (!knownTests.contains(attempt.testId)) missingTests++;
+      await upsertAttempt(attempt);
+      attempts++;
+    }
+
+    final activeId = backup['active_user_id']?.toString();
+    if (activeId != null && activeId.isNotEmpty) {
+      await setActiveUserId(activeId);
+    }
+
+    return {
+      'users': users,
+      'attempts': attempts,
+      'missing_tests': missingTests,
+    };
+  }
+
+  TestAttempt _attemptFromBackupRow(Map<String, dynamic> row) {
+    Map<int, int> answers = {};
+    final rawAnswers = row['answers'];
+    if (rawAnswers is Map) {
+      answers = rawAnswers.map(
+        (k, v) => MapEntry(int.parse(k.toString()), (v as num).toInt()),
+      );
+    } else {
+      try {
+        final decoded = jsonDecode(row['answers_json'] as String? ?? '{}') as Map<String, dynamic>;
+        answers = decoded.map((k, v) => MapEntry(int.parse(k), (v as num).toInt()));
+      } catch (_) {}
+    }
+
+    return TestAttempt(
+      id: row['id'] as String,
+      userId: row['user_id'] as String,
+      testId: row['test_id'] as String,
+      testName: row['test_name'] as String? ?? '',
+      finishedAt: DateTime.parse(row['finished_at'] as String),
+      durationSeconds: (row['duration_seconds'] as num?)?.toInt() ?? 0,
+      netScore: (row['net_score'] as num?)?.toDouble() ?? 0,
+      percentScore: (row['percent_score'] as num?)?.toDouble() ?? 0,
+      answers: answers,
+      examSimulation: row['exam_simulation'] == true || row['exam_simulation'] == 1,
+      errorFormat: (row['error_format'] as num?)?.toInt() ?? 0,
+    );
   }
 }

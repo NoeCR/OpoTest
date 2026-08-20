@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../database/app_database.dart';
 import '../models/test_options.dart';
+import '../features/backup/presentation/backup_section.dart';
 import '../services/content_importer.dart';
 import '../services/sync_service.dart';
 import '../services/test_preferences.dart';
@@ -140,6 +141,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     ],
                   ),
                 ),
+                const SizedBox(height: 12),
+                BackupSection(onChanged: (message) => setState(() => status = message)),
                 const SizedBox(height: 12),
                 SectionCard(
                   label: 'Carpeta de datos',

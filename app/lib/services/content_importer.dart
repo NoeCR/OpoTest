@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 
+import '../app_constants.dart';
 import '../database/app_database.dart';
 
 class ContentImporter {
@@ -118,11 +119,11 @@ class ContentImporter {
             titles++;
           }
         } catch (e) {
-          debugPrint('Testea title skip ${entity.path}: $e');
+          debugPrint('${AppConstants.name} title skip ${entity.path}: $e');
         }
       }
     }
-    debugPrint('Testea import: $titles titles');
+    debugPrint('${AppConstants.name} import: $titles titles');
     return titles;
   }
 
@@ -142,17 +143,17 @@ class ContentImporter {
         if (saved) {
           imported++;
           if (imported % 120 == 0) {
-            debugPrint('Testea import: $imported tests...');
+            debugPrint('${AppConstants.name} import: $imported tests...');
           }
         } else {
           skippedCustom++;
         }
       } catch (e) {
-        debugPrint('Testea import skip ${entity.path}: $e');
+        debugPrint('${AppConstants.name} import skip ${entity.path}: $e');
       }
     }
 
-    debugPrint('Testea import: $imported tests total · $skippedCustom custom preservados');
+    debugPrint('${AppConstants.name} import: $imported tests total · $skippedCustom custom preservados');
     return imported;
   }
 

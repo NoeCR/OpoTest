@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import '../../../database/app_database.dart';
 import '../../../theme/app_theme.dart';
 import '../application/custom_test_service.dart';
+import '../domain/custom_law.dart';
 import '../domain/custom_question_draft.dart';
 import '../domain/custom_test_draft.dart';
 import '../domain/custom_test_validation.dart';
@@ -19,22 +20,26 @@ class CustomTestEditorScreen extends StatefulWidget {
 }
 
 class _CustomTestEditorScreenState extends State<CustomTestEditorScreen> {
-  List<Map<String, dynamic>> _laws = [];
+  List<Map<String, dynamic>> _officialLaws = [];
+  List<Map<String, dynamic>> _customLaws = [];
   CustomTestDraft _draft = CustomTestDraft.empty();
   bool _loading = true;
   bool _saving = false;
   late TextEditingController _nameCtrl;
+  late TextEditingController _customLawNameCtrl;
 
   @override
   void initState() {
     super.initState();
     _nameCtrl = TextEditingController();
+    _customLawNameCtrl = TextEditingController();
     _load();
   }
 
   @override
   void dispose() {
     _nameCtrl.dispose();
+    _customLawNameCtrl.dispose();
     super.dispose();
   }
 
@@ -42,40 +47,81 @@ class _CustomTestEditorScreenState extends State<CustomTestEditorScreen> {
     final db = context.read<AppDatabase>();
     final service = context.read<CustomTestService>();
     final laws = await db.getLaws();
+    final official = laws.where((l) => !isCustomLawId(l['id'] as String)).toList();
+    final custom = laws.where((l) => isCustomLawId(l['id'] as String)).toList();
 
     CustomTestDraft draft;
     if (widget.testId != null) {
       draft = await service.getDraft(widget.testId!) ?? CustomTestDraft.empty();
+      if (isCustomLawId(draft.lawId)) {
+        draft = draft.copyWith(customLawName: draft.lawName);
+      }
     } else {
       draft = CustomTestDraft.empty(
-        lawId: laws.isNotEmpty ? laws.first['id'] as String : '',
+        lawId: official.isNotEmpty ? official.first['id'] as String : customLawOthersOption,
       );
-      if (laws.isNotEmpty) {
+      if (official.isNotEmpty) {
+        final first = official.first;
         draft = draft.copyWith(
-          lawCode: laws.first['code']?.toString() ?? '',
-          lawName: laws.first['name_es']?.toString() ?? laws.first['name']?.toString() ?? '',
+          lawCode: first['code']?.toString() ?? '',
+          lawName: first['name_es']?.toString() ?? first['name']?.toString() ?? '',
         );
       }
     }
 
     if (!mounted) return;
     _nameCtrl.text = draft.name;
+    _customLawNameCtrl.text = draft.effectiveCustomLawName;
     setState(() {
-      _laws = laws;
+      _officialLaws = official;
+      _customLaws = custom;
       _draft = draft;
       _loading = false;
     });
   }
 
-  void _setLaw(String? lawId) {
-    if (lawId == null) return;
-    final law = _laws.firstWhere((l) => l['id'] == lawId, orElse: () => {});
+  String? get _dropdownValue {
+    if (isCustomLawOthersOption(_draft.lawId)) return customLawOthersOption;
+    if (_draft.lawId.isEmpty) return null;
+    if (_officialLaws.any((l) => l['id'] == _draft.lawId) ||
+        _customLaws.any((l) => l['id'] == _draft.lawId) ||
+        isCustomLawId(_draft.lawId)) {
+      return _draft.lawId;
+    }
+    return null;
+  }
+
+  void _setLaw(String? value) {
+    if (value == null) return;
+
+    if (value == customLawOthersOption) {
+      setState(() {
+        _draft = _draft.copyWith(
+          lawId: customLawOthersOption,
+          lawCode: '',
+          lawName: '',
+          customLawName: _customLawNameCtrl.text,
+        );
+      });
+      return;
+    }
+
+    final law = [..._officialLaws, ..._customLaws].firstWhere(
+      (l) => l['id'] == value,
+      orElse: () => {},
+    );
+    final name = law['name_es']?.toString() ?? law['name']?.toString() ?? '';
+    final code = law['code']?.toString() ?? '';
     setState(() {
       _draft = _draft.copyWith(
-        lawId: lawId,
-        lawCode: law['code']?.toString() ?? '',
-        lawName: law['name_es']?.toString() ?? law['name']?.toString() ?? '',
+        lawId: value,
+        lawCode: code,
+        lawName: name,
+        customLawName: isCustomLawId(value) ? name : '',
       );
+      if (isCustomLawId(value)) {
+        _customLawNameCtrl.text = name;
+      }
     });
   }
 
@@ -104,7 +150,8 @@ class _CustomTestEditorScreenState extends State<CustomTestEditorScreen> {
     final messenger = ScaffoldMessenger.of(context);
     try {
       setState(() => _saving = true);
-      await context.read<CustomTestService>().save(_draft);
+      final draft = _draft.copyWith(customLawName: _customLawNameCtrl.text);
+      await context.read<CustomTestService>().save(draft);
       if (!mounted) return;
       Navigator.pop(context, true);
     } on CustomTestValidationException catch (e) {
@@ -114,8 +161,58 @@ class _CustomTestEditorScreenState extends State<CustomTestEditorScreen> {
     }
   }
 
+  List<DropdownMenuItem<String>> get _lawDropdownItems {
+    final items = <DropdownMenuItem<String>>[
+      ..._officialLaws.map(
+        (law) => DropdownMenuItem<String>(
+          value: law['id'] as String,
+          child: Text(_lawDropdownLabel(law), overflow: TextOverflow.ellipsis, maxLines: 2),
+        ),
+      ),
+      ..._customLaws.map(
+        (law) => DropdownMenuItem<String>(
+          value: law['id'] as String,
+          child: Text(_lawDropdownLabel(law), overflow: TextOverflow.ellipsis, maxLines: 2),
+        ),
+      ),
+      const DropdownMenuItem<String>(
+        value: customLawOthersOption,
+        child: Text('Otros — nueva sección'),
+      ),
+    ];
+    return items;
+  }
+
+  List<Widget> get _selectedLawLabels {
+    return [
+      ..._officialLaws.map((law) => _selectedLawLabel(law)),
+      ..._customLaws.map((law) => _selectedLawLabel(law)),
+      Align(
+        alignment: Alignment.centerLeft,
+        child: Text(
+          'Otros — nueva sección',
+          overflow: TextOverflow.ellipsis,
+          maxLines: 1,
+        ),
+      ),
+    ];
+  }
+
+  Widget _selectedLawLabel(Map<String, dynamic> law) {
+    return Align(
+      alignment: Alignment.centerLeft,
+      child: Text(
+        _lawDropdownLabel(law),
+        overflow: TextOverflow.ellipsis,
+        maxLines: 1,
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
+    final showCustomLawName = _draft.usesCustomLawSection;
+
     return Scaffold(
       backgroundColor: AppTheme.pageBlue,
       appBar: AppBar(
@@ -150,38 +247,30 @@ class _CustomTestEditorScreenState extends State<CustomTestEditorScreen> {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         DropdownButtonFormField<String>(
-                          value: _draft.lawId.isEmpty ? null : _draft.lawId,
+                          value: _dropdownValue,
                           isExpanded: true,
                           decoration: const InputDecoration(
-                            labelText: 'Ley',
+                            labelText: 'Ley o sección',
                             border: OutlineInputBorder(),
                           ),
-                          selectedItemBuilder: (context) => _laws
-                              .map(
-                                (law) => Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Text(
-                                    _lawDropdownLabel(law),
-                                    overflow: TextOverflow.ellipsis,
-                                    maxLines: 1,
-                                  ),
-                                ),
-                              )
-                              .toList(),
-                          items: _laws
-                              .map(
-                                (law) => DropdownMenuItem<String>(
-                                  value: law['id'] as String,
-                                  child: Text(
-                                    _lawDropdownLabel(law),
-                                    overflow: TextOverflow.ellipsis,
-                                    maxLines: 2,
-                                  ),
-                                ),
-                              )
-                              .toList(),
+                          selectedItemBuilder: (context) => _selectedLawLabels,
+                          items: _lawDropdownItems,
                           onChanged: _setLaw,
                         ),
+                        if (showCustomLawName) ...[
+                          const SizedBox(height: 12),
+                          TextField(
+                            decoration: const InputDecoration(
+                              labelText: 'Nombre de la sección',
+                              hintText: 'Ej. Psicotécnicos, Inglés técnico...',
+                              border: OutlineInputBorder(),
+                            ),
+                            controller: _customLawNameCtrl,
+                            onChanged: (v) => setState(
+                              () => _draft = _draft.copyWith(customLawName: v, lawName: v),
+                            ),
+                          ),
+                        ],
                         const SizedBox(height: 12),
                         TextField(
                           decoration: const InputDecoration(
@@ -218,6 +307,9 @@ class _CustomTestEditorScreenState extends State<CustomTestEditorScreen> {
   }
 
   String _lawDropdownLabel(Map<String, dynamic> law) {
+    if (isCustomLawId(law['id'] as String)) {
+      return law['name']?.toString() ?? law['code']?.toString() ?? 'Sección propia';
+    }
     final code = law['code']?.toString() ?? '';
     final name = law['name_es']?.toString() ?? law['name']?.toString() ?? '';
     if (code.isNotEmpty && name.isNotEmpty) return '$code — $name';

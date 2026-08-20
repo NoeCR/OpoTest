@@ -2,6 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:testea_local/database/app_database.dart';
 import 'package:testea_local/features/custom_tests/application/custom_test_service.dart';
 import 'package:testea_local/features/custom_tests/data/custom_test_repository_impl.dart';
+import 'package:testea_local/features/custom_tests/domain/custom_law.dart';
 import 'package:testea_local/features/custom_tests/domain/custom_question_draft.dart';
 import 'package:testea_local/features/custom_tests/domain/custom_test_draft.dart';
 
@@ -97,6 +98,31 @@ void main() {
       final draft = await service.getDraft(id);
       expect(draft?.name, 'Actualizado');
       expect(draft?.questions, hasLength(2));
+    });
+
+    test('guardar con Otros crea sección custom en legislación', () async {
+      final id = await service.save(
+        CustomTestDraft(
+          lawId: customLawOthersOption,
+          customLawName: 'Psicotécnicos',
+          name: 'Test sección nueva',
+          questions: [
+            CustomQuestionDraft(
+              text: 'P',
+              answers: ['A', 'B', 'C', 'D'],
+              solution: 1,
+            ),
+          ],
+        ),
+      );
+
+      expect(id.startsWith('custom_'), isTrue);
+      final laws = await db.getLaws();
+      final customLaw = laws.firstWhere((l) => isCustomLawId(l['id'] as String));
+      expect(customLaw['name'], 'Psicotécnicos');
+
+      final grouped = await db.allContentIdsGroupedByLaw();
+      expect(grouped[customLaw['id'] as String], contains(id));
     });
 
     test('eliminar test y excluir de getAllTestIds', () async {

@@ -6,8 +6,8 @@ import '../theme/app_theme.dart';
 import 'screens/main_shell.dart';
 import 'screens/users_screen.dart';
 
-class TesteaApp extends StatelessWidget {
-  const TesteaApp({super.key});
+class OpoTestApp extends StatelessWidget {
+  const OpoTestApp({super.key});
 
   @override
   Widget build(BuildContext context) {
