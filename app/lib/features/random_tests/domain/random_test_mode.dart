@@ -1,11 +1,11 @@
-import '../../../models/question.dart';
-
 enum RandomTestMode {
   classic,
   practiced,
   refresh,
   mostErrors,
   mixed,
+  reinforcement,
+  markedReview,
 }
 
 extension RandomTestModeLabels on RandomTestMode {
@@ -15,6 +15,8 @@ extension RandomTestModeLabels on RandomTestMode {
         RandomTestMode.refresh => 'Refrescar olvidados',
         RandomTestMode.mostErrors => 'Más fallos recientes',
         RandomTestMode.mixed => 'Mixto multisección',
+        RandomTestMode.reinforcement => 'Test de refuerzo',
+        RandomTestMode.markedReview => 'Test de repaso',
       };
 
   String get subtitle => switch (this) {
@@ -23,6 +25,8 @@ extension RandomTestModeLabels on RandomTestMode {
         RandomTestMode.refresh => 'Tests sin repetir hace tiempo o muy largos',
         RandomTestMode.mostErrors => 'Prioriza donde más fallaste la última vez',
         RandomTestMode.mixed => 'Preguntas aleatorias de varias leyes',
+        RandomTestMode.reinforcement => 'Preguntas falladas en tus últimos intentos',
+        RandomTestMode.markedReview => 'Preguntas que marcaste para revisión',
       };
 
   String get emptyHint => switch (this) {
@@ -31,25 +35,7 @@ extension RandomTestModeLabels on RandomTestMode {
         RandomTestMode.refresh => 'Necesitas intentos previos para detectar tests olvidados.',
         RandomTestMode.mostErrors => 'Completa tests con fallos para usar este modo.',
         RandomTestMode.mixed => 'Importa el temario para generar un mix.',
+        RandomTestMode.reinforcement => 'Necesitas fallos recientes en tests completados.',
+        RandomTestMode.markedReview => 'Marca preguntas durante un test para repasarlas aquí.',
       };
-}
-
-class RandomTestPick {
-  const RandomTestPick.test(this.testId)
-      : mixedTest = null,
-        emptyMessage = null;
-
-  const RandomTestPick.mixed(this.mixedTest)
-      : testId = null,
-        emptyMessage = null;
-
-  const RandomTestPick.empty(this.emptyMessage)
-      : testId = null,
-        mixedTest = null;
-
-  final String? testId;
-  final TestDefinition? mixedTest;
-  final String? emptyMessage;
-
-  bool get isEmpty => emptyMessage != null;
 }

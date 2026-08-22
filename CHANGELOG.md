@@ -8,6 +8,18 @@ Este formato sigue una estructura inspirada en [Keep a Changelog](https://keepac
 
 ---
 
+## [1.7.0] - 2026-08-22
+
+### Added
+- Modos **Test de refuerzo** (preguntas falladas en intentos recientes) y **Test de repaso** (preguntas marcadas).
+- Tests unitarios del hub de tests aleatorios (estrategias, builder sintético y servicio).
+
+### Changed
+- Refactor del hub de tests aleatorios con patrón **Strategy** (registry + una estrategia por modo).
+- `RandomTestPick` y constantes extraídos a capa de dominio; builder de tests sintéticos reutilizable.
+
+---
+
 ## [1.6.5] - 2026-08-22
 
 ### Added
