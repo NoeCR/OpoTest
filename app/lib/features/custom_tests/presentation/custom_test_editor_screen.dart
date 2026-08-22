@@ -27,6 +27,7 @@ class _CustomTestEditorScreenState extends State<CustomTestEditorScreen> {
   bool _saving = false;
   late TextEditingController _nameCtrl;
   late TextEditingController _customLawNameCtrl;
+  final ScrollController _scrollController = ScrollController();
 
   @override
   void initState() {
@@ -38,6 +39,7 @@ class _CustomTestEditorScreenState extends State<CustomTestEditorScreen> {
 
   @override
   void dispose() {
+    _scrollController.dispose();
     _nameCtrl.dispose();
     _customLawNameCtrl.dispose();
     super.dispose();
@@ -138,6 +140,14 @@ class _CustomTestEditorScreenState extends State<CustomTestEditorScreen> {
         questions: [..._draft.questions, CustomQuestionDraft.empty()],
       );
     });
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!_scrollController.hasClients) return;
+      _scrollController.animateTo(
+        _scrollController.position.maxScrollExtent,
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.easeOut,
+      );
+    });
   }
 
   void _removeQuestion(int index) {
@@ -235,6 +245,7 @@ class _CustomTestEditorScreenState extends State<CustomTestEditorScreen> {
       body: _loading
           ? const Center(child: CircularProgressIndicator())
           : ListView(
+              controller: _scrollController,
               padding: const EdgeInsets.all(16),
               children: [
                 Card(

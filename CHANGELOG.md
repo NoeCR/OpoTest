@@ -8,6 +8,13 @@ Este formato sigue una estructura inspirada en [Keep a Changelog](https://keepac
 
 ---
 
+## [1.7.1] - 2026-08-22
+
+### Fixed
+- Al añadir una pregunta en el editor de tests propios, la vista hace scroll automático hasta la nueva pregunta.
+
+---
+
 ## [1.7.0] - 2026-08-22
 
 ### Added
