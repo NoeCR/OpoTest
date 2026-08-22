@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:uuid/uuid.dart';
@@ -49,6 +50,19 @@ class _TestSessionScreenState extends State<TestSessionScreen> {
   Timer? _timer;
   bool _advancing = false;
   Set<int> _markedIndices = {};
+  final Map<int, ScrollController> _scrollControllers = {};
+
+  bool get _useSwipeNavigation {
+    if (kIsWeb) return false;
+    return defaultTargetPlatform == TargetPlatform.android ||
+        defaultTargetPlatform == TargetPlatform.iOS;
+  }
+
+  bool get _showQuestionNavButtons => widget.reviewMode || !_useSwipeNavigation;
+
+  ScrollController _scrollControllerFor(int index) {
+    return _scrollControllers.putIfAbsent(index, ScrollController.new);
+  }
 
   bool get _hasTimeLimit => !widget.reviewMode && widget.durationMinutes > 0;
   int get _timeLimitSeconds => widget.durationMinutes * 60;
@@ -77,10 +91,17 @@ class _TestSessionScreenState extends State<TestSessionScreen> {
   void dispose() {
     _timer?.cancel();
     _pageController.dispose();
+    for (final controller in _scrollControllers.values) {
+      controller.dispose();
+    }
     super.dispose();
   }
 
   bool get showClarification => widget.reviewMode || !widget.examSimulation;
+
+  bool get _hasAnsweredQuestions => answers.values.any((v) => v > 0);
+
+  int get _answeredCount => answers.values.where((v) => v > 0).length;
 
   Future<void> _loadMarkedQuestions() async {
     final user = context.read<AppState>().activeUser;
@@ -111,6 +132,14 @@ class _TestSessionScreenState extends State<TestSessionScreen> {
     }
   }
 
+  void _onPageChanged(int index) {
+    setState(() => currentIndex = index);
+    final controller = _scrollControllers[index];
+    if (controller?.hasClients ?? false) {
+      controller!.jumpTo(0);
+    }
+  }
+
   void _goToQuestion(int index, {bool animate = true}) {
     if (index < 0 || index >= widget.test.questions.length) return;
     setState(() => currentIndex = index);
@@ -131,16 +160,19 @@ class _TestSessionScreenState extends State<TestSessionScreen> {
     if (widget.reviewMode || _advancing) return;
 
     final index = currentIndex;
+    final isLast = index >= widget.test.questions.length - 1;
     setState(() => answers[index] = option);
-
-    if (index >= widget.test.questions.length - 1) return;
 
     _advancing = true;
     final delay = widget.examSimulation ? Duration.zero : const Duration(milliseconds: 450);
-    Future.delayed(delay, () {
+    Future.delayed(delay, () async {
       if (!mounted) return;
       _advancing = false;
-      _goToQuestion(index + 1);
+      if (isLast) {
+        await _confirmFinish();
+      } else {
+        _goToQuestion(index + 1);
+      }
     });
   }
 
@@ -150,21 +182,25 @@ class _TestSessionScreenState extends State<TestSessionScreen> {
       return;
     }
 
-    final unanswered = widget.test.questions.length -
-        answers.values.where((v) => v > 0).length;
+    final unanswered = widget.test.questions.length - _answeredCount;
 
     final proceed = await showDialog<bool>(
       context: context,
       builder: (ctx) => AlertDialog(
-        title: const Text('Finalizar test'),
+        title: Text(unanswered == widget.test.questions.length ? 'Salir del test' : 'Finalizar test'),
         content: Text(
-          unanswered > 0
-              ? 'Quedan $unanswered preguntas sin responder. ¿Quieres finalizar y ver los resultados?'
-              : '¿Quieres finalizar y ver los resultados?',
+          unanswered == widget.test.questions.length
+              ? 'No has respondido ninguna pregunta. El intento no se guardará.'
+              : unanswered > 0
+                  ? 'Quedan $unanswered preguntas sin responder. ¿Quieres finalizar y ver los resultados?'
+                  : '¿Quieres finalizar y ver los resultados?',
         ),
         actions: [
           TextButton(onPressed: () => Navigator.pop(ctx, false), child: const Text('Continuar')),
-          FilledButton(onPressed: () => Navigator.pop(ctx, true), child: const Text('Finalizar')),
+          FilledButton(
+            onPressed: () => Navigator.pop(ctx, true),
+            child: Text(unanswered == widget.test.questions.length ? 'Salir' : 'Finalizar'),
+          ),
         ],
       ),
     );
@@ -175,6 +211,15 @@ class _TestSessionScreenState extends State<TestSessionScreen> {
   Future<void> _finish({bool force = false}) async {
     _timer?.cancel();
     if (!widget.reviewMode) {
+      if (!_hasAnsweredQuestions) {
+        if (!mounted) return;
+        Navigator.of(context).pop();
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Test descartado: no se guardan intentos sin respuestas.')),
+        );
+        return;
+      }
+
       final result = TestScoring.score(
         questions: widget.test.questions,
         answers: answers,
@@ -209,96 +254,116 @@ class _TestSessionScreenState extends State<TestSessionScreen> {
     }
   }
 
+  Widget _buildQuestionNavigationRow(int index) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        OutlinedButton.icon(
+          onPressed: index > 0 ? () => _goToQuestion(index - 1) : null,
+          icon: const Icon(Icons.chevron_left),
+          label: const Text('Anterior'),
+        ),
+        OutlinedButton.icon(
+          onPressed: index < widget.test.questions.length - 1
+              ? () => _goToQuestion(index + 1)
+              : null,
+          icon: const Icon(Icons.chevron_right),
+          label: const Text('Siguiente'),
+        ),
+      ],
+    );
+  }
+
   Widget _buildQuestionPage(int index) {
     final q = widget.test.questions[index];
     final selected = answers[index];
 
-    return ListView(
-      key: PageStorageKey<int>(index),
-      padding: const EdgeInsets.all(16),
-      children: [
-        Card(
-          child: Padding(
-            padding: const EdgeInsets.all(16),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return SingleChildScrollView(
+          controller: _scrollControllerFor(index),
+          padding: const EdgeInsets.all(16),
+          child: ConstrainedBox(
+            constraints: BoxConstraints(minHeight: constraints.maxHeight),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Expanded(
-                      child: Text(
-                        '${q.order}. ${q.text}',
-                        style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w600, height: 1.35),
-                      ),
-                    ),
-                    IconButton(
-                      tooltip: _markedIndices.contains(index)
-                          ? 'Quitar de revisión'
-                          : 'Marcar para revisión',
-                      visualDensity: VisualDensity.compact,
-                      padding: EdgeInsets.zero,
-                      constraints: const BoxConstraints(minWidth: 36, minHeight: 36),
-                      onPressed: () => _toggleMarked(index),
-                      icon: Icon(
-                        _markedIndices.contains(index)
-                            ? Icons.bookmark_rounded
-                            : Icons.bookmark_outline_rounded,
-                        color: _markedIndices.contains(index)
-                            ? AppTheme.accentOrange
-                            : Colors.grey.shade500,
-                      ),
-                    ),
-                  ],
-                ),
-                if (showClarification && q.clarificationHtml.isNotEmpty)
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: TextButton.icon(
-                      onPressed: () => showModalBottomSheet(
-                        context: context,
-                        isScrollControlled: true,
-                        backgroundColor: Colors.white,
-                        shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+                Card(
+                  child: Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Expanded(
+                              child: Text(
+                                '${q.order}. ${q.text}',
+                                style: const TextStyle(
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.w600,
+                                  height: 1.35,
+                                ),
+                              ),
+                            ),
+                            IconButton(
+                              tooltip: _markedIndices.contains(index)
+                                  ? 'Quitar de revisión'
+                                  : 'Marcar para revisión',
+                              visualDensity: VisualDensity.compact,
+                              padding: EdgeInsets.zero,
+                              constraints: const BoxConstraints(minWidth: 36, minHeight: 36),
+                              onPressed: () => _toggleMarked(index),
+                              icon: Icon(
+                                _markedIndices.contains(index)
+                                    ? Icons.bookmark_rounded
+                                    : Icons.bookmark_outline_rounded,
+                                color: _markedIndices.contains(index)
+                                    ? AppTheme.accentOrange
+                                    : Colors.grey.shade500,
+                              ),
+                            ),
+                          ],
                         ),
-                        builder: (_) => ClarificationSheet(html: q.clarificationHtml),
-                      ),
-                      icon: const Icon(Icons.info_outline, size: 18),
-                      label: const Text('Nota aclaratoria'),
+                        if (showClarification && q.clarificationHtml.isNotEmpty)
+                          Align(
+                            alignment: Alignment.centerLeft,
+                            child: TextButton.icon(
+                              onPressed: () => showModalBottomSheet(
+                                context: context,
+                                isScrollControlled: true,
+                                backgroundColor: Colors.white,
+                                shape: const RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+                                ),
+                                builder: (_) => ClarificationSheet(html: q.clarificationHtml),
+                              ),
+                              icon: const Icon(Icons.info_outline, size: 18),
+                              label: const Text('Nota aclaratoria'),
+                            ),
+                          ),
+                      ],
                     ),
                   ),
+                ),
+                const SizedBox(height: 12),
+                for (var i = 0; i < q.answers.length; i++)
+                  _AnswerTile(
+                    text: q.answers[i],
+                    selected: selected == i + 1,
+                    state: _answerState(q, i + 1, selected),
+                    onTap: () => _select(i + 1),
+                  ),
+                if (_showQuestionNavButtons) ...[
+                  const SizedBox(height: 8),
+                  _buildQuestionNavigationRow(index),
+                ],
               ],
             ),
           ),
-        ),
-        const SizedBox(height: 12),
-        for (var i = 0; i < q.answers.length; i++)
-          _AnswerTile(
-            text: q.answers[i],
-            selected: selected == i + 1,
-            state: _answerState(q, i + 1, selected),
-            onTap: () => _select(i + 1),
-          ),
-        if (widget.reviewMode)
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              OutlinedButton.icon(
-                onPressed: index > 0 ? () => _goToQuestion(index - 1) : null,
-                icon: const Icon(Icons.chevron_left),
-                label: const Text('Anterior'),
-              ),
-              OutlinedButton.icon(
-                onPressed: index < widget.test.questions.length - 1
-                    ? () => _goToQuestion(index + 1)
-                    : null,
-                icon: const Icon(Icons.chevron_right),
-                label: const Text('Siguiente'),
-              ),
-            ],
-          ),
-      ],
+        );
+      },
     );
   }
 
@@ -332,7 +397,7 @@ class _TestSessionScreenState extends State<TestSessionScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final completed = answers.values.where((v) => v > 0).length;
+    final completed = _answeredCount;
     final progress = (currentIndex + 1) / widget.test.questions.length;
 
     return PopScope(
@@ -429,9 +494,11 @@ class _TestSessionScreenState extends State<TestSessionScreen> {
             Expanded(
               child: PageView.builder(
                 controller: _pageController,
-                physics: const PageScrollPhysics(),
+                physics: _useSwipeNavigation
+                    ? const PageScrollPhysics()
+                    : const NeverScrollableScrollPhysics(),
                 itemCount: widget.test.questions.length,
-                onPageChanged: (index) => setState(() => currentIndex = index),
+                onPageChanged: _onPageChanged,
                 itemBuilder: (_, index) => _buildQuestionPage(index),
               ),
             ),

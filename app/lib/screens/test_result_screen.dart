@@ -30,10 +30,8 @@ class TestResultScreen extends StatelessWidget {
   }
 
   String _scoreLabel(Result result) {
-    final net = result.netScore == result.netScore.roundToDouble()
-        ? result.netScore.round().toString()
-        : result.netScore.toString();
-    return '$net · ${result.percentScore.round()}%';
+    final grade = TestScoring.formatGrade(result.netScore);
+    return '$grade/10 · ${result.percentScore.round()}%';
   }
 
   AnswerCellState _cellState(Question q, int? a) {
@@ -63,7 +61,7 @@ class TestResultScreen extends StatelessWidget {
                   child: Column(
                     children: [
                       const Text(
-                        'Nota neta',
+                        'Nota',
                         style: TextStyle(color: Colors.black54, fontSize: 12, fontWeight: FontWeight.w600),
                       ),
                       const SizedBox(height: 4),

@@ -14,7 +14,7 @@ void main() {
   group('TestScoring', () {
     final questions = List.generate(4, (i) => _q(i + 1, solution: 1));
 
-    test('sin penalización cuenta aciertos netos', () {
+    test('sin penalización: nota sobre 10 proporcional a aciertos netos', () {
       final result = TestScoring.score(
         questions: questions,
         answers: {0: 1, 1: 1, 2: 2, 3: 0},
@@ -24,7 +24,7 @@ void main() {
       expect(result.correct, 2);
       expect(result.incorrect, 1);
       expect(result.unanswered, 1);
-      expect(result.netScore, 2.0);
+      expect(result.netScore, 5.0);
       expect(result.percentScore, 50.0);
     });
 
@@ -37,8 +37,8 @@ void main() {
 
       expect(result.correct, 1);
       expect(result.incorrect, 3);
-      expect(result.netScore, 0.3);
-      expect(result.percentScore, 6.3);
+      expect(result.netScore, closeTo(0.6, 0.1));
+      expect(result.percentScore, closeTo(6.3, 0.1));
     });
 
     test('penalización 0.33 (formato 33)', () {
@@ -50,7 +50,7 @@ void main() {
 
       expect(result.correct, 2);
       expect(result.incorrect, 2);
-      expect(result.netScore, closeTo(1.3, 0.01));
+      expect(result.netScore, closeTo(3.3, 0.1));
       expect(result.percentScore, closeTo(33.3, 0.1));
     });
 
@@ -63,7 +63,7 @@ void main() {
 
       expect(result.correct, 2);
       expect(result.incorrect, 2);
-      expect(result.netScore, 1.0);
+      expect(result.netScore, 2.5);
       expect(result.percentScore, 25.0);
     });
 
@@ -80,15 +80,36 @@ void main() {
       expect(result.percentScore, 0.0);
     });
 
-    test('test perfecto alcanza 100%', () {
+    test('test perfecto alcanza 10/10 y 100%', () {
       final result = TestScoring.score(
         questions: questions,
         answers: {0: 1, 1: 1, 2: 1, 3: 1},
         errorFormat: 100,
       );
 
+      expect(result.netScore, 10.0);
       expect(result.percentScore, 100.0);
       expect(result.unanswered, 0);
+    });
+
+    test('misma proporción de aciertos da la misma nota con distinto nº de preguntas', () {
+      final short = TestScoring.score(
+        questions: List.generate(4, (i) => _q(i + 1)),
+        answers: {0: 1, 1: 1, 2: 2, 3: 2},
+        errorFormat: 0,
+      );
+      final long = TestScoring.score(
+        questions: List.generate(20, (i) => _q(i + 1)),
+        answers: Map.fromIterables(
+          List.generate(20, (i) => i),
+          [...List.filled(10, 1), ...List.filled(10, 2)],
+        ),
+        errorFormat: 0,
+      );
+
+      expect(short.netScore, 5.0);
+      expect(long.netScore, 5.0);
+      expect(short.percentScore, long.percentScore);
     });
 
     test('lista vacía devuelve cero', () {
@@ -98,8 +119,20 @@ void main() {
         errorFormat: 100,
       );
 
+      expect(result.netScore, 0.0);
       expect(result.percentScore, 0.0);
       expect(result.unanswered, 0);
+    });
+
+    test('gradeOnTen usa percent en intentos antiguos con netScore bruto', () {
+      expect(
+        TestScoring.gradeOnTen(netScore: 80, percentScore: 80),
+        8.0,
+      );
+      expect(
+        TestScoring.gradeOnTen(netScore: 7.5, percentScore: 75),
+        7.5,
+      );
     });
   });
 }

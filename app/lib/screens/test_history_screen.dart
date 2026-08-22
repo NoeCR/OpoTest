@@ -235,9 +235,11 @@ class _HistoryTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final net = attempt.netScore == attempt.netScore.roundToDouble()
-        ? attempt.netScore.round().toString()
-        : attempt.netScore.toString();
+    final grade = TestScoring.gradeOnTen(
+      netScore: attempt.netScore,
+      percentScore: attempt.percentScore,
+    );
+    final gradeLabel = TestScoring.formatGrade(grade);
 
     return Material(
       color: Colors.transparent,
@@ -292,7 +294,7 @@ class _HistoryTile extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Text(
-                    'Nota $net',
+                    'Nota $gradeLabel/10',
                     style: const TextStyle(fontWeight: FontWeight.bold, color: AppTheme.cardDark),
                   ),
                   Text(

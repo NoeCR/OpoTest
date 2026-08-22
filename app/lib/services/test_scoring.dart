@@ -1,6 +1,21 @@
 import '../models/question.dart';
 
 class TestScoring {
+  static const maxGrade = 10.0;
+
+  /// Nota sobre 10 a partir de valores guardados (compatible con intentos antiguos).
+  static double gradeOnTen({required double netScore, required double percentScore}) {
+    if (netScore >= 0 && netScore <= maxGrade) return netScore;
+    return (percentScore / 10).clamp(0, maxGrade);
+  }
+
+  static String formatGrade(double grade) {
+    final rounded = double.parse(grade.toStringAsFixed(1));
+    return rounded == rounded.roundToDouble()
+        ? rounded.round().toString()
+        : rounded.toStringAsFixed(1);
+  }
+
   static Result score({
     required List<Question> questions,
     required Map<int, int> answers,
@@ -19,30 +34,32 @@ class TestScoring {
         incorrect++;
       }
     }
-    var net = correct.toDouble();
+    var rawNet = correct.toDouble();
     switch (errorFormat) {
       case 25:
-        net -= incorrect / 4;
+        rawNet -= incorrect / 4;
         break;
       case 33:
-        net -= incorrect / 3;
+        rawNet -= incorrect / 3;
         break;
       case 50:
-        net -= incorrect / 2;
+        rawNet -= incorrect / 2;
         break;
       case 100:
-        net -= incorrect;
+        rawNet -= incorrect;
         break;
     }
-    if (net < 0) net = 0;
+    if (rawNet < 0) rawNet = 0;
     final total = questions.length;
-    final percent = total == 0 ? 0.0 : (net / total) * 100;
+    final ratio = total == 0 ? 0.0 : (rawNet / total).clamp(0.0, 1.0);
+    final netScore = double.parse((ratio * maxGrade).toStringAsFixed(1));
+    final percentScore = double.parse((ratio * 100).toStringAsFixed(1));
     return Result(
       correct: correct,
       incorrect: incorrect,
       unanswered: total - answered,
-      netScore: double.parse(net.toStringAsFixed(1)),
-      percentScore: double.parse(percent.toStringAsFixed(1)),
+      netScore: netScore,
+      percentScore: percentScore,
     );
   }
 }

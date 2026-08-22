@@ -8,6 +8,21 @@ Este formato sigue una estructura inspirada en [Keep a Changelog](https://keepac
 
 ---
 
+## [1.6.5] - 2026-08-22
+
+### Added
+- Botones Anterior/Siguiente en tests en escritorio (Windows/macOS/Linux/web).
+- Diálogo automático al responder la última pregunta de un test.
+
+### Changed
+- Nota normalizada de 0 a 10, independiente del número de preguntas del test.
+
+### Fixed
+- Scroll al volver a preguntas anteriores en móvil durante un test.
+- Los intentos sin ninguna respuesta ya no se guardan ni aparecen en historial o medias.
+
+---
+
 ## [1.6.4] - 2026-08-20
 
 ### Added
