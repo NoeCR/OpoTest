@@ -8,6 +8,13 @@ Este formato sigue una estructura inspirada en [Keep a Changelog](https://keepac
 
 ---
 
+## [1.7.2] - 2026-08-23
+
+### Changed
+- El pie de Configuración muestra la versión y el número de build de la app.
+
+---
+
 ## [1.7.1] - 2026-08-22
 
 ### Fixed

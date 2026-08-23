@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:provider/provider.dart';
 
 import '../database/app_database.dart';
@@ -9,6 +10,7 @@ import '../services/sync_service.dart';
 import '../services/test_preferences.dart';
 import '../state/app_state.dart';
 import '../theme/app_theme.dart';
+import '../utils/app_version.dart';
 import '../utils/user_facing_error.dart';
 import '../widgets/app_decorations.dart';
 
@@ -23,11 +25,32 @@ class _SettingsScreenState extends State<SettingsScreen> {
   final _pathController = TextEditingController();
   String? status;
   bool _importing = false;
+  String? _appVersionLabel;
 
   @override
   void initState() {
     super.initState();
     _loadDefaultPath();
+    _loadAppVersion();
+  }
+
+  Future<void> _loadAppVersion() async {
+    try {
+      final info = await PackageInfo.fromPlatform();
+      if (!mounted) return;
+      setState(() {
+        _appVersionLabel = formatAppVersionLabel(
+          version: info.version,
+          buildNumber: info.buildNumber,
+        );
+      });
+    } catch (_) {
+      if (!mounted) return;
+      setState(() => _appVersionLabel = formatAppVersionLabel(
+            version: '',
+            buildNumber: '',
+          ));
+    }
   }
 
   Future<void> _loadDefaultPath() async {
@@ -202,10 +225,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   ),
                 ],
                 const SizedBox(height: 24),
-                const Text(
-                  'Las opciones de test se aplican a todos los tests. El temario y el progreso viven en local.',
-                  style: TextStyle(color: Colors.black45, height: 1.4),
-                ),
+                if (_appVersionLabel != null)
+                  Text(
+                    _appVersionLabel!,
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(color: Colors.black45, height: 1.4),
+                  ),
               ],
             ),
           ),
