@@ -1,13 +1,13 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:testea_local/features/random_tests/application/random_test_service.dart';
-import 'package:testea_local/features/random_tests/application/strategies/classic_random_test_strategy.dart';
-import 'package:testea_local/features/random_tests/application/strategies/marked_review_random_test_strategy.dart';
-import 'package:testea_local/features/random_tests/application/strategies/mixed_random_test_strategy.dart';
-import 'package:testea_local/features/random_tests/application/strategies/most_errors_random_test_strategy.dart';
-import 'package:testea_local/features/random_tests/application/strategies/practiced_random_test_strategy.dart';
-import 'package:testea_local/features/random_tests/application/strategies/reinforcement_random_test_strategy.dart';
-import 'package:testea_local/features/random_tests/domain/random_test_mode.dart';
-import 'package:testea_local/models/local_user.dart';
+import 'package:opotest/features/random_tests/application/random_test_service.dart';
+import 'package:opotest/features/random_tests/application/strategies/classic_random_test_strategy.dart';
+import 'package:opotest/features/random_tests/application/strategies/marked_review_random_test_strategy.dart';
+import 'package:opotest/features/random_tests/application/strategies/mixed_random_test_strategy.dart';
+import 'package:opotest/features/random_tests/application/strategies/most_errors_random_test_strategy.dart';
+import 'package:opotest/features/random_tests/application/strategies/practiced_random_test_strategy.dart';
+import 'package:opotest/features/random_tests/application/strategies/reinforcement_random_test_strategy.dart';
+import 'package:opotest/features/random_tests/domain/random_test_mode.dart';
+import 'package:opotest/models/local_user.dart';
 
 import '../../helpers/database_helper.dart';
 import 'random_test_context_helper.dart';

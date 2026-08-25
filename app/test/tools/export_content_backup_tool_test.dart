@@ -3,10 +3,10 @@ import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:path/path.dart' as p;
-import 'package:testea_local/database/app_database.dart';
-import 'package:testea_local/features/backup/data/content_backup_repository_impl.dart';
-import 'package:testea_local/features/backup/domain/backup_validation.dart';
-import 'package:testea_local/services/content_importer.dart';
+import 'package:opotest/database/app_database.dart';
+import 'package:opotest/features/backup/data/content_backup_repository_impl.dart';
+import 'package:opotest/features/backup/domain/backup_validation.dart';
+import 'package:opotest/services/content_importer.dart';
 
 /// Ejecutar con:
 ///   flutter test test/tools/export_content_backup_tool_test.dart

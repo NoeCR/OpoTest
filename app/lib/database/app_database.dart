@@ -16,6 +16,8 @@ import '../utils/qmap.dart';
 class AppDatabase {
   static const testSourceOfficial = 'official';
   static const testSourceCustom = 'custom';
+  static const _databaseFileName = 'opotest.db';
+  static const _legacyDatabaseFileName = 'testea_local.db';
   static Database? _db;
 
   static Future<void> init() async {
@@ -25,7 +27,8 @@ class AppDatabase {
     }
     if (_db != null) return;
     final dir = await getApplicationDocumentsDirectory();
-    final path = p.join(dir.path, 'testea_local.db');
+    final path = p.join(dir.path, _databaseFileName);
+    await _migrateLegacyDatabaseIfNeeded(dir.path);
     _db = await _openDatabase(path);
   }
 
@@ -42,6 +45,17 @@ class AppDatabase {
   static Future<void> disposeForTest() async {
     await _db?.close();
     _db = null;
+  }
+
+  static Future<void> _migrateLegacyDatabaseIfNeeded(String dirPath) async {
+    final current = File(p.join(dirPath, _databaseFileName));
+    final legacy = File(p.join(dirPath, _legacyDatabaseFileName));
+    if (current.existsSync() || !legacy.existsSync()) return;
+    try {
+      await legacy.rename(current.path);
+    } catch (e) {
+      debugPrint('No se pudo migrar la base local antigua: $e');
+    }
   }
 
   static Future<Database> _openDatabase(String path) {

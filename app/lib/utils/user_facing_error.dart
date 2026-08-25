@@ -5,12 +5,14 @@ import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
 import '../features/backup/domain/backup_validation.dart';
+import '../features/progress_sync/domain/progress_sync_exception.dart';
 
 enum UserErrorContext {
   bootstrap,
   import,
   sync,
   backup,
+  progressSync,
   general,
 }
 
@@ -22,7 +24,13 @@ class UserFacingError {
     Object error, {
     UserErrorContext context = UserErrorContext.general,
   }) {
-    if (error is BackupValidationException) return error.message;
+    if (error is ProgressSyncException) {
+      if (error.cancelled) return 'Inicio de sesión cancelado.';
+      return error.message;
+    }
+    if (error is BackupValidationException) {
+      return error.message;
+    }
 
     final raw = _rawMessage(error);
     final mapped = _mapKnownError(raw, error, context);
@@ -73,6 +81,8 @@ class UserFacingError {
       return switch (context) {
         UserErrorContext.sync => 'No se pudo contactar con el servidor de actualizaciones. '
             'Comprueba tu conexión a internet e inténtalo de nuevo.',
+        UserErrorContext.progressSync => 'No se pudo conectar con Google Drive. '
+            'Comprueba tu conexión a internet e inténtalo de nuevo.',
         _ => 'No hay conexión a internet o el servidor no responde. Inténtalo de nuevo.',
       };
     }
@@ -80,6 +90,7 @@ class UserFacingError {
     if (error is TimeoutException || lower.contains('timeout') || lower.contains('tiempo de espera')) {
       return switch (context) {
         UserErrorContext.sync => 'La comprobación de actualizaciones tardó demasiado. Inténtalo de nuevo.',
+        UserErrorContext.progressSync => 'La sincronización con Google Drive tardó demasiado. Inténtalo de nuevo.',
         _ => 'La operación tardó demasiado. Comprueba tu conexión e inténtalo de nuevo.',
       };
     }
@@ -167,6 +178,7 @@ class UserFacingError {
       UserErrorContext.import => 'No se pudo importar el temario. Inténtalo de nuevo desde Configuración.',
       UserErrorContext.sync => 'No se pudo comprobar actualizaciones. Inténtalo de nuevo más tarde.',
       UserErrorContext.backup => 'No se pudo completar la copia de seguridad. Inténtalo de nuevo.',
+      UserErrorContext.progressSync => 'No se pudo sincronizar el progreso con Google Drive. Inténtalo de nuevo.',
       UserErrorContext.general => 'Ha ocurrido un error inesperado. Inténtalo de nuevo.',
     };
   }

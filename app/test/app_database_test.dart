@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:testea_local/database/app_database.dart';
-import 'package:testea_local/models/local_user.dart';
+import 'package:opotest/database/app_database.dart';
+import 'package:opotest/models/local_user.dart';
 
 import 'helpers/database_helper.dart';
 

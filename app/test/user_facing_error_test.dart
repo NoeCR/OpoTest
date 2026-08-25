@@ -3,8 +3,9 @@ import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
-import 'package:testea_local/features/backup/domain/backup_validation.dart';
-import 'package:testea_local/utils/user_facing_error.dart';
+import 'package:opotest/features/backup/domain/backup_validation.dart';
+import 'package:opotest/features/progress_sync/domain/progress_sync_exception.dart';
+import 'package:opotest/utils/user_facing_error.dart';
 
 void main() {
   group('UserFacingError', () {
@@ -57,6 +58,25 @@ void main() {
       );
       expect(text, contains('No se encontró el temario'));
       expect(text, isNot(contains('push-data-android')));
+    });
+
+    test('usa el mensaje de ProgressSyncException', () {
+      expect(
+        UserFacingError.message(
+          ProgressSyncException('Faltan las credenciales de Google.'),
+          context: UserErrorContext.progressSync,
+        ),
+        'Faltan las credenciales de Google.',
+      );
+    });
+
+    test('mapea SocketException en progressSync', () {
+      final text = UserFacingError.message(
+        const SocketException('Failed host lookup: www.googleapis.com'),
+        context: UserErrorContext.progressSync,
+      );
+      expect(text, contains('Google Drive'));
+      expect(text, isNot(contains('SocketException')));
     });
 
     test('usa mensaje de BackupValidationException', () {

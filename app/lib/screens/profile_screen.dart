@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import '../database/app_database.dart';
 import '../navigation/app_navigation.dart';
 import '../features/backup/application/progress_backup_service.dart';
+import '../features/progress_sync/presentation/google_sync_section.dart';
 import '../state/app_state.dart';
 import '../theme/app_theme.dart';
 import '../widgets/app_decorations.dart';
@@ -54,7 +55,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       body: ListView(
         padding: EdgeInsets.zero,
         children: [
-          const GradientHeader(title: 'Perfil', subtitle: 'Cuenta local · sin servidor'),
+          const GradientHeader(title: 'Perfil', subtitle: 'Cuenta local · sync opcional con Google'),
           const SizedBox(height: 16),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -88,6 +89,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ],
               ],
             ),
+          ),
+          const SizedBox(height: 20),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: GoogleSyncSection(onMessage: (message) {
+              _loadStats();
+              if (!context.mounted) return;
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message)));
+            }),
           ),
           const SizedBox(height: 20),
           Padding(

@@ -44,6 +44,7 @@ Luego reinicia la app o usa la importación desde Configuración.
 - Resultados con métricas (aciertos, fallos, sin responder, tiempo).
 - Notas aclaratorias con render HTML.
 - Persistencia local de progreso por usuario.
+- Sincronización opcional del progreso con Google Drive (misma cuenta en Windows, tablet y móvil). Ver `docs/google-drive-sync.md`.
 
 ## Estructura del repositorio
 

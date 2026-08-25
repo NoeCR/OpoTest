@@ -9,6 +9,7 @@ import '../database/app_database.dart';
 import '../models/local_user.dart';
 import '../models/question.dart';
 import '../services/test_scoring.dart';
+import '../features/progress_sync/application/progress_sync_service.dart';
 import '../navigation/app_navigation.dart';
 import '../state/app_state.dart';
 import '../theme/app_theme.dart';
@@ -242,6 +243,7 @@ class _TestSessionScreenState extends State<TestSessionScreen> {
       await context.read<AppDatabase>().saveAttempt(attempt);
       if (!mounted) return;
       context.read<AppState>().notifyProgressChanged();
+      unawaited(context.read<ProgressSyncService>().syncIfSignedIn());
       context.pushReplacementPage(
         TestResultScreen(
           test: widget.test,

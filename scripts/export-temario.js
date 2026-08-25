@@ -1,5 +1,5 @@
 /**
- * Exporta el temario completo de Testea desde la API pública.
+ * Exporta el temario completo desde la API de origen.
  * Uso: node scripts/export-temario.js [--resume] [--concurrency=8]
  */
 const fs = require('fs');
@@ -312,7 +312,7 @@ async function buildManifest(ids, progress) {
 }
 
 async function main() {
-  console.log('=== Testea temario export ===\n');
+  console.log('=== Exportación de temario ===\n');
   const ids = await exportHierarchy();
   const progress = await exportTests(ids);
   await buildManifest(ids, progress);

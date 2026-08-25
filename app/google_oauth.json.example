@@ -1,0 +1,5 @@
+{
+  "desktop_client_id": "TU_ID.apps.googleusercontent.com",
+  "desktop_client_secret": "GOCSPX-TU_SECRET",
+  "server_client_id": "TU_ID_WEB.apps.googleusercontent.com"
+}

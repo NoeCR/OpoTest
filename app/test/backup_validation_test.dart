@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:testea_local/app_constants.dart';
-import 'package:testea_local/features/backup/domain/backup_validation.dart';
+import 'package:opotest/app_constants.dart';
+import 'package:opotest/features/backup/domain/backup_validation.dart';
 
 void main() {
   group('validateContentBackup', () {
@@ -15,8 +15,11 @@ void main() {
       expect(() => validateContentBackup(valid()), returnsNormally);
     });
 
-    test('acepta id legacy testea_local', () {
-      expect(() => validateContentBackup(valid(app: 'testea_local')), returnsNormally);
+    test('acepta id de backups antiguos', () {
+      expect(
+        () => validateContentBackup(valid(app: AppConstants.legacyIds.first)),
+        returnsNormally,
+      );
     });
 
     test('rechaza app desconocida', () {

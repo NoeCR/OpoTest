@@ -3,8 +3,8 @@ import 'dart:convert';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/testing.dart';
-import 'package:testea_local/database/app_database.dart';
-import 'package:testea_local/services/sync_service.dart';
+import 'package:opotest/database/app_database.dart';
+import 'package:opotest/services/sync_service.dart';
 
 import 'helpers/database_helper.dart';
 

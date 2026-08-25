@@ -1,6 +1,6 @@
 # Captura screenshots y tráfico HTTPS en emulador Android (Windows)
-# Ejecutar SIEMPRE desde testea-local:
-#   cd testea-local
+# Ejecutar SIEMPRE desde OpoTest:
+#   cd OpoTest
 #   .\scripts\emulator-capture.ps1 -StopProxy
 # O con ruta completa:
 #   & "$PSScriptRoot\emulator-capture.ps1" -StopProxy

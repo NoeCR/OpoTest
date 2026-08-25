@@ -2,9 +2,9 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:testea_local/app_constants.dart';
-import 'package:testea_local/models/local_user.dart';
-import 'package:testea_local/services/progress_export_service.dart';
+import 'package:opotest/app_constants.dart';
+import 'package:opotest/models/local_user.dart';
+import 'package:opotest/services/progress_export_service.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();

@@ -1,5 +1,5 @@
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:testea_local/database/app_database.dart';
+import 'package:opotest/database/app_database.dart';
 
 Future<AppDatabase> setUpTestDatabase() async {
   SharedPreferences.setMockInitialValues({});

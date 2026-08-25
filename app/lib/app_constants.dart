@@ -2,8 +2,9 @@
 abstract final class AppConstants {
   static const name = 'OpoTest';
   static const id = 'opotest';
+  static const androidApplicationId = 'com.opotest.app';
 
-  /// IDs aceptados al importar backups generados antes del rebrand.
+  /// IDs aceptados al importar backups anteriores al rebrand.
   static const legacyIds = {'testea_local'};
 }
 

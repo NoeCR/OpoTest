@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:testea_local/models/content_kind.dart';
-import 'package:testea_local/models/test_options.dart';
+import 'package:opotest/models/content_kind.dart';
+import 'package:opotest/models/test_options.dart';
 
 void main() {
   group('ContentKind', () {

@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:testea_local/utils/qmap.dart';
+import 'package:opotest/utils/qmap.dart';
 
 void main() {
   group('qmap utils', () {

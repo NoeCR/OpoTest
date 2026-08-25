@@ -5,3 +5,5 @@ capture/traffic.flow
 capture/requests.jsonl
 releases/*.apk
 releases/OpoTest-content*.json
+app/google_oauth.json
+google_oauth.json
