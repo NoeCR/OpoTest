@@ -20,6 +20,10 @@ class AppState extends ChangeNotifier {
   List<Map<String, dynamic>> laws = [];
   String? importStatus;
 
+  /// Sube cada vez que cambia el progreso (intentos, perfil, importación).
+  /// Las pantallas de legislación lo usan para recargar contadores al volver atrás.
+  int progressGeneration = 0;
+
   bool get contentReady => laws.isNotEmpty && (lastImport?.tests ?? 0) > 0;
 
   Future<void> bootstrap() async {
@@ -180,6 +184,11 @@ class AppState extends ChangeNotifier {
   Future<void> selectUser(LocalUser user) async {
     activeUser = user;
     await _db.setActiveUserId(user.id);
+    notifyProgressChanged();
+  }
+
+  void notifyProgressChanged() {
+    progressGeneration++;
     notifyListeners();
   }
 
@@ -192,6 +201,6 @@ class AppState extends ChangeNotifier {
       activeUser = null;
       await _db.setActiveUserId(null);
     }
-    notifyListeners();
+    notifyProgressChanged();
   }
 }

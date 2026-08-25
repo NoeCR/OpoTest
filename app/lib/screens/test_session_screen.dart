@@ -241,6 +241,7 @@ class _TestSessionScreenState extends State<TestSessionScreen> {
       );
       await context.read<AppDatabase>().saveAttempt(attempt);
       if (!mounted) return;
+      context.read<AppState>().notifyProgressChanged();
       context.pushReplacementPage(
         TestResultScreen(
           test: widget.test,

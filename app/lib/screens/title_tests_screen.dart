@@ -5,6 +5,7 @@ import '../database/app_database.dart';
 import '../models/test_stats.dart';
 import '../services/test_launcher.dart';
 import '../state/app_state.dart';
+import '../state/progress_reload.dart';
 import '../theme/app_theme.dart';
 import '../widgets/app_decorations.dart';
 import '../widgets/test_picker_card.dart';
@@ -31,7 +32,7 @@ class TitleTestsScreen extends StatefulWidget {
   State<TitleTestsScreen> createState() => _TitleTestsScreenState();
 }
 
-class _TitleTestsScreenState extends State<TitleTestsScreen> {
+class _TitleTestsScreenState extends State<TitleTestsScreen> with ProgressReload {
   List<String> _ids = [];
   Map<String, TestStats> _stats = {};
   bool _loading = true;
@@ -40,6 +41,15 @@ class _TitleTestsScreenState extends State<TitleTestsScreen> {
   void initState() {
     super.initState();
     _load();
+  }
+
+  @override
+  void onProgressChanged() {
+    if (_ids.isEmpty) {
+      _load();
+    } else {
+      _reloadStats();
+    }
   }
 
   Future<void> _load() async {

@@ -11,6 +11,7 @@ import '../models/test_stats.dart';
 import '../navigation/app_navigation.dart';
 import '../services/test_launcher.dart';
 import '../state/app_state.dart';
+import '../state/progress_reload.dart';
 import '../theme/app_theme.dart';
 import '../utils/law_sort.dart';
 import '../utils/qmap.dart';
@@ -75,6 +76,9 @@ class _LawsScreenState extends State<LawsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final progressGeneration = context.select<AppState, int>((s) => s.progressGeneration);
+    final userId = context.select<AppState, String?>((s) => s.activeUser?.id);
+
     return Scaffold(
       backgroundColor: AppTheme.pageBlue,
       body: Column(
@@ -87,7 +91,7 @@ class _LawsScreenState extends State<LawsScreen> {
           ),
           Expanded(
             child: FutureBuilder<_LawsListData>(
-              key: ValueKey(_reloadToken),
+              key: ValueKey('$_reloadToken-$progressGeneration-$userId'),
               future: _loadLawsList(),
               builder: (context, snap) {
                 if (snap.connectionState != ConnectionState.done) {
@@ -152,13 +156,16 @@ class _LawsScreenState extends State<LawsScreen> {
                       title: code.isNotEmpty ? code : name,
                       footerLabel: subtitle,
                       progress: progressByLaw[lawId] ?? const ProgressCounts(done: 0, total: 0),
-                      onTap: () => context.pushPage(
-                        LawContentScreen(
-                          lawId: lawId,
-                          lawCode: code,
-                          lawName: name,
-                        ),
-                      ),
+                      onTap: () async {
+                        await context.pushPage(
+                          LawContentScreen(
+                            lawId: lawId,
+                            lawCode: code,
+                            lawName: name,
+                          ),
+                        );
+                        if (mounted) setState(() => _reloadToken++);
+                      },
                     );
                   },
                 );
@@ -194,7 +201,7 @@ class LawContentScreen extends StatefulWidget {
   State<LawContentScreen> createState() => _LawContentScreenState();
 }
 
-class _LawContentScreenState extends State<LawContentScreen> {
+class _LawContentScreenState extends State<LawContentScreen> with ProgressReload {
   ContentKind _kind = ContentKind.tests;
   Set<String> _attempted = {};
   List<Map<String, dynamic>> _titles = [];
@@ -209,6 +216,11 @@ class _LawContentScreenState extends State<LawContentScreen> {
   @override
   void initState() {
     super.initState();
+    _load();
+  }
+
+  @override
+  void onProgressChanged() {
     _load();
   }
 

@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import '../database/app_database.dart';
 import '../navigation/app_navigation.dart';
 import '../state/app_state.dart';
+import '../state/progress_reload.dart';
 import '../theme/app_theme.dart';
 import '../utils/qmap.dart';
 import '../widgets/app_decorations.dart';
@@ -33,7 +34,7 @@ class HierarchyScreen extends StatefulWidget {
   State<HierarchyScreen> createState() => _HierarchyScreenState();
 }
 
-class _HierarchyScreenState extends State<HierarchyScreen> {
+class _HierarchyScreenState extends State<HierarchyScreen> with ProgressReload {
   Set<String> _attempted = {};
 
   bool get _isChapter => widget.chapterId != null;
@@ -49,6 +50,11 @@ class _HierarchyScreenState extends State<HierarchyScreen> {
   @override
   void initState() {
     super.initState();
+    _loadProgress();
+  }
+
+  @override
+  void onProgressChanged() {
     _loadProgress();
   }
 

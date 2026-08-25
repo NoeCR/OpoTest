@@ -8,6 +8,13 @@ Este formato sigue una estructura inspirada en [Keep a Changelog](https://keepac
 
 ---
 
+## [1.7.3] - 2026-08-25
+
+### Fixed
+- El contador de tests realizados en Legislación se actualiza al volver atrás tras completar un test, sin salir a Inicio.
+
+---
+
 ## [1.7.2] - 2026-08-23
 
 ### Changed
