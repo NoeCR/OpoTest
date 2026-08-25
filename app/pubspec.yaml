@@ -1,4 +1,4 @@
-name: testea_local
+name: opotest
 description: OpoTest — temario local con cuentas y progreso en dispositivo.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.

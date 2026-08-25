@@ -1,8 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:testea_local/features/custom_tests/domain/custom_law.dart';
-import 'package:testea_local/features/custom_tests/domain/custom_question_draft.dart';
-import 'package:testea_local/features/custom_tests/domain/custom_test_draft.dart';
-import 'package:testea_local/features/custom_tests/domain/custom_test_validation.dart';
+import 'package:opotest/features/custom_tests/domain/custom_law.dart';
+import 'package:opotest/features/custom_tests/domain/custom_question_draft.dart';
+import 'package:opotest/features/custom_tests/domain/custom_test_draft.dart';
+import 'package:opotest/features/custom_tests/domain/custom_test_validation.dart';
 
 void main() {
   group('validateCustomTestDraft', () {

@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:testea_local/models/law_sort_mode.dart';
-import 'package:testea_local/utils/law_sort.dart';
-import 'package:testea_local/utils/qmap.dart';
+import 'package:opotest/models/law_sort_mode.dart';
+import 'package:opotest/utils/law_sort.dart';
+import 'package:opotest/utils/qmap.dart';
 
 Map<String, dynamic> _law(String id, String code, {int order = 0}) => {
       'id': id,

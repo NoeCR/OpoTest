@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:testea_local/features/custom_tests/presentation/widgets/html_selection.dart';
+import 'package:opotest/features/custom_tests/presentation/widgets/html_selection.dart';
 
 void main() {
   group('wrapHtmlSelection', () {

@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:testea_local/features/random_tests/application/strategies/reinforcement_random_test_strategy.dart';
-import 'package:testea_local/features/random_tests/domain/random_test_mode.dart';
-import 'package:testea_local/models/local_user.dart';
+import 'package:opotest/features/random_tests/application/strategies/reinforcement_random_test_strategy.dart';
+import 'package:opotest/features/random_tests/domain/random_test_mode.dart';
+import 'package:opotest/models/local_user.dart';
 
 import '../../helpers/database_helper.dart';
 import 'random_test_context_helper.dart';

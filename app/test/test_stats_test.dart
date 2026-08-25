@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:testea_local/models/test_stats.dart';
+import 'package:opotest/models/test_stats.dart';
 
 void main() {
   group('TestStats', () {

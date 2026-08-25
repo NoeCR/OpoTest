@@ -1,4 +1,4 @@
-package com.testea.local.testea_local
+package com.opotest.app
 
 import io.flutter.embedding.android.FlutterActivity
 

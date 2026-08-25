@@ -6,6 +6,9 @@ Este formato sigue una estructura inspirada en [Keep a Changelog](https://keepac
 
 ## [Unreleased]
 
+### Changed
+- Identificadores de paquete y binario a OpoTest (`com.opotest.app`). En Android es una instalación distinta: exporta el progreso antes de reinstalar.
+
 ---
 
 ## [1.7.3] - 2026-08-25

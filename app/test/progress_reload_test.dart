@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
-import 'package:testea_local/database/app_database.dart';
-import 'package:testea_local/state/app_state.dart';
-import 'package:testea_local/state/progress_reload.dart';
+import 'package:opotest/database/app_database.dart';
+import 'package:opotest/state/app_state.dart';
+import 'package:opotest/state/progress_reload.dart';
 
 import 'helpers/database_helper.dart';
 

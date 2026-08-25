@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:testea_local/services/test_preferences.dart';
+import 'package:opotest/services/test_preferences.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();

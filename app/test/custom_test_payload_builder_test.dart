@@ -1,9 +1,9 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:testea_local/features/custom_tests/data/custom_test_payload_builder.dart';
-import 'package:testea_local/features/custom_tests/domain/custom_question_draft.dart';
-import 'package:testea_local/features/custom_tests/domain/custom_test_draft.dart';
-import 'package:testea_local/models/content_kind.dart';
-import 'package:testea_local/models/question.dart';
+import 'package:opotest/features/custom_tests/data/custom_test_payload_builder.dart';
+import 'package:opotest/features/custom_tests/domain/custom_question_draft.dart';
+import 'package:opotest/features/custom_tests/domain/custom_test_draft.dart';
+import 'package:opotest/models/content_kind.dart';
+import 'package:opotest/models/question.dart';
 
 void main() {
   const builder = CustomTestPayloadBuilder();

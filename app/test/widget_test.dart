@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:testea_local/models/test_stats.dart';
-import 'package:testea_local/widgets/score_stars.dart';
-import 'package:testea_local/widgets/test_picker_card.dart';
+import 'package:opotest/models/test_stats.dart';
+import 'package:opotest/widgets/score_stars.dart';
+import 'package:opotest/widgets/test_picker_card.dart';
 
 void main() {
   group('ScoreStars widget', () {

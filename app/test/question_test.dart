@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:testea_local/models/question.dart';
+import 'package:opotest/models/question.dart';
 
 void main() {
   group('Question.fromApiMap', () {

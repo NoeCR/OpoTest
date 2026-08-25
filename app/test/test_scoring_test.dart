@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:testea_local/models/question.dart';
-import 'package:testea_local/services/test_scoring.dart';
+import 'package:opotest/models/question.dart';
+import 'package:opotest/services/test_scoring.dart';
 
 Question _q(int order, {int solution = 1}) => Question(
       order: order,

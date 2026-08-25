@@ -1,5 +1,5 @@
 # Copia el temario exportado al emulador/dispositivo Android.
-# Uso (desde testea-local):
+# Uso (desde OpoTest):
 #   .\scripts\push-data-android.ps1
 #   .\scripts\push-data-android.ps1 -Device emulator-5554
 #
@@ -8,7 +8,7 @@
 
 param(
   [string]$Device = "",
-  [string]$Package = "com.testea.local.testea_local"
+  [string]$Package = "com.opotest.app"
 )
 
 $ErrorActionPreference = "Stop"
@@ -26,7 +26,7 @@ if ($Device) { $adbArgs += "-s", $Device }
 Write-Host "Comprobando dispositivo..."
 & adb @adbArgs get-state | Out-Null
 
-$tmp = "/data/local/tmp/testea-data"
+$tmp = "/data/local/tmp/opotest-data"
 Write-Host "Subiendo temario (~30 MB) a $tmp ..."
 & adb @adbArgs push "$data" $tmp
 

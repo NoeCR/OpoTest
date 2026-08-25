@@ -89,12 +89,12 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.testea.local" "\0"
+            VALUE "CompanyName", "OpoTest" "\0"
             VALUE "FileDescription", "OpoTest" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "OpoTest" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2026 com.testea.local. All rights reserved." "\0"
-            VALUE "OriginalFilename", "testea_local.exe" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2026 OpoTest. All rights reserved." "\0"
+            VALUE "OriginalFilename", "OpoTest.exe" "\0"
             VALUE "ProductName", "OpoTest" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END

@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:testea_local/utils/app_version.dart';
+import 'package:opotest/utils/app_version.dart';
 
 void main() {
   group('formatAppVersionLabel', () {
