@@ -366,6 +366,19 @@ class AppDatabase {
     return TestDefinition.fromApiJson(payload);
   }
 
+  Future<String?> getTestLawId(String testId) async {
+    final rows = await db.query(
+      'tests',
+      columns: ['law_id'],
+      where: 'id = ?',
+      whereArgs: [testId],
+      limit: 1,
+    );
+    if (rows.isEmpty) return null;
+    final lawId = rows.first['law_id']?.toString() ?? '';
+    return lawId.isEmpty ? null : lawId;
+  }
+
   Future<Map<String, dynamic>?> getChapterPayload(String lawId, String titleId, String chapterId) async {
     final base = await getSyncMeta('content_path');
     if (base == null) return null;

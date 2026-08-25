@@ -34,6 +34,17 @@ class BackupFileIo {
     return exportsDir;
   }
 
+  Future<BackupWriteResult> writeText({
+    required String fileName,
+    required String contents,
+    Directory? targetDir,
+  }) async {
+    final exportsDir = targetDir ?? await this.exportsDir();
+    final file = File(p.join(exportsDir.path, fileName));
+    await file.writeAsString(contents);
+    return BackupWriteResult(file: file, filePath: file.path);
+  }
+
   Future<BackupWriteResult> writePayload({
     required String fileName,
     required Map<String, dynamic> payload,

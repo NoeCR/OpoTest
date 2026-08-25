@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../database/app_database.dart';
 import '../features/custom_tests/presentation/custom_tests_hub_screen.dart';
+import '../features/failed_questions_export/presentation/failed_questions_export_screen.dart';
 import '../features/random_tests/presentation/random_test_hub_screen.dart';
 import '../navigation/app_navigation.dart';
 import '../state/app_state.dart';
@@ -162,6 +163,14 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                               subtitle: 'Tests realizados y notas',
                               compact: compact,
                               onTap: () => context.pushPage(const TestHistoryScreen()).then((_) => _loadMeta()),
+                            ),
+                            _HomeTile(
+                              icon: Icons.quiz_outlined,
+                              iconColor: AppTheme.accentPurple,
+                              title: 'Exportar fallos',
+                              subtitle: 'Informe HTML para estudiar',
+                              compact: compact,
+                              onTap: () => context.pushPage(const FailedQuestionsExportScreen()),
                             ),
                             _HomeTile(
                               icon: Icons.replay_rounded,

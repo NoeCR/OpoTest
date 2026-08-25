@@ -9,6 +9,8 @@ import 'features/backup/data/content_backup_repository_impl.dart';
 import 'features/backup/data/progress_backup_repository_impl.dart';
 import 'features/custom_tests/application/custom_test_service.dart';
 import 'features/custom_tests/data/custom_test_repository_impl.dart';
+import 'features/failed_questions_export/application/failed_questions_collector.dart';
+import 'features/failed_questions_export/application/failed_questions_export_service.dart';
 import 'features/random_tests/application/random_test_service.dart';
 import 'services/test_preferences.dart';
 import 'state/app_state.dart';
@@ -25,6 +27,9 @@ Future<void> main() async {
   final contentBackupService = ContentBackupService(ContentBackupRepositoryImpl(db));
   final progressBackupService = ProgressBackupService(ProgressBackupRepositoryImpl(db));
   final randomTestService = RandomTestService(db);
+  final failedQuestionsExportService = FailedQuestionsExportService(
+    FailedQuestionsCollector(db),
+  );
   runApp(
     MultiProvider(
       providers: [
@@ -33,6 +38,7 @@ Future<void> main() async {
         Provider<ContentBackupService>.value(value: contentBackupService),
         Provider<ProgressBackupService>.value(value: progressBackupService),
         Provider<RandomTestService>.value(value: randomTestService),
+        Provider<FailedQuestionsExportService>.value(value: failedQuestionsExportService),
         ChangeNotifierProvider<TestPreferences>.value(value: testPrefs),
         ChangeNotifierProvider<AppState>.value(value: state),
       ],

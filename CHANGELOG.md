@@ -4,7 +4,10 @@ Todas las mejoras relevantes del proyecto se documentan en este archivo.
 
 Este formato sigue una estructura inspirada en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y [SemVer](https://semver.org/lang/es/).
 
-## [Unreleased]
+## [1.9.0] - 2026-08-25
+
+### Added
+- En Inicio se puede exportar un informe HTML de preguntas falladas (respuesta, correcta, aclaración y ley) filtrable por periodo, y abrirlo en el navegador. Al imprimir o guardar, el nombre incluye perfil y fecha.
 
 ---
 
