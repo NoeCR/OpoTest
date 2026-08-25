@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:share_plus/share_plus.dart';
 
+import '../../../state/app_state.dart';
 import '../../../theme/app_theme.dart';
 import '../../../utils/user_facing_error.dart';
 import '../../../widgets/app_decorations.dart';
@@ -8,6 +10,7 @@ import '../application/content_backup_service.dart';
 import '../application/progress_backup_service.dart';
 import '../data/backup_file_io.dart';
 import '../domain/backup_validation.dart';
+import 'backup_share.dart';
 
 class BackupSection extends StatefulWidget {
   const BackupSection({super.key, required this.onChanged});
@@ -64,12 +67,25 @@ class _BackupSectionState extends State<BackupSection> {
                       : () => _run(() async {
                             final result = await context.read<ContentBackupService>().export();
                             final s = result.stats;
-                            widget.onChanged(
-                              'Contenido exportado:\n'
-                              '${s['laws'] ?? 0} leyes · ${s['titles'] ?? 0} títulos · '
-                              '${s['tests_official'] ?? 0} tests oficiales · ${s['tests_custom'] ?? 0} propios\n'
-                              '${result.filePath}',
+                            if (!context.mounted) return;
+                            final status = await shareBackupFile(
+                              context,
+                              filePath: result.filePath,
+                              shareName: result.shareName,
                             );
+                            if (!context.mounted) return;
+                            if (status == ShareResultStatus.unavailable) {
+                              widget.onChanged(
+                                'Contenido exportado:\n'
+                                '${s['laws'] ?? 0} leyes · ${s['titles'] ?? 0} títulos · '
+                                '${s['tests_official'] ?? 0} tests oficiales · ${s['tests_custom'] ?? 0} propios\n'
+                                '${result.filePath}',
+                              );
+                              return;
+                            }
+                            if (status == ShareResultStatus.success) {
+                              widget.onChanged('Contenido exportado.');
+                            }
                           }),
                   icon: const Icon(Icons.upload_outlined),
                   label: const Text('Exportar'),
@@ -105,13 +121,30 @@ class _BackupSectionState extends State<BackupSection> {
                   onPressed: _busy
                       ? null
                       : () => _run(() async {
-                            final result = await context.read<ProgressBackupService>().exportAll();
+                            final profileName =
+                                context.read<AppState>().activeUser?.name ?? 'todos-los-perfiles';
+                            final result = await context.read<ProgressBackupService>().exportAll(
+                                  profileName: profileName,
+                                );
                             final s = result.stats;
-                            widget.onChanged(
-                              'Progreso exportado:\n'
-                              '${s['total_attempts'] ?? 0} intentos · ${s['unique_tests'] ?? 0} tests distintos\n'
-                              '${result.filePath}',
+                            if (!context.mounted) return;
+                            final status = await shareBackupFile(
+                              context,
+                              filePath: result.filePath,
+                              shareName: result.shareName,
                             );
+                            if (!context.mounted) return;
+                            if (status == ShareResultStatus.unavailable) {
+                              widget.onChanged(
+                                'Progreso exportado:\n'
+                                '${s['total_attempts'] ?? 0} intentos · ${s['unique_tests'] ?? 0} tests distintos\n'
+                                '${result.filePath}',
+                              );
+                              return;
+                            }
+                            if (status == ShareResultStatus.success) {
+                              widget.onChanged('Progreso exportado.');
+                            }
                           }),
                   icon: const Icon(Icons.upload_outlined),
                   label: const Text('Exportar'),

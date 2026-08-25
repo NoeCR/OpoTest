@@ -13,13 +13,15 @@ class ContentBackupService {
 
   Future<BackupFileResult> export({Directory? targetDir}) async {
     final payload = await _repository.buildExportPayload();
+    final at = DateTime.now();
+    final shareName = backupShareLabel(profileName: 'contenido', at: at);
     final written = await _fileIo.writePayload(
-      prefix: 'opotest_content',
+      fileName: backupExportFileName(profileName: 'contenido', at: at),
       payload: payload,
       targetDir: targetDir,
     );
     final stats = Map<String, dynamic>.from(payload['stats'] as Map? ?? {});
-    return BackupFileResult(filePath: written.filePath, stats: stats);
+    return BackupFileResult(filePath: written.filePath, shareName: shareName, stats: stats);
   }
 
   Future<ContentImportResult> importFromPicker() async {

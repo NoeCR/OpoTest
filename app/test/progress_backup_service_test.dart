@@ -7,6 +7,7 @@ import 'package:opotest/features/backup/data/progress_backup_repository_impl.dar
 import 'package:opotest/features/backup/domain/backup_constants.dart';
 import 'package:opotest/features/backup/domain/backup_validation.dart';
 import 'package:opotest/models/local_user.dart';
+import 'package:opotest/state/app_state.dart';
 
 import 'helpers/database_helper.dart';
 
@@ -50,6 +51,11 @@ void main() {
       expect(payload['kind'], progressBackupKind);
       expect(payload['version'], progressBackupVersion);
       expect(result.stats['total_attempts'], 1);
+      expect(result.shareName, startsWith('OpoTest · todos-los-perfiles_'));
+      expect(
+        result.filePath.replaceAll('\\', '/').split('/').last,
+        matches(RegExp(r'^OpoTest · todos-los-perfiles_\d{4}-\d{2}-\d{2}_\d{2}-\d{2}-\d{2}\.json$')),
+      );
       await tempDir.delete(recursive: true);
     });
 
@@ -65,6 +71,19 @@ void main() {
       );
       expect(imported.attempts, 1);
       expect(await db.attemptsForUser(user.id), hasLength(1));
+    });
+
+    test('activateImportedProfile selecciona el perfil restaurado', () async {
+      final payload = await ProgressBackupRepositoryImpl(db).buildExportPayload(userId: user.id);
+      await AppDatabase.db.delete('attempts');
+      await AppDatabase.db.delete('users');
+      await db.setActiveUserId(null);
+
+      await ProgressBackupRepositoryImpl(db).importPayload(normalizeProgressBackup(payload));
+      final state = AppState(db);
+      await state.activateImportedProfile();
+      expect(state.activeUser?.id, user.id);
+      expect(state.activeUser?.name, 'Ana');
     });
   });
 }

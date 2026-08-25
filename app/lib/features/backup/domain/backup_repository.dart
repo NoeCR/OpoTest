@@ -1,7 +1,12 @@
 class BackupFileResult {
-  const BackupFileResult({required this.filePath, required this.stats});
+  const BackupFileResult({
+    required this.filePath,
+    required this.shareName,
+    required this.stats,
+  });
 
   final String filePath;
+  final String shareName;
   final Map<String, dynamic> stats;
 }
 

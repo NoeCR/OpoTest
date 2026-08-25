@@ -2,9 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../database/app_database.dart';
+import '../features/backup/application/progress_backup_service.dart';
+import '../features/backup/data/backup_file_io.dart';
+import '../features/backup/domain/backup_validation.dart';
 import '../models/local_user.dart';
 import '../state/app_state.dart';
 import '../theme/app_theme.dart';
+import '../utils/user_facing_error.dart';
 import '../widgets/app_decorations.dart';
 import '../widgets/staggered_entry.dart';
 
@@ -19,6 +23,7 @@ class _UsersScreenState extends State<UsersScreen> {
   final _controller = TextEditingController();
   late Future<List<LocalUser>> _usersFuture;
   var _initialized = false;
+  var _busy = false;
 
   @override
   void initState() {
@@ -51,6 +56,7 @@ class _UsersScreenState extends State<UsersScreen> {
   }
 
   Future<void> _create() async {
+    if (_busy) return;
     final name = _controller.text.trim();
     if (name.isEmpty) return;
     await context.read<AppState>().createUser(name);
@@ -62,6 +68,68 @@ class _UsersScreenState extends State<UsersScreen> {
     await context.read<AppState>().selectUser(user);
     if (!mounted) return;
     if (Navigator.canPop(context)) Navigator.pop(context);
+  }
+
+  Future<void> _importProfile() async {
+    if (_busy) return;
+    setState(() => _busy = true);
+    final db = context.read<AppDatabase>();
+    final progressService = context.read<ProgressBackupService>();
+    final appState = context.read<AppState>();
+    try {
+      final existing = await db.getUsers();
+      var replace = false;
+      if (existing.isNotEmpty) {
+        final choice = await _confirmReplaceUsers();
+        if (!mounted || choice == null) return;
+        replace = choice;
+      }
+      final result = await progressService.importFromPicker(
+        replaceExistingUsers: replace,
+      );
+      if (!mounted) return;
+      if (result.users == 0) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('El archivo no contiene ningún perfil.')),
+        );
+        return;
+      }
+      await appState.activateImportedProfile();
+    } on BackupFileCancelledException {
+      return;
+    } on BackupValidationException catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(e.message)));
+    } catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(UserFacingError.message(e, context: UserErrorContext.backup))),
+      );
+    } finally {
+      if (mounted) {
+        setState(() => _busy = false);
+        await _refresh();
+      }
+    }
+  }
+
+  Future<bool?> _confirmReplaceUsers() {
+    return showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: const Text('Importar perfil'),
+        content: const Text(
+          'Ya hay cuentas en este dispositivo.\n\n'
+          '• Fusionar: añade el progreso sin borrar lo existente\n'
+          '• Reemplazar: borra los intentos previos de cada perfil importado',
+        ),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(ctx), child: const Text('Cancelar')),
+          TextButton(onPressed: () => Navigator.pop(ctx, false), child: const Text('Fusionar')),
+          TextButton(onPressed: () => Navigator.pop(ctx, true), child: const Text('Reemplazar')),
+        ],
+      ),
+    );
   }
 
   Future<void> _deleteUser(LocalUser user) async {
@@ -93,7 +161,7 @@ class _UsersScreenState extends State<UsersScreen> {
         children: [
           GradientHeader(
             title: 'Cuentas locales',
-            subtitle: 'El progreso se guarda solo en este dispositivo',
+            subtitle: 'Crea una cuenta o importa un perfil que ya hayas exportado',
             onBack: canPop ? () => Navigator.pop(context) : null,
             trailing: Container(
               padding: const EdgeInsets.all(10),
@@ -108,6 +176,29 @@ class _UsersScreenState extends State<UsersScreen> {
             child: ListView(
               padding: const EdgeInsets.all(16),
               children: [
+                if (_busy) ...[
+                  const LinearProgressIndicator(color: AppTheme.primary),
+                  const SizedBox(height: 12),
+                ],
+                SectionCard(
+                  label: 'Importar perfil',
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Text(
+                        'Si ya exportaste el progreso a Drive, correo u otra app, restáuralo aquí sin crear una cuenta nueva.',
+                        style: TextStyle(color: Colors.black.withValues(alpha: 0.55), height: 1.35),
+                      ),
+                      const SizedBox(height: 12),
+                      OutlinedButton.icon(
+                        onPressed: _busy ? null : _importProfile,
+                        icon: const Icon(Icons.download_outlined),
+                        label: const Text('IMPORTAR PERFIL'),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 20),
                 SectionCard(
                   label: 'Nueva cuenta',
                   child: Column(
@@ -115,12 +206,13 @@ class _UsersScreenState extends State<UsersScreen> {
                     children: [
                       TextField(
                         controller: _controller,
+                        enabled: !_busy,
                         decoration: const InputDecoration(
                           hintText: 'Nombre de usuario',
                           prefixIcon: Icon(Icons.person_add_outlined),
                         ),
                         textInputAction: TextInputAction.done,
-                        onSubmitted: (_) => _create(),
+                        onSubmitted: _busy ? null : (_) => _create(),
                       ),
                       const SizedBox(height: 12),
                       DecoratedBox(
@@ -134,7 +226,7 @@ class _UsersScreenState extends State<UsersScreen> {
                             shadowColor: Colors.transparent,
                             minimumSize: const Size.fromHeight(48),
                           ),
-                          onPressed: _create,
+                          onPressed: _busy ? null : _create,
                           child: const Text('CREAR CUENTA'),
                         ),
                       ),
@@ -163,7 +255,7 @@ class _UsersScreenState extends State<UsersScreen> {
                             Icon(Icons.account_circle_outlined, size: 48, color: AppTheme.primary),
                             SizedBox(height: 12),
                             Text(
-                              'Crea tu primera cuenta para empezar',
+                              'Crea tu primera cuenta o importa un perfil exportado',
                               textAlign: TextAlign.center,
                               style: TextStyle(color: Colors.black54),
                             ),

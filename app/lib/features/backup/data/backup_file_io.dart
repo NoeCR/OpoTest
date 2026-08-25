@@ -5,6 +5,27 @@ import 'package:file_picker/file_picker.dart';
 import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 
+/// Nombre que ve Drive/correo: `OpoTest · Ana_2026/08/25 : 13:05:07`
+String backupShareLabel({
+  required String profileName,
+  DateTime? at,
+}) {
+  final name = profileName.trim().isEmpty ? 'usuario' : profileName.trim();
+  final when = (at ?? DateTime.now()).toLocal();
+  String two(int n) => n.toString().padLeft(2, '0');
+  final stamp =
+      '${when.year}/${two(when.month)}/${two(when.day)} : ${two(when.hour)}:${two(when.minute)}:${two(when.second)}';
+  return 'OpoTest · ${name}_$stamp';
+}
+
+String backupExportFileName({
+  required String profileName,
+  DateTime? at,
+}) {
+  final label = backupShareLabel(profileName: profileName, at: at);
+  return '${label.replaceAll('/', '-').replaceAll(' : ', '_').replaceAll(':', '-')}.json';
+}
+
 class BackupFileIo {
   Future<Directory> exportsDir() async {
     final dir = await getApplicationDocumentsDirectory();
@@ -14,13 +35,11 @@ class BackupFileIo {
   }
 
   Future<BackupWriteResult> writePayload({
-    required String prefix,
+    required String fileName,
     required Map<String, dynamic> payload,
     Directory? targetDir,
   }) async {
     final exportsDir = targetDir ?? await this.exportsDir();
-    final stamp = DateTime.now().toIso8601String().replaceAll(':', '-').split('.').first;
-    final fileName = '${prefix}_$stamp.json';
     final file = File(p.join(exportsDir.path, fileName));
     await file.writeAsString(const JsonEncoder.withIndent('  ').convert(payload));
     return BackupWriteResult(file: file, filePath: file.path);

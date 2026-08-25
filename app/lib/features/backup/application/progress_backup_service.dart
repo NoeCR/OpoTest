@@ -12,15 +12,24 @@ class ProgressBackupService {
   final ProgressBackupRepository _repository;
   final BackupFileIo _fileIo;
 
-  Future<BackupFileResult> exportAll({Directory? targetDir}) async {
+  Future<BackupFileResult> exportAll({
+    Directory? targetDir,
+    String? profileName,
+  }) async {
     final payload = await _repository.buildExportPayload();
+    final at = DateTime.now();
+    final name = (profileName != null && profileName.trim().isNotEmpty)
+        ? profileName.trim()
+        : 'todos-los-perfiles';
+    final shareName = backupShareLabel(profileName: name, at: at);
     final written = await _fileIo.writePayload(
-      prefix: 'opotest_progress',
+      fileName: backupExportFileName(profileName: name, at: at),
       payload: payload,
       targetDir: targetDir,
     );
     return BackupFileResult(
       filePath: written.filePath,
+      shareName: shareName,
       stats: Map<String, dynamic>.from(payload['summary'] as Map? ?? {}),
     );
   }
@@ -30,14 +39,16 @@ class ProgressBackupService {
     Directory? targetDir,
   }) async {
     final payload = await _repository.buildExportPayload(userId: user.id);
-    final safeName = user.name.replaceAll(RegExp(r'[^\w\-]+'), '_').toLowerCase();
+    final at = DateTime.now();
+    final shareName = backupShareLabel(profileName: user.name, at: at);
     final written = await _fileIo.writePayload(
-      prefix: 'opotest_progress_$safeName',
+      fileName: backupExportFileName(profileName: user.name, at: at),
       payload: payload,
       targetDir: targetDir,
     );
     return BackupFileResult(
       filePath: written.filePath,
+      shareName: shareName,
       stats: Map<String, dynamic>.from(payload['summary'] as Map? ?? {}),
     );
   }

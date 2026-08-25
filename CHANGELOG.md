@@ -6,8 +6,17 @@ Este formato sigue una estructura inspirada en [Keep a Changelog](https://keepac
 
 ## [Unreleased]
 
+---
+
+## [1.8.0] - 2026-08-25
+
+### Added
+- En la pantalla de cuentas se puede importar un perfil exportado (Drive, correo, etc.) sin crear una cuenta nueva.
+
 ### Changed
 - Identificadores de paquete y binario a OpoTest (`com.opotest.app`). En Android es una instalación distinta: exporta el progreso antes de reinstalar.
+- Al exportar progreso o contenido, se abre el menú de compartir del sistema (Drive, correo, etc.) en lugar de dejar el JSON solo en una carpeta interna.
+- El JSON exportado se nombra `OpoTest · {perfil}_{yyyy/MM/dd : HH:mm:ss}` al compartirlo (Drive, correo, etc.).
 
 ---
 

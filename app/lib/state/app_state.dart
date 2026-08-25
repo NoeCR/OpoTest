@@ -187,6 +187,26 @@ class AppState extends ChangeNotifier {
     notifyProgressChanged();
   }
 
+  /// Tras importar un JSON de progreso, entra en un perfil restaurado.
+  Future<void> activateImportedProfile() async {
+    final users = await _db.getUsers();
+    if (users.isEmpty) {
+      notifyProgressChanged();
+      return;
+    }
+    final activeId = await _db.activeUserId();
+    var chosen = users.first;
+    if (activeId != null) {
+      for (final user in users) {
+        if (user.id == activeId) {
+          chosen = user;
+          break;
+        }
+      }
+    }
+    await selectUser(chosen);
+  }
+
   void notifyProgressChanged() {
     progressGeneration++;
     notifyListeners();

@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:share_plus/share_plus.dart';
 
 import '../database/app_database.dart';
 import '../navigation/app_navigation.dart';
 import '../features/backup/application/progress_backup_service.dart';
+import '../features/backup/presentation/backup_share.dart';
 import '../state/app_state.dart';
 import '../theme/app_theme.dart';
+import '../utils/user_facing_error.dart';
 import '../widgets/app_decorations.dart';
 import '../widgets/score_stars.dart';
 import 'settings_screen.dart';
@@ -104,32 +107,31 @@ class _ProfileScreenState extends State<ProfileScreen> {
             },
           ),
           _ProfileTile(
-            icon: Icons.upload_file_outlined,
-            title: 'Exportar progreso JSON',
-            subtitle: 'Resumen + intentos en carpeta exports/',
+            icon: Icons.share_outlined,
+            title: 'Exportar y compartir progreso',
+            subtitle: 'Enviar el JSON a Drive, correo u otra app',
             onTap: () async {
-              final user = state.activeUser!;
-              final result = await context.read<ProgressBackupService>().exportUser(user: user);
-              if (!context.mounted) return;
-              final s = result.stats;
-              await showDialog<void>(
-                context: context,
-                builder: (c) => AlertDialog(
-                  title: const Text('Progreso exportado'),
-                  content: SelectableText(
-                    (s['total_attempts'] as int? ?? 0) == 0
-                        ? 'Archivo creado (sin intentos aún):\n${result.filePath}'
-                        : 'Intentos: ${s['total_attempts']}\n'
-                            'Tests distintos: ${s['unique_tests']}\n'
-                            'Media: ${s['average_percent']}%\n'
-                            'Mejor: ${s['best_percent']}%\n\n'
-                            '${result.filePath}',
+              try {
+                final user = state.activeUser!;
+                final result = await context.read<ProgressBackupService>().exportUser(user: user);
+                if (!context.mounted) return;
+                final status = await shareBackupFile(
+                  context,
+                  filePath: result.filePath,
+                  shareName: result.shareName,
+                );
+                if (!context.mounted) return;
+                if (status == ShareResultStatus.unavailable) {
+                  await _showExportedPathDialog(context, result.filePath, result.stats);
+                }
+              } catch (e) {
+                if (!context.mounted) return;
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text(UserFacingError.message(e, context: UserErrorContext.backup)),
                   ),
-                  actions: [
-                    TextButton(onPressed: () => Navigator.pop(c), child: const Text('Cerrar')),
-                  ],
-                ),
-              );
+                );
+              }
             },
           ),
           _ProfileTile(
@@ -168,6 +170,31 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ],
             ),
           ),
+        ],
+      ),
+    );
+  }
+
+  Future<void> _showExportedPathDialog(
+    BuildContext context,
+    String filePath,
+    Map<String, dynamic> stats,
+  ) {
+    return showDialog<void>(
+      context: context,
+      builder: (c) => AlertDialog(
+        title: const Text('Progreso exportado'),
+        content: SelectableText(
+          (stats['total_attempts'] as int? ?? 0) == 0
+              ? 'Archivo creado (sin intentos aún):\n$filePath'
+              : 'Intentos: ${stats['total_attempts']}\n'
+                  'Tests distintos: ${stats['unique_tests']}\n'
+                  'Media: ${stats['average_percent']}%\n'
+                  'Mejor: ${stats['best_percent']}%\n\n'
+                  '$filePath',
+        ),
+        actions: [
+          TextButton(onPressed: () => Navigator.pop(c), child: const Text('Cerrar')),
         ],
       ),
     );
