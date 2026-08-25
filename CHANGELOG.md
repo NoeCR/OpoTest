@@ -8,6 +8,13 @@ Este formato sigue una estructura inspirada en [Keep a Changelog](https://keepac
 
 ---
 
+## [1.8.1] - 2026-08-25
+
+### Fixed
+- Tras importar el temario por JSON, Inicio reconoce el contenido y habilita el test aleatorio.
+
+---
+
 ## [1.8.0] - 2026-08-25
 
 ### Added

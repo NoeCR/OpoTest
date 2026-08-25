@@ -97,7 +97,10 @@ class _BackupSectionState extends State<BackupSection> {
                   onPressed: _busy
                       ? null
                       : () => _run(() async {
-                            final result = await context.read<ContentBackupService>().importFromPicker();
+                            final contentService = context.read<ContentBackupService>();
+                            final appState = context.read<AppState>();
+                            final result = await contentService.importFromPicker();
+                            await appState.reloadContentFromDatabase();
                             widget.onChanged(
                               'Contenido importado:\n'
                               '${result.laws} leyes · ${result.titles} títulos · '

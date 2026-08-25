@@ -51,8 +51,10 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
 
   Future<void> _loadMeta() async {
     final db = context.read<AppDatabase>();
-    final user = context.read<AppState>().activeUser;
+    final state = context.read<AppState>();
+    final user = state.activeUser;
     if (user == null) return;
+    await state.reloadContentFromDatabase();
     final q = await db.countQuestions();
     final last = await db.getLastAttempt(user.id);
     final marked = await db.countMarkedQuestions(user.id);

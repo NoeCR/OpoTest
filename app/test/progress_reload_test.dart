@@ -19,6 +19,25 @@ void main() {
 
     tearDown(tearDownTestDatabase);
 
+    test('reloadContentFromDatabase habilita el temario tras importar a la base', () async {
+      state.error = 'No se encontró el temario en este dispositivo.';
+      expect(state.contentReady, isFalse);
+
+      await db.importLawIndex({
+        'laws': [
+          {'id': '10', 'code': 'CE', 'name_es': 'Constitución', 'order': '1'},
+        ],
+        'qByLawNew': {'10': {}},
+      });
+      await db.upsertOfficialTest(sampleTestJson(id: '1001', lawId: '10'));
+      await state.reloadContentFromDatabase();
+
+      expect(state.contentReady, isTrue);
+      expect(state.error, isNull);
+      expect(state.laws, isNotEmpty);
+      expect(state.lastImport?.tests, greaterThan(0));
+    });
+
     test('notifyProgressChanged incrementa y notifica', () {
       var notifications = 0;
       state.addListener(() => notifications++);

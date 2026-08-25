@@ -26,6 +26,14 @@ class AppState extends ChangeNotifier {
 
   bool get contentReady => laws.isNotEmpty && (lastImport?.tests ?? 0) > 0;
 
+  /// Relée leyes y tests de la base y actualiza [contentReady].
+  /// Tras importar un JSON de contenido, Inicio y el test aleatorio lo necesitan.
+  Future<void> reloadContentFromDatabase() async {
+    await _refreshContentStats();
+    _validateContentState();
+    notifyListeners();
+  }
+
   Future<void> bootstrap() async {
     loading = true;
     importStatus = 'Comprobando temario...';
@@ -109,7 +117,9 @@ class AppState extends ChangeNotifier {
     if (tests == 0) {
       error = 'Las leyes están cargadas pero los tests no. Ve a Configuración > Importar temario '
           '(o reinicia la app tras ejecutar push-data-android.ps1).';
+      return;
     }
+    error = null;
   }
 
   Future<void> _refreshContentStats() async {
