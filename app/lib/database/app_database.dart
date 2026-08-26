@@ -561,6 +561,18 @@ class AppDatabase {
     return rows.map((r) => r['id'] as String).toList();
   }
 
+  /// Devuelve IDs de tests propios (creados por el usuario).
+  Future<List<String>> getAllCustomTestIds() async {
+    final rows = await db.query(
+      'tests',
+      columns: ['id'],
+      where: 'source = ?',
+      whereArgs: [testSourceCustom],
+      orderBy: 'index_num',
+    );
+    return rows.map((r) => r['id'] as String).toList();
+  }
+
   Future<List<({String id, String lawId, String name})>> getOfficialTestsMeta() async {
     final rows = await db.query(
       'tests',

@@ -77,6 +77,7 @@ class _ModeTile extends StatelessWidget {
 
   IconData get _icon => switch (mode) {
         RandomTestMode.classic => Icons.shuffle_rounded,
+        RandomTestMode.own => Icons.edit_note_rounded,
         RandomTestMode.practiced => Icons.check_circle_outline_rounded,
         RandomTestMode.refresh => Icons.schedule_rounded,
         RandomTestMode.mostErrors => Icons.error_outline_rounded,
@@ -87,6 +88,7 @@ class _ModeTile extends StatelessWidget {
 
   Color get _color => switch (mode) {
         RandomTestMode.classic => AppTheme.accentPurple,
+        RandomTestMode.own => Colors.teal.shade600,
         RandomTestMode.practiced => AppTheme.primary,
         RandomTestMode.refresh => AppTheme.accentOrange,
         RandomTestMode.mostErrors => Colors.red.shade400,

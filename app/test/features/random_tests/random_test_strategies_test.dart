@@ -3,6 +3,7 @@ import 'package:opotest/features/random_tests/application/strategies/classic_ran
 import 'package:opotest/features/random_tests/application/strategies/marked_review_random_test_strategy.dart';
 import 'package:opotest/features/random_tests/application/strategies/mixed_random_test_strategy.dart';
 import 'package:opotest/features/random_tests/application/strategies/most_errors_random_test_strategy.dart';
+import 'package:opotest/features/random_tests/application/strategies/own_random_test_strategy.dart';
 import 'package:opotest/features/random_tests/application/strategies/practiced_random_test_strategy.dart';
 import 'package:opotest/features/random_tests/application/strategies/reinforcement_random_test_strategy.dart';
 import 'package:opotest/features/random_tests/domain/random_test_mode.dart';
@@ -30,6 +31,28 @@ void main() {
       final pick = await ClassicRandomTestStrategy().pick(setup.context, user.id);
       expect(pick.isEmpty, isFalse);
       expect(['5001', '5002'], contains(pick.testId));
+    });
+
+    test('own elige solo tests propios', () async {
+      final setup = await setUpRandomTestContext(userId: user.id);
+      await setup.db.upsertOfficialTest(sampleTestJson(id: '5001'));
+      await setup.db.upsertCustomTest(sampleTestJson(id: 'custom_a', name: 'Propio A'));
+      await setup.db.upsertCustomTest(sampleTestJson(id: 'custom_b', name: 'Propio B', lawId: '11'));
+
+      for (var i = 0; i < 8; i++) {
+        final pick = await OwnRandomTestStrategy().pick(setup.context, user.id);
+        expect(pick.isEmpty, isFalse);
+        expect(['custom_a', 'custom_b'], contains(pick.testId));
+      }
+    });
+
+    test('own vacío sin tests propios', () async {
+      final setup = await setUpRandomTestContext(userId: user.id);
+      await setup.db.upsertOfficialTest(sampleTestJson(id: '5001'));
+
+      final pick = await OwnRandomTestStrategy().pick(setup.context, user.id);
+      expect(pick.isEmpty, isTrue);
+      expect(pick.emptyMessage, RandomTestMode.own.emptyHint);
     });
 
     test('practiced solo elige tests ya intentados', () async {

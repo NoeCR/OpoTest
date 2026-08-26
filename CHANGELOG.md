@@ -4,6 +4,13 @@ Todas las mejoras relevantes del proyecto se documentan en este archivo.
 
 Este formato sigue una estructura inspirada en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y [SemVer](https://semver.org/lang/es/).
 
+## [1.10.0] - 2026-08-26
+
+### Added
+- En Test aleatorio se puede practicar solo con tests propios (los creados por el usuario).
+
+---
+
 ## [1.9.0] - 2026-08-25
 
 ### Added

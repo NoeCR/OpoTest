@@ -1,5 +1,6 @@
 enum RandomTestMode {
   classic,
+  own,
   practiced,
   refresh,
   mostErrors,
@@ -11,6 +12,7 @@ enum RandomTestMode {
 extension RandomTestModeLabels on RandomTestMode {
   String get title => switch (this) {
         RandomTestMode.classic => 'Al azar',
+        RandomTestMode.own => 'Tests propios',
         RandomTestMode.practiced => 'Temario practicado',
         RandomTestMode.refresh => 'Refrescar olvidados',
         RandomTestMode.mostErrors => 'Más fallos recientes',
@@ -21,6 +23,7 @@ extension RandomTestModeLabels on RandomTestMode {
 
   String get subtitle => switch (this) {
         RandomTestMode.classic => 'Cualquier test del temario importado',
+        RandomTestMode.own => 'Solo tests que has creado tú',
         RandomTestMode.practiced => 'Solo tests que ya has completado',
         RandomTestMode.refresh => 'Tests sin repetir hace tiempo o muy largos',
         RandomTestMode.mostErrors => 'Prioriza donde más fallaste la última vez',
@@ -31,6 +34,7 @@ extension RandomTestModeLabels on RandomTestMode {
 
   String get emptyHint => switch (this) {
         RandomTestMode.classic => 'Importa el temario para practicar.',
+        RandomTestMode.own => 'Crea al menos un test propio para usar este modo.',
         RandomTestMode.practiced => 'Completa al menos un test para usar este modo.',
         RandomTestMode.refresh => 'Necesitas intentos previos para detectar tests olvidados.',
         RandomTestMode.mostErrors => 'Completa tests con fallos para usar este modo.',

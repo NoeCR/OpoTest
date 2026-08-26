@@ -147,12 +147,15 @@ void main() {
       expect(allBefore, contains('official_1'));
       expect(allBefore, isNot(contains(customId)));
 
+      expect(await db.getAllCustomTestIds(), [customId]);
+
       final ownIds = await db.testIdsForLawSource('10', AppDatabase.testSourceCustom);
       expect(ownIds, contains(customId));
 
       await service.delete(customId);
       expect(await service.listSummaries(), isEmpty);
       expect(await db.getAllTestIds(), ['official_1']);
+      expect(await db.getAllCustomTestIds(), isEmpty);
     });
   });
 }

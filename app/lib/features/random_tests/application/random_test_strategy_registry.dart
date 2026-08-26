@@ -6,6 +6,7 @@ import 'strategies/classic_random_test_strategy.dart';
 import 'strategies/marked_review_random_test_strategy.dart';
 import 'strategies/mixed_random_test_strategy.dart';
 import 'strategies/most_errors_random_test_strategy.dart';
+import 'strategies/own_random_test_strategy.dart';
 import 'strategies/practiced_random_test_strategy.dart';
 import 'strategies/refresh_random_test_strategy.dart';
 import 'strategies/reinforcement_random_test_strategy.dart';
@@ -19,6 +20,7 @@ class RandomTestStrategyRegistry {
 
   static final _allStrategies = <RandomTestStrategy>[
     ClassicRandomTestStrategy(),
+    OwnRandomTestStrategy(),
     PracticedRandomTestStrategy(),
     RefreshRandomTestStrategy(),
     MostErrorsRandomTestStrategy(),
