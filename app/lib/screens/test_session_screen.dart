@@ -6,6 +6,10 @@ import 'package:provider/provider.dart';
 import 'package:uuid/uuid.dart';
 
 import '../database/app_database.dart';
+import '../features/in_progress_session/data/in_progress_session_store.dart';
+import '../features/in_progress_session/domain/in_progress_choices.dart';
+import '../features/in_progress_session/domain/in_progress_session.dart';
+import '../features/in_progress_session/presentation/in_progress_session_dialogs.dart';
 import '../models/local_user.dart';
 import '../models/question.dart';
 import '../services/test_scoring.dart';
@@ -42,13 +46,16 @@ class TestSessionScreen extends StatefulWidget {
   State<TestSessionScreen> createState() => _TestSessionScreenState();
 }
 
-class _TestSessionScreenState extends State<TestSessionScreen> {
+class _TestSessionScreenState extends State<TestSessionScreen> with WidgetsBindingObserver {
   late int currentIndex;
   late Map<int, int> answers;
   late int elapsed;
   late PageController _pageController;
   Timer? _timer;
+  Timer? _autosaveDebounce;
   bool _advancing = false;
+  bool _handlingLeave = false;
+  bool _sessionClosed = false;
   Set<int> _markedIndices = {};
   final Map<int, ScrollController> _scrollControllers = {};
 
@@ -78,18 +85,27 @@ class _TestSessionScreenState extends State<TestSessionScreen> {
     _pageController = PageController(initialPage: widget.initialIndex);
     _loadMarkedQuestions();
     if (!widget.reviewMode) {
+      WidgetsBinding.instance.addObserver(this);
       _timer = Timer.periodic(const Duration(seconds: 1), (_) {
         setState(() => elapsed++);
+        if (elapsed > 0 && elapsed % 10 == 0) {
+          _persistSession();
+        }
         if (_hasTimeLimit && elapsed >= _timeLimitSeconds) {
           _finish(force: true);
         }
+      });
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) _persistSession();
       });
     }
   }
 
   @override
   void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
     _timer?.cancel();
+    _autosaveDebounce?.cancel();
     _pageController.dispose();
     for (final controller in _scrollControllers.values) {
       controller.dispose();
@@ -97,11 +113,88 @@ class _TestSessionScreenState extends State<TestSessionScreen> {
     super.dispose();
   }
 
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (widget.reviewMode) return;
+    if (state == AppLifecycleState.inactive ||
+        state == AppLifecycleState.hidden ||
+        state == AppLifecycleState.paused) {
+      _persistSession();
+    }
+  }
+
   bool get showClarification => widget.reviewMode || !widget.examSimulation;
 
   bool get _hasAnsweredQuestions => answers.values.any((v) => v > 0);
 
   int get _answeredCount => answers.values.where((v) => v > 0).length;
+
+  InProgressSession? _sessionSnapshot() {
+    final user = context.read<AppState>().activeUser;
+    if (user == null) return null;
+    return InProgressSession.fromLive(
+      userId: user.id,
+      test: widget.test,
+      answers: answers,
+      currentIndex: currentIndex,
+      elapsedSeconds: elapsed,
+      errorFormat: widget.errorFormat,
+      durationMinutes: widget.durationMinutes,
+      examSimulation: widget.examSimulation,
+    );
+  }
+
+  void _scheduleAutosave() {
+    if (widget.reviewMode || _sessionClosed) return;
+    _autosaveDebounce?.cancel();
+    _autosaveDebounce = Timer(const Duration(milliseconds: 400), _persistSession);
+  }
+
+  Future<void> _persistSession() async {
+    if (widget.reviewMode || _sessionClosed || !mounted) return;
+    final session = _sessionSnapshot();
+    if (session == null) return;
+    final store = context.read<InProgressSessionStore>();
+    await store.save(session);
+    if (_sessionClosed) {
+      await store.deleteForUser(session.userId);
+    }
+  }
+
+  Future<void> _clearSession() async {
+    final user = context.read<AppState>().activeUser;
+    if (user == null) return;
+    await context.read<InProgressSessionStore>().deleteForUser(user.id);
+  }
+
+  Future<void> _pauseAndLeave() async {
+    _timer?.cancel();
+    await _persistSession();
+    if (mounted) Navigator.of(context).pop();
+  }
+
+  Future<void> _onLeaveRequested() async {
+    if (widget.reviewMode || _handlingLeave) return;
+    _handlingLeave = true;
+    try {
+      final choice = await showInProgressLeaveDialog(
+        context,
+        hasAnswers: _hasAnsweredQuestions,
+      );
+      if (!mounted) return;
+      switch (choice) {
+        case InProgressLeaveChoice.stay:
+          break;
+        case InProgressLeaveChoice.pause:
+          await _pauseAndLeave();
+          break;
+        case InProgressLeaveChoice.finish:
+          await _finish();
+      }
+    } finally {
+      _handlingLeave = false;
+    }
+  }
 
   Future<void> _loadMarkedQuestions() async {
     final user = context.read<AppState>().activeUser;
@@ -134,6 +227,7 @@ class _TestSessionScreenState extends State<TestSessionScreen> {
 
   void _onPageChanged(int index) {
     setState(() => currentIndex = index);
+    _scheduleAutosave();
     final controller = _scrollControllers[index];
     if (controller?.hasClients ?? false) {
       controller!.jumpTo(0);
@@ -162,6 +256,7 @@ class _TestSessionScreenState extends State<TestSessionScreen> {
     final index = currentIndex;
     final isLast = index >= widget.test.questions.length - 1;
     setState(() => answers[index] = option);
+    _scheduleAutosave();
 
     _advancing = true;
     final delay = widget.examSimulation ? Duration.zero : const Duration(milliseconds: 450);
@@ -209,8 +304,11 @@ class _TestSessionScreenState extends State<TestSessionScreen> {
   }
 
   Future<void> _finish({bool force = false}) async {
+    _sessionClosed = true;
     _timer?.cancel();
+    _autosaveDebounce?.cancel();
     if (!widget.reviewMode) {
+      await _clearSession();
       if (!_hasAnsweredQuestions) {
         if (!mounted) return;
         Navigator.of(context).pop();
@@ -405,15 +503,18 @@ class _TestSessionScreenState extends State<TestSessionScreen> {
       canPop: widget.reviewMode,
       onPopInvokedWithResult: (didPop, _) {
         if (!didPop && !widget.reviewMode) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(content: Text('Finaliza el test para ver los resultados.')),
-          );
+          _onLeaveRequested();
         }
       },
       child: Scaffold(
         backgroundColor: AppTheme.pageBlue,
         appBar: AppBar(
-          automaticallyImplyLeading: widget.reviewMode,
+          automaticallyImplyLeading: false,
+          leading: IconButton(
+            tooltip: widget.reviewMode ? 'Cerrar' : 'Pausar',
+            icon: Icon(widget.reviewMode ? Icons.close : Icons.pause_circle_outline_rounded),
+            onPressed: widget.reviewMode ? _finish : _onLeaveRequested,
+          ),
           title: Text(widget.test.name, maxLines: 1, overflow: TextOverflow.ellipsis),
           flexibleSpace: Container(
             decoration: BoxDecoration(

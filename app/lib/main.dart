@@ -11,6 +11,7 @@ import 'features/custom_tests/application/custom_test_service.dart';
 import 'features/custom_tests/data/custom_test_repository_impl.dart';
 import 'features/failed_questions_export/application/failed_questions_collector.dart';
 import 'features/failed_questions_export/application/failed_questions_export_service.dart';
+import 'features/in_progress_session/data/in_progress_session_store.dart';
 import 'features/random_tests/application/random_test_service.dart';
 import 'services/test_preferences.dart';
 import 'state/app_state.dart';
@@ -24,6 +25,7 @@ Future<void> main() async {
   final state = AppState(db);
   await state.bootstrap();
   final customTestService = CustomTestService(CustomTestRepositoryImpl(db));
+  final inProgressSessionStore = InProgressSessionStore(db);
   final contentBackupService = ContentBackupService(ContentBackupRepositoryImpl(db));
   final progressBackupService = ProgressBackupService(ProgressBackupRepositoryImpl(db));
   final randomTestService = RandomTestService(db);
@@ -35,6 +37,7 @@ Future<void> main() async {
       providers: [
         Provider<AppDatabase>.value(value: db),
         Provider<CustomTestService>.value(value: customTestService),
+        Provider<InProgressSessionStore>.value(value: inProgressSessionStore),
         Provider<ContentBackupService>.value(value: contentBackupService),
         Provider<ProgressBackupService>.value(value: progressBackupService),
         Provider<RandomTestService>.value(value: randomTestService),

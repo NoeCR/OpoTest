@@ -2,7 +2,9 @@ import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:opotest/database/app_database.dart';
+import 'package:opotest/features/in_progress_session/domain/in_progress_session.dart';
 import 'package:opotest/models/local_user.dart';
+import 'package:opotest/models/question.dart';
 
 import 'helpers/database_helper.dart';
 
@@ -341,10 +343,22 @@ void main() {
         questionIndex: 0,
       );
 
+      await db.upsertInProgressSession(InProgressSession.fromLive(
+        userId: user.id,
+        test: TestDefinition.fromApiJson(sampleTestJson(id: '7001')),
+        answers: const {0: 1},
+        currentIndex: 0,
+        elapsedSeconds: 10,
+        errorFormat: 100,
+        durationMinutes: 0,
+        examSimulation: false,
+      ));
+
       await db.deleteUserData(user.id);
       expect(await db.getUsers(), isEmpty);
       expect(await db.attemptsForUser(user.id), isEmpty);
       expect(await db.countMarkedQuestions(user.id), 0);
+      expect(await db.getInProgressSession(user.id), isNull);
     });
   });
 }

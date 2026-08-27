@@ -7,6 +7,8 @@ import '../features/failed_questions_export/application/failed_questions_export_
 import '../features/failed_questions_export/domain/failed_questions_reminder.dart';
 import '../features/failed_questions_export/presentation/failed_questions_export_screen.dart';
 import '../features/failed_questions_export/presentation/failed_questions_reminder_dialog.dart';
+import '../features/in_progress_session/data/in_progress_session_store.dart';
+import '../features/in_progress_session/domain/in_progress_session.dart';
 import '../features/random_tests/presentation/random_test_hub_screen.dart';
 import '../navigation/app_navigation.dart';
 import '../state/app_state.dart';
@@ -29,6 +31,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
   int? _questionCount;
   Map<String, dynamic>? _lastAttempt;
   int _markedCount = 0;
+  InProgressSession? _inProgress;
   var _reminderInFlight = false;
 
   Future<void> _openRandomHub() async {
@@ -69,11 +72,14 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
     final q = await db.countQuestions();
     final last = await db.getLastAttempt(user.id);
     final marked = await db.countMarkedQuestions(user.id);
+    if (!mounted) return;
+    final inProgress = await context.read<InProgressSessionStore>().getForUser(user.id);
     if (mounted) {
       setState(() {
         _questionCount = q;
         _lastAttempt = last;
         _markedCount = marked;
+        _inProgress = inProgress;
       });
     }
   }
@@ -168,6 +174,20 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
+                        if (_inProgress != null) ...[
+                          _HomeTile(
+                            icon: Icons.play_circle_outline_rounded,
+                            iconColor: AppTheme.accentOrange,
+                            title: 'Continuar test',
+                            subtitle: '${_inProgress!.testName} · ${_inProgress!.progressLabel}',
+                            compact: compact,
+                            onTap: () => TestLauncher.resume(
+                              context,
+                              session: _inProgress!,
+                            ).then((_) => _loadMeta()),
+                          ),
+                          const SizedBox(height: 12),
+                        ],
                         _HomeTile(
                           gradient: AppDecorations.headerGradient,
                           icon: Icons.menu_book_rounded,

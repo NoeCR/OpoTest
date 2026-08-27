@@ -7,6 +7,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
+import '../features/in_progress_session/domain/in_progress_session.dart';
 import '../models/local_user.dart';
 import '../models/marked_question.dart';
 import '../models/question.dart';
@@ -61,7 +62,7 @@ class AppDatabase {
   static Future<Database> _openDatabase(String path) {
     return openDatabase(
       path,
-      version: 3,
+      version: 4,
       onCreate: _onCreate,
       onUpgrade: _onUpgrade,
     );
@@ -131,6 +132,7 @@ class AppDatabase {
       )
     ''');
     await _createMarkedQuestionsTable(db);
+    await _createInProgressSessionsTable(db);
   }
 
   static Future<void> _createMarkedQuestionsTable(Database db) async {
@@ -141,6 +143,25 @@ class AppDatabase {
         question_index INTEGER NOT NULL,
         marked_at TEXT NOT NULL,
         PRIMARY KEY (user_id, test_id, question_index)
+      )
+    ''');
+  }
+
+  static Future<void> _createInProgressSessionsTable(Database db) async {
+    await db.execute('''
+      CREATE TABLE in_progress_sessions (
+        user_id TEXT PRIMARY KEY,
+        test_id TEXT NOT NULL,
+        test_name TEXT NOT NULL,
+        payload TEXT NOT NULL,
+        answers_json TEXT NOT NULL,
+        current_index INTEGER NOT NULL,
+        elapsed_seconds INTEGER NOT NULL,
+        error_format INTEGER NOT NULL,
+        duration_minutes INTEGER NOT NULL,
+        exam_simulation INTEGER NOT NULL,
+        question_count INTEGER NOT NULL,
+        updated_at TEXT NOT NULL
       )
     ''');
   }
@@ -156,6 +177,9 @@ class AppDatabase {
     }
     if (oldVersion < 3) {
       await _createMarkedQuestionsTable(db);
+    }
+    if (oldVersion < 4) {
+      await _createInProgressSessionsTable(db);
     }
   }
 
@@ -177,6 +201,7 @@ class AppDatabase {
   Future<void> deleteUserData(String userId) async {
     await db.delete('attempts', where: 'user_id = ?', whereArgs: [userId]);
     await db.delete('marked_questions', where: 'user_id = ?', whereArgs: [userId]);
+    await db.delete('in_progress_sessions', where: 'user_id = ?', whereArgs: [userId]);
     await db.delete('users', where: 'id = ?', whereArgs: [userId]);
   }
 
@@ -1054,6 +1079,33 @@ class AppDatabase {
     return true;
   }
 
+  Future<void> upsertInProgressSession(InProgressSession session) async {
+    await db.insert(
+      'in_progress_sessions',
+      session.toMap(),
+      conflictAlgorithm: ConflictAlgorithm.replace,
+    );
+  }
+
+  Future<InProgressSession?> getInProgressSession(String userId) async {
+    final rows = await db.query(
+      'in_progress_sessions',
+      where: 'user_id = ?',
+      whereArgs: [userId],
+      limit: 1,
+    );
+    if (rows.isEmpty) return null;
+    return InProgressSession.fromMap(rows.first);
+  }
+
+  Future<void> deleteInProgressSession(String userId) async {
+    await db.delete(
+      'in_progress_sessions',
+      where: 'user_id = ?',
+      whereArgs: [userId],
+    );
+  }
+
   Future<Map<String, int>> importProgressSnapshot(
     Map<String, dynamic> backup, {
     bool replaceExistingUsers = false,
@@ -1074,6 +1126,7 @@ class AppDatabase {
       if (replaceExistingUsers) {
         await db.delete('attempts', where: 'user_id = ?', whereArgs: [user.id]);
         await db.delete('marked_questions', where: 'user_id = ?', whereArgs: [user.id]);
+        await db.delete('in_progress_sessions', where: 'user_id = ?', whereArgs: [user.id]);
       }
       await upsertUser(user);
       users++;

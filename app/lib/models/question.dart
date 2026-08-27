@@ -28,6 +28,19 @@ class Question {
       clarificationHtml: q['textClarification_es']?.toString() ?? '',
     );
   }
+
+  Map<String, dynamic> toApiMap() => {
+        'order': '$order',
+        'q': {
+          'text_es': text,
+          'answer1_es': answers.isNotEmpty ? answers[0] : '',
+          'answer2_es': answers.length > 1 ? answers[1] : '',
+          'answer3_es': answers.length > 2 ? answers[2] : '',
+          'answer4_es': answers.length > 3 ? answers[3] : '',
+          'solution': '$solution',
+          'textClarification_es': clarificationHtml,
+        },
+      };
 }
 
 class TestDefinition {
@@ -59,4 +72,17 @@ class TestDefinition {
       questions: list.map((e) => Question.fromApiMap(e as Map<String, dynamic>)).toList(),
     );
   }
+
+  /// JSON compatible con [fromApiJson], para persistir tests sintéticos o oficiales.
+  Map<String, dynamic> toApiJson() => {
+        'error': 0,
+        'test': {
+          'id': id,
+          'name': name,
+          'type': type,
+          'q': {
+            '1': questions.map((q) => q.toApiMap()).toList(),
+          },
+        },
+      };
 }

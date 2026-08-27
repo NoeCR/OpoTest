@@ -95,5 +95,38 @@ void main() {
       expect(def.type, 'exam');
       expect(def.questions.single.solution, 3);
     });
+
+    test('toApiJson roundtrip conserva id, nombre y preguntas', () {
+      final original = TestDefinition.fromApiJson({
+        'test': {
+          'id': 'mixed_random_99',
+          'name': 'Mixto · 1 preguntas',
+          'type': 'test',
+          'q': {
+            '1': [
+              {
+                'order': '1',
+                'q': {
+                  'text_es': 'Enunciado',
+                  'answer1_es': 'A',
+                  'answer2_es': 'B',
+                  'answer3_es': 'C',
+                  'answer4_es': 'D',
+                  'solution': '4',
+                  'textClarification_es': '<p>Nota</p>',
+                },
+              },
+            ],
+          },
+        },
+      });
+
+      final restored = TestDefinition.fromApiJson(original.toApiJson());
+      expect(restored.id, original.id);
+      expect(restored.name, original.name);
+      expect(restored.questions.single.text, 'Enunciado');
+      expect(restored.questions.single.solution, 4);
+      expect(restored.questions.single.clarificationHtml, '<p>Nota</p>');
+    });
   });
 }
