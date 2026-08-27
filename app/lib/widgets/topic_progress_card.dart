@@ -16,12 +16,16 @@ class TopicProgressCard extends StatelessWidget {
     required this.footerLabel,
     required this.progress,
     required this.onTap,
+    this.leading,
+    this.trailing,
   });
 
   final String title;
   final String footerLabel;
   final ProgressCounts progress;
   final VoidCallback onTap;
+  final Widget? leading;
+  final Widget? trailing;
 
   @override
   Widget build(BuildContext context) {
@@ -49,6 +53,10 @@ class TopicProgressCard extends StatelessWidget {
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        if (leading != null) ...[
+                          leading!,
+                          const SizedBox(width: 10),
+                        ],
                         Expanded(
                           child: Text(
                             title,
@@ -65,6 +73,10 @@ class TopicProgressCard extends StatelessWidget {
                         if (!progress.isEmpty) ...[
                           const SizedBox(width: 10),
                           _ProgressBadge(label: progress.label),
+                        ],
+                        if (trailing != null) ...[
+                          const SizedBox(width: 8),
+                          trailing!,
                         ],
                       ],
                     ),

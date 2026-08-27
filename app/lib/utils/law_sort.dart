@@ -50,11 +50,34 @@ double _progressRatio(Map<String, dynamic> law, Map<String, ProgressCounts> prog
   return progressByLaw[id]?.ratio ?? 0;
 }
 
+/// Conserva el orden guardado, omite ids desaparecidos y añade los nuevos al final.
+List<String> mergeCustomLawOrder(List<String> savedOrder, Iterable<String> currentIds) {
+  final current = currentIds.toList();
+  final currentSet = current.toSet();
+  final merged = <String>[];
+  final seen = <String>{};
+  for (final id in savedOrder) {
+    if (currentSet.contains(id) && seen.add(id)) {
+      merged.add(id);
+    }
+  }
+  for (final id in current) {
+    if (seen.add(id)) merged.add(id);
+  }
+  return merged;
+}
+
+int _customOrderRank(Map<String, dynamic> law, List<String> customOrder) {
+  final index = customOrder.indexOf(law['id']?.toString() ?? '');
+  return index < 0 ? customOrder.length : index;
+}
+
 List<Map<String, dynamic>> sortLaws(
   List<Map<String, dynamic>> laws,
   LawSortMode mode,
-  Map<String, ProgressCounts> progressByLaw,
-) {
+  Map<String, ProgressCounts> progressByLaw, {
+  List<String> customOrder = const [],
+}) {
   final sorted = List<Map<String, dynamic>>.from(laws);
   sorted.sort((a, b) {
     final primary = switch (mode) {
@@ -71,6 +94,8 @@ List<Map<String, dynamic>> sortLaws(
         }(),
       LawSortMode.nombre =>
         _lawCode(a).toUpperCase().compareTo(_lawCode(b).toUpperCase()),
+      LawSortMode.custom =>
+        _customOrderRank(a, customOrder).compareTo(_customOrderRank(b, customOrder)),
     };
     if (primary != 0) return primary;
     return _orderIndex(a).compareTo(_orderIndex(b));

@@ -72,10 +72,44 @@ void main() {
       expect(sorted.first['code'], 'CONSTITUCIÓN');
       expect(sorted.last['code'], 'RD364/1995');
     });
+
+    test('personalizado respeta el orden guardado', () {
+      final sorted = sortLaws(
+        laws,
+        LawSortMode.custom,
+        progress,
+        customOrder: ['8', '5', '7', '6'],
+      );
+      expect(sorted.map((l) => l['id']).toList(), ['8', '5', '7', '6']);
+    });
+
+    test('personalizado coloca ids nuevos al final', () {
+      final sorted = sortLaws(
+        laws,
+        LawSortMode.custom,
+        progress,
+        customOrder: ['7', '6'],
+      );
+      expect(sorted.map((l) => l['id']).toList(), ['7', '6', '5', '8']);
+    });
+  });
+
+  group('mergeCustomLawOrder', () {
+    test('conserva orden, omite desaparecidos y añade nuevos al final', () {
+      expect(
+        mergeCustomLawOrder(['6', 'gone', '8', '6'], ['8', '5', '6']),
+        ['6', '8', '5'],
+      );
+    });
+
+    test('sin orden previo usa el orden actual', () {
+      expect(mergeCustomLawOrder(const [], ['5', '6']), ['5', '6']);
+    });
   });
 
   test('lawSortModeFromStorage usa temario por defecto', () {
     expect(lawSortModeFromStorage(null), LawSortMode.temario);
     expect(lawSortModeFromStorage('leyesFirst'), LawSortMode.leyesFirst);
+    expect(lawSortModeFromStorage('custom'), LawSortMode.custom);
   });
 }

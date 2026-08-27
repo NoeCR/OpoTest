@@ -4,6 +4,13 @@ Todas las mejoras relevantes del proyecto se documentan en este archivo.
 
 Este formato sigue una estructura inspirada en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y [SemVer](https://semver.org/lang/es/).
 
+## [1.11.0] - 2026-08-27
+
+### Added
+- En Legislación se puede ordenar las secciones de forma personalizada, arrastrándolas, y bloquear el orden con un candado para hacer scroll sin moverlas.
+
+---
+
 ## [1.10.0] - 2026-08-26
 
 ### Added

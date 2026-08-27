@@ -24,6 +24,8 @@ import 'hierarchy_screen.dart';
 import 'title_tests_screen.dart';
 
 const _lawSortPrefKey = 'laws_sort_mode';
+const _lawCustomOrderPrefKey = 'laws_custom_order';
+const _lawCustomOrderLockedPrefKey = 'laws_custom_order_locked';
 
 class LawsScreen extends StatefulWidget {
   const LawsScreen({super.key});
@@ -35,23 +37,101 @@ class LawsScreen extends StatefulWidget {
 class _LawsScreenState extends State<LawsScreen> {
   int _reloadToken = 0;
   LawSortMode _sortMode = LawSortMode.temario;
+  List<String> _customOrder = [];
+  List<String> _displayedLawIds = [];
+  bool _customOrderLocked = true;
+  Future<_LawsListData>? _lawsFuture;
+  String? _lawsFutureKey;
+  _LawsListData? _lawsData;
 
   @override
   void initState() {
     super.initState();
-    _loadSortMode();
+    _loadSortPrefs();
   }
 
-  Future<void> _loadSortMode() async {
+  Future<void> _loadSortPrefs() async {
     final prefs = await SharedPreferences.getInstance();
     final mode = lawSortModeFromStorage(prefs.getString(_lawSortPrefKey));
-    if (mounted) setState(() => _sortMode = mode);
+    final locked = prefs.getBool(_lawCustomOrderLockedPrefKey) ?? true;
+    final order = _decodeCustomOrder(prefs.getString(_lawCustomOrderPrefKey));
+    if (!mounted) return;
+    setState(() {
+      _sortMode = mode;
+      _customOrderLocked = locked;
+      _customOrder = order;
+    });
+  }
+
+  List<String> _decodeCustomOrder(String? raw) {
+    if (raw == null || raw.isEmpty) return [];
+    try {
+      final decoded = jsonDecode(raw);
+      if (decoded is! List) return [];
+      return decoded.map((e) => e.toString()).where((id) => id.isNotEmpty).toList();
+    } catch (_) {
+      return [];
+    }
+  }
+
+  Future<void> _persistSortMode(LawSortMode mode) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(_lawSortPrefKey, mode.storageKey);
+  }
+
+  Future<void> _persistCustomOrder(List<String> order) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(_lawCustomOrderPrefKey, jsonEncode(order));
+  }
+
+  Future<void> _persistCustomLock(bool locked) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool(_lawCustomOrderLockedPrefKey, locked);
   }
 
   Future<void> _setSortMode(LawSortMode mode) async {
-    setState(() => _sortMode = mode);
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setString(_lawSortPrefKey, mode.storageKey);
+    var order = _customOrder;
+    if (mode == LawSortMode.custom && order.isEmpty && _displayedLawIds.isNotEmpty) {
+      order = List<String>.from(_displayedLawIds);
+    }
+    setState(() {
+      _sortMode = mode;
+      _customOrder = order;
+    });
+    await _persistSortMode(mode);
+    if (mode == LawSortMode.custom && order.isNotEmpty) {
+      await _persistCustomOrder(order);
+    }
+  }
+
+  Future<void> _toggleCustomLock() async {
+    final next = !_customOrderLocked;
+    setState(() => _customOrderLocked = next);
+    await _persistCustomLock(next);
+    if (!mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          next
+              ? 'Orden bloqueado. Ya puedes hacer scroll sin mover secciones.'
+              : 'Arrastra las secciones para cambiar el orden.',
+        ),
+      ),
+    );
+  }
+
+  void _onReorderLaws(int oldIndex, int newIndex) {
+    if (newIndex > oldIndex) newIndex -= 1;
+    final ids = List<String>.from(_displayedLawIds);
+    if (oldIndex < 0 || oldIndex >= ids.length) return;
+    final item = ids.removeAt(oldIndex);
+    final insertAt = newIndex.clamp(0, ids.length);
+    ids.insert(insertAt, item);
+    setState(() {
+      _customOrder = ids;
+      _displayedLawIds = ids;
+    });
+    _persistCustomOrder(ids);
   }
 
   Future<_LawsListData> _loadLawsList() async {
@@ -65,6 +145,16 @@ class _LawsScreenState extends State<LawsScreen> {
         entry.key: progressCounts(entry.value, attempted),
     };
     return _LawsListData(laws: laws, progressByLaw: progressByLaw);
+  }
+
+  Future<_LawsListData> _lawsFutureFor(String key) {
+    if (_lawsFutureKey == key && _lawsFuture != null) return _lawsFuture!;
+    _lawsFutureKey = key;
+    _lawsFuture = _loadLawsList().then((data) {
+      _lawsData = data;
+      return data;
+    });
+    return _lawsFuture!;
   }
 
   Future<void> _retryImport() async {
@@ -88,16 +178,14 @@ class _LawsScreenState extends State<LawsScreen> {
           LawSortBar(
             selected: _sortMode,
             onSelected: _setSortMode,
+            customOrderLocked: _customOrderLocked,
+            onToggleCustomLock: _toggleCustomLock,
           ),
           Expanded(
             child: FutureBuilder<_LawsListData>(
-              key: ValueKey('$_reloadToken-$progressGeneration-$userId'),
-              future: _loadLawsList(),
+              future: _lawsFutureFor('$_reloadToken-$progressGeneration-$userId'),
               builder: (context, snap) {
-                if (snap.connectionState != ConnectionState.done) {
-                  return const Center(child: CircularProgressIndicator());
-                }
-                if (snap.hasError) {
+                if (snap.hasError && snap.data == null && _lawsData == null) {
                   return Center(
                     child: Padding(
                       padding: const EdgeInsets.all(24),
@@ -105,8 +193,12 @@ class _LawsScreenState extends State<LawsScreen> {
                     ),
                   );
                 }
-                final laws = snap.data?.laws ?? [];
-                final progressByLaw = snap.data?.progressByLaw ?? {};
+                final data = snap.data ?? _lawsData;
+                if (data == null) {
+                  return const Center(child: CircularProgressIndicator());
+                }
+                final laws = data.laws;
+                final progressByLaw = data.progressByLaw;
                 if (laws.isEmpty) {
                   return Center(
                     child: Padding(
@@ -132,7 +224,25 @@ class _LawsScreenState extends State<LawsScreen> {
                   final lawId = law['id'] as String;
                   return (progressByLaw[lawId]?.total ?? 0) > 0;
                 }).toList();
-                final sortedLaws = sortLaws(lawsWithTests, _sortMode, progressByLaw);
+                final currentIds = [for (final law in lawsWithTests) law['id'] as String];
+                final effectiveCustomOrder = _sortMode == LawSortMode.custom
+                    ? mergeCustomLawOrder(_customOrder, currentIds)
+                    : _customOrder;
+                final sortedLaws = sortLaws(
+                  lawsWithTests,
+                  _sortMode,
+                  progressByLaw,
+                  customOrder: effectiveCustomOrder,
+                );
+                _displayedLawIds = [for (final law in sortedLaws) law['id'] as String];
+                if (_sortMode == LawSortMode.custom &&
+                    !_listEquals(effectiveCustomOrder, _customOrder)) {
+                  WidgetsBinding.instance.addPostFrameCallback((_) {
+                    if (!mounted) return;
+                    setState(() => _customOrder = effectiveCustomOrder);
+                    _persistCustomOrder(effectiveCustomOrder);
+                  });
+                }
 
                 if (sortedLaws.isEmpty) {
                   return const Center(
@@ -143,30 +253,50 @@ class _LawsScreenState extends State<LawsScreen> {
                   );
                 }
 
+                final reorderEnabled = _sortMode == LawSortMode.custom && !_customOrderLocked;
+
+                if (reorderEnabled) {
+                  return ReorderableListView.builder(
+                    padding: const EdgeInsets.fromLTRB(16, 12, 16, 24),
+                    itemCount: sortedLaws.length,
+                    buildDefaultDragHandles: false,
+                    onReorder: _onReorderLaws,
+                    proxyDecorator: (child, index, animation) {
+                      return AnimatedBuilder(
+                        animation: animation,
+                        builder: (context, _) {
+                          return Material(
+                            elevation: 6,
+                            color: Colors.transparent,
+                            shadowColor: Colors.black.withValues(alpha: 0.2),
+                            child: child,
+                          );
+                        },
+                      );
+                    },
+                    itemBuilder: (context, i) {
+                      final law = sortedLaws[i];
+                      return ReorderableDragStartListener(
+                        key: ValueKey(law['id']),
+                        index: i,
+                        child: _buildLawCard(
+                          law,
+                          progressByLaw,
+                          trailing: const Icon(
+                            Icons.drag_handle_rounded,
+                            color: Colors.black38,
+                          ),
+                        ),
+                      );
+                    },
+                  );
+                }
+
                 return ListView.builder(
                   padding: const EdgeInsets.fromLTRB(16, 12, 16, 24),
                   itemCount: sortedLaws.length,
                   itemBuilder: (context, i) {
-                    final law = sortedLaws[i];
-                    final lawId = law['id'] as String;
-                    final code = law['code'] as String? ?? '';
-                    final name = law['name'] as String? ?? '';
-                    final subtitle = name.isNotEmpty && name != code ? name : '';
-                    return TopicProgressCard(
-                      title: code.isNotEmpty ? code : name,
-                      footerLabel: subtitle,
-                      progress: progressByLaw[lawId] ?? const ProgressCounts(done: 0, total: 0),
-                      onTap: () async {
-                        await context.pushPage(
-                          LawContentScreen(
-                            lawId: lawId,
-                            lawCode: code,
-                            lawName: name,
-                          ),
-                        );
-                        if (mounted) setState(() => _reloadToken++);
-                      },
-                    );
+                    return _buildLawCard(sortedLaws[i], progressByLaw);
                   },
                 );
               },
@@ -174,6 +304,42 @@ class _LawsScreenState extends State<LawsScreen> {
           ),
         ],
       ),
+    );
+  }
+
+  bool _listEquals(List<String> a, List<String> b) {
+    if (identical(a, b)) return true;
+    if (a.length != b.length) return false;
+    for (var i = 0; i < a.length; i++) {
+      if (a[i] != b[i]) return false;
+    }
+    return true;
+  }
+
+  Widget _buildLawCard(
+    Map<String, dynamic> law,
+    Map<String, ProgressCounts> progressByLaw, {
+    Widget? trailing,
+  }) {
+    final lawId = law['id'] as String;
+    final code = law['code'] as String? ?? '';
+    final name = law['name'] as String? ?? '';
+    final subtitle = name.isNotEmpty && name != code ? name : '';
+    return TopicProgressCard(
+      title: code.isNotEmpty ? code : name,
+      footerLabel: subtitle,
+      progress: progressByLaw[lawId] ?? const ProgressCounts(done: 0, total: 0),
+      trailing: trailing,
+      onTap: () async {
+        await context.pushPage(
+          LawContentScreen(
+            lawId: lawId,
+            lawCode: code,
+            lawName: name,
+          ),
+        );
+        if (mounted) setState(() => _reloadToken++);
+      },
     );
   }
 }

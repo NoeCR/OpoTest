@@ -5,6 +5,7 @@ enum LawSortMode {
   leyesFirst,
   decretosFirst,
   nombre,
+  custom,
 }
 
 extension LawSortModeX on LawSortMode {
@@ -15,6 +16,7 @@ extension LawSortModeX on LawSortMode {
         LawSortMode.leyesFirst => 'Leyes primero',
         LawSortMode.decretosFirst => 'Decretos primero',
         LawSortMode.nombre => 'Nombre A-Z',
+        LawSortMode.custom => 'Personalizado',
       };
 
   String get storageKey => name;
