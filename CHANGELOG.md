@@ -4,6 +4,13 @@ Todas las mejoras relevantes del proyecto se documentan en este archivo.
 
 Este formato sigue una estructura inspirada en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y [SemVer](https://semver.org/lang/es/).
 
+## [1.12.0] - 2026-08-27
+
+### Added
+- En Configuración se puede programar un recordatorio del informe de fallos (ninguno, diario o semanal). Al abrir la app, si toca y hay fallos, aparece un aviso para generarlo.
+
+---
+
 ## [1.11.0] - 2026-08-27
 
 ### Added

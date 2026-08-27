@@ -7,6 +7,7 @@ import '../../backup/data/backup_file_io.dart';
 import '../data/failed_questions_export_store.dart';
 import '../domain/failed_question_item.dart';
 import '../domain/failed_questions_range.dart';
+import '../domain/failed_questions_reminder.dart';
 import 'failed_questions_collector.dart';
 import 'failed_questions_html_report.dart';
 
@@ -40,6 +41,45 @@ class FailedQuestionsExportService {
   final FailedQuestionsHtmlReport _report;
 
   Future<DateTime?> lastExportAt(String userId) => _store.lastExportAt(userId);
+
+  Future<void> markExported(String userId, {DateTime? at}) {
+    return _store.setLastExportAt(userId, at ?? DateTime.now());
+  }
+
+  Future<FailedQuestionsReminderInterval> reminderInterval() => _store.reminderInterval();
+
+  Future<void> setReminderInterval(FailedQuestionsReminderInterval interval) {
+    return _store.setReminderInterval(interval);
+  }
+
+  Future<DateTime?> lastPromptedAt(String userId) => _store.lastPromptedAt(userId);
+
+  Future<void> markReminderPrompted(String userId, {DateTime? at}) {
+    return _store.setLastPromptedAt(userId, at ?? DateTime.now());
+  }
+
+  Future<bool> shouldPromptReminder({
+    required String userId,
+    DateTime? now,
+  }) async {
+    final interval = await reminderInterval();
+    final lastExport = await lastExportAt(userId);
+    final lastPrompt = await lastPromptedAt(userId);
+    return shouldPromptFailedQuestionsReminder(
+      interval: interval,
+      now: now ?? DateTime.now(),
+      lastExportAt: lastExport,
+      lastPromptedAt: lastPrompt,
+    );
+  }
+
+  FailedQuestionsRange rangeForReminder(FailedQuestionsReminderInterval interval, {DateTime? now}) {
+    return switch (interval) {
+      FailedQuestionsReminderInterval.none || FailedQuestionsReminderInterval.daily =>
+        FailedQuestionsRange.lastDay(now: now),
+      FailedQuestionsReminderInterval.weekly => FailedQuestionsRange.last7Days(now: now),
+    };
+  }
 
   Future<FailedQuestionsCollectResult> preview({
     required String userId,
@@ -76,10 +116,6 @@ class FailedQuestionsExportService {
       count: collected.items.length,
       skippedMissingTests: collected.skippedMissingTests,
     );
-  }
-
-  Future<void> markExported(String userId, {DateTime? at}) {
-    return _store.setLastExportAt(userId, at ?? DateTime.now());
   }
 
   String _stamp(DateTime at) {

@@ -5,6 +5,8 @@ import 'package:provider/provider.dart';
 import '../database/app_database.dart';
 import '../models/test_options.dart';
 import '../features/backup/presentation/backup_section.dart';
+import '../features/failed_questions_export/application/failed_questions_export_service.dart';
+import '../features/failed_questions_export/domain/failed_questions_reminder.dart';
 import '../services/content_importer.dart';
 import '../services/sync_service.dart';
 import '../services/test_preferences.dart';
@@ -26,12 +28,16 @@ class _SettingsScreenState extends State<SettingsScreen> {
   String? status;
   bool _importing = false;
   String? _appVersionLabel;
+  FailedQuestionsReminderInterval _reminderInterval = FailedQuestionsReminderInterval.none;
 
   @override
   void initState() {
     super.initState();
     _loadDefaultPath();
     _loadAppVersion();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) _loadReminderInterval();
+    });
   }
 
   Future<void> _loadAppVersion() async {
@@ -59,6 +65,21 @@ class _SettingsScreenState extends State<SettingsScreen> {
       if (mounted) _pathController.text = path;
     } catch (_) {
       _pathController.text = ContentImporter.defaultDataPath();
+    }
+  }
+
+  Future<void> _loadReminderInterval() async {
+    final interval = await context.read<FailedQuestionsExportService>().reminderInterval();
+    if (mounted) setState(() => _reminderInterval = interval);
+  }
+
+  Future<void> _setReminderInterval(FailedQuestionsReminderInterval interval) async {
+    setState(() => _reminderInterval = interval);
+    final service = context.read<FailedQuestionsExportService>();
+    await service.setReminderInterval(interval);
+    final userId = context.read<AppState>().activeUser?.id;
+    if (interval != FailedQuestionsReminderInterval.none && userId != null) {
+      await service.markReminderPrompted(userId);
     }
   }
 
@@ -167,6 +188,35 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         ),
                         value: prefs.examSimulation,
                         onChanged: prefs.setExamSimulation,
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 12),
+                SectionCard(
+                  label: 'Informe de fallos',
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Text('Recordatorio al abrir la app', style: AppDecorations.sectionLabel(context)),
+                      const SizedBox(height: 8),
+                      OptionChipRow<FailedQuestionsReminderInterval>(
+                        options: FailedQuestionsReminderInterval.values,
+                        selected: _reminderInterval,
+                        onSelected: _setReminderInterval,
+                        labelBuilder: (v) => v.label,
+                      ),
+                      const SizedBox(height: 8),
+                      Text(
+                        switch (_reminderInterval) {
+                          FailedQuestionsReminderInterval.none =>
+                            'No se mostrará ningún aviso. Puedes exportar fallos cuando quieras desde Inicio.',
+                          FailedQuestionsReminderInterval.daily =>
+                            'Al día siguiente de abrir la app, si hay fallos nuevos, te preguntará si generar el informe.',
+                          FailedQuestionsReminderInterval.weekly =>
+                            'Pasados 7 días, si hay fallos, te preguntará si generar el informe.',
+                        },
+                        style: const TextStyle(fontSize: 12, color: Colors.black54, height: 1.35),
                       ),
                     ],
                   ),

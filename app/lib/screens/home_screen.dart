@@ -3,7 +3,10 @@ import 'package:provider/provider.dart';
 
 import '../database/app_database.dart';
 import '../features/custom_tests/presentation/custom_tests_hub_screen.dart';
+import '../features/failed_questions_export/application/failed_questions_export_service.dart';
+import '../features/failed_questions_export/domain/failed_questions_reminder.dart';
 import '../features/failed_questions_export/presentation/failed_questions_export_screen.dart';
+import '../features/failed_questions_export/presentation/failed_questions_reminder_dialog.dart';
 import '../features/random_tests/presentation/random_test_hub_screen.dart';
 import '../navigation/app_navigation.dart';
 import '../state/app_state.dart';
@@ -26,6 +29,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
   int? _questionCount;
   Map<String, dynamic>? _lastAttempt;
   int _markedCount = 0;
+  var _reminderInFlight = false;
 
   Future<void> _openRandomHub() async {
     if (!context.read<AppState>().contentReady) return;
@@ -37,6 +41,9 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
     _loadMeta();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) _maybeShowFailedQuestionsReminder();
+    });
   }
 
   @override
@@ -47,7 +54,10 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
 
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
-    if (state == AppLifecycleState.resumed) _loadMeta();
+    if (state == AppLifecycleState.resumed) {
+      _loadMeta();
+      _maybeShowFailedQuestionsReminder();
+    }
   }
 
   Future<void> _loadMeta() async {
@@ -65,6 +75,40 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
         _lastAttempt = last;
         _markedCount = marked;
       });
+    }
+  }
+
+  Future<void> _maybeShowFailedQuestionsReminder() async {
+    if (_reminderInFlight || !mounted) return;
+    final user = context.read<AppState>().activeUser;
+    if (user == null) return;
+    final service = context.read<FailedQuestionsExportService>();
+
+    _reminderInFlight = true;
+    try {
+      if (!await service.shouldPromptReminder(userId: user.id)) return;
+      final interval = await service.reminderInterval();
+      final preview = await service.preview(
+        userId: user.id,
+        range: service.rangeForReminder(interval),
+      );
+      if (!mounted || preview.items.isEmpty) return;
+
+      final generate = await showFailedQuestionsReminderDialog(
+        context,
+        interval: interval,
+        failCount: preview.items.length,
+      );
+      if (!mounted) return;
+      await service.markReminderPrompted(user.id);
+      if (generate) {
+        await context.pushPage(
+          FailedQuestionsExportScreen(initialPreset: interval.exportPreset),
+        );
+        if (mounted) await _loadMeta();
+      }
+    } finally {
+      _reminderInFlight = false;
     }
   }
 
@@ -206,7 +250,8 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                               compact: compact,
                               onTap: () async {
                                 await context.pushPage(const SettingsScreen());
-                                _loadMeta();
+                                await _loadMeta();
+                                if (mounted) await _maybeShowFailedQuestionsReminder();
                               },
                             ),
                           ],

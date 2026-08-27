@@ -11,14 +11,16 @@ import '../domain/failed_questions_range.dart';
 import 'open_html_report.dart';
 
 class FailedQuestionsExportScreen extends StatefulWidget {
-  const FailedQuestionsExportScreen({super.key});
+  const FailedQuestionsExportScreen({super.key, this.initialPreset});
+
+  final FailedQuestionsPreset? initialPreset;
 
   @override
   State<FailedQuestionsExportScreen> createState() => _FailedQuestionsExportScreenState();
 }
 
 class _FailedQuestionsExportScreenState extends State<FailedQuestionsExportScreen> {
-  FailedQuestionsPreset _preset = FailedQuestionsPreset.lastDay;
+  late FailedQuestionsPreset _preset = widget.initialPreset ?? FailedQuestionsPreset.lastDay;
   DateTime _customStart = DateTime.now().subtract(const Duration(days: 1));
   DateTime _customEnd = DateTime.now();
   DateTime? _lastExportAt;
