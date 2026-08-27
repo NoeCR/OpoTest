@@ -9,6 +9,7 @@ import 'features/backup/data/content_backup_repository_impl.dart';
 import 'features/backup/data/progress_backup_repository_impl.dart';
 import 'features/custom_tests/application/custom_test_service.dart';
 import 'features/custom_tests/data/custom_test_repository_impl.dart';
+import 'features/daily_focus/application/daily_focus_service.dart';
 import 'features/failed_questions_export/application/failed_questions_collector.dart';
 import 'features/failed_questions_export/application/failed_questions_export_service.dart';
 import 'features/in_progress_session/data/in_progress_session_store.dart';
@@ -29,9 +30,11 @@ Future<void> main() async {
   final contentBackupService = ContentBackupService(ContentBackupRepositoryImpl(db));
   final progressBackupService = ProgressBackupService(ProgressBackupRepositoryImpl(db));
   final randomTestService = RandomTestService(db);
+  final failedQuestionsCollector = FailedQuestionsCollector(db);
   final failedQuestionsExportService = FailedQuestionsExportService(
-    FailedQuestionsCollector(db),
+    failedQuestionsCollector,
   );
+  final dailyFocusService = DailyFocusService(db, failedQuestionsCollector);
   runApp(
     MultiProvider(
       providers: [
@@ -42,6 +45,7 @@ Future<void> main() async {
         Provider<ProgressBackupService>.value(value: progressBackupService),
         Provider<RandomTestService>.value(value: randomTestService),
         Provider<FailedQuestionsExportService>.value(value: failedQuestionsExportService),
+        Provider<DailyFocusService>.value(value: dailyFocusService),
         ChangeNotifierProvider<TestPreferences>.value(value: testPrefs),
         ChangeNotifierProvider<AppState>.value(value: state),
       ],

@@ -57,3 +57,5 @@ OpoTest/
 ## Documentación de cambios
 
 Revisa `CHANGELOG.md` para el historial de versiones y funcionalidades.
+
+La hoja de ruta de lo siguiente a construir está en `docs/roadmap-funcional.md` (prioridad, criterio de hecho y cómo implementarlo, punto a punto).

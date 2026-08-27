@@ -4,6 +4,13 @@ Todas las mejoras relevantes del proyecto se documentan en este archivo.
 
 Este formato sigue una estructura inspirada en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y [SemVer](https://semver.org/lang/es/).
 
+## [1.14.0] - 2026-08-27
+
+### Added
+- En Inicio aparece «Hoy»: una propuesta para practicar (marcas recientes, fallos de 7 días, el test más flojo o un test al azar), usando los modos que ya existen.
+
+---
+
 ## [1.13.0] - 2026-08-27
 
 ### Added

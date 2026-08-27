@@ -1,36 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
-import '../../../state/app_state.dart';
 import '../../../theme/app_theme.dart';
 import '../../../widgets/app_decorations.dart';
-import '../../../services/test_launcher.dart';
-import '../application/random_test_service.dart';
 import '../domain/random_test_mode.dart';
+import 'random_test_launcher.dart';
 
 class RandomTestHubScreen extends StatelessWidget {
   const RandomTestHubScreen({super.key});
-
-  Future<void> _launchMode(BuildContext context, RandomTestMode mode) async {
-    final messenger = ScaffoldMessenger.of(context);
-    final user = context.read<AppState>().activeUser;
-    if (user == null) return;
-
-    final service = context.read<RandomTestService>();
-    final pick = await service.pick(mode: mode, userId: user.id);
-    if (!context.mounted) return;
-
-    if (pick.isEmpty) {
-      messenger.showSnackBar(SnackBar(content: Text(pick.emptyMessage!)));
-      return;
-    }
-
-    if (pick.testId != null) {
-      await TestLauncher.start(context, testId: pick.testId!);
-    } else if (pick.mixedTest != null) {
-      await TestLauncher.startWithDefinition(context, test: pick.mixedTest!);
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +35,7 @@ class RandomTestHubScreen extends StatelessWidget {
           for (final mode in RandomTestMode.values) ...[
             _ModeTile(
               mode: mode,
-              onTap: () => _launchMode(context, mode),
+              onTap: () => RandomTestLauncher.launchMode(context, mode),
             ),
             const SizedBox(height: 10),
           ],

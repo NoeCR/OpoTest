@@ -3,6 +3,9 @@ import 'package:provider/provider.dart';
 
 import '../database/app_database.dart';
 import '../features/custom_tests/presentation/custom_tests_hub_screen.dart';
+import '../features/daily_focus/application/daily_focus_service.dart';
+import '../features/daily_focus/domain/daily_focus.dart';
+import '../features/daily_focus/presentation/daily_focus_card.dart';
 import '../features/failed_questions_export/application/failed_questions_export_service.dart';
 import '../features/failed_questions_export/domain/failed_questions_reminder.dart';
 import '../features/failed_questions_export/presentation/failed_questions_export_screen.dart';
@@ -10,6 +13,7 @@ import '../features/failed_questions_export/presentation/failed_questions_remind
 import '../features/in_progress_session/data/in_progress_session_store.dart';
 import '../features/in_progress_session/domain/in_progress_session.dart';
 import '../features/random_tests/presentation/random_test_hub_screen.dart';
+import '../features/random_tests/presentation/random_test_launcher.dart';
 import '../navigation/app_navigation.dart';
 import '../state/app_state.dart';
 import '../theme/app_theme.dart';
@@ -32,11 +36,35 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
   Map<String, dynamic>? _lastAttempt;
   int _markedCount = 0;
   InProgressSession? _inProgress;
+  DailyFocusPlan? _dailyFocus;
   var _reminderInFlight = false;
 
   Future<void> _openRandomHub() async {
     if (!context.read<AppState>().contentReady) return;
     await context.pushPage(const RandomTestHubScreen());
+  }
+
+  Future<void> _runDailyFocus(DailyFocusAction action) async {
+    switch (action.kind) {
+      case DailyFocusKind.getStarted:
+        await context.pushPage(const SettingsScreen());
+        break;
+      case DailyFocusKind.weakTest:
+      case DailyFocusKind.retryLast:
+        final testId = action.testId;
+        if (testId != null) {
+          await TestLauncher.start(context, testId: testId);
+        }
+        break;
+      case DailyFocusKind.markedReview:
+      case DailyFocusKind.reinforcement:
+      case DailyFocusKind.classic:
+        final mode = action.randomMode;
+        if (mode != null) {
+          await RandomTestLauncher.launchMode(context, mode);
+        }
+    }
+    if (mounted) await _loadMeta();
   }
 
   @override
@@ -74,12 +102,18 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
     final marked = await db.countMarkedQuestions(user.id);
     if (!mounted) return;
     final inProgress = await context.read<InProgressSessionStore>().getForUser(user.id);
+    if (!mounted) return;
+    final dailyFocus = await context.read<DailyFocusService>().planFor(
+          userId: user.id,
+          contentReady: state.contentReady,
+        );
     if (mounted) {
       setState(() {
         _questionCount = q;
         _lastAttempt = last;
         _markedCount = marked;
         _inProgress = inProgress;
+        _dailyFocus = dailyFocus;
       });
     }
   }
@@ -185,6 +219,14 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                               context,
                               session: _inProgress!,
                             ).then((_) => _loadMeta()),
+                          ),
+                          const SizedBox(height: 12),
+                        ],
+                        if (_dailyFocus != null) ...[
+                          DailyFocusCard(
+                            plan: _dailyFocus!,
+                            compact: compact,
+                            onSelect: (action) => _runDailyFocus(action),
                           ),
                           const SizedBox(height: 12),
                         ],
