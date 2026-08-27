@@ -21,7 +21,7 @@ Base: OpoTest **v1.13.0** (offline, SQLite, Flutter). Cada punto está pensado c
 | Ya existe | Hueco |
 |---|---|
 | Temario local, SQLite, usuarios locales | No hay búsqueda |
-| 8 modos de test aleatorio | No hay «qué estudiar hoy» |
+| 8 modos de test aleatorio + foco del día (v1.14.0) | — |
 | Informe HTML de fallos + recordatorio | No hay intervalo de repaso por pregunta |
 | Marcas, refuerzo, historial | Perfil solo muestra nº de intentos y media |
 | Pausar y continuar un test a medias (v1.13.0) | — |
@@ -80,7 +80,7 @@ Archivos ancla:
 - **Prioridad:** P0 (segundo)
 - **Esfuerzo:** medio
 - **Dependencias:** ninguna (mejora si existe 1.1 mapa de débiles)
-- **Estado:** [ ] En curso (rama `feature/daily-focus`)
+- **Estado:** [x] Hecho en **v1.14.0**
 
 **Qué es.** En Inicio, una propuesta concreta: «hoy haz esto», no ocho modos a elegir.
 

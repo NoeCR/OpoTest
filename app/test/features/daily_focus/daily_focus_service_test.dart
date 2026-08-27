@@ -91,5 +91,73 @@ void main() {
       final plan = await service.planFor(userId: user.id, contentReady: true, now: now);
       expect(plan.primary.kind, DailyFocusKind.classic);
     });
+
+    test('fallos de 7 días proponen refuerzo', () async {
+      await saveAttempt(
+        id: 'att-fail-recent',
+        testId: '1001',
+        finishedAt: now.subtract(const Duration(days: 2)),
+        answers: const {0: 2},
+        percent: 50,
+      );
+
+      final plan = await service.planFor(userId: user.id, contentReady: true, now: now);
+      expect(plan.primary.kind, DailyFocusKind.reinforcement);
+      expect(plan.primary.reason, contains('7 días'));
+    });
+
+    test('fallos de hace más de 7 días no entran en refuerzo', () async {
+      await saveAttempt(
+        id: 'att-fail-old',
+        testId: '1001',
+        finishedAt: now.subtract(const Duration(days: 10)),
+        answers: const {0: 2},
+        percent: 40,
+      );
+
+      final plan = await service.planFor(userId: user.id, contentReady: true, now: now);
+      expect(plan.primary.kind, DailyFocusKind.weakTest);
+      expect(plan.primary.testId, '1001');
+    });
+
+    test('elige el test con peor último porcentaje', () async {
+      await saveAttempt(
+        id: 'att-ok',
+        testId: '1002',
+        finishedAt: now.subtract(const Duration(hours: 2)),
+        answers: const {0: 1},
+        percent: 80,
+      );
+      await saveAttempt(
+        id: 'att-bad',
+        testId: '1001',
+        finishedAt: now.subtract(const Duration(hours: 1)),
+        answers: const {0: 1},
+        percent: 25,
+      );
+
+      final plan = await service.planFor(userId: user.id, contentReady: true, now: now);
+      expect(plan.primary.kind, DailyFocusKind.weakTest);
+      expect(plan.primary.testId, '1001');
+      expect(plan.primary.title, 'Test débil');
+    });
+
+    test('un último intento sintético no se reintenta', () async {
+      await saveAttempt(
+        id: 'att-mix',
+        testId: 'mixed_random_1',
+        finishedAt: now,
+        answers: const {0: 1},
+        percent: 70,
+      );
+
+      final plan = await service.planFor(userId: user.id, contentReady: true, now: now);
+      expect(plan.primary.kind, DailyFocusKind.classic);
+    });
+
+    test('sin temario y sin datos pide importar', () async {
+      final plan = await service.planFor(userId: user.id, contentReady: false, now: now);
+      expect(plan.primary.kind, DailyFocusKind.getStarted);
+    });
   });
 }

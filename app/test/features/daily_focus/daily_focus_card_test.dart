@@ -42,5 +42,8 @@ void main() {
 
     await tester.tap(find.text('Empezar'));
     expect(selected?.kind, DailyFocusKind.markedReview);
+
+    await tester.tap(find.text('Repasar fallos'));
+    expect(selected?.kind, DailyFocusKind.reinforcement);
   });
 }
