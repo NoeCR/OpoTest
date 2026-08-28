@@ -24,8 +24,8 @@ class ContentKindTabs extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         child: Row(
           children: [
-            for (final kind in ContentKind.values) ...[
-              if (kind != ContentKind.values.first) const SizedBox(width: 8),
+            for (final kind in ContentKindX.lawTabs) ...[
+              if (kind != ContentKindX.lawTabs.first) const SizedBox(width: 8),
               _TabChip(
                 label: _labelFor(kind),
                 selected: kind == selected,

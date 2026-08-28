@@ -670,12 +670,20 @@ class AppDatabase {
     return rows.map((r) => r['id'] as String).toList();
   }
 
-  Future<List<({String id, String lawId, String name})>> getOfficialTestsMeta() async {
+  Future<List<({String id, String lawId, String name})>> getOfficialTestsMeta({
+    List<String>? types,
+  }) async {
+    final args = <Object>[testSourceOfficial];
+    var typeClause = '';
+    if (types != null && types.isNotEmpty) {
+      typeClause = ' AND type IN (${List.filled(types.length, '?').join(', ')})';
+      args.addAll(types);
+    }
     final rows = await db.query(
       'tests',
       columns: ['id', 'law_id', 'name'],
-      where: 'source = ? OR source IS NULL',
-      whereArgs: [testSourceOfficial],
+      where: '(source = ? OR source IS NULL)$typeClause',
+      whereArgs: args,
       orderBy: 'index_num',
     );
     return rows

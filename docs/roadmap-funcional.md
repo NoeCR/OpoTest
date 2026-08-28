@@ -174,18 +174,18 @@ Archivos ancla:
 - **Prioridad:** P1
 - **Esfuerzo:** medio
 - **Dependencias:** 0.1 (pausa/continuar) muy recomendable
-- **Estado:** [ ] Pendiente
+- **Estado:** [x] Hecho en **v1.17.0**
 
 **Qué es.** Un preset «Simulacro»: N preguntas (p. ej. 100), tiempo fijo, mezcla de leyes, sin corrección inmediata. No es el toggle actual de simulación (solo oculta la corrección).
 
-**Criterio de hecho.** Desde Test aleatorio o Inicio; N y minutos configurables (guardados); al terminar, nota 0–10 con las reglas ya existentes de penalización.
+**Criterio de hecho.** Desde Test aleatorio o Inicio; N y minutos configurables (guardados); solo pruebas reales de convocatoria (`officialpaper`) que el usuario haya importado; antes de empezar, listado agrupado por administración y año para incluir o excluir pruebas; al terminar, nota 0–10 con la penalización prefijada de los tests oficiales (no la de Configuración).
 
 **Cómo llevarlo a cabo.**
 
 1. Extender `MixedRandomTestStrategy` (ahora `mixedQuestionCount = 15`) con `questionCount` y opcionalmente leyes incluidas.
-2. Preset en `TestPreferences`: `simulacrumQuestions`, `simulacrumMinutes`, fuerza `examSimulation = true` al lanzar.
+2. Preset en `TestPreferences`: `simulacrumQuestions`, `simulacrumMinutes`. Al lanzar: `examSimulation = true`, penalización oficial fija (`simulacrumErrorFormat`) y pool `officialpaper`.
 3. Tile «Simulacro» en `random_test_hub_screen.dart`.
-4. Reutilizar `TestScoring` y resultado. El ID sintético debe seguir excluido del informe de fallos o documentar si se incluye.
+4. Reutilizar `TestScoring` y resultado. El ID `simulacrum_random_*` queda excluido del informe de fallos y del mapa de puntos débiles, igual que el mixto.
 
 **No hacer.** Un motor de examen distinto al de `TestSessionScreen`.
 

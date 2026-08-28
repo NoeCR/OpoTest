@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
+import '../../../navigation/app_navigation.dart';
 import '../../../theme/app_theme.dart';
 import '../../../widgets/app_decorations.dart';
 import '../domain/random_test_mode.dart';
 import 'random_test_launcher.dart';
+import 'simulacrum_screen.dart';
 
 class RandomTestHubScreen extends StatelessWidget {
   const RandomTestHubScreen({super.key});
@@ -32,6 +34,15 @@ class RandomTestHubScreen extends StatelessWidget {
             style: TextStyle(color: Colors.grey.shade700, fontSize: 14),
           ),
           const SizedBox(height: 12),
+          _SimulacrumTile(
+            onTap: () => context.pushPage(const SimulacrumScreen()),
+          ),
+          const SizedBox(height: 20),
+          Text(
+            'Modos de práctica',
+            style: TextStyle(color: Colors.grey.shade700, fontSize: 14),
+          ),
+          const SizedBox(height: 12),
           for (final mode in RandomTestMode.values) ...[
             _ModeTile(
               mode: mode,
@@ -40,6 +51,58 @@ class RandomTestHubScreen extends StatelessWidget {
             const SizedBox(height: 10),
           ],
         ],
+      ),
+    );
+  }
+}
+
+class _SimulacrumTile extends StatelessWidget {
+  const _SimulacrumTile({required this.onTap});
+
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(16),
+        child: Ink(
+          decoration: AppDecorations.card(),
+          padding: const EdgeInsets.all(14),
+          child: Row(
+            children: [
+              Container(
+                width: 44,
+                height: 44,
+                decoration: BoxDecoration(
+                  color: AppTheme.primary.withValues(alpha: 0.12),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: const Icon(Icons.timer_rounded, color: AppTheme.primary),
+              ),
+              const SizedBox(width: 12),
+              const Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Simulacro',
+                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                    ),
+                    SizedBox(height: 4),
+                    Text(
+                      'Pruebas reales de convocatoria, tiempo fijo y sin corrección inmediata',
+                      style: TextStyle(color: Colors.black54, fontSize: 12, height: 1.35),
+                    ),
+                  ],
+                ),
+              ),
+              Icon(Icons.chevron_right_rounded, color: Colors.grey.shade400),
+            ],
+          ),
+        ),
       ),
     );
   }

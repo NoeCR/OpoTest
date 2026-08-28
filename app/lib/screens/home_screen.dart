@@ -14,6 +14,7 @@ import '../features/in_progress_session/data/in_progress_session_store.dart';
 import '../features/in_progress_session/domain/in_progress_session.dart';
 import '../features/random_tests/presentation/random_test_hub_screen.dart';
 import '../features/random_tests/presentation/random_test_launcher.dart';
+import '../features/random_tests/presentation/simulacrum_screen.dart';
 import '../features/temario_search/presentation/temario_search_screen.dart';
 import '../features/weak_points/presentation/repaso_screen.dart';
 import '../navigation/app_navigation.dart';
@@ -49,6 +50,13 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
   Future<void> _openRandomHub() async {
     if (!context.read<AppState>().contentReady) return;
     await context.pushPage(const RandomTestHubScreen());
+    if (mounted) await _loadMeta();
+  }
+
+  Future<void> _openSimulacrum() async {
+    if (!context.read<AppState>().contentReady) return;
+    await context.pushPage(const SimulacrumScreen());
+    if (mounted) await _loadMeta();
   }
 
   Future<void> _runDailyFocus(DailyFocusAction action) async {
@@ -278,6 +286,15 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                               enabled: state.contentReady,
                               compact: compact,
                               onTap: state.contentReady ? _openRandomHub : null,
+                            ),
+                            _HomeTile(
+                              icon: Icons.timer_rounded,
+                              iconColor: AppTheme.primary,
+                              title: 'Simulacro',
+                              subtitle: state.contentReady ? 'Examen a tamaño real' : 'Importa temario',
+                              enabled: state.contentReady,
+                              compact: compact,
+                              onTap: state.contentReady ? _openSimulacrum : null,
                             ),
                             _HomeTile(
                               icon: Icons.history_rounded,

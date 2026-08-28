@@ -18,6 +18,8 @@ void main() {
       expect(prefs.errorFormat, 100);
       expect(prefs.durationMinutes, 0);
       expect(prefs.examSimulation, isFalse);
+      expect(prefs.simulacrumQuestions, 100);
+      expect(prefs.simulacrumMinutes, 90);
     });
 
     test('setErrorFormat persiste y notifica', () async {
@@ -41,6 +43,41 @@ void main() {
 
       expect(reloaded.durationMinutes, 15);
       expect(reloaded.examSimulation, isTrue);
+    });
+
+    test('simulacro guarda preguntas y minutos aparte del test global', () async {
+      await prefs.setDurationMinutes(15);
+      await prefs.setSimulacrumQuestions(50);
+      await prefs.setSimulacrumMinutes(60);
+
+      final reloaded = TestPreferences();
+      await reloaded.load();
+
+      expect(reloaded.durationMinutes, 15);
+      expect(reloaded.simulacrumQuestions, 50);
+      expect(reloaded.simulacrumMinutes, 60);
+    });
+
+    test('simulacro recuerda las pruebas excluidas del pool', () async {
+      await prefs.setSimulacrumPaperIncluded('paper_am_2025', false);
+      expect(prefs.isSimulacrumPaperIncluded('paper_am_2025'), isFalse);
+      expect(prefs.isSimulacrumPaperIncluded('paper_ja_2025'), isTrue);
+
+      final reloaded = TestPreferences();
+      await reloaded.load();
+      expect(reloaded.isSimulacrumPaperIncluded('paper_am_2025'), isFalse);
+
+      await reloaded.includeAllSimulacrumPapers();
+      expect(reloaded.isSimulacrumPaperIncluded('paper_am_2025'), isTrue);
+
+      await prefs.setSimulacrumPaperIncluded('paper_am_2025', false);
+      await prefs.excludeSimulacrumPapers(['paper_inap_2024']);
+      expect(prefs.isSimulacrumPaperIncluded('paper_am_2025'), isFalse);
+      expect(prefs.isSimulacrumPaperIncluded('paper_inap_2024'), isFalse);
+
+      await prefs.includeSimulacrumPapers(['paper_am_2025']);
+      expect(prefs.isSimulacrumPaperIncluded('paper_am_2025'), isTrue);
+      expect(prefs.isSimulacrumPaperIncluded('paper_inap_2024'), isFalse);
     });
   });
 }

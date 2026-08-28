@@ -9,6 +9,7 @@ import 'package:opotest/features/random_tests/application/strategies/practiced_r
 import 'package:opotest/features/random_tests/application/strategies/reinforcement_random_test_strategy.dart';
 import 'package:opotest/features/random_tests/domain/random_test_mode.dart';
 import 'package:opotest/models/local_user.dart';
+import 'package:opotest/models/official_paper.dart';
 
 import '../../helpers/database_helper.dart';
 import 'random_test_context_helper.dart';
@@ -56,6 +57,73 @@ void main() {
       expect(MixedRandomTestStrategy().mode, RandomTestMode.mixed);
       expect(ReinforcementRandomTestStrategy().mode, RandomTestMode.reinforcement);
       expect(MarkedReviewRandomTestStrategy().mode, RandomTestMode.markedReview);
+    });
+
+    test('pickSimulacrum genera un mixto con prefijo de simulacro', () async {
+      final setup = await setUpRandomTestContext(userId: user.id);
+      service = RandomTestService(setup.db);
+      await setup.db.upsertOfficialTest(
+        sampleTestJson(id: '5001', questionCount: 4, type: OfficialPaper.type),
+      );
+      await setup.db.upsertOfficialTest(
+        sampleTestJson(id: '5002', lawId: '11', questionCount: 4, type: OfficialPaper.type),
+      );
+
+      final pick = await service.pickSimulacrum(userId: user.id, questionCount: 6);
+      expect(pick.isEmpty, isFalse);
+      expect(pick.mixedTest!.type, 'simulacrum');
+      expect(pick.mixedTest!.id, startsWith('simulacrum_random'));
+      expect(pick.mixedTest!.questions, hasLength(6));
+      expect(RandomTestService.isSyntheticAttemptTestId(pick.mixedTest!.id), isTrue);
+    });
+
+    test('listOfficialPapers solo lista officialpaper', () async {
+      final setup = await setUpRandomTestContext(userId: user.id);
+      service = RandomTestService(setup.db);
+      await setup.db.upsertOfficialTest(sampleTestJson(id: 'practice', name: 'Práctica'));
+      await setup.db.upsertOfficialTest(
+        sampleTestJson(id: 'paper_am', name: 'TAI Ayuntamiento de Madrid 2025', type: OfficialPaper.type),
+      );
+
+      final papers = await service.listOfficialPapers();
+      expect(papers, hasLength(1));
+      expect(papers.single.id, 'paper_am');
+      expect(papers.single.administration, 'Ayuntamiento de Madrid');
+      expect(papers.single.year, 2025);
+    });
+
+    test('pickSimulacrum respeta las pruebas incluidas', () async {
+      final setup = await setUpRandomTestContext(userId: user.id);
+      service = RandomTestService(setup.db);
+      await setup.db.upsertOfficialTest(
+        sampleTestJson(id: 'paper_a', questionCount: 4, type: OfficialPaper.type),
+      );
+      await setup.db.upsertOfficialTest(
+        sampleTestJson(id: 'paper_b', lawId: '11', questionCount: 4, type: OfficialPaper.type),
+      );
+
+      final pick = await service.pickSimulacrum(
+        userId: user.id,
+        questionCount: 8,
+        includedTestIds: {'paper_b'},
+      );
+      expect(pick.mixedTest!.questions, hasLength(4));
+      expect(
+        pick.mixedTest!.questions.every((q) => q.sourceTestId == 'paper_b'),
+        isTrue,
+      );
+    });
+
+    test('pickSimulacrum ignora tests de práctica y realexam', () async {
+      final setup = await setUpRandomTestContext(userId: user.id);
+      service = RandomTestService(setup.db);
+      await setup.db.upsertOfficialTest(sampleTestJson(id: '5001', questionCount: 4));
+      await setup.db.upsertOfficialTest(
+        sampleTestJson(id: '5002', questionCount: 4, type: 'realexam'),
+      );
+
+      final pick = await service.pickSimulacrum(userId: user.id, questionCount: 4);
+      expect(pick.isEmpty, isTrue);
     });
   });
 }

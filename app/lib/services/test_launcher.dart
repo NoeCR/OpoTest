@@ -38,9 +38,19 @@ class TestLauncher {
   static Future<void> startWithDefinition(
     BuildContext context, {
     required TestDefinition test,
+    int? durationMinutes,
+    bool? examSimulation,
+    int? errorFormat,
   }) async {
     final prefs = context.read<TestPreferences>();
-    await _open(context, test: test, prefs: prefs);
+    await _open(
+      context,
+      test: test,
+      prefs: prefs,
+      durationMinutes: durationMinutes,
+      examSimulation: examSimulation,
+      errorFormat: errorFormat,
+    );
   }
 
   static Future<void> resume(
@@ -54,6 +64,9 @@ class TestLauncher {
     BuildContext context, {
     required TestDefinition test,
     required TestPreferences prefs,
+    int? durationMinutes,
+    bool? examSimulation,
+    int? errorFormat,
   }) async {
     final user = context.read<AppState>().activeUser;
     if (user == null) return;
@@ -84,9 +97,9 @@ class TestLauncher {
     await context.pushPage(
       TestSessionScreen(
         test: test,
-        errorFormat: prefs.errorFormat,
-        durationMinutes: prefs.durationMinutes,
-        examSimulation: prefs.examSimulation,
+        errorFormat: errorFormat ?? prefs.errorFormat,
+        durationMinutes: durationMinutes ?? prefs.durationMinutes,
+        examSimulation: examSimulation ?? prefs.examSimulation,
       ),
       transition: AppTransition.fade,
     );

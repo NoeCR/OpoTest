@@ -8,6 +8,13 @@ Este formato sigue una estructura inspirada en [Keep a Changelog](https://keepac
 
 ---
 
+## [1.17.0] - 2026-08-28
+
+### Added
+- En Inicio y en Test aleatorio hay un Simulacro: mezcla las pruebas reales de convocatoria que hayas importado (`officialpaper`), no las preguntas oficiales recortadas por ley. N preguntas (50/100/150), tiempo fijo y sin corrección hasta el final. Los fallos restan 1. No entra en el informe de fallos ni en el mapa de puntos débiles. Antes de empezar se listan las pruebas agrupadas por administración y año para incluir o excluir las que interesen.
+
+---
+
 ## [1.16.0] - 2026-08-28
 
 ### Added

@@ -6,8 +6,10 @@ import 'package:opotest/features/random_tests/application/strategies/most_errors
 import 'package:opotest/features/random_tests/application/strategies/own_random_test_strategy.dart';
 import 'package:opotest/features/random_tests/application/strategies/practiced_random_test_strategy.dart';
 import 'package:opotest/features/random_tests/application/strategies/reinforcement_random_test_strategy.dart';
+import 'package:opotest/features/random_tests/domain/random_test_constants.dart';
 import 'package:opotest/features/random_tests/domain/random_test_mode.dart';
 import 'package:opotest/models/local_user.dart';
+import 'package:opotest/models/official_paper.dart';
 
 import '../../helpers/database_helper.dart';
 import 'random_test_context_helper.dart';
@@ -124,6 +126,85 @@ void main() {
       expect(pick.mixedTest, isNotNull);
       expect(pick.mixedTest!.questions, isNotEmpty);
       expect(pick.mixedTest!.type, 'mixed');
+    });
+
+    test('mixed respeta questionCount y no duplica preguntas', () async {
+      final setup = await setUpRandomTestContext(userId: user.id);
+      await setup.db.upsertOfficialTest(sampleTestJson(id: '5032', lawId: '20', questionCount: 4));
+      await setup.db.upsertOfficialTest(sampleTestJson(id: '5033', lawId: '21', questionCount: 4));
+      await setup.db.upsertOfficialTest(sampleTestJson(id: '5034', lawId: '22', questionCount: 4));
+
+      final pick = await MixedRandomTestStrategy(questionCount: 10).pick(setup.context, user.id);
+      final questions = pick.mixedTest!.questions;
+      expect(questions, hasLength(10));
+      final keys = {
+        for (final q in questions) '${q.sourceTestId}:${q.sourceQuestionIndex}',
+      };
+      expect(keys, hasLength(10));
+    });
+
+    test('mixed recorta si no hay tantas preguntas únicas', () async {
+      final setup = await setUpRandomTestContext(userId: user.id);
+      await setup.db.upsertOfficialTest(
+        sampleTestJson(id: '5035', lawId: '20', questionCount: 3, type: OfficialPaper.type),
+      );
+      await setup.db.upsertOfficialTest(
+        sampleTestJson(id: '5036', lawId: '21', questionCount: 3, type: OfficialPaper.type),
+      );
+
+      final pick = await MixedRandomTestStrategy(
+        questionCount: 50,
+        idPrefix: 'simulacrum_random',
+        namePrefix: 'Simulacro',
+        type: 'simulacrum',
+        allowedTypes: RandomTestConstants.simulacrumOfficialTypes,
+      ).pick(setup.context, user.id);
+      expect(pick.mixedTest!.questions, hasLength(6));
+      expect(pick.mixedTest!.type, 'simulacrum');
+      expect(pick.mixedTest!.id, startsWith('simulacrum_random'));
+    });
+
+    test('simulacro ignora tests de práctica, propios y realexam', () async {
+      final setup = await setUpRandomTestContext(userId: user.id);
+      await setup.db.upsertOfficialTest(sampleTestJson(id: '5040', lawId: '20', questionCount: 4));
+      await setup.db.upsertCustomTest(sampleTestJson(id: 'custom_sim', name: 'Propio', questionCount: 4));
+      await setup.db.upsertOfficialTest(
+        sampleTestJson(id: '5041', lawId: '21', questionCount: 4, type: 'realexam'),
+      );
+      await setup.db.upsertOfficialTest(
+        sampleTestJson(id: '5042', lawId: '22', questionCount: 4, type: OfficialPaper.type),
+      );
+
+      final pick = await MixedRandomTestStrategy(
+        questionCount: 10,
+        allowedTypes: RandomTestConstants.simulacrumOfficialTypes,
+      ).pick(setup.context, user.id);
+      expect(pick.mixedTest!.questions, hasLength(4));
+      expect(
+        pick.mixedTest!.questions.every((q) => q.sourceTestId == '5042'),
+        isTrue,
+      );
+    });
+
+    test('simulacro solo usa los tests incluidos', () async {
+      final setup = await setUpRandomTestContext(userId: user.id);
+      await setup.db.upsertOfficialTest(
+        sampleTestJson(id: 'paper_keep', lawId: '20', questionCount: 4, type: OfficialPaper.type),
+      );
+      await setup.db.upsertOfficialTest(
+        sampleTestJson(id: 'paper_skip', lawId: '21', questionCount: 4, type: OfficialPaper.type),
+      );
+
+      final pick = await MixedRandomTestStrategy(
+        questionCount: 10,
+        allowedTypes: RandomTestConstants.simulacrumOfficialTypes,
+        allowedTestIds: {'paper_keep'},
+      ).pick(setup.context, user.id);
+      expect(pick.mixedTest!.questions, hasLength(4));
+      expect(
+        pick.mixedTest!.questions.every((q) => q.sourceTestId == 'paper_keep'),
+        isTrue,
+      );
     });
 
     test('markedReview genera test con preguntas marcadas', () async {
