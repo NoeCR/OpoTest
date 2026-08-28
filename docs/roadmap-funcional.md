@@ -24,7 +24,7 @@ Base: OpoTest **v1.13.0** (offline, SQLite, Flutter). Cada punto está pensado c
 | 8 modos de test aleatorio + foco del día (v1.14.0) | — |
 | Búsqueda en el temario (v1.15.0) | — |
 | Informe HTML de fallos + recordatorio | No hay intervalo de repaso por pregunta |
-| Marcas, refuerzo, historial | Perfil solo muestra nº de intentos y media |
+| Marcas, refuerzo, historial | — |
 | Pausar y continuar un test a medias (v1.13.0) | — |
 | Tests propios CRUD + backup/compartir progreso | No se comparte un test propio suelto |
 | Orden personalizado de leyes | No hay filtros (nunca hecho / completado) |
@@ -38,6 +38,7 @@ Archivos ancla:
 - Aleatorio: `app/lib/features/random_tests/`
 - Tests propios: `app/lib/features/custom_tests/`
 - Búsqueda: `app/lib/features/temario_search/`
+- Puntos débiles: `app/lib/features/weak_points/`
 
 ---
 
@@ -151,9 +152,9 @@ Archivos ancla:
 - **Prioridad:** P1
 - **Esfuerzo:** medio
 - **Dependencias:** ninguna; alimenta 0.2 y 1.3
-- **Estado:** [ ] Pendiente
+- **Estado:** [x] Hecho en **v1.16.0**
 
-**Qué es.** En Perfil (o una pantalla «Progreso»), lista de leyes/títulos con media, último % e intentos. Lo flojo arriba.
+**Qué es.** En Inicio, tarjeta **Repaso**: lista de leyes/títulos con media, último % e intentos. Lo flojo arriba.
 
 **Por qué.** Perfil solo tiene intentos y media global. Sin desglose, el orden de leyes y el aleatorio se usan a ciegas.
 
@@ -163,7 +164,7 @@ Archivos ancla:
 
 1. Query: `attempts` ⨝ `tests.law_id` / `title_id`; ignorar IDs de `RandomTestConstants.isSyntheticAttemptTestId`.
 2. Reutilizar `TestStats` (avg / last / attempts) a nivel ley y título.
-3. UI en `profile_screen.dart` o `ProgressScreen`. Sin librería de gráficos en este punto.
+3. UI en `RepasoScreen` (Inicio, entre Revisión y Configuración). Sin librería de gráficos en este punto. Perfil se queda para cuenta y ajustes.
 4. Tests del agregado con intentos de varias leyes.
 
 ---

@@ -15,6 +15,7 @@ import '../features/in_progress_session/domain/in_progress_session.dart';
 import '../features/random_tests/presentation/random_test_hub_screen.dart';
 import '../features/random_tests/presentation/random_test_launcher.dart';
 import '../features/temario_search/presentation/temario_search_screen.dart';
+import '../features/weak_points/presentation/repaso_screen.dart';
 import '../navigation/app_navigation.dart';
 import '../state/app_state.dart';
 import '../theme/app_theme.dart';
@@ -319,6 +320,14 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                                   : 'Estudia tus marcas',
                               compact: compact,
                               onTap: () => context.pushPage(const ReviewScreen()).then((_) => _loadMeta()),
+                            ),
+                            _HomeTile(
+                              icon: Icons.insights_rounded,
+                              iconColor: Colors.deepOrange.shade400,
+                              title: 'Repaso',
+                              subtitle: 'Leyes y títulos flojos',
+                              compact: compact,
+                              onTap: () => context.pushPage(const RepasoScreen()).then((_) => _loadMeta()),
                             ),
                             _HomeTile(
                               icon: Icons.settings_rounded,

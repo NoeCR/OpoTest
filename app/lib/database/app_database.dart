@@ -633,6 +633,19 @@ class AppDatabase {
     return rows.map(TestAttempt.fromMap).toList();
   }
 
+  Future<List<Map<String, dynamic>>> officialAttemptPoints(String userId) {
+    return db.rawQuery(
+      '''
+      SELECT a.test_id, a.percent_score, a.finished_at, t.law_id, t.title_id
+      FROM attempts a
+      INNER JOIN tests t ON t.id = a.test_id
+      WHERE a.user_id = ?
+      ORDER BY a.finished_at ASC
+      ''',
+      [userId],
+    );
+  }
+
   /// Devuelve IDs de tests disponibles en el temario local.
   Future<List<String>> getAllTestIds() async {
     final rows = await db.query(

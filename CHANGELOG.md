@@ -4,6 +4,17 @@ Todas las mejoras relevantes del proyecto se documentan en este archivo.
 
 Este formato sigue una estructura inspirada en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y [SemVer](https://semver.org/lang/es/).
 
+## [Unreleased]
+
+---
+
+## [1.16.0] - 2026-08-28
+
+### Added
+- En Inicio, la tarjeta Repaso (entre Revisión y Configuración) muestra un mapa de puntos débiles: leyes y títulos con media, último % e intentos, lo más flojo arriba. Tocar una abre esa parte del temario.
+
+---
+
 ## [1.15.0] - 2026-08-28
 
 ### Added
