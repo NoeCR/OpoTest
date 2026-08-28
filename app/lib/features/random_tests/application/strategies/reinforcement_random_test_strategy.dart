@@ -1,4 +1,5 @@
 import '../../../../models/question.dart';
+import '../../../failed_questions_export/domain/fail_resolution.dart';
 import '../../domain/random_test_constants.dart';
 import '../../domain/random_test_mode.dart';
 import '../../domain/random_test_pick.dart';
@@ -25,7 +26,7 @@ class ReinforcementRandomTestStrategy implements RandomTestStrategy {
 
     if (recent.isEmpty) return context.emptyFor(mode);
 
-    final seen = <String>{};
+    final seen = FailResolution(await context.db.recoveredQuestionsForUser(userId));
     final failed = <Question>[];
     final testCache = <String, TestDefinition?>{};
 
@@ -36,11 +37,24 @@ class ReinforcementRandomTestStrategy implements RandomTestStrategy {
       for (var i = 0; i < test.questions.length; i++) {
         final answer = attempt.answers[i];
         if (answer == null || answer == 0) continue;
-        if (answer == test.questions[i].solution) continue;
+        final correct = answer == test.questions[i].solution;
+        if (!seen.isCurrentFail(
+          testId: attempt.testId,
+          questionIndex: i,
+          correct: correct,
+          at: attempt.finishedAt,
+        )) {
+          continue;
+        }
 
-        final key = '${attempt.testId}:$i';
-        if (!seen.add(key)) continue;
-        failed.add(cloneQuestion(test.questions[i], order: failed.length + 1));
+        failed.add(
+          cloneQuestion(
+            test.questions[i],
+            order: failed.length + 1,
+            sourceTestId: attempt.testId,
+            sourceQuestionIndex: i,
+          ),
+        );
       }
     }
 

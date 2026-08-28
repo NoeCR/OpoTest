@@ -34,8 +34,16 @@ class MixedRandomTestStrategy implements RandomTestStrategy {
       final test = await context.db.getTest(row.id);
       if (test == null || test.questions.isEmpty) continue;
 
-      final q = test.questions[context.random.nextInt(test.questions.length)];
-      selected.add(cloneQuestion(q, order: selected.length + 1));
+      final index = context.random.nextInt(test.questions.length);
+      final q = test.questions[index];
+      selected.add(
+        cloneQuestion(
+          q,
+          order: selected.length + 1,
+          sourceTestId: test.id,
+          sourceQuestionIndex: index,
+        ),
+      );
       if (lawId.isNotEmpty) usedLaws.add(lawId);
     }
 
@@ -43,8 +51,16 @@ class MixedRandomTestStrategy implements RandomTestStrategy {
       final row = meta[context.random.nextInt(meta.length)];
       final test = await context.db.getTest(row.id);
       if (test == null || test.questions.isEmpty) continue;
-      final q = test.questions[context.random.nextInt(test.questions.length)];
-      selected.add(cloneQuestion(q, order: selected.length + 1));
+      final index = context.random.nextInt(test.questions.length);
+      final q = test.questions[index];
+      selected.add(
+        cloneQuestion(
+          q,
+          order: selected.length + 1,
+          sourceTestId: test.id,
+          sourceQuestionIndex: index,
+        ),
+      );
     }
 
     if (selected.isEmpty) return context.emptyFor(mode);

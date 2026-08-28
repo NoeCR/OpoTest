@@ -10,6 +10,7 @@ import '../features/in_progress_session/data/in_progress_session_store.dart';
 import '../features/in_progress_session/domain/in_progress_choices.dart';
 import '../features/in_progress_session/domain/in_progress_session.dart';
 import '../features/in_progress_session/presentation/in_progress_session_dialogs.dart';
+import '../features/random_tests/domain/random_test_constants.dart';
 import '../models/local_user.dart';
 import '../models/question.dart';
 import '../services/test_scoring.dart';
@@ -338,6 +339,17 @@ class _TestSessionScreenState extends State<TestSessionScreen> with WidgetsBindi
         errorFormat: widget.errorFormat,
       );
       await context.read<AppDatabase>().saveAttempt(attempt);
+      final recoveries = originAnswersFrom(
+        questions: widget.test.questions,
+        answers: answers,
+      ).where((o) => !RandomTestConstants.isSyntheticAttemptTestId(o.testId)).toList();
+      if (recoveries.isNotEmpty) {
+        await context.read<AppDatabase>().applyOriginAnswerOutcomes(
+              userId: user.id,
+              outcomes: recoveries,
+              at: attempt.finishedAt,
+            );
+      }
       if (!mounted) return;
       context.read<AppState>().notifyProgressChanged();
       context.pushReplacementPage(

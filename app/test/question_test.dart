@@ -128,5 +128,60 @@ void main() {
       expect(restored.questions.single.solution, 4);
       expect(restored.questions.single.clarificationHtml, '<p>Nota</p>');
     });
+
+    test('toApiJson roundtrip conserva el origen de preguntas clonadas', () {
+      const original = TestDefinition(
+        id: 'reinforcement_random_1',
+        name: 'Refuerzo',
+        type: 'reinforcement',
+        questions: [
+          Question(
+            order: 1,
+            text: 'P1',
+            answers: ['A', 'B', 'C', 'D'],
+            solution: 1,
+            clarificationHtml: '',
+            sourceTestId: '1001',
+            sourceQuestionIndex: 2,
+          ),
+        ],
+      );
+
+      final restored = TestDefinition.fromApiJson(original.toApiJson());
+      expect(restored.questions.single.sourceTestId, '1001');
+      expect(restored.questions.single.sourceQuestionIndex, 2);
+    });
+  });
+
+  group('originAnswersFrom', () {
+    test('solo incluye preguntas clonadas con respuesta', () {
+      const questions = [
+        Question(
+          order: 1,
+          text: 'Con origen',
+          answers: ['A', 'B', 'C', 'D'],
+          solution: 2,
+          clarificationHtml: '',
+          sourceTestId: '1001',
+          sourceQuestionIndex: 3,
+        ),
+        Question(
+          order: 2,
+          text: 'Sin origen',
+          answers: ['A', 'B', 'C', 'D'],
+          solution: 1,
+          clarificationHtml: '',
+        ),
+      ];
+
+      final outcomes = originAnswersFrom(
+        questions: questions,
+        answers: const {0: 2, 1: 1},
+      );
+      expect(outcomes, hasLength(1));
+      expect(outcomes.single.testId, '1001');
+      expect(outcomes.single.questionIndex, 3);
+      expect(outcomes.single.correct, isTrue);
+    });
   });
 }

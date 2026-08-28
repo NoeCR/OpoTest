@@ -4,6 +4,9 @@ class Question {
   final List<String> answers;
   final int solution;
   final String clarificationHtml;
+  /// Origen en el temario, si la pregunta se clonó a un test sintético.
+  final String? sourceTestId;
+  final int? sourceQuestionIndex;
 
   const Question({
     required this.order,
@@ -11,6 +14,8 @@ class Question {
     required this.answers,
     required this.solution,
     required this.clarificationHtml,
+    this.sourceTestId,
+    this.sourceQuestionIndex,
   });
 
   factory Question.fromApiMap(Map<String, dynamic> item) {
@@ -26,6 +31,8 @@ class Question {
       ],
       solution: int.tryParse(q['solution']?.toString() ?? '') ?? 0,
       clarificationHtml: q['textClarification_es']?.toString() ?? '',
+      sourceTestId: item['source_test_id']?.toString(),
+      sourceQuestionIndex: int.tryParse(item['source_question_index']?.toString() ?? ''),
     );
   }
 
@@ -40,7 +47,45 @@ class Question {
           'solution': '$solution',
           'textClarification_es': clarificationHtml,
         },
+        if (sourceTestId != null) 'source_test_id': sourceTestId,
+        if (sourceQuestionIndex != null) 'source_question_index': sourceQuestionIndex,
       };
+}
+
+class OriginAnswer {
+  const OriginAnswer({
+    required this.testId,
+    required this.questionIndex,
+    required this.correct,
+  });
+
+  final String testId;
+  final int questionIndex;
+  final bool correct;
+}
+
+/// Aciertos y fallos de preguntas clonadas, para actualizar la lista de fallos.
+List<OriginAnswer> originAnswersFrom({
+  required List<Question> questions,
+  required Map<int, int> answers,
+}) {
+  final out = <OriginAnswer>[];
+  for (var i = 0; i < questions.length; i++) {
+    final q = questions[i];
+    final testId = q.sourceTestId;
+    final index = q.sourceQuestionIndex;
+    if (testId == null || testId.isEmpty || index == null) continue;
+    final answer = answers[i];
+    if (answer == null || answer == 0) continue;
+    out.add(
+      OriginAnswer(
+        testId: testId,
+        questionIndex: index,
+        correct: answer == q.solution,
+      ),
+    );
+  }
+  return out;
 }
 
 class TestDefinition {

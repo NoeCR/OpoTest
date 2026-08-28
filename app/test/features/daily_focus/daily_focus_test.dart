@@ -17,6 +17,53 @@ void main() {
     });
   });
 
+  group('countsForMarkedFocus', () {
+    final now = DateTime(2026, 8, 28, 12);
+
+    test('cuenta marcas recientes si no hay repaso', () {
+      expect(
+        countsForMarkedFocus(
+          markedAt: now.subtract(const Duration(days: 2)),
+          now: now,
+        ),
+        isTrue,
+      );
+    });
+
+    test('no cuenta marcas ya cubiertas por un repaso de hoy', () {
+      expect(
+        countsForMarkedFocus(
+          markedAt: now.subtract(const Duration(hours: 3)),
+          now: now,
+          lastMarkedReviewAt: now.subtract(const Duration(hours: 1)),
+        ),
+        isFalse,
+      );
+    });
+
+    test('sí cuenta marcas nuevas posteriores al repaso de hoy', () {
+      expect(
+        countsForMarkedFocus(
+          markedAt: now.subtract(const Duration(minutes: 10)),
+          now: now,
+          lastMarkedReviewAt: now.subtract(const Duration(hours: 1)),
+        ),
+        isTrue,
+      );
+    });
+
+    test('un repaso de ayer no descarta las marcas de hoy', () {
+      expect(
+        countsForMarkedFocus(
+          markedAt: now.subtract(const Duration(days: 2)),
+          now: now,
+          lastMarkedReviewAt: now.subtract(const Duration(days: 1)),
+        ),
+        isTrue,
+      );
+    });
+  });
+
   group('pickWeakestTest', () {
     test('elige el peor último porcentaje', () {
       final picked = pickWeakestTest(const [

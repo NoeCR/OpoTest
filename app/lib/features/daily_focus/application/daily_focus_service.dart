@@ -29,10 +29,15 @@ class DailyFocusService {
     DateTime? now,
   }) async {
     final at = now ?? DateTime.now();
+    final lastMarkedReviewAt = await _lastMarkedReviewAt(userId);
     final marked = await _db.markedQuestionsForUser(userId);
     final recentMarkedCount = marked.where((m) {
       if (RandomTestConstants.isSyntheticAttemptTestId(m.testId)) return false;
-      return isRecentMark(m.markedAt, at);
+      return countsForMarkedFocus(
+        markedAt: m.markedAt,
+        now: at,
+        lastMarkedReviewAt: lastMarkedReviewAt,
+      );
     }).length;
 
     final fails = await _fails.collect(
@@ -50,6 +55,16 @@ class DailyFocusService {
       weakest: weakest,
       lastAttempt: lastAttempt,
     );
+  }
+
+  Future<DateTime?> _lastMarkedReviewAt(String userId) async {
+    final attempts = await _db.attemptsForUser(userId);
+    for (final row in attempts) {
+      final testId = row['test_id'] as String? ?? '';
+      if (!testId.startsWith('review_random')) continue;
+      return DateTime.tryParse(row['finished_at'] as String? ?? '');
+    }
+    return null;
   }
 
   Future<WeakTestHint?> _weakestTest(String userId) async {

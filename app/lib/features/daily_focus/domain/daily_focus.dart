@@ -76,12 +76,30 @@ class DailyFocusPlan {
 
   final DailyFocusAction primary;
   final List<DailyFocusAction> secondary;
+
+  List<DailyFocusAction> get actions => [primary, ...secondary];
 }
 
 bool isRecentMark(DateTime markedAt, DateTime now) {
   final age = now.difference(markedAt);
   if (age.isNegative) return true;
   return age <= markedFocusMaxAge;
+}
+
+bool isSameCalendarDay(DateTime a, DateTime b) {
+  return a.year == b.year && a.month == b.month && a.day == b.day;
+}
+
+/// Marca que aún pide foco hoy: reciente y no cubierta por un test de repaso de hoy.
+bool countsForMarkedFocus({
+  required DateTime markedAt,
+  required DateTime now,
+  DateTime? lastMarkedReviewAt,
+}) {
+  if (!isRecentMark(markedAt, now)) return false;
+  if (lastMarkedReviewAt == null) return true;
+  if (!isSameCalendarDay(lastMarkedReviewAt, now)) return true;
+  return markedAt.isAfter(lastMarkedReviewAt);
 }
 
 /// Elige el test con peor último % (menor que 100). Empate: más intentos.
@@ -96,7 +114,7 @@ WeakTestHint? pickWeakestTest(Iterable<WeakTestHint> candidates) {
   return weak.first;
 }
 
-/// Orden fijo: marcas recientes → fallos 7 días → test más flojo → último intento → azar.
+/// Orden fijo: marcas pendientes de hoy → fallos 7 días → test más flojo → último intento → azar.
 DailyFocusPlan buildDailyFocus(DailyFocusSnapshot snapshot) {
   final candidates = <DailyFocusAction>[];
 

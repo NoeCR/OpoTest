@@ -62,7 +62,7 @@ class AppDatabase {
   static Future<Database> _openDatabase(String path) {
     return openDatabase(
       path,
-      version: 4,
+      version: 5,
       onCreate: _onCreate,
       onUpgrade: _onUpgrade,
     );
@@ -133,6 +133,7 @@ class AppDatabase {
     ''');
     await _createMarkedQuestionsTable(db);
     await _createInProgressSessionsTable(db);
+    await _createRecoveredQuestionsTable(db);
   }
 
   static Future<void> _createMarkedQuestionsTable(Database db) async {
@@ -142,6 +143,18 @@ class AppDatabase {
         test_id TEXT NOT NULL,
         question_index INTEGER NOT NULL,
         marked_at TEXT NOT NULL,
+        PRIMARY KEY (user_id, test_id, question_index)
+      )
+    ''');
+  }
+
+  static Future<void> _createRecoveredQuestionsTable(Database db) async {
+    await db.execute('''
+      CREATE TABLE recovered_questions (
+        user_id TEXT NOT NULL,
+        test_id TEXT NOT NULL,
+        question_index INTEGER NOT NULL,
+        recovered_at TEXT NOT NULL,
         PRIMARY KEY (user_id, test_id, question_index)
       )
     ''');
@@ -181,6 +194,9 @@ class AppDatabase {
     if (oldVersion < 4) {
       await _createInProgressSessionsTable(db);
     }
+    if (oldVersion < 5) {
+      await _createRecoveredQuestionsTable(db);
+    }
   }
 
   static Database get db {
@@ -201,6 +217,7 @@ class AppDatabase {
   Future<void> deleteUserData(String userId) async {
     await db.delete('attempts', where: 'user_id = ?', whereArgs: [userId]);
     await db.delete('marked_questions', where: 'user_id = ?', whereArgs: [userId]);
+    await db.delete('recovered_questions', where: 'user_id = ?', whereArgs: [userId]);
     await db.delete('in_progress_sessions', where: 'user_id = ?', whereArgs: [userId]);
     await db.delete('users', where: 'id = ?', whereArgs: [userId]);
   }
@@ -999,6 +1016,7 @@ class AppDatabase {
       'active_user_id': activeId,
       'attempts': attempts,
       'marked_questions': await _markedQuestionsForExport(userId),
+      'recovered_questions': await _recoveredQuestionsForExport(userId),
     };
   }
 
@@ -1079,6 +1097,64 @@ class AppDatabase {
     return true;
   }
 
+  Future<Map<String, DateTime>> recoveredQuestionsForUser(String userId) async {
+    final rows = await db.query(
+      'recovered_questions',
+      where: 'user_id = ?',
+      whereArgs: [userId],
+    );
+    final out = <String, DateTime>{};
+    for (final row in rows) {
+      final testId = row['test_id'] as String? ?? '';
+      final index = (row['question_index'] as num?)?.toInt();
+      final at = DateTime.tryParse(row['recovered_at'] as String? ?? '');
+      if (testId.isEmpty || index == null || at == null) continue;
+      out['$testId:$index'] = at;
+    }
+    return out;
+  }
+
+  Future<void> applyOriginAnswerOutcomes({
+    required String userId,
+    required List<OriginAnswer> outcomes,
+    required DateTime at,
+  }) async {
+    if (outcomes.isEmpty) return;
+    final batch = db.batch();
+    for (final outcome in outcomes) {
+      if (outcome.correct) {
+        batch.insert(
+          'recovered_questions',
+          {
+            'user_id': userId,
+            'test_id': outcome.testId,
+            'question_index': outcome.questionIndex,
+            'recovered_at': at.toIso8601String(),
+          },
+          conflictAlgorithm: ConflictAlgorithm.replace,
+        );
+      } else {
+        batch.delete(
+          'recovered_questions',
+          where: 'user_id = ? AND test_id = ? AND question_index = ?',
+          whereArgs: [userId, outcome.testId, outcome.questionIndex],
+        );
+      }
+    }
+    await batch.commit(noResult: true);
+  }
+
+  Future<List<Map<String, dynamic>>> _recoveredQuestionsForExport(String? userId) async {
+    return userId == null
+        ? db.query('recovered_questions', orderBy: 'recovered_at DESC')
+        : db.query(
+            'recovered_questions',
+            where: 'user_id = ?',
+            whereArgs: [userId],
+            orderBy: 'recovered_at DESC',
+          );
+  }
+
   Future<void> upsertInProgressSession(InProgressSession session) async {
     await db.insert(
       'in_progress_sessions',
@@ -1114,6 +1190,7 @@ class AppDatabase {
     var attempts = 0;
     var missingTests = 0;
     var markedQuestions = 0;
+    var recoveredQuestions = 0;
 
     final userRows = backup['users'] as List? ?? [];
     if (backup['user'] is Map && userRows.isEmpty) {
@@ -1126,6 +1203,7 @@ class AppDatabase {
       if (replaceExistingUsers) {
         await db.delete('attempts', where: 'user_id = ?', whereArgs: [user.id]);
         await db.delete('marked_questions', where: 'user_id = ?', whereArgs: [user.id]);
+        await db.delete('recovered_questions', where: 'user_id = ?', whereArgs: [user.id]);
         await db.delete('in_progress_sessions', where: 'user_id = ?', whereArgs: [user.id]);
       }
       await upsertUser(user);
@@ -1163,11 +1241,30 @@ class AppDatabase {
       markedQuestions++;
     }
 
+    final recoveredRows = backup['recovered_questions'] as List? ?? [];
+    for (final raw in recoveredRows) {
+      final row = Map<String, dynamic>.from(raw as Map);
+      final testId = row['test_id']?.toString() ?? '';
+      if (testId.isNotEmpty && !knownTests.contains(testId)) missingTests++;
+      await db.insert(
+        'recovered_questions',
+        {
+          'user_id': row['user_id'],
+          'test_id': testId,
+          'question_index': row['question_index'],
+          'recovered_at': row['recovered_at'],
+        },
+        conflictAlgorithm: ConflictAlgorithm.replace,
+      );
+      recoveredQuestions++;
+    }
+
     return {
       'users': users,
       'attempts': attempts,
       'missing_tests': missingTests,
       'marked_questions': markedQuestions,
+      'recovered_questions': recoveredQuestions,
     };
   }
 

@@ -4,6 +4,17 @@ Todas las mejoras relevantes del proyecto se documentan en este archivo.
 
 Este formato sigue una estructura inspirada en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y [SemVer](https://semver.org/lang/es/).
 
+## [1.14.1] - 2026-08-28
+
+### Changed
+- La tarjeta «Hoy» muestra cada propuesta como una opción aparte (subtarjeta), no como texto suelto.
+
+### Fixed
+- El foco del día deja de proponer «Repasar marcas» el mismo día después de terminar ese test; propone lo siguiente (fallos, test flojo o azar). Las marcas se quedan para otro día.
+- Un acierto al repasar fallos saca esa pregunta de la lista de fallos (foco del día y test de refuerzo). Si se vuelve a fallar, reaparece.
+
+---
+
 ## [1.14.0] - 2026-08-27
 
 ### Added

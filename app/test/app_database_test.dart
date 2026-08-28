@@ -321,6 +321,28 @@ void main() {
       expect(await db.isQuestionMarked(user.id, '9003', 0), isTrue);
     });
 
+    test('export e import conservan preguntas recuperadas', () async {
+      await db.upsertOfficialTest(sampleTestJson(id: '9004'));
+      await db.applyOriginAnswerOutcomes(
+        userId: user.id,
+        outcomes: const [
+          OriginAnswer(testId: '9004', questionIndex: 0, correct: true),
+        ],
+        at: DateTime.parse('2026-08-28T10:00:00'),
+      );
+
+      final snapshot = await db.exportProgressSnapshot(userId: user.id);
+      final recovered = snapshot['recovered_questions'] as List;
+      expect(recovered, hasLength(1));
+      expect(recovered.first['test_id'], '9004');
+
+      await AppDatabase.db.delete('recovered_questions');
+      expect(await db.recoveredQuestionsForUser(user.id), isEmpty);
+
+      await db.importProgressSnapshot(snapshot);
+      expect(await db.recoveredQuestionsForUser(user.id), contains('9004:0'));
+    });
+
     test('deleteUserData elimina usuario e intentos', () async {
       await db.upsertOfficialTest(sampleTestJson(id: '7001'));
       await db.saveAttempt(TestAttempt(
@@ -342,6 +364,13 @@ void main() {
         testId: '7001',
         questionIndex: 0,
       );
+      await db.applyOriginAnswerOutcomes(
+        userId: user.id,
+        outcomes: const [
+          OriginAnswer(testId: '7001', questionIndex: 0, correct: true),
+        ],
+        at: DateTime.now(),
+      );
 
       await db.upsertInProgressSession(InProgressSession.fromLive(
         userId: user.id,
@@ -359,6 +388,7 @@ void main() {
       expect(await db.attemptsForUser(user.id), isEmpty);
       expect(await db.countMarkedQuestions(user.id), 0);
       expect(await db.getInProgressSession(user.id), isNull);
+      expect(await db.recoveredQuestionsForUser(user.id), isEmpty);
     });
   });
 }

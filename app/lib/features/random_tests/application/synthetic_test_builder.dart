@@ -25,13 +25,20 @@ class SyntheticTestBuilder {
   }
 }
 
-Question cloneQuestion(Question source, {required int order}) {
+Question cloneQuestion(
+  Question source, {
+  required int order,
+  String? sourceTestId,
+  int? sourceQuestionIndex,
+}) {
   return Question(
     order: order,
     text: source.text,
     answers: source.answers,
     solution: source.solution,
     clarificationHtml: source.clarificationHtml,
+    sourceTestId: sourceTestId ?? source.sourceTestId,
+    sourceQuestionIndex: sourceQuestionIndex ?? source.sourceQuestionIndex,
   );
 }
 

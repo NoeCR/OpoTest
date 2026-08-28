@@ -4,6 +4,7 @@ import 'package:opotest/features/daily_focus/application/daily_focus_service.dar
 import 'package:opotest/features/daily_focus/domain/daily_focus.dart';
 import 'package:opotest/features/failed_questions_export/application/failed_questions_collector.dart';
 import 'package:opotest/models/local_user.dart';
+import 'package:opotest/models/question.dart';
 
 import '../../helpers/database_helper.dart';
 
@@ -66,6 +67,76 @@ void main() {
       expect(plan.secondary.first.kind, DailyFocusKind.reinforcement);
     });
 
+    test('tras un test de repaso de hoy, las mismas marcas no vuelven a proponerse', () async {
+      await db.toggleMarkedQuestion(userId: user.id, testId: '1002', questionIndex: 0);
+      await db.toggleMarkedQuestion(userId: user.id, testId: '1002', questionIndex: 1);
+      await AppDatabase.db.update(
+        'marked_questions',
+        {'marked_at': now.subtract(const Duration(hours: 2)).toIso8601String()},
+        where: 'user_id = ?',
+        whereArgs: [user.id],
+      );
+      await saveAttempt(
+        id: 'att-fail',
+        testId: '1001',
+        finishedAt: now.subtract(const Duration(days: 1)),
+        answers: const {0: 2},
+        percent: 40,
+      );
+      await saveAttempt(
+        id: 'att-review',
+        testId: 'review_random_1',
+        finishedAt: now.subtract(const Duration(minutes: 5)),
+        answers: const {0: 1, 1: 1},
+        percent: 100,
+      );
+
+      final plan = await service.planFor(userId: user.id, contentReady: true, now: now);
+      expect(plan.primary.kind, DailyFocusKind.reinforcement);
+    });
+
+    test('un test de repaso de ayer no quita las marcas del foco de hoy', () async {
+      await db.toggleMarkedQuestion(userId: user.id, testId: '1002', questionIndex: 0);
+      await saveAttempt(
+        id: 'att-review-old',
+        testId: 'review_random_ayer',
+        finishedAt: now.subtract(const Duration(days: 1)),
+        answers: const {0: 1},
+        percent: 80,
+      );
+
+      final plan = await service.planFor(userId: user.id, contentReady: true, now: now);
+      expect(plan.primary.kind, DailyFocusKind.markedReview);
+    });
+
+    test('una marca nueva posterior al repaso de hoy sí entra en el foco', () async {
+      await db.toggleMarkedQuestion(userId: user.id, testId: '1002', questionIndex: 0);
+      await AppDatabase.db.update(
+        'marked_questions',
+        {'marked_at': now.subtract(const Duration(hours: 4)).toIso8601String()},
+        where: 'user_id = ? AND test_id = ?',
+        whereArgs: [user.id, '1002'],
+      );
+      await saveAttempt(
+        id: 'att-review',
+        testId: 'review_random_1',
+        finishedAt: now.subtract(const Duration(hours: 2)),
+        answers: const {0: 1},
+        percent: 100,
+      );
+      await db.toggleMarkedQuestion(userId: user.id, testId: '1001', questionIndex: 0);
+      await AppDatabase.db.update(
+        'marked_questions',
+        {'marked_at': now.subtract(const Duration(minutes: 5)).toIso8601String()},
+        where: 'user_id = ? AND test_id = ?',
+        whereArgs: [user.id, '1001'],
+      );
+
+      final plan = await service.planFor(userId: user.id, contentReady: true, now: now);
+      expect(plan.primary.kind, DailyFocusKind.markedReview);
+      expect(plan.primary.reason, contains('1 pregunta'));
+    });
+
     test('marcas antiguas no cuentan y gana el test flojo o los fallos', () async {
       await db.toggleMarkedQuestion(userId: user.id, testId: '1002', questionIndex: 0);
       await AppDatabase.db.update(
@@ -104,6 +175,27 @@ void main() {
       final plan = await service.planFor(userId: user.id, contentReady: true, now: now);
       expect(plan.primary.kind, DailyFocusKind.reinforcement);
       expect(plan.primary.reason, contains('7 días'));
+    });
+
+    test('un acierto al repasar fallos deja de proponer refuerzo', () async {
+      await saveAttempt(
+        id: 'att-fail-recent',
+        testId: '1001',
+        finishedAt: now.subtract(const Duration(days: 2)),
+        answers: const {0: 2},
+        percent: 50,
+      );
+      await db.applyOriginAnswerOutcomes(
+        userId: user.id,
+        outcomes: const [
+          OriginAnswer(testId: '1001', questionIndex: 0, correct: true),
+        ],
+        at: now.subtract(const Duration(hours: 1)),
+      );
+
+      final plan = await service.planFor(userId: user.id, contentReady: true, now: now);
+      expect(plan.primary.kind, isNot(DailyFocusKind.reinforcement));
+      expect(plan.primary.kind, DailyFocusKind.weakTest);
     });
 
     test('fallos de hace más de 7 días no entran en refuerzo', () async {

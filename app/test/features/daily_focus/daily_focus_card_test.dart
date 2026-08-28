@@ -36,9 +36,13 @@ void main() {
     );
 
     expect(find.text('HOY'), findsOneWidget);
+    expect(find.text('Elige qué practicar'), findsOneWidget);
+    expect(find.text('RECOMENDADO'), findsOneWidget);
     expect(find.text('Repasar marcas'), findsOneWidget);
     expect(find.text('Tienes 3 preguntas marcadas para revisión'), findsOneWidget);
+    expect(find.text('También'), findsOneWidget);
     expect(find.text('Repasar fallos'), findsOneWidget);
+    expect(find.text('Tienes 2 fallos de los últimos 7 días'), findsOneWidget);
 
     await tester.tap(find.text('Empezar'));
     expect(selected?.kind, DailyFocusKind.markedReview);

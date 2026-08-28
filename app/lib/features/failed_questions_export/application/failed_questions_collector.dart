@@ -3,6 +3,7 @@ import '../../../models/question.dart';
 import '../../random_tests/domain/random_test_constants.dart';
 import '../domain/failed_question_item.dart';
 import '../domain/failed_questions_range.dart';
+import '../domain/fail_resolution.dart';
 
 class FailedQuestionsCollector {
   FailedQuestionsCollector(this._db);
@@ -25,7 +26,7 @@ class FailedQuestionsCollector {
     final testCache = <String, TestDefinition?>{};
     final lawIdCache = <String, String?>{};
     final titleCache = <String, String?>{};
-    final seen = <String>{};
+    final seen = FailResolution(await _db.recoveredQuestionsForUser(userId));
     final items = <FailedQuestionItem>[];
     var skippedMissingTests = 0;
 
@@ -42,10 +43,15 @@ class FailedQuestionsCollector {
       for (var i = 0; i < test.questions.length; i++) {
         final answer = attempt.answers[i];
         if (answer == null || answer == 0) continue;
-        if (answer == test.questions[i].solution) continue;
-
-        final key = '${attempt.testId}:$i';
-        if (!seen.add(key)) continue;
+        final correct = answer == test.questions[i].solution;
+        if (!seen.isCurrentFail(
+          testId: attempt.testId,
+          questionIndex: i,
+          correct: correct,
+          at: attempt.finishedAt,
+        )) {
+          continue;
+        }
 
         final lawId = lawIdCache[attempt.testId] ??= await _db.getTestLawId(attempt.testId);
         final law = laws[lawId];

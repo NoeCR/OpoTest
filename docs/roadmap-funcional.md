@@ -32,7 +32,7 @@ Archivos ancla:
 
 - Sesión: `app/lib/screens/test_session_screen.dart`, `app/lib/services/test_launcher.dart`
 - Inicio: `app/lib/screens/home_screen.dart`
-- BD: `app/lib/database/app_database.dart` (versión **4**)
+- BD: `app/lib/database/app_database.dart` (versión **5**)
 - Fallos: `app/lib/features/failed_questions_export/`
 - Aleatorio: `app/lib/features/random_tests/`
 - Tests propios: `app/lib/features/custom_tests/`
@@ -92,6 +92,9 @@ Archivos ancla:
 - Tocar lanza el test o el modo ya existente (no un noveno modo aleatorio).
 - Sin datos: copy útil («Haz un test de cualquier ley para empezar»), no error.
 - Recalcula al volver de un test y al `resumed`.
+- Si ya se terminó un test de repaso de marcas **hoy**, esas marcas no vuelven a proponerse el mismo día (sale la siguiente prioridad). Mañana sí, si siguen marcadas. Una marca nueva posterior al repaso sí cuenta.
+- Un acierto al **repasar fallos** (o en otro test sintético con origen) saca esa pregunta de la lista de fallos; si se vuelve a fallar, reaparece.
+- La tarjeta «Hoy» muestra cada propuesta como subtarjeta accionable (recomendada + alternativas).
 
 **Cómo llevarlo a cabo.**
 
@@ -289,7 +292,7 @@ Hacer **después** de Fase 0. Varios son releases pequeños.
 | # | Punto | Versión orientativa |
 |---|---|---|
 | 1 | 0.1 Continuar test | 1.13.0 |
-| 2 | 0.2 Foco del día | 1.14.0 |
+| 2 | 0.2 Foco del día | 1.14.0 (parche 1.14.1) |
 | 3 | 0.3 Búsqueda | 1.15.0 |
 | 4 | 1.1 Mapa de débiles | 1.16.0 |
 | 5 | 1.2 Simulacro | 1.17.0 |

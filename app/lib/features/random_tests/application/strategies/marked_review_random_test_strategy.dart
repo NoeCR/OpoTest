@@ -26,7 +26,14 @@ class MarkedReviewRandomTestStrategy implements RandomTestStrategy {
       final test = await context.db.getTest(item.testId);
       if (test == null) continue;
       if (item.questionIndex < 0 || item.questionIndex >= test.questions.length) continue;
-      selected.add(cloneQuestion(test.questions[item.questionIndex], order: selected.length + 1));
+      selected.add(
+        cloneQuestion(
+          test.questions[item.questionIndex],
+          order: selected.length + 1,
+          sourceTestId: item.testId,
+          sourceQuestionIndex: item.questionIndex,
+        ),
+      );
     }
 
     if (selected.isEmpty) return context.emptyFor(mode);

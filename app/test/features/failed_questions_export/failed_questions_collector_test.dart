@@ -145,6 +145,70 @@ void main() {
       );
       expect(result.items, isEmpty);
     });
+
+    test('un acierto posterior en el mismo test deja de contar el fallo', () async {
+      await saveAttempt(
+        id: 'att-fail',
+        finishedAt: DateTime.parse('2026-08-20T10:00:00'),
+        answers: const {0: 2},
+      );
+      await saveAttempt(
+        id: 'att-ok',
+        finishedAt: DateTime.parse('2026-08-20T18:00:00'),
+        answers: const {0: 1},
+      );
+
+      final result = await collector.collect(
+        userId: user.id,
+        range: rangeAround(DateTime.parse('2026-08-20T12:00:00')),
+      );
+      expect(result.items, isEmpty);
+    });
+
+    test('un acierto al repasar saca el fallo de la lista', () async {
+      final failedAt = DateTime.parse('2026-08-20T10:00:00');
+      await saveAttempt(id: 'att-fail', finishedAt: failedAt, answers: const {0: 2});
+      await db.applyOriginAnswerOutcomes(
+        userId: user.id,
+        outcomes: const [
+          OriginAnswer(testId: '1001', questionIndex: 0, correct: true),
+        ],
+        at: failedAt.add(const Duration(hours: 2)),
+      );
+
+      final result = await collector.collect(
+        userId: user.id,
+        range: rangeAround(failedAt),
+      );
+      expect(result.items, isEmpty);
+    });
+
+    test('si se falla otra vez después de recuperarla, vuelve a la lista', () async {
+      await saveAttempt(
+        id: 'att-fail-1',
+        finishedAt: DateTime.parse('2026-08-20T10:00:00'),
+        answers: const {0: 2},
+      );
+      await db.applyOriginAnswerOutcomes(
+        userId: user.id,
+        outcomes: const [
+          OriginAnswer(testId: '1001', questionIndex: 0, correct: true),
+        ],
+        at: DateTime.parse('2026-08-20T12:00:00'),
+      );
+      await saveAttempt(
+        id: 'att-fail-2',
+        finishedAt: DateTime.parse('2026-08-20T18:00:00'),
+        answers: const {0: 3},
+      );
+
+      final result = await collector.collect(
+        userId: user.id,
+        range: rangeAround(DateTime.parse('2026-08-20T12:00:00')),
+      );
+      expect(result.items, hasLength(1));
+      expect(result.items.single.userAnswer, 3);
+    });
   });
 
   group('FailedQuestionsHtmlReport', () {
