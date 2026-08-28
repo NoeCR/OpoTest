@@ -8,6 +8,7 @@ import '../database/app_database.dart';
 import '../models/content_kind.dart';
 import '../models/law_sort_mode.dart';
 import '../models/test_stats.dart';
+import '../features/temario_search/presentation/temario_search_screen.dart';
 import '../navigation/app_navigation.dart';
 import '../services/test_launcher.dart';
 import '../state/app_state.dart';
@@ -174,7 +175,15 @@ class _LawsScreenState extends State<LawsScreen> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          const GradientHeader(title: 'Legislación', subtitle: 'Selecciona una ley'),
+          GradientHeader(
+            title: 'Legislación',
+            subtitle: 'Selecciona una ley',
+            trailing: IconButton(
+              tooltip: 'Buscar',
+              onPressed: () => context.pushPage(const TemarioSearchScreen()),
+              icon: const Icon(Icons.search_rounded, color: Colors.white),
+            ),
+          ),
           LawSortBar(
             selected: _sortMode,
             onSelected: _setSortMode,

@@ -401,6 +401,48 @@ class AppDatabase {
   Future<List<Map<String, dynamic>>> getTitlesForLaw(String lawId) =>
       db.query('titles', where: 'law_id = ?', whereArgs: [lawId], orderBy: 'order_idx');
 
+  Future<List<Map<String, dynamic>>> titlesWithLaw() {
+    return db.rawQuery(
+      '''
+      SELECT t.id, t.law_id, t.code, t.name, l.code AS law_code, l.name AS law_name
+      FROM titles t
+      LEFT JOIN laws l ON l.id = t.law_id
+      ORDER BY t.order_idx
+      ''',
+    );
+  }
+
+  Future<List<Map<String, dynamic>>> testsWithPlace() {
+    return db.rawQuery(
+      '''
+      SELECT te.id, te.name, te.law_id, te.title_id,
+             l.code AS law_code, l.name AS law_name, ti.name AS title_name
+      FROM tests te
+      LEFT JOIN laws l ON l.id = te.law_id
+      LEFT JOIN titles ti ON ti.id = te.title_id
+      ORDER BY te.index_num
+      ''',
+    );
+  }
+
+  Future<List<Map<String, dynamic>>> searchTestPayloadsContaining(
+    String likePattern, {
+    int limit = 80,
+  }) {
+    return db.rawQuery(
+      '''
+      SELECT te.id, te.name, te.law_id, te.title_id, te.payload,
+             l.code AS law_code, l.name AS law_name, ti.name AS title_name
+      FROM tests te
+      LEFT JOIN laws l ON l.id = te.law_id
+      LEFT JOIN titles ti ON ti.id = te.title_id
+      WHERE LOWER(te.payload) LIKE ? ESCAPE '\\'
+      LIMIT ?
+      ''',
+      [likePattern, limit],
+    );
+  }
+
   Future<TestDefinition?> getTest(String id) async {
     final rows = await db.query('tests', where: 'id = ?', whereArgs: [id], limit: 1);
     if (rows.isEmpty) return null;

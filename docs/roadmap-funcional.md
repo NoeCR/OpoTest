@@ -20,8 +20,9 @@ Base: OpoTest **v1.13.0** (offline, SQLite, Flutter). Cada punto está pensado c
 
 | Ya existe | Hueco |
 |---|---|
-| Temario local, SQLite, usuarios locales | No hay búsqueda |
+| Temario local, SQLite, usuarios locales | — |
 | 8 modos de test aleatorio + foco del día (v1.14.0) | — |
+| Búsqueda en el temario (v1.15.0) | — |
 | Informe HTML de fallos + recordatorio | No hay intervalo de repaso por pregunta |
 | Marcas, refuerzo, historial | Perfil solo muestra nº de intentos y media |
 | Pausar y continuar un test a medias (v1.13.0) | — |
@@ -36,6 +37,7 @@ Archivos ancla:
 - Fallos: `app/lib/features/failed_questions_export/`
 - Aleatorio: `app/lib/features/random_tests/`
 - Tests propios: `app/lib/features/custom_tests/`
+- Búsqueda: `app/lib/features/temario_search/`
 
 ---
 
@@ -116,7 +118,7 @@ Archivos ancla:
 - **Prioridad:** P0 (tercero)
 - **Esfuerzo:** medio
 - **Dependencias:** ninguna
-- **Estado:** [ ] Pendiente
+- **Estado:** [x] Hecho en **v1.15.0**
 
 **Qué es.** Buscar por texto leyes, títulos, tests y (si rinde) enunciados de preguntas.
 

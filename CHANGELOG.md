@@ -4,6 +4,13 @@ Todas las mejoras relevantes del proyecto se documentan en este archivo.
 
 Este formato sigue una estructura inspirada en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y [SemVer](https://semver.org/lang/es/).
 
+## [1.15.0] - 2026-08-28
+
+### Added
+- Se puede buscar en el temario (leyes, títulos, tests y enunciados) desde Inicio y Legislación.
+
+---
+
 ## [1.14.1] - 2026-08-28
 
 ### Changed

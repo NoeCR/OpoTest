@@ -14,6 +14,7 @@ import '../features/in_progress_session/data/in_progress_session_store.dart';
 import '../features/in_progress_session/domain/in_progress_session.dart';
 import '../features/random_tests/presentation/random_test_hub_screen.dart';
 import '../features/random_tests/presentation/random_test_launcher.dart';
+import '../features/temario_search/presentation/temario_search_screen.dart';
 import '../navigation/app_navigation.dart';
 import '../state/app_state.dart';
 import '../theme/app_theme.dart';
@@ -38,6 +39,11 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
   InProgressSession? _inProgress;
   DailyFocusPlan? _dailyFocus;
   var _reminderInFlight = false;
+
+  Future<void> _openSearch() async {
+    await context.pushPage(const TemarioSearchScreen());
+    if (mounted) await _loadMeta();
+  }
 
   Future<void> _openRandomHub() async {
     if (!context.read<AppState>().contentReady) return;
@@ -167,13 +173,23 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
             subtitle: _questionCount != null
                 ? 'Más de $_questionCount preguntas disponibles'
                 : 'Cargando temario...',
-            trailing: CircleAvatar(
-              radius: 22,
-              backgroundColor: Colors.white.withValues(alpha: 0.2),
-              child: Text(
-                user.name[0].toUpperCase(),
-                style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-              ),
+            trailing: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                IconButton(
+                  tooltip: 'Buscar',
+                  onPressed: _openSearch,
+                  icon: const Icon(Icons.search_rounded, color: Colors.white),
+                ),
+                CircleAvatar(
+                  radius: 22,
+                  backgroundColor: Colors.white.withValues(alpha: 0.2),
+                  child: Text(
+                    user.name[0].toUpperCase(),
+                    style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ],
             ),
           ),
           Padding(
