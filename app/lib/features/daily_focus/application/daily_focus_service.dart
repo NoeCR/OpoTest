@@ -45,6 +45,8 @@ class DailyFocusService {
       range: FailedQuestionsRange.last7Days(now: at),
     );
 
+    final dueReviewCount = await _db.countDueQuestionReviews(userId, at);
+
     final weakest = await _weakestTest(userId);
     final lastAttempt = await _lastOfficialAttempt(userId);
 
@@ -52,6 +54,7 @@ class DailyFocusService {
       contentReady: contentReady,
       recentMarkedCount: recentMarkedCount,
       recentFailCount: fails.items.length,
+      dueReviewCount: dueReviewCount,
       weakest: weakest,
       lastAttempt: lastAttempt,
     );

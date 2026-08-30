@@ -8,6 +8,13 @@ Este formato sigue una estructura inspirada en [Keep a Changelog](https://keepac
 
 ---
 
+## [1.18.0] - 2026-08-30
+
+### Added
+- Tras cada test, los fallos entran en un repaso espaciado (5 cajas, 1 / 3 / 7 / 16 / 30 días). Un acierto alarga el intervalo; un fallo vuelve a empezar. El foco del día, el test de refuerzo y el recordatorio priorizan lo que toca hoy; si no hay nada vencido, el refuerzo saca unos pocos fallos recientes.
+
+---
+
 ## [1.17.0] - 2026-08-28
 
 ### Added

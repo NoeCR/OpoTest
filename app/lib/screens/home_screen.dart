@@ -7,6 +7,7 @@ import '../features/daily_focus/application/daily_focus_service.dart';
 import '../features/daily_focus/domain/daily_focus.dart';
 import '../features/daily_focus/presentation/daily_focus_card.dart';
 import '../features/failed_questions_export/application/failed_questions_export_service.dart';
+import '../features/spaced_review/application/spaced_review_service.dart';
 import '../features/failed_questions_export/domain/failed_questions_reminder.dart';
 import '../features/failed_questions_export/presentation/failed_questions_export_screen.dart';
 import '../features/failed_questions_export/presentation/failed_questions_reminder_dialog.dart';
@@ -147,12 +148,14 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
         userId: user.id,
         range: service.rangeForReminder(interval),
       );
+      final dueCount = await SpacedReviewService(context.read<AppDatabase>()).countDue(userId: user.id);
       if (!mounted || preview.items.isEmpty) return;
 
       final generate = await showFailedQuestionsReminderDialog(
         context,
         interval: interval,
         failCount: preview.items.length,
+        dueCount: dueCount,
       );
       if (!mounted) return;
       await service.markReminderPrompted(user.id);

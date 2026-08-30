@@ -7,19 +7,19 @@ Future<bool> showFailedQuestionsReminderDialog(
   BuildContext context, {
   required FailedQuestionsReminderInterval interval,
   required int failCount,
+  int dueCount = 0,
 }) async {
-  final periodLabel = interval == FailedQuestionsReminderInterval.weekly
-      ? 'esta semana'
-      : 'el último día';
   final result = await showDialog<bool>(
     context: context,
     builder: (ctx) {
       return AlertDialog(
         title: const Text('Informe de fallos'),
         content: Text(
-          failCount == 1
-              ? 'Tienes 1 pregunta fallada de $periodLabel. ¿Quieres generar el informe para estudiarla?'
-              : 'Tienes $failCount preguntas falladas de $periodLabel. ¿Quieres generar el informe para estudiarlas?',
+          failedQuestionsReminderBody(
+            interval: interval,
+            failCount: failCount,
+            dueCount: dueCount,
+          ),
         ),
         actions: [
           TextButton(

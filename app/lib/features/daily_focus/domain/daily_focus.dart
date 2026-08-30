@@ -41,6 +41,7 @@ class DailyFocusSnapshot {
     required this.contentReady,
     this.recentMarkedCount = 0,
     this.recentFailCount = 0,
+    this.dueReviewCount = 0,
     this.weakest,
     this.lastAttempt,
   });
@@ -48,6 +49,7 @@ class DailyFocusSnapshot {
   final bool contentReady;
   final int recentMarkedCount;
   final int recentFailCount;
+  final int dueReviewCount;
   final WeakTestHint? weakest;
   final LastAttemptHint? lastAttempt;
 }
@@ -132,15 +134,20 @@ DailyFocusPlan buildDailyFocus(DailyFocusSnapshot snapshot) {
     );
   }
 
-  if (snapshot.recentFailCount > 0) {
-    final n = snapshot.recentFailCount;
+  if (snapshot.dueReviewCount > 0 || snapshot.recentFailCount > 0) {
+    final dueToday = snapshot.dueReviewCount > 0;
+    final n = dueToday ? snapshot.dueReviewCount : snapshot.recentFailCount;
     candidates.add(
       DailyFocusAction(
         kind: DailyFocusKind.reinforcement,
         title: 'Repasar fallos',
-        reason: n == 1
-            ? 'Tienes 1 fallo de los últimos 7 días'
-            : 'Tienes $n fallos de los últimos 7 días',
+        reason: dueToday
+            ? (n == 1
+                ? 'Tienes 1 pregunta para repasar hoy'
+                : 'Tienes $n preguntas para repasar hoy')
+            : (n == 1
+                ? 'Tienes 1 fallo de los últimos 7 días'
+                : 'Tienes $n fallos de los últimos 7 días'),
         randomMode: RandomTestMode.reinforcement,
       ),
     );

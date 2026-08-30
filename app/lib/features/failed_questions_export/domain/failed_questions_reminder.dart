@@ -29,6 +29,24 @@ FailedQuestionsReminderInterval failedQuestionsReminderIntervalFromStorage(Strin
   );
 }
 
+String failedQuestionsReminderBody({
+  required FailedQuestionsReminderInterval interval,
+  required int failCount,
+  int dueCount = 0,
+}) {
+  final periodLabel = interval == FailedQuestionsReminderInterval.weekly
+      ? 'esta semana'
+      : 'el último día';
+  final fails = failCount == 1
+      ? 'Tienes 1 pregunta fallada de $periodLabel.'
+      : 'Tienes $failCount preguntas falladas de $periodLabel.';
+  if (dueCount <= 0) return '$fails ¿Quieres generar el informe para ${failCount == 1 ? 'estudiarla' : 'estudiarlas'}?';
+  final due = dueCount == 1
+      ? 'Tienes 1 pregunta para repasar hoy.'
+      : 'Tienes $dueCount para repasar hoy.';
+  return '$fails $due ¿Quieres generar el informe?';
+}
+
 /// Decide si hay que avisar al abrir la app, según la última exportación o el último aviso.
 bool shouldPromptFailedQuestionsReminder({
   required FailedQuestionsReminderInterval interval,

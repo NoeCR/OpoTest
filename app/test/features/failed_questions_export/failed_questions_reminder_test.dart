@@ -83,6 +83,24 @@ void main() {
     });
   });
 
+  test('el aviso menciona las preguntas a repasar hoy', () {
+    expect(
+      failedQuestionsReminderBody(
+        interval: FailedQuestionsReminderInterval.weekly,
+        failCount: 8,
+        dueCount: 3,
+      ),
+      contains('3 para repasar hoy'),
+    );
+    expect(
+      failedQuestionsReminderBody(
+        interval: FailedQuestionsReminderInterval.daily,
+        failCount: 1,
+      ),
+      contains('el último día'),
+    );
+  });
+
   test('etiquetas y preset de exportación', () {
     expect(FailedQuestionsReminderInterval.none.label, 'Ninguno');
     expect(FailedQuestionsReminderInterval.daily.label, 'Diario');

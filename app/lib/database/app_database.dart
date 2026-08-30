@@ -8,6 +8,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
 import '../features/in_progress_session/domain/in_progress_session.dart';
+import '../features/spaced_review/domain/question_review_state.dart';
+import '../features/spaced_review/domain/spaced_review_scheduler.dart';
 import '../models/local_user.dart';
 import '../models/marked_question.dart';
 import '../models/question.dart';
@@ -62,7 +64,7 @@ class AppDatabase {
   static Future<Database> _openDatabase(String path) {
     return openDatabase(
       path,
-      version: 5,
+      version: 6,
       onCreate: _onCreate,
       onUpgrade: _onUpgrade,
     );
@@ -134,6 +136,7 @@ class AppDatabase {
     await _createMarkedQuestionsTable(db);
     await _createInProgressSessionsTable(db);
     await _createRecoveredQuestionsTable(db);
+    await _createQuestionReviewStateTable(db);
   }
 
   static Future<void> _createMarkedQuestionsTable(Database db) async {
@@ -155,6 +158,20 @@ class AppDatabase {
         test_id TEXT NOT NULL,
         question_index INTEGER NOT NULL,
         recovered_at TEXT NOT NULL,
+        PRIMARY KEY (user_id, test_id, question_index)
+      )
+    ''');
+  }
+
+  static Future<void> _createQuestionReviewStateTable(Database db) async {
+    await db.execute('''
+      CREATE TABLE question_review_state (
+        user_id TEXT NOT NULL,
+        test_id TEXT NOT NULL,
+        question_index INTEGER NOT NULL,
+        box INTEGER NOT NULL,
+        next_due TEXT NOT NULL,
+        last_result INTEGER NOT NULL,
         PRIMARY KEY (user_id, test_id, question_index)
       )
     ''');
@@ -197,6 +214,9 @@ class AppDatabase {
     if (oldVersion < 5) {
       await _createRecoveredQuestionsTable(db);
     }
+    if (oldVersion < 6) {
+      await _createQuestionReviewStateTable(db);
+    }
   }
 
   static Database get db {
@@ -218,6 +238,7 @@ class AppDatabase {
     await db.delete('attempts', where: 'user_id = ?', whereArgs: [userId]);
     await db.delete('marked_questions', where: 'user_id = ?', whereArgs: [userId]);
     await db.delete('recovered_questions', where: 'user_id = ?', whereArgs: [userId]);
+    await db.delete('question_review_state', where: 'user_id = ?', whereArgs: [userId]);
     await db.delete('in_progress_sessions', where: 'user_id = ?', whereArgs: [userId]);
     await db.delete('users', where: 'id = ?', whereArgs: [userId]);
   }
@@ -1080,6 +1101,7 @@ class AppDatabase {
       'attempts': attempts,
       'marked_questions': await _markedQuestionsForExport(userId),
       'recovered_questions': await _recoveredQuestionsForExport(userId),
+      'question_review_states': await _questionReviewsForExport(userId),
     };
   }
 
@@ -1218,6 +1240,63 @@ class AppDatabase {
           );
   }
 
+  Future<List<QuestionReviewState>> questionReviewsForUser(String userId) async {
+    final rows = await db.query(
+      'question_review_state',
+      where: 'user_id = ?',
+      whereArgs: [userId],
+    );
+    return rows.map(QuestionReviewState.fromMap).toList();
+  }
+
+  Future<void> upsertQuestionReviews(Iterable<QuestionReviewState> states) async {
+    if (states.isEmpty) return;
+    final batch = db.batch();
+    for (final state in states) {
+      batch.insert(
+        'question_review_state',
+        state.toMap(),
+        conflictAlgorithm: ConflictAlgorithm.replace,
+      );
+    }
+    await batch.commit(noResult: true);
+  }
+
+  Future<int> countDueQuestionReviews(String userId, DateTime now) async {
+    final today = SpacedReviewScheduler.calendarDay(now).toIso8601String();
+    final result = await db.rawQuery(
+      '''
+      SELECT COUNT(*) AS c
+      FROM question_review_state
+      WHERE user_id = ? AND next_due <= ?
+      ''',
+      [userId, today],
+    );
+    return (result.first['c'] as num?)?.toInt() ?? 0;
+  }
+
+  Future<List<QuestionReviewState>> dueQuestionReviews(String userId, DateTime now) async {
+    final today = SpacedReviewScheduler.calendarDay(now).toIso8601String();
+    final rows = await db.query(
+      'question_review_state',
+      where: 'user_id = ? AND next_due <= ?',
+      whereArgs: [userId, today],
+      orderBy: 'next_due',
+    );
+    return rows.map(QuestionReviewState.fromMap).toList();
+  }
+
+  Future<List<Map<String, dynamic>>> _questionReviewsForExport(String? userId) async {
+    return userId == null
+        ? db.query('question_review_state', orderBy: 'next_due')
+        : db.query(
+            'question_review_state',
+            where: 'user_id = ?',
+            whereArgs: [userId],
+            orderBy: 'next_due',
+          );
+  }
+
   Future<void> upsertInProgressSession(InProgressSession session) async {
     await db.insert(
       'in_progress_sessions',
@@ -1254,6 +1333,7 @@ class AppDatabase {
     var missingTests = 0;
     var markedQuestions = 0;
     var recoveredQuestions = 0;
+    var questionReviews = 0;
 
     final userRows = backup['users'] as List? ?? [];
     if (backup['user'] is Map && userRows.isEmpty) {
@@ -1267,6 +1347,7 @@ class AppDatabase {
         await db.delete('attempts', where: 'user_id = ?', whereArgs: [user.id]);
         await db.delete('marked_questions', where: 'user_id = ?', whereArgs: [user.id]);
         await db.delete('recovered_questions', where: 'user_id = ?', whereArgs: [user.id]);
+        await db.delete('question_review_state', where: 'user_id = ?', whereArgs: [user.id]);
         await db.delete('in_progress_sessions', where: 'user_id = ?', whereArgs: [user.id]);
       }
       await upsertUser(user);
@@ -1322,12 +1403,26 @@ class AppDatabase {
       recoveredQuestions++;
     }
 
+    final reviewRows = backup['question_review_states'] as List? ?? [];
+    for (final raw in reviewRows) {
+      final row = Map<String, dynamic>.from(raw as Map);
+      final state = QuestionReviewState.fromMap(row);
+      if (state.testId.isNotEmpty && !knownTests.contains(state.testId)) missingTests++;
+      await db.insert(
+        'question_review_state',
+        state.toMap(),
+        conflictAlgorithm: ConflictAlgorithm.replace,
+      );
+      questionReviews++;
+    }
+
     return {
       'users': users,
       'attempts': attempts,
       'missing_tests': missingTests,
       'marked_questions': markedQuestions,
       'recovered_questions': recoveredQuestions,
+      'question_review_states': questionReviews,
     };
   }
 

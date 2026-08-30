@@ -30,6 +30,8 @@ class ProgressBackupRepositoryImpl implements ProgressBackupRepository {
       'by_test': byTest,
       'attempts': attempts,
       'marked_questions': snapshot['marked_questions'] ?? [],
+      'recovered_questions': snapshot['recovered_questions'] ?? [],
+      'question_review_states': snapshot['question_review_states'] ?? [],
     };
   }
 

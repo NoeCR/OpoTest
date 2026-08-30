@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:opotest/database/app_database.dart';
 import 'package:opotest/features/in_progress_session/domain/in_progress_session.dart';
+import 'package:opotest/features/spaced_review/domain/question_review_state.dart';
 import 'package:opotest/models/local_user.dart';
 import 'package:opotest/models/question.dart';
 
@@ -383,12 +384,49 @@ void main() {
         examSimulation: false,
       ));
 
+      await db.upsertQuestionReviews([
+        QuestionReviewState(
+          userId: user.id,
+          testId: '7001',
+          questionIndex: 0,
+          box: 1,
+          nextDue: DateTime(2026, 8, 29),
+          lastResultCorrect: false,
+        ),
+      ]);
+
       await db.deleteUserData(user.id);
       expect(await db.getUsers(), isEmpty);
       expect(await db.attemptsForUser(user.id), isEmpty);
       expect(await db.countMarkedQuestions(user.id), 0);
       expect(await db.getInProgressSession(user.id), isNull);
       expect(await db.recoveredQuestionsForUser(user.id), isEmpty);
+      expect(await db.questionReviewsForUser(user.id), isEmpty);
+    });
+
+    test('export e import conservan el estado de repaso espaciado', () async {
+      await db.upsertOfficialTest(sampleTestJson(id: '9005'));
+      await db.upsertQuestionReviews([
+        QuestionReviewState(
+          userId: user.id,
+          testId: '9005',
+          questionIndex: 1,
+          box: 2,
+          nextDue: DateTime(2026, 9, 1),
+          lastResultCorrect: true,
+        ),
+      ]);
+
+      final snapshot = await db.exportProgressSnapshot(userId: user.id);
+      expect(snapshot['question_review_states'], hasLength(1));
+      await AppDatabase.db.delete('question_review_state');
+      expect(await db.questionReviewsForUser(user.id), isEmpty);
+
+      await db.importProgressSnapshot(snapshot);
+      final restored = await db.questionReviewsForUser(user.id);
+      expect(restored, hasLength(1));
+      expect(restored.single.box, 2);
+      expect(restored.single.questionIndex, 1);
     });
   });
 }

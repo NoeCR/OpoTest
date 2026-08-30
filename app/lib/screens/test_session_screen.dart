@@ -11,6 +11,7 @@ import '../features/in_progress_session/domain/in_progress_choices.dart';
 import '../features/in_progress_session/domain/in_progress_session.dart';
 import '../features/in_progress_session/presentation/in_progress_session_dialogs.dart';
 import '../features/random_tests/domain/random_test_constants.dart';
+import '../features/spaced_review/application/spaced_review_service.dart';
 import '../models/local_user.dart';
 import '../models/question.dart';
 import '../services/test_scoring.dart';
@@ -350,6 +351,12 @@ class _TestSessionScreenState extends State<TestSessionScreen> with WidgetsBindi
               at: attempt.finishedAt,
             );
       }
+      await SpacedReviewService(context.read<AppDatabase>()).applyFromTest(
+        userId: user.id,
+        test: widget.test,
+        answers: answers,
+        at: attempt.finishedAt,
+      );
       if (!mounted) return;
       context.read<AppState>().notifyProgressChanged();
       context.pushReplacementPage(

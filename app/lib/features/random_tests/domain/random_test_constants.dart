@@ -5,6 +5,8 @@ abstract final class RandomTestConstants {
   static const refreshMinDays = 7;
   static const reinforcementMaxAttempts = 50;
   static const reinforcementQuestionCap = 25;
+  /// Si no hay ninguna vencida hoy, tope de fallos recientes (si hay menos, salen todas).
+  static const reinforcementMinIfNoneDue = 5;
 
   static const simulacrumIdPrefix = 'simulacrum_random';
   static const simulacrumDefaultQuestions = 100;

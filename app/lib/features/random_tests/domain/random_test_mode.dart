@@ -28,7 +28,7 @@ extension RandomTestModeLabels on RandomTestMode {
         RandomTestMode.refresh => 'Tests sin repetir hace tiempo o muy largos',
         RandomTestMode.mostErrors => 'Prioriza donde más fallaste la última vez',
         RandomTestMode.mixed => 'Preguntas aleatorias de varias leyes',
-        RandomTestMode.reinforcement => 'Preguntas falladas en tus últimos intentos',
+        RandomTestMode.reinforcement => 'Fallos que toca repasar hoy',
         RandomTestMode.markedReview => 'Preguntas que marcaste para revisión',
       };
 
@@ -39,7 +39,7 @@ extension RandomTestModeLabels on RandomTestMode {
         RandomTestMode.refresh => 'Necesitas intentos previos para detectar tests olvidados.',
         RandomTestMode.mostErrors => 'Completa tests con fallos para usar este modo.',
         RandomTestMode.mixed => 'Importa el temario para generar un mix.',
-        RandomTestMode.reinforcement => 'Necesitas fallos recientes en tests completados.',
+        RandomTestMode.reinforcement => 'No hay preguntas pendientes de repaso.',
         RandomTestMode.markedReview => 'Marca preguntas durante un test para repasarlas aquí.',
       };
 }

@@ -23,7 +23,7 @@ Base: OpoTest **v1.13.0** (offline, SQLite, Flutter). Cada punto está pensado c
 | Temario local, SQLite, usuarios locales | — |
 | 8 modos de test aleatorio + foco del día (v1.14.0) | — |
 | Búsqueda en el temario (v1.15.0) | — |
-| Informe HTML de fallos + recordatorio | No hay intervalo de repaso por pregunta |
+| Informe HTML de fallos + recordatorio + repaso espaciado (v1.18.0) | — |
 | Marcas, refuerzo, historial | — |
 | Pausar y continuar un test a medias (v1.13.0) | — |
 | Tests propios CRUD + backup/compartir progreso | No se comparte un test propio suelto |
@@ -33,12 +33,13 @@ Archivos ancla:
 
 - Sesión: `app/lib/screens/test_session_screen.dart`, `app/lib/services/test_launcher.dart`
 - Inicio: `app/lib/screens/home_screen.dart`
-- BD: `app/lib/database/app_database.dart` (versión **5**)
+- BD: `app/lib/database/app_database.dart` (versión **6**)
 - Fallos: `app/lib/features/failed_questions_export/`
 - Aleatorio: `app/lib/features/random_tests/`
 - Tests propios: `app/lib/features/custom_tests/`
 - Búsqueda: `app/lib/features/temario_search/`
 - Puntos débiles: `app/lib/features/weak_points/`
+- Repaso espaciado: `app/lib/features/spaced_review/`
 
 ---
 
@@ -196,7 +197,7 @@ Archivos ancla:
 - **Prioridad:** P1
 - **Esfuerzo:** alto
 - **Dependencias:** 0.2 ayuda; el collector y el recordatorio ya existen
-- **Estado:** [ ] Pendiente
+- **Estado:** [x] Hecho en **v1.18.0**
 
 **Qué es.** Cada fallo tiene fecha de próximo repaso (p. ej. 1 / 3 / 7 / 16 días). El foco del día y/o el test de refuerzo priorizan lo que toca hoy.
 
@@ -204,7 +205,7 @@ Archivos ancla:
 
 **Cómo llevarlo a cabo.**
 
-1. Tabla `question_review_state` (`user_id`, `test_id`, `question_index`, `box`, `next_due`, `last_result`). BD **4 o 5**.
+1. Tabla `question_review_state` (`user_id`, `test_id`, `question_index`, `box`, `next_due`, `last_result`). BD **5 → 6**.
 2. Al `saveAttempt`, actualizar cajas (Leitner simple, 5 cajas).
 3. Estrategia o filtro sobre `ReinforcementRandomTestStrategy`: `next_due <= today`.
 4. Enlazar con el recordatorio de fallos: el diálogo puede decir «tienes N para repasar» además de exportar.

@@ -3,6 +3,7 @@ import 'package:opotest/database/app_database.dart';
 import 'package:opotest/features/daily_focus/application/daily_focus_service.dart';
 import 'package:opotest/features/daily_focus/domain/daily_focus.dart';
 import 'package:opotest/features/failed_questions_export/application/failed_questions_collector.dart';
+import 'package:opotest/features/spaced_review/domain/question_review_state.dart';
 import 'package:opotest/models/local_user.dart';
 import 'package:opotest/models/question.dart';
 
@@ -161,6 +162,23 @@ void main() {
     test('sin historial y con temario propone azar', () async {
       final plan = await service.planFor(userId: user.id, contentReady: true, now: now);
       expect(plan.primary.kind, DailyFocusKind.classic);
+    });
+
+    test('fallos vencidos hoy aparecen en el foco como repaso', () async {
+      await db.upsertQuestionReviews([
+        QuestionReviewState(
+          userId: user.id,
+          testId: '1001',
+          questionIndex: 0,
+          box: 1,
+          nextDue: DateTime(2026, 8, 27),
+          lastResultCorrect: false,
+        ),
+      ]);
+
+      final plan = await service.planFor(userId: user.id, contentReady: true, now: now);
+      expect(plan.primary.kind, DailyFocusKind.reinforcement);
+      expect(plan.primary.reason, contains('repasar hoy'));
     });
 
     test('fallos de 7 días proponen refuerzo', () async {

@@ -165,6 +165,19 @@ void main() {
       expect(plan.primary.testId, 'last-1');
     });
 
+    test('vencidas hoy ganan a los fallos recientes en el copy', () {
+      final plan = buildDailyFocus(
+        const DailyFocusSnapshot(
+          contentReady: true,
+          recentFailCount: 8,
+          dueReviewCount: 3,
+        ),
+      );
+      expect(plan.primary.kind, DailyFocusKind.reinforcement);
+      expect(plan.primary.reason, contains('repasar hoy'));
+      expect(plan.primary.reason, contains('3'));
+    });
+
     test('no usa último intento si ya hay otra propuesta', () {
       final plan = buildDailyFocus(
         const DailyFocusSnapshot(
