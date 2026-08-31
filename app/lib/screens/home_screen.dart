@@ -6,6 +6,9 @@ import '../features/custom_tests/presentation/custom_tests_hub_screen.dart';
 import '../features/daily_focus/application/daily_focus_service.dart';
 import '../features/daily_focus/domain/daily_focus.dart';
 import '../features/daily_focus/presentation/daily_focus_card.dart';
+import '../features/daily_streak/application/daily_streak_service.dart';
+import '../features/daily_streak/domain/daily_streak.dart';
+import '../features/daily_streak/presentation/daily_streak_chip.dart';
 import '../features/failed_questions_export/application/failed_questions_export_service.dart';
 import '../features/spaced_review/application/spaced_review_service.dart';
 import '../features/failed_questions_export/domain/failed_questions_reminder.dart';
@@ -23,6 +26,7 @@ import '../state/app_state.dart';
 import '../theme/app_theme.dart';
 import '../widgets/app_decorations.dart';
 import '../services/test_launcher.dart';
+import '../services/test_preferences.dart';
 import 'laws_screen.dart';
 import 'settings_screen.dart';
 import 'test_history_screen.dart';
@@ -41,6 +45,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
   int _markedCount = 0;
   InProgressSession? _inProgress;
   DailyFocusPlan? _dailyFocus;
+  DailyStreakSnapshot? _dailyStreak;
   var _reminderInFlight = false;
 
   Future<void> _openSearch() async {
@@ -123,6 +128,12 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
           userId: user.id,
           contentReady: state.contentReady,
         );
+    if (!mounted) return;
+    final dailyGoal = context.read<TestPreferences>().dailyGoal;
+    final dailyStreak = await context.read<DailyStreakService>().snapshotFor(
+          userId: user.id,
+          dailyGoal: dailyGoal,
+        );
     if (mounted) {
       setState(() {
         _questionCount = q;
@@ -130,6 +141,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
         _markedCount = marked;
         _inProgress = inProgress;
         _dailyFocus = dailyFocus;
+        _dailyStreak = dailyStreak;
       });
     }
   }
@@ -247,6 +259,16 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                               context,
                               session: _inProgress!,
                             ).then((_) => _loadMeta()),
+                          ),
+                          const SizedBox(height: 12),
+                        ],
+                        if (_dailyStreak != null) ...[
+                          DailyStreakChip(
+                            snapshot: _dailyStreak!,
+                            compact: compact,
+                            onTap: () => context
+                                .pushPage(const SettingsScreen())
+                                .then((_) => _loadMeta()),
                           ),
                           const SizedBox(height: 12),
                         ],

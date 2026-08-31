@@ -8,6 +8,13 @@ Este formato sigue una estructura inspirada en [Keep a Changelog](https://keepac
 
 ---
 
+## [1.19.0] - 2026-08-31
+
+### Added
+- En Inicio, racha de días seguidos con al menos un test terminado y cupo de preguntas respondidas hoy (20/40/60/80, en Configuración). Tocar la tarjeta abre el ajuste del cupo. Sin notificaciones push.
+
+---
+
 ## [1.18.0] - 2026-08-30
 
 ### Added

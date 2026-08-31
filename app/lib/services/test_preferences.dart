@@ -8,6 +8,8 @@ class TestPreferences extends ChangeNotifier {
   static const _keySimulacrumQuestions = 'simulacrum_questions';
   static const _keySimulacrumMinutes = 'simulacrum_minutes';
   static const _keySimulacrumExcluded = 'simulacrum_excluded_test_ids';
+  static const _keyDailyGoal = 'daily_question_goal';
+  static const dailyGoalOptions = [20, 40, 60, 80];
 
   int errorFormat = 100;
   int durationMinutes = 0;
@@ -15,6 +17,7 @@ class TestPreferences extends ChangeNotifier {
   int simulacrumQuestions = 100;
   int simulacrumMinutes = 90;
   Set<String> simulacrumExcludedTestIds = {};
+  int dailyGoal = 40;
 
   Future<void> load() async {
     final prefs = await SharedPreferences.getInstance();
@@ -24,7 +27,15 @@ class TestPreferences extends ChangeNotifier {
     simulacrumQuestions = prefs.getInt(_keySimulacrumQuestions) ?? 100;
     simulacrumMinutes = prefs.getInt(_keySimulacrumMinutes) ?? 90;
     simulacrumExcludedTestIds = {...prefs.getStringList(_keySimulacrumExcluded) ?? const <String>[]};
+    dailyGoal = prefs.getInt(_keyDailyGoal) ?? 40;
     notifyListeners();
+  }
+
+  Future<void> setDailyGoal(int value) async {
+    dailyGoal = value;
+    notifyListeners();
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setInt(_keyDailyGoal, value);
   }
 
   Future<void> setErrorFormat(int value) async {

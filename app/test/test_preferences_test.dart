@@ -20,6 +20,7 @@ void main() {
       expect(prefs.examSimulation, isFalse);
       expect(prefs.simulacrumQuestions, 100);
       expect(prefs.simulacrumMinutes, 90);
+      expect(prefs.dailyGoal, 40);
     });
 
     test('setErrorFormat persiste y notifica', () async {
@@ -78,6 +79,13 @@ void main() {
       await prefs.includeSimulacrumPapers(['paper_am_2025']);
       expect(prefs.isSimulacrumPaperIncluded('paper_am_2025'), isTrue);
       expect(prefs.isSimulacrumPaperIncluded('paper_inap_2024'), isFalse);
+    });
+
+    test('cupo diario persiste', () async {
+      await prefs.setDailyGoal(60);
+      final reloaded = TestPreferences();
+      await reloaded.load();
+      expect(reloaded.dailyGoal, 60);
     });
   });
 }

@@ -10,6 +10,7 @@ import 'features/backup/data/progress_backup_repository_impl.dart';
 import 'features/custom_tests/application/custom_test_service.dart';
 import 'features/custom_tests/data/custom_test_repository_impl.dart';
 import 'features/daily_focus/application/daily_focus_service.dart';
+import 'features/daily_streak/application/daily_streak_service.dart';
 import 'features/failed_questions_export/application/failed_questions_collector.dart';
 import 'features/failed_questions_export/application/failed_questions_export_service.dart';
 import 'features/in_progress_session/data/in_progress_session_store.dart';
@@ -37,6 +38,7 @@ Future<void> main() async {
     failedQuestionsCollector,
   );
   final dailyFocusService = DailyFocusService(db, failedQuestionsCollector);
+  final dailyStreakService = DailyStreakService(db);
   final temarioSearchService = TemarioSearchService(db);
   final weakPointsService = WeakPointsService(db);
   runApp(
@@ -50,6 +52,7 @@ Future<void> main() async {
         Provider<RandomTestService>.value(value: randomTestService),
         Provider<FailedQuestionsExportService>.value(value: failedQuestionsExportService),
         Provider<DailyFocusService>.value(value: dailyFocusService),
+        Provider<DailyStreakService>.value(value: dailyStreakService),
         Provider<TemarioSearchService>.value(value: temarioSearchService),
         Provider<WeakPointsService>.value(value: weakPointsService),
         ChangeNotifierProvider<TestPreferences>.value(value: testPrefs),

@@ -194,6 +194,28 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 ),
                 const SizedBox(height: 12),
                 SectionCard(
+                  label: 'Cupo diario',
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Text('Preguntas al día', style: AppDecorations.sectionLabel(context)),
+                      const SizedBox(height: 8),
+                      OptionChipRow<int>(
+                        options: TestPreferences.dailyGoalOptions,
+                        selected: prefs.dailyGoal,
+                        onSelected: prefs.setDailyGoal,
+                        labelBuilder: (v) => '$v',
+                      ),
+                      const SizedBox(height: 8),
+                      const Text(
+                        'En Inicio verás cuántas preguntas has respondido hoy y los días seguidos con al menos un test terminado. No hay avisos push.',
+                        style: TextStyle(fontSize: 12, color: Colors.black54, height: 1.35),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 12),
+                SectionCard(
                   label: 'Informe de fallos',
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
