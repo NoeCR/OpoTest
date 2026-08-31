@@ -6,6 +6,9 @@ import '../database/app_database.dart';
 import '../navigation/app_navigation.dart';
 import '../features/backup/application/progress_backup_service.dart';
 import '../features/backup/presentation/backup_share.dart';
+import '../features/score_trend/application/score_trend_service.dart';
+import '../features/score_trend/domain/score_trend.dart';
+import '../features/score_trend/presentation/score_trend_card.dart';
 import '../state/app_state.dart';
 import '../theme/app_theme.dart';
 import '../utils/user_facing_error.dart';
@@ -25,6 +28,7 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   int _attemptCount = 0;
   double? _avgPercent;
+  ScoreTrend? _trend;
 
   @override
   void initState() {
@@ -35,7 +39,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Future<void> _loadStats() async {
     final userId = context.read<AppState>().activeUser?.id;
     if (userId == null) return;
+    final db = context.read<AppDatabase>();
     final rows = await context.read<AppState>().attemptsForUser(userId);
+    final trend = await ScoreTrendService(db).forUser(userId: userId);
     if (!mounted) return;
     var sum = 0.0;
     for (final r in rows) {
@@ -44,6 +50,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     setState(() {
       _attemptCount = rows.length;
       _avgPercent = rows.isEmpty ? null : sum / rows.length;
+      _trend = trend;
     });
   }
 
@@ -92,6 +99,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ],
             ),
           ),
+          if (_trend != null) ...[
+            const SizedBox(height: 16),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: ScoreTrendCard(trend: _trend!),
+            ),
+          ],
           const SizedBox(height: 20),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),

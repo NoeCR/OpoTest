@@ -25,6 +25,7 @@ Base: OpoTest **v1.13.0** (offline, SQLite, Flutter). Cada punto está pensado c
 | Búsqueda en el temario (v1.15.0) | — |
 | Informe HTML de fallos + recordatorio + repaso espaciado (v1.18.0) | — |
 | Racha y cupo diario (v1.19.0) | — |
+| Evolución de notas (v1.20.0) | — |
 | Marcas, refuerzo, historial | — |
 | Pausar y continuar un test a medias (v1.13.0) | — |
 | Tests propios CRUD + backup/compartir progreso | No se comparte un test propio suelto |
@@ -42,6 +43,7 @@ Archivos ancla:
 - Puntos débiles: `app/lib/features/weak_points/`
 - Repaso espaciado: `app/lib/features/spaced_review/`
 - Racha y cupo diario: `app/lib/features/daily_streak/`
+- Evolución de notas: `app/lib/features/score_trend/`
 
 ---
 
@@ -237,7 +239,7 @@ Hacer **después** de Fase 0. Varios son releases pequeños.
 
 - **Prioridad:** P2
 - **Esfuerzo:** bajo
-- **Estado:** [ ] Pendiente
+- **Estado:** [x] Hecho en **v1.20.0**
 
 **Qué es.** En Perfil o Historial, tendencia (media por semana o últimos 15 intentos).
 
@@ -304,7 +306,8 @@ Hacer **después** de Fase 0. Varios son releases pequeños.
 | 5 | 1.2 Simulacro | 1.17.0 |
 | 6 | 1.3 Repaso espaciado | 1.18.0 |
 | 7 | 2.1 Racha y cupo diario | 1.19.0 |
-| 8+ | Fase 2, uno a uno | 1.20.0 … |
+| 8 | 2.2 Evolución de notas | 1.20.0 |
+| 9+ | Fase 2, uno a uno | 1.21.0 … |
 
 Las versiones son una guía: si un punto se parte, usa parches o dos minors. No hace falta respetar los números si el alcance cambia.
 

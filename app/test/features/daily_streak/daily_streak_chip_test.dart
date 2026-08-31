@@ -50,5 +50,29 @@ void main() {
 
     expect(find.text('1 día seguido'), findsOneWidget);
     expect(find.text('Cupo de hoy cumplido'), findsOneWidget);
+    expect(find.text('40 / 40 preguntas hoy'), findsNothing);
+    expect(find.byType(LinearProgressIndicator), findsNothing);
+  });
+
+  testWidgets('al superar el cupo no muestra el ratio ni la barra', (tester) async {
+    const snapshot = DailyStreakSnapshot(
+      streakDays: 3,
+      questionsToday: 55,
+      testsToday: 3,
+      dailyGoal: 40,
+    );
+
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: Scaffold(
+          body: DailyStreakChip(snapshot: snapshot),
+        ),
+      ),
+    );
+
+    expect(find.text('Cupo de hoy cumplido'), findsOneWidget);
+    expect(find.text('3 días seguidos'), findsOneWidget);
+    expect(find.text('55 / 40 preguntas hoy'), findsNothing);
+    expect(find.byType(LinearProgressIndicator), findsNothing);
   });
 }

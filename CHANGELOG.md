@@ -8,6 +8,16 @@ Este formato sigue una estructura inspirada en [Keep a Changelog](https://keepac
 
 ---
 
+## [1.20.0] - 2026-08-31
+
+### Added
+- En Perfil, evolución de notas: media de esta semana frente a la anterior y barras de los últimos 15 tests del temario. Los aleatorios y el simulacro no entran.
+
+### Changed
+- Al cumplir el cupo diario, la tarjeta de Inicio pasa a verde con «Cupo de hoy cumplido» y deja de mostrar el ratio y la barra (p. ej. 55/40).
+
+---
+
 ## [1.19.0] - 2026-08-31
 
 ### Added
