@@ -26,6 +26,7 @@ Base: OpoTest **v1.13.0** (offline, SQLite, Flutter). Cada punto está pensado c
 | Informe HTML de fallos + recordatorio + repaso espaciado (v1.18.0) | — |
 | Racha y cupo diario (v1.19.0) | — |
 | Evolución de notas (v1.20.0) | — |
+| Sincronización de perfil (v1.21.0) | — |
 | Marcas, refuerzo, historial | — |
 | Pausar y continuar un test a medias (v1.13.0) | — |
 | Tests propios CRUD + backup/compartir progreso | No se comparte un test propio suelto |
@@ -35,7 +36,7 @@ Archivos ancla:
 
 - Sesión: `app/lib/screens/test_session_screen.dart`, `app/lib/services/test_launcher.dart`
 - Inicio: `app/lib/screens/home_screen.dart`
-- BD: `app/lib/database/app_database.dart` (versión **6**)
+- BD: `app/lib/database/app_database.dart` (versión **7**)
 - Fallos: `app/lib/features/failed_questions_export/`
 - Aleatorio: `app/lib/features/random_tests/`
 - Tests propios: `app/lib/features/custom_tests/`
@@ -44,6 +45,7 @@ Archivos ancla:
 - Repaso espaciado: `app/lib/features/spaced_review/`
 - Racha y cupo diario: `app/lib/features/daily_streak/`
 - Evolución de notas: `app/lib/features/score_trend/`
+- Sincronización de perfil (opcional): `app/lib/features/profile_sync/`
 
 ---
 
@@ -307,7 +309,8 @@ Hacer **después** de Fase 0. Varios son releases pequeños.
 | 6 | 1.3 Repaso espaciado | 1.18.0 |
 | 7 | 2.1 Racha y cupo diario | 1.19.0 |
 | 8 | 2.2 Evolución de notas | 1.20.0 |
-| 9+ | Fase 2, uno a uno | 1.21.0 … |
+| 9 | Sincronización de perfil | 1.21.0 |
+| 10+ | Fase 2, uno a uno | 1.22.0 … |
 
 Las versiones son una guía: si un punto se parte, usa parches o dos minors. No hace falta respetar los números si el alcance cambia.
 

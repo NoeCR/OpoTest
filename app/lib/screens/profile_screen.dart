@@ -9,6 +9,7 @@ import '../features/backup/presentation/backup_share.dart';
 import '../features/score_trend/application/score_trend_service.dart';
 import '../features/score_trend/domain/score_trend.dart';
 import '../features/score_trend/presentation/score_trend_card.dart';
+import '../features/profile_sync/presentation/profile_sync_screen.dart';
 import '../state/app_state.dart';
 import '../theme/app_theme.dart';
 import '../utils/user_facing_error.dart';
@@ -64,7 +65,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       body: ListView(
         padding: EdgeInsets.zero,
         children: [
-          const GradientHeader(title: 'Perfil', subtitle: 'Cuenta local · sin servidor'),
+          const GradientHeader(title: 'Perfil', subtitle: 'Cuenta local · sincronización opcional'),
           const SizedBox(height: 16),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -117,6 +118,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
             subtitle: 'Crear o seleccionar otra cuenta local',
             onTap: () async {
               await context.pushPage(const UsersScreen());
+              _loadStats();
+            },
+          ),
+          _ProfileTile(
+            icon: Icons.cloud_sync_outlined,
+            title: 'Sincronizar este perfil',
+            subtitle: 'Mismo progreso en tablet, móvil y PC, sin mezclar otras cuentas',
+            onTap: () async {
+              await context.pushPage(const ProfileSyncScreen());
               _loadStats();
             },
           ),

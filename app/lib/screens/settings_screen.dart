@@ -7,6 +7,7 @@ import '../models/test_options.dart';
 import '../features/backup/presentation/backup_section.dart';
 import '../features/failed_questions_export/application/failed_questions_export_service.dart';
 import '../features/failed_questions_export/domain/failed_questions_reminder.dart';
+import '../features/profile_sync/application/profile_sync_service.dart';
 import '../services/content_importer.dart';
 import '../services/sync_service.dart';
 import '../services/test_preferences.dart';
@@ -25,6 +26,7 @@ class SettingsScreen extends StatefulWidget {
 
 class _SettingsScreenState extends State<SettingsScreen> {
   final _pathController = TextEditingController();
+  final _syncUrlController = TextEditingController();
   String? status;
   bool _importing = false;
   String? _appVersionLabel;
@@ -35,6 +37,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     super.initState();
     _loadDefaultPath();
     _loadAppVersion();
+    _loadSyncUrl();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted) _loadReminderInterval();
     });
@@ -83,9 +86,18 @@ class _SettingsScreenState extends State<SettingsScreen> {
     }
   }
 
+  Future<void> _loadSyncUrl() async {
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      if (!mounted) return;
+      final uri = await context.read<ProfileSyncService>().mongoUriOverride();
+      if (mounted) _syncUrlController.text = uri;
+    });
+  }
+
   @override
   void dispose() {
     _pathController.dispose();
+    _syncUrlController.dispose();
     super.dispose();
   }
 
@@ -239,6 +251,43 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             'Pasados 7 días, si hay fallos, te preguntará si generar el informe.',
                         },
                         style: const TextStyle(fontSize: 12, color: Colors.black54, height: 1.35),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 12),
+                SectionCard(
+                  label: 'Sincronización de perfil',
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Text(
+                        context.read<ProfileSyncService>().hasBundledUri
+                            ? 'La URI de Atlas va en esta instalación (archivo mongo_atlas.env.json al compilar). No hace falta pegarla en cada dispositivo. El campo de abajo es solo un recambio puntual.'
+                            : 'Copia app/mongo_atlas.env.json.example a mongo_atlas.env.json, pega la URI y recompila (scripts/build-release.ps1). Mientras tanto puedes pegarla aquí solo en este dispositivo.',
+                        style: const TextStyle(fontSize: 12, color: Colors.black54, height: 1.35),
+                      ),
+                      const SizedBox(height: 8),
+                      TextField(
+                        controller: _syncUrlController,
+                        keyboardType: TextInputType.url,
+                        decoration: const InputDecoration(
+                          hintText: 'Recambio opcional mongodb+srv://…',
+                          prefixIcon: Icon(Icons.dns_outlined),
+                        ),
+                        onEditingComplete: () {
+                          context.read<ProfileSyncService>().setMongoUri(_syncUrlController.text);
+                          FocusScope.of(context).unfocus();
+                        },
+                      ),
+                      const SizedBox(height: 8),
+                      OutlinedButton(
+                        onPressed: () async {
+                          await context.read<ProfileSyncService>().setMongoUri(_syncUrlController.text);
+                          if (!mounted) return;
+                          setState(() => status = 'Recambio de URI guardado en este dispositivo.');
+                        },
+                        child: const Text('Guardar recambio en este dispositivo'),
                       ),
                     ],
                   ),

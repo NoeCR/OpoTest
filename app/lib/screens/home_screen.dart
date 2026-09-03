@@ -16,6 +16,8 @@ import '../features/failed_questions_export/presentation/failed_questions_export
 import '../features/failed_questions_export/presentation/failed_questions_reminder_dialog.dart';
 import '../features/in_progress_session/data/in_progress_session_store.dart';
 import '../features/in_progress_session/domain/in_progress_session.dart';
+import '../features/profile_sync/application/profile_sync_service.dart';
+import '../features/profile_sync/domain/profile_sync_link.dart';
 import '../features/random_tests/presentation/random_test_hub_screen.dart';
 import '../features/random_tests/presentation/random_test_launcher.dart';
 import '../features/random_tests/presentation/simulacrum_screen.dart';
@@ -94,7 +96,10 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
     WidgetsBinding.instance.addObserver(this);
     _loadMeta();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      if (mounted) _maybeShowFailedQuestionsReminder();
+      if (mounted) {
+        _syncActiveProfile();
+        _maybeShowFailedQuestionsReminder();
+      }
     });
   }
 
@@ -107,8 +112,23 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
     if (state == AppLifecycleState.resumed) {
+      _syncActiveProfile();
       _loadMeta();
       _maybeShowFailedQuestionsReminder();
+    }
+  }
+
+  Future<void> _syncActiveProfile() async {
+    if (!mounted) return;
+    final appState = context.read<AppState>();
+    final user = appState.activeUser;
+    if (user == null) return;
+    final service = context.read<ProfileSyncService>();
+    final result = await service.syncUser(user);
+    if (!mounted) return;
+    if (result.status == ProfileSyncStatus.synced) {
+      appState.notifyProgressChanged();
+      _loadMeta();
     }
   }
 

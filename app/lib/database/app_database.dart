@@ -8,6 +8,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
 import '../features/in_progress_session/domain/in_progress_session.dart';
+import '../features/profile_sync/domain/profile_sync_link.dart';
 import '../features/spaced_review/domain/question_review_state.dart';
 import '../features/spaced_review/domain/spaced_review_scheduler.dart';
 import '../models/local_user.dart';
@@ -64,7 +65,7 @@ class AppDatabase {
   static Future<Database> _openDatabase(String path) {
     return openDatabase(
       path,
-      version: 6,
+      version: 7,
       onCreate: _onCreate,
       onUpgrade: _onUpgrade,
     );
@@ -137,6 +138,7 @@ class AppDatabase {
     await _createInProgressSessionsTable(db);
     await _createRecoveredQuestionsTable(db);
     await _createQuestionReviewStateTable(db);
+    await _createUserProfileSyncTable(db);
   }
 
   static Future<void> _createMarkedQuestionsTable(Database db) async {
@@ -173,6 +175,18 @@ class AppDatabase {
         next_due TEXT NOT NULL,
         last_result INTEGER NOT NULL,
         PRIMARY KEY (user_id, test_id, question_index)
+      )
+    ''');
+  }
+
+  static Future<void> _createUserProfileSyncTable(Database db) async {
+    await db.execute('''
+      CREATE TABLE user_profile_sync (
+        user_id TEXT PRIMARY KEY,
+        sync_id TEXT NOT NULL UNIQUE,
+        token TEXT NOT NULL,
+        last_synced_at TEXT,
+        last_error TEXT
       )
     ''');
   }
@@ -217,6 +231,9 @@ class AppDatabase {
     if (oldVersion < 6) {
       await _createQuestionReviewStateTable(db);
     }
+    if (oldVersion < 7) {
+      await _createUserProfileSyncTable(db);
+    }
   }
 
   static Database get db {
@@ -240,6 +257,7 @@ class AppDatabase {
     await db.delete('recovered_questions', where: 'user_id = ?', whereArgs: [userId]);
     await db.delete('question_review_state', where: 'user_id = ?', whereArgs: [userId]);
     await db.delete('in_progress_sessions', where: 'user_id = ?', whereArgs: [userId]);
+    await db.delete('user_profile_sync', where: 'user_id = ?', whereArgs: [userId]);
     await db.delete('users', where: 'id = ?', whereArgs: [userId]);
   }
 
@@ -1424,6 +1442,107 @@ class AppDatabase {
       'recovered_questions': recoveredQuestions,
       'question_review_states': questionReviews,
     };
+  }
+
+  Future<ProfileSyncLink?> profileSyncLinkForUser(String userId) async {
+    final rows = await db.query(
+      'user_profile_sync',
+      where: 'user_id = ?',
+      whereArgs: [userId],
+      limit: 1,
+    );
+    if (rows.isEmpty) return null;
+    return ProfileSyncLink.fromMap(rows.first);
+  }
+
+  Future<ProfileSyncLink?> profileSyncLinkForSyncId(String syncId) async {
+    final rows = await db.query(
+      'user_profile_sync',
+      where: 'sync_id = ?',
+      whereArgs: [syncId],
+      limit: 1,
+    );
+    if (rows.isEmpty) return null;
+    return ProfileSyncLink.fromMap(rows.first);
+  }
+
+  Future<void> upsertProfileSyncLink(ProfileSyncLink link) async {
+    await db.insert(
+      'user_profile_sync',
+      link.toMap(),
+      conflictAlgorithm: ConflictAlgorithm.replace,
+    );
+  }
+
+  Future<void> deleteProfileSyncLink(String userId) async {
+    await db.delete('user_profile_sync', where: 'user_id = ?', whereArgs: [userId]);
+  }
+
+  /// Incorpora progreso ya remapeado al [userId] local. No cambia de usuario activo ni crea cuentas.
+  Future<void> mergeProgressForUser({
+    required String userId,
+    required Map<String, dynamic> payload,
+  }) async {
+    final attemptRows = payload['attempts'] as List? ?? [];
+    for (final raw in attemptRows) {
+      final row = Map<String, dynamic>.from(raw as Map);
+      row['user_id'] = userId;
+      final attempt = _attemptFromBackupRow(row);
+      await db.insert(
+        'attempts',
+        {
+          'id': attempt.id,
+          'user_id': userId,
+          'test_id': attempt.testId,
+          'test_name': attempt.testName,
+          'finished_at': attempt.finishedAt.toIso8601String(),
+          'duration_seconds': attempt.durationSeconds,
+          'net_score': attempt.netScore,
+          'percent_score': attempt.percentScore,
+          'answers_json': jsonEncode(attempt.answers.map((k, v) => MapEntry(k.toString(), v))),
+          'exam_simulation': attempt.examSimulation ? 1 : 0,
+          'error_format': attempt.errorFormat,
+        },
+        conflictAlgorithm: ConflictAlgorithm.ignore,
+      );
+    }
+
+    final markedRows = payload['marked_questions'] as List? ?? [];
+    for (final raw in markedRows) {
+      final row = Map<String, dynamic>.from(raw as Map);
+      row['user_id'] = userId;
+      await db.insert(
+        'marked_questions',
+        MarkedQuestion.fromMap(row).toMap(),
+        conflictAlgorithm: ConflictAlgorithm.replace,
+      );
+    }
+
+    final recoveredRows = payload['recovered_questions'] as List? ?? [];
+    for (final raw in recoveredRows) {
+      final row = Map<String, dynamic>.from(raw as Map);
+      await db.insert(
+        'recovered_questions',
+        {
+          'user_id': userId,
+          'test_id': row['test_id'],
+          'question_index': row['question_index'],
+          'recovered_at': row['recovered_at'],
+        },
+        conflictAlgorithm: ConflictAlgorithm.replace,
+      );
+    }
+
+    final reviewRows = payload['question_review_states'] as List? ?? [];
+    for (final raw in reviewRows) {
+      final row = Map<String, dynamic>.from(raw as Map);
+      row['user_id'] = userId;
+      await db.insert(
+        'question_review_state',
+        QuestionReviewState.fromMap(row).toMap(),
+        conflictAlgorithm: ConflictAlgorithm.replace,
+      );
+    }
   }
 
   TestAttempt _attemptFromBackupRow(Map<String, dynamic> row) => TestAttempt.fromMap(row);

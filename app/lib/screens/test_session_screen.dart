@@ -10,6 +10,7 @@ import '../features/in_progress_session/data/in_progress_session_store.dart';
 import '../features/in_progress_session/domain/in_progress_choices.dart';
 import '../features/in_progress_session/domain/in_progress_session.dart';
 import '../features/in_progress_session/presentation/in_progress_session_dialogs.dart';
+import '../features/profile_sync/application/profile_sync_service.dart';
 import '../features/random_tests/domain/random_test_constants.dart';
 import '../features/spaced_review/application/spaced_review_service.dart';
 import '../models/local_user.dart';
@@ -325,7 +326,10 @@ class _TestSessionScreenState extends State<TestSessionScreen> with WidgetsBindi
         answers: answers,
         errorFormat: widget.errorFormat,
       );
-      final user = context.read<AppState>().activeUser!;
+      final appState = context.read<AppState>();
+      final db = context.read<AppDatabase>();
+      final sync = context.read<ProfileSyncService>();
+      final user = appState.activeUser!;
       final attempt = TestAttempt(
         id: const Uuid().v4(),
         userId: user.id,
@@ -339,26 +343,27 @@ class _TestSessionScreenState extends State<TestSessionScreen> with WidgetsBindi
         examSimulation: widget.examSimulation,
         errorFormat: widget.errorFormat,
       );
-      await context.read<AppDatabase>().saveAttempt(attempt);
+      await db.saveAttempt(attempt);
       final recoveries = originAnswersFrom(
         questions: widget.test.questions,
         answers: answers,
       ).where((o) => !RandomTestConstants.isSyntheticAttemptTestId(o.testId)).toList();
       if (recoveries.isNotEmpty) {
-        await context.read<AppDatabase>().applyOriginAnswerOutcomes(
+        await db.applyOriginAnswerOutcomes(
               userId: user.id,
               outcomes: recoveries,
               at: attempt.finishedAt,
             );
       }
-      await SpacedReviewService(context.read<AppDatabase>()).applyFromTest(
+      await SpacedReviewService(db).applyFromTest(
         userId: user.id,
         test: widget.test,
         answers: answers,
         at: attempt.finishedAt,
       );
       if (!mounted) return;
-      context.read<AppState>().notifyProgressChanged();
+      appState.notifyProgressChanged();
+      unawaited(sync.syncUser(user, force: true));
       context.pushReplacementPage(
         TestResultScreen(
           test: widget.test,

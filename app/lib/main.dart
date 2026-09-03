@@ -14,6 +14,9 @@ import 'features/daily_streak/application/daily_streak_service.dart';
 import 'features/failed_questions_export/application/failed_questions_collector.dart';
 import 'features/failed_questions_export/application/failed_questions_export_service.dart';
 import 'features/in_progress_session/data/in_progress_session_store.dart';
+import 'features/profile_sync/application/profile_sync_service.dart';
+import 'features/profile_sync/data/profile_sync_repository_factory.dart';
+import 'features/profile_sync/data/profile_sync_settings.dart';
 import 'features/random_tests/application/random_test_service.dart';
 import 'features/temario_search/application/temario_search_service.dart';
 import 'features/weak_points/application/weak_points_service.dart';
@@ -37,6 +40,14 @@ Future<void> main() async {
   final failedQuestionsExportService = FailedQuestionsExportService(
     failedQuestionsCollector,
   );
+  final profileSyncSettings = ProfileSyncSettings();
+  final profileSyncFactory = ProfileSyncRepositoryFactory(profileSyncSettings);
+  final profileSyncService = ProfileSyncService(
+    db: db,
+    progressRepository: ProgressBackupRepositoryImpl(db),
+    openRepository: profileSyncFactory.open,
+    settings: profileSyncSettings,
+  );
   final dailyFocusService = DailyFocusService(db, failedQuestionsCollector);
   final dailyStreakService = DailyStreakService(db);
   final temarioSearchService = TemarioSearchService(db);
@@ -51,6 +62,7 @@ Future<void> main() async {
         Provider<ProgressBackupService>.value(value: progressBackupService),
         Provider<RandomTestService>.value(value: randomTestService),
         Provider<FailedQuestionsExportService>.value(value: failedQuestionsExportService),
+        Provider<ProfileSyncService>.value(value: profileSyncService),
         Provider<DailyFocusService>.value(value: dailyFocusService),
         Provider<DailyStreakService>.value(value: dailyStreakService),
         Provider<TemarioSearchService>.value(value: temarioSearchService),

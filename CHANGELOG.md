@@ -8,6 +8,13 @@ Este formato sigue una estructura inspirada en [Keep a Changelog](https://keepac
 
 ---
 
+## [1.21.0] - 2026-09-03
+
+### Added
+- Sincronización opcional por usuario: un código vincula el mismo perfil en tablet, móvil y PC. El progreso viaja cifrado a MongoDB Atlas; el temario no se sube. La URI se incrusta al compilar (`mongo_atlas.env.json`); en Configuración solo hay un recambio puntual de ese dispositivo.
+
+---
+
 ## [1.20.0] - 2026-08-31
 
 ### Added

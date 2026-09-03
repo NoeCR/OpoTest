@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
 import '../features/backup/domain/backup_validation.dart';
+import '../features/profile_sync/domain/profile_sync_repository.dart';
 
 enum UserErrorContext {
   bootstrap,
@@ -23,6 +24,7 @@ class UserFacingError {
     UserErrorContext context = UserErrorContext.general,
   }) {
     if (error is BackupValidationException) return error.message;
+    if (error is ProfileSyncException) return error.message;
 
     final raw = _rawMessage(error);
     final mapped = _mapKnownError(raw, error, context);

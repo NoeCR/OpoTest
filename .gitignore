@@ -7,3 +7,6 @@ releases/*.apk
 releases/OpoTest-content*.json
 app/google_oauth.json
 google_oauth.json
+app/mongo_atlas.env.json
+tools/.profile-sync-data/
+tools/profile-sync-api/node_modules/

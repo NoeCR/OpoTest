@@ -5,6 +5,8 @@ import '../database/app_database.dart';
 import '../features/backup/application/progress_backup_service.dart';
 import '../features/backup/data/backup_file_io.dart';
 import '../features/backup/domain/backup_validation.dart';
+import '../features/profile_sync/application/profile_sync_service.dart';
+import '../features/profile_sync/domain/profile_sync_link.dart';
 import '../models/local_user.dart';
 import '../state/app_state.dart';
 import '../theme/app_theme.dart';
@@ -67,6 +69,11 @@ class _UsersScreenState extends State<UsersScreen> {
   Future<void> _selectUser(LocalUser user) async {
     await context.read<AppState>().selectUser(user);
     if (!mounted) return;
+    final result = await context.read<ProfileSyncService>().syncUser(user, force: true);
+    if (!mounted) return;
+    if (result.status == ProfileSyncStatus.synced) {
+      context.read<AppState>().notifyProgressChanged();
+    }
     if (Navigator.canPop(context)) Navigator.pop(context);
   }
 
